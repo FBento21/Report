@@ -1,0 +1,3 @@
+{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QIn particular, a pivotal notion is of Banach spaces, i.e, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a Banach space if is a complete normed space.\\E$"}
+{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QIn particular, a pivotal notion is of Banach spaces, i.e, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a Banach space if it is a complete normed space.\\E$"}
+{"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a complex valued function defin\\E$"}

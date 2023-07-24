@@ -1,0 +1,55 @@
+% #############################################################################
+% This is Chapter 1
+% !TEX root = ../main.tex
+% #############################################################################
+% Change the Name of the Chapter i the following line
+\fancychapter{Introduction}
+% \cleardoublepage
+% The following line allows to ref this chapter
+\label{chap:intro}
+% \noindent \todo[color=green!40,author=Rui Cruz, inline]{The examples of techniques, tools, and packages along the document are for you to get familiarized with them. It is advisable to preserve those examples of usage, for reference, by moving the respective blocks of text to the last Chapter of this template (or to a Chapter file that you know you will not use), until you finish your document.}
+
+% \textcolor{violet}{Example of using package} \verb:todo: \textcolor{violet}{for notes of authors.} \textcolor{violet}{In this case} \todo[color=yellow!40,author=Johnny, fancyline]{pointing out to the place} \textcolor{violet}{the author Johnny is calling the attention for something at the specific place in the text.}
+
+% \textcolor{violet}{In this other case, another co-author is commenting on something inline.} \todo[color=orange!40,author=Manuel, inline]{Inline comment or Note. It can be an extract of some recommended text. ``Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.''}
+
+% \textcolor{violet}{In this other case, another co-author is making a note about the citation for missing some bibliographic record}~\cite{Apple:2011fk,AdobeHDS:ys,A.:qy}.
+% \todo[color=red!40,author=Pete]{You should cite also Pellentesque:2014}
+
+
+Partial Differential Equations (PDEs) are one of the most powerful mathematical techniques in mathematical modelling, with direct applications in engineering, physics and even machine learning. As such, the development of reliable numerical methods to solve them are of major importance since most of these equations cannot be solved analytically. Throughout this work we are going to explore a newly developed class type of numerical methods known as \textit{meshless} or \textit{meshfree} methods and its applications in open problems in mathematical-physics. Contrary to the widely used classical methods like finite differences and finite element methods which involve some previously created mesh (where numerically solving a PDE might be difficult if the domain's geometry is convoluted), these type of meshless methods are easier to use since they are mostly independent from the domain, at least from an implementation point of view.
+
+The meshless method we are interested in is known as the \emph{Method of Fundamental Solutions} (MFS) that is based on the fundamental solutions of well-known equations such as the Laplace Equation and the Helmholtz equation. As we are going to see, such set of functions have some interesting properties that we can use to numerically solve PDEs. We are also going to implement a generalization of MFS based on \textit{Kansa method}, another meshless method that in turn uses radial basis functions.
+
+One of the main points of this work is to address open conjectures related with the spectrum of the Dirac Operator while seeking numerical evidence of some proposed isoperimetric inequalities using the methods listed above. Motivated by developments in molecular and nuclear physics, and the particularly interesting properties of low energy charge carriers in graphene, Dirac equation replaced the non-relativistic Schr\"{o}dinger Equation. Unfortunately, the matrix structure found in the Dirac Equation makes it harder to study. The interest in capable numerical methods arises in such conditions: not only can they be used to test some conjectures but they can also be a source of insights for future advances.
+
+
+% \textcolor{violet}{This is an example of Tracking} \replaced[id=JO]{Changes}{Xanges} (in this case a replacement) by different authors in the document. The Text can additionally be modified by \added[id=PT]{adding} new text or by deleting \deleted[id=MN]{wrong} inadequate text. Author can manipulate changes \replaced[id=PT]{introduced by each author\deleted[id=MN]{, as adequate}}{intrroduced by other authors}.
+
+ %#############################################################################
+
+% \textcolor{violet}{You can use in-paragraph lists with this construct for: 
+% \begin{inparaenum}[(a)]
+% \item first case;
+% \item second case; and
+% \item third case,
+% \end{inparaenum}
+% making the text organized and fluid.}
+
+% #############################################################################
+\section{Thesis Overview}
+% This thesis is is organized as follows: \Cref{chap:intro} \todo[color=cyan!40, author=RC, fancyline]{references to doc sections/chapters are automatic}{}interdum vel, tristique ac, condimentum non, tellus. 
+% In \cref{chap:back} curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede.
+% In \cref{chap:architecture} consequat ligula nec tortor. Integer eget sem. Ut vitae enim eu est vehicula gravida.
+% \Cref{chap:implement} morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh in \cref{chap:evaluation}.
+% \Cref{chap:conclusion} suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.
+
+% \begin{align*}
+%     \begin{cases}
+%         x^2\\
+%     \end{cases}
+% \end{align*}
+
+% \begin{equation*}
+%     y-x
+% \end{equation*}

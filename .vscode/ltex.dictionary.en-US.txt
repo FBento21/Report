@@ -1,0 +1,8 @@
+Hankel
+pointwise
+surjective
+functionals
+bilinearity
+eigenfrequency
+holomorphic
+eigenfrequencies

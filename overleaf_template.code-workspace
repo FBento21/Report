@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "overleaf_template",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

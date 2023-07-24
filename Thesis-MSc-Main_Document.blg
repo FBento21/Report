@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis-MSc-Main_Document.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ./Thesis-MSc-Bibliography.bib
+Warning--I'm ignoring huguinho's extra "note" field
+--line 224 of file ./Thesis-MSc-Bibliography.bib
+Warning--I didn't find a database entry for "Apple:2011fk"
+Warning--I didn't find a database entry for "AdobeHDS:ys"
+Warning--I didn't find a database entry for "A.:qy"
+Warning--I didn't find a database entry for "ISO/IEC:2012fk"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 33 entries,
+            4087 wiz_defined-function locations,
+            1019 strings with 12379 characters,
+and the built_in function-call counts, 19241 in all, are:
+= -- 1581
+> -- 341
+< -- 142
++ -- 182
+- -- 57
+* -- 846
+:= -- 3088
+add.period$ -- 66
+call.type$ -- 33
+change.case$ -- 18
+chr.to.int$ -- 282
+cite$ -- 33
+duplicate$ -- 1416
+empty$ -- 1716
+format.name$ -- 76
+if$ -- 4482
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 245
+newline$ -- 126
+num.names$ -- 33
+pop$ -- 560
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1585
+stack$ -- 0
+substring$ -- 685
+swap$ -- 1082
+text.length$ -- 48
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 33
+warning$ -- 0
+while$ -- 86
+width$ -- 35
+write$ -- 323
+(There were 5 warnings)
