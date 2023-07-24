@@ -1,9 +1,9 @@
-PWD /home/francisco/Universidade/Tese/Tese/overleaf_template
+PWD /home/francisco/Universidade/Tese/Report/Report
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/francisco/Universidade/Tese/Tese/overleaf_template/main.tex
+INPUT /home/francisco/Universidade/Tese/Report/Report/main.tex
 OUTPUT main.log
 INPUT ./Thesis-MSc-Main_Document.tex
 INPUT ./Thesis-MSc-Main_Document.tex
