@@ -565,15 +565,22 @@ A main consequence of the Divergence Theorem are the well-known \textit{Green's 
         \item \(\int_\Omega \Delta u v dx = -\int_\Omega \nabla u \cdot \nabla v dx + \int_{\partial \Omega} \frac{\partial u}{\partial n}v d\sigma\);
         \item \(\int_\Omega \Delta u v - u \Delta v dx= \int_{\partial \Omega} \frac{\partial u}{\partial n}v - \frac{\partial v}{\partial n}u d\sigma\).
     \end{enumerate}
-\end{corollary} 
-Consider the following partial differential equation with null Dirichlet boundary conditions (the Neumann case is analogous)
-\begin{equation}
-    \begin{cases}
-        -\Delta u(x) = \lambda u(x), \text{ in } \Omega\\
-        u = 0, \text{ on } \partial \Omega.
-    \end{cases}
-\end{equation}
-The following the result is classical and can be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}.
+\end{corollary}
+
+The study of the spectrum of the following equation is of major importance throughout this work, and will be studied in the following chapter. For now, we will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
+
+\begin{definition}\label{eig_def}
+    Consider the Helmholtz equation with null Dirichlet boundary conditions
+    \begin{equation}\label{eig_helm_eq}
+        \begin{cases}
+            -\Delta u(x) = \lambda u(x), & x \in \Omega, \\
+            u(x) = 0, & x \in \partial \Omega,
+        \end{cases}
+    \end{equation}
+    where $\Delta=\sum_{i=0}^{d}\frac{\partial^2 }{\partial x_i^2}$. Then, \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
+\end{definition}
+
+% The following the result is classical and can be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}.
 \begin{theorem}\label{spec_lap_pre}
     There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
     \[
@@ -592,8 +599,8 @@ The following the result is classical and can be found in numerous textbooks, se
     For each \(f \in L^2(\Omega)\), we consider the problem
     \[
         \begin{cases}
-            -\Delta u(x) = f, \text{ in } \Omega\\
-            u = 0, \text{ on } \partial \Omega
+            -\Delta u(x) = f, & \text{ in } \Omega\\
+            u = 0, & \text{ on } \partial \Omega
         \end{cases} 
     \]
     with the associated variational form
@@ -647,4 +654,7 @@ The following the result is classical and can be found in numerous textbooks, se
     \]
     The other case is analogous.
 \end{proof}
+\begin{remark}
+    Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
+\end{remark}
 

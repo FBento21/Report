@@ -515,17 +515,53 @@ To solve the first problem, we add additional interior points in order to over d
     \end{bmatrix},
 \]
 where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (i.e., \(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points we also have
-\[
+\begin{equation*}
     Q(k) = \begin{bmatrix}
         Q_B(k)\\
         Q_I(k)
     \end{bmatrix},
-\]
+\end{equation*}
 and each unit vector \(u \in \mathcal{C}(A(k))\) has the form
-\[
-    u = Q(k)v = \begin{bmatrix}
+\begin{equation}\label{sat_qr}
+    u = \begin{bmatrix}
+        u_B\\
+        u_I
+    \end{bmatrix} = Q(k)v = \begin{bmatrix}
         Q_B(k)\\
         Q_I(k)
     \end{bmatrix}v
+\end{equation}
+for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichlet boundary conditions, we are interested in non-trivial solutions \(v \in \mathbb{R}^2\) to the above problem when \(u \approx 0\) at the boundary, i.e, to solve the constrained minimization problem
+\[
+    \min_{v \in \mathbb{R}^2, \norm*{v}=1} \norm*{Q_B(k) v}. 
 \]
-for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 0\).
+The above problem is easy to solve and has a closed form solution which can be found using Lagrange multipliers. The solution \(\check{v}\) is the right singular vector associated with the smallest singular value \(\sigma_N\) and
+\[
+    \sigma_N(k) = \norm*{Q_B(k) \check{v}}.
+\]
+Let \(\check{u} = Q(k) \check{v}\). Taking the norm on both sides of equation \eqref{sat_qr}, one can write
+\begin{equation}\label{sat_eq}
+    1 = \norm{\check{u}}^2 = \norm{\begin{bmatrix}
+        Q_B(k)\\
+        Q_I(k)
+    \end{bmatrix}\check{v}}^2 = \sigma_N^2(k) + \norm*{Q_I(k) \check{v}}^2.
+\end{equation}
+Notice how equation \eqref{sat_eq} can be used to eliminate spurious solutions: since \(0 < \sigma_N < 1\), if \(\sigma_N \approx 1\), then \(Q_I(k) \check{v} \approx 0 \implies u_I \approx 0\) which is an incorrect solution (is zero on the interior and does not satisfy the boundary constraints); on the other hand, if \(\sigma_N \approx 0\), then we found an eigenfunction which is small on the boundary points and whose interior is not null.
+
+The name Subspace Angle Technique comes from the fact that \(\sigma_N\) is related with the angle between the subspaces \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\), the space of vectors that are zero at boundary points\footnote{\(\mathcal{G}_0\) can be seen as the discretization of the functions which satisfy the boundary conditions but not the Helmholtz equation.}. The angle \(\phi(k)=\angle (\mathcal{C}(A(k)), \mathcal{G}_0)\) between both subspaces is defined by
+\[
+    \cos \phi(k) = \sup_{\substack{u \in \mathcal{C}(A(k)), \, \norm{u}=1 \\ v \in \mathcal{G}_0, \, \norm*{v} = 1}} (u, v),
+\]
+and one can prove (c.f. \cite{betcke2005reviving}) that
+\[
+    \sigma_N = \sin \phi(k).
+\]
+Therefore, the discrete problem has a non-trivial solution (i.e. \(\lambda\) is an eigenvalue of the Laplace Operator) if and only if \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\) have a non-trivial intersection (i.e. \(\phi(k) = l \pi, \, l \in \mathbb{Z}\)).
+
+\begin{remark}
+    While the construction above assumed homogeneous Dirichlet boundary conditions, it can be easily generalized to any type of homogeneous boundary conditions \(\mathcal{B}\) by considering the appropriate \(A\) matrix.
+\end{remark}
+
+\begin{remark}
+    Neither the enrichment technique nor the Subspace Angle Technique are specific methods only applicable to the Laplace equation and the Helmholtz equation, respectively. They can be used for both equations and at the same time. For example, in \cite{antunes2010meshfree}, both methods were used to study the spectrum of the Laplace operator in domains with corners and cracks.
+\end{remark}

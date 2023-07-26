@@ -6,8 +6,9 @@
 \contentsline {section}{\numberline {2.2}Some concepts on Hilbert Spaces}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Lebesgue and Sobolev Spaces}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Spectral Decomposition of the Laplace Operator}{17}{section.2.4}%
-\contentsline {chapter}{\numberline {3}From Spectral Theory to Geometry and Shape Optimization}{21}{chapter.3}%
+\contentsline {chapter}{\numberline {3}From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The Laplace Operator}{22}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Some shape optimization results}{23}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}The Dirac Operator}{25}{section.3.2}%
 \contentsline {section}{\numberline {3.3}A domain decomposition problem}{31}{section.3.3}%
 \contentsline {chapter}{\numberline {4}The Method of Fundamental Solutions}{37}{chapter.4}%
@@ -17,12 +18,11 @@
 \contentsline {section}{\numberline {4.3}Numerical approach for the Helmholtz Equation}{51}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}The Subspace Angle Technique}{52}{subsection.4.3.1}%
 \contentsline {chapter}{\numberline {5}Conducted Numerical Simulations}{55}{chapter.5}%
-\contentsline {chapter}{\numberline {6}The Poisson Equation with Variable Coefficients}{57}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{59}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusions}{60}{section.7.1}%
-\contentsline {section}{\numberline {7.2}System Limitations and Future Work}{61}{section.7.2}%
-\contentsline {chapter}{Bibliography}{63}{section.7.2}%
-\contentsline {chapter}{Glossary}{67}{section*.15}%
-\contentsline {xchapter}{}{67}{chapter*.16}%
-\contentsline {chapter}{\numberline {A}Code of Project}{69}{appendix.A}%
-\contentsline {chapter}{\numberline {B}A Large Table}{77}{appendix.B}%
+\contentsline {chapter}{\numberline {6}Conclusion}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusions}{58}{section.6.1}%
+\contentsline {section}{\numberline {6.2}System Limitations and Future Work}{59}{section.6.2}%
+\contentsline {chapter}{Bibliography}{61}{section.6.2}%
+\contentsline {chapter}{Glossary}{65}{section*.14}%
+\contentsline {xchapter}{}{65}{chapter*.15}%
+\contentsline {chapter}{\numberline {A}Code of Project}{67}{appendix.A}%
+\contentsline {chapter}{\numberline {B}A Large Table}{75}{appendix.B}%

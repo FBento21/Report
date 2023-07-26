@@ -238,4 +238,10 @@ C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
 T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
   \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
 
+\bibitem{antunes2010meshfree}
+P.~R. Antunes and S.~S. Valtchev, ``A meshfree numerical method for acoustic
+  wave propagation problems in planar domains with corners and cracks,''
+  \emph{Journal of Computational and Applied Mathematics}, vol. 234, no.~9, pp.
+  2646--2662, 2010.
+
 \end{thebibliography}

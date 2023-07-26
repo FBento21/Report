@@ -3,7 +3,7 @@
 % !TEX root = ../main.tex
 % #############################################################################
 % Change the Name of the Chapter i the following line
-\fancychapter{From Spectral Theory to Geometry and Shape Optimization}
+\fancychapter{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}
 % \cleardoublepage
 % The following line allows to ref this chapter
 \label{chap:back}
@@ -11,20 +11,23 @@
 % #############################################################################
 Until otherwise indicated, let \(\Omega \subset \mathbb{R}^d\) be an open and bounded domain with \(C^2\) boundary, with $d \geq 2$.
 
-We start by introducing the definition of a fundamental solution of a differential operator:
+Let \(p(x)\) be a polynomial in the variables \(x=(x_1,\dots,x_d)\), and \(p(\partial)\) be the partial differential operator obtained by substituting \(\frac{\partial}{\partial x_i}\) for \(x_i\) in \(p(x)\). We start by introducing the definition of a fundamental solution of a partial differential operator:
+
 \begin{definition}
-    Consider the polynomial $p(\partial) = \sum_{i=0}^{d} c_i \frac{\partial}{\partial x_i}$, $c_i \in \mathbb{R}$ for each $i$. We say that the distribution $\Phi \in \mathcal{D}(\mathbb{R}^n)$ is the fundamental solution of the partial differential operator $p(\partial)$ if
-    \[p(\partial) \Phi = \delta,
-        \]
-    where $\delta$ is the Dirac Delta.
+    Consider the polynomial \(p(\partial)\). A distribution \(\Phi \in \mathcal{D}^\star(\mathbb{R}^n)\) is said to be the fundamental solution of the partial differential operator \(p(\partial)\) if
+    \[
+        p(\partial) \Phi = \delta,
+    \]
+    where \(\delta\) is the Dirac Delta distribution.
 \end{definition}
 
-In particular, given $\Phi$ in the above conditions we have that $p(\partial)\Phi(x) = 0$, for $x \in \mathbb{R}^d\setminus \{0\}$. An important result in this context is Malgrange-Ehrenpreis theorem:
+In particular, given \(\Phi\) satisfying the above conditions, we have that \(p(\partial)\Phi(x) = 0\) for \(x \in \mathbb{R}^d\setminus \{0\}\). Then, it is easy to see that the fundamental solution of a partial differential operator is not unique: if \(\Phi\) is such that \(p(\partial) \Phi = \delta\) and \(p(\partial) v(x) = 0\) for all \(x \in \mathbb{R}^d\), then \(p(\partial) (\Phi + v) = \delta\). However, the fundamental solutions given below are chosen because they exhibit an important radial behavior, which is needed for the numerical method presented in Chapter 4.
+
+An important result in this context is Malgrange-Ehrenpreis theorem.
 
 \begin{theorem}[Malgrange-Ehrenpreis]\label{malgrange-ehrenpreis}
-    Every constant partial differential operator $p(\partial)$, has a fundamental solution $\Phi \in \mathcal{D}(\mathbb{R}^d)$.
+    Every constant partial differential operator $p(\partial)$, has a fundamental solution $\Phi \in \mathcal{D}^\star(\mathbb{R}^d)$.
 \end{theorem}
-
 \begin{proof}
     See \cite{reed1975ii}.
 \end{proof}
@@ -33,15 +36,19 @@ Below we present the fundamental solution of Laplace differential operator and s
 \section{The Laplace Operator}
 \label{section:laplace_op}
 
-In the following, we are going to study the Laplace operator (\(-\Delta\) where $\Delta=\sum_{i=0}^{d}\frac{\partial^2 }{\partial x_i^2}$) associated with the well-known Laplace equation
+In what follows, we present some results of the Laplace operator associated with the well-known Laplace equation
 \begin{equation} \label{laplace_equation}
     -\Delta u = 0.
 \end{equation}
 Throughout this first part we are mostly concerned about its spectrum which is associated with the Helmholtz equation
 \begin{equation} \label{helmholtz_equation}
-    -(\Delta+\lambda) u = 0 \iff -\Delta u = \lambda u
+    -(\Delta+\lambda) u = 0 \iff -\Delta u = \lambda u.
 \end{equation}
-when subject to Dirichlet, Neumann or Robin boundary conditions.
+% when subject to Dirichlet, Neumann or Robin boundary conditions.
+
+\begin{remark}
+    In some literature, it is common to write the Helmholtz equation as \(-\Delta u = k^2 u\), where \(k\) is known as an eigenfrequency, and \(k^2 = \lambda\). This terminology is a consequence of the fact that the Helmholtz equation can be derived from the wave equation, where a constant \(c^2\) (where \(c \in \mathbb{R}\)) is used.
+\end{remark}
 
 By Theorem \ref{malgrange-ehrenpreis} we know that both equations \eqref{laplace_equation} and \eqref{helmholtz_equation} admit a fundamental solution that are given below.
 
@@ -49,60 +56,28 @@ By Theorem \ref{malgrange-ehrenpreis} we know that both equations \eqref{laplace
     The function \(\Phi: \mathbb{R}^d \setminus \{0\} \rightarrow \mathbb{R}\) given by
     \[
     \Phi(x) = \begin{cases}
-        -\frac{1}{2 \pi} \log \abs*{x}, \; d=2\\
-        \frac{1}{(n-2)\abs{\partial B_1}}\frac{1}{\abs*{x}^{d-2}}, \; d > 2
+        -\frac{1}{2 \pi} \log \abs*{x}, & d=2\\
+        \frac{1}{(n-2)\abs{\partial B_1}}\frac{1}{\abs*{x}^{d-2}}, & d > 2
     \end{cases}    
     \]
     is the fundamental solution of equation \eqref{laplace_equation}, where \(\abs{\partial B_1}\) denotes the boundary measure of the unitary ball.
 \end{proposition}
 \begin{proposition}\label{helm_fund_sol}
-    The function \(\Phi_k: \mathbb{R}^d \setminus \{0\} \rightarrow \mathbb{R}\) given by
+    The function \(\Phi_\lambda: \mathbb{R}^d \setminus \{0\} \rightarrow \mathbb{R}\) given by
     \[
-    \Phi_k(x) = \begin{cases}
-        \frac{i}{4} H_0^{(1)}(\sqrt{\lambda} \norm*{x}), \; d=2\\
-        \frac{e^{i \sqrt{\lambda} \norm*{x}}}{4 \pi \norm*{x}}, \; d > 2
+    \Phi_\lambda(x) = \begin{cases}
+        \frac{i}{4} H_0^{(1)}(\sqrt{\lambda} \norm*{x}), & d=2\\
+        \frac{e^{i \sqrt{\lambda} \norm*{x}}}{4 \pi \norm*{x}}, & d > 2
     \end{cases}    
     \]
     is the fundamental solution of equation \eqref{helmholtz_equation}, where \(H_0^{(1)}\) is the Hankel function of first kind and order 0.
 \end{proposition}
 
-\begin{remark}
-    We note that the fundamental solutions presented above are not unique. Given the linearity of the Laplace operator, if \(\Phi(x)\) is a fundamental solution of Equation \ref*{laplace_equation} then, \(\Phi(x)+v(x)\) is also a fundamental solution of Laplace equation assuming that \(v(x)\) is harmonic. However, we choose the fundamental solutions above since they present a radial behavior which is important to the numerical method to be presented in Chapter \ref*{chap:numerical}
-\end{remark}
+If one considers the eigenfrequency form of the Helmholtz equation, then the fundamental solution in Proposition \eqref{helm_fund_sol} would change accordingly.
 
-% Before presenting some major results concerning the Helmholtz equation, we introduce some important properties regarding the spectrum of this operator, when subject to Dirichlet boundary conditions (although similar results can be derived for Neumann or Robin boundary conditions).
-\begin{definition}\label{eig_def}
-    We say that \(\lambda \in \mathbb{C}\) is an eigenvalue of equation \eqref{helmholtz_equation} if there exists an eigenfunction function \(u \not\equiv 0 \in C^2(\Omega) \cap C(\overline{\Omega}) \ \) such that
-    \[
-    \begin{cases}
-        -\Delta u(x) = \lambda u(x), \; x \in \Omega\\
-        u(x) = 0, \; x \in \partial \Omega 
-    \end{cases}
-    \]
-\end{definition}
-\begin{remark}
-    We note that, in some literature, it is common to write Equation \ref*{helmholtz_equation} as \(-\Delta u = \kappa^2 u\), where \(\kappa\) is known as an eigenfrequency and \(\kappa^2 = \lambda\). This is a consequence of the fact that Equation \ref*{helmholtz_equation} can be derived from the wave Equation where we also use some constant in the form \(c^2, \; c \in \mathbb{R}\). As such, if using eigenfrequencies, the fundamental solution in Proposition \ref*{helm_fund_sol} would change accordingly the consideration above.
-\end{remark}
+\subsection{Some shape optimization results}
 
-% As usual, more properties regarding the eigenvalues and the eigenfunctions of Equation \eqref{helmholtz_equation} can be derived when working in the variational weak form. Not only it allows for  By working in an appropriate Hilbert space can be derived from Definition \ref*{eig_def}. As a direct consequence, using some form of the spectral theorem for Hilbert spaces (see \cite{arendt2010partielle} or \cite{brezis2011functional}), we can conclude the result below.
-% \begin{theorem}\label{properties_helm}
-%     The eigenvalues and eigenfunctions of equation \eqref{helmholtz_equation} have the following properties:
-%     \begin{itemize}
-%         \item The eigenvalues are real and the spectrum of the Helmholtz operator is discrete. Also, the eigenvalues can be ordered such that
-%         \[
-%         0 < \lambda_1 < \lambda_2 \leq \lambda_3 \leq \dots \rightarrow \infty;
-%         \]
-%         \item We can describe the eigenvalues using the variational form
-%         \[
-%         \lambda_n = \min_{\substack{M \subset H^1_0(\Omega) \\ \dim M =n}} \max_{0 \neq u \in M}\frac{\norm*{\nabla u}_2^2}{\norm{u}_2^2}\quad \text{(min-max principle)};
-%         \]
-%         \item The eigenfunctions are mutually orthogonal.
-%     \end{itemize}
-% \end{theorem}
-
-\subsection*{Some shape optimization results}
-
-In this chapter we present some important results regarding shape optimization. More precisely, we're interested in problems of the form
+In this subsection some important results regarding shape optimization are presented. More precisely, we are interested in problems of the form
 \begin{equation}\label{shape_prob}
     \min\{F(\lambda_1(\Omega),\dots, \lambda_k(\Omega)): \abs{\Omega} = c\},
 \end{equation}
