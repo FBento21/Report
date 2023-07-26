@@ -17,43 +17,43 @@ Warning--I'm ignoring huguinho's extra "note" field
 Done.
 You've used 45 entries,
             4087 wiz_defined-function locations,
-            1080 strings with 14184 characters,
-and the built_in function-call counts, 27537 in all, are:
-= -- 2308
-> -- 483
-< -- 223
-+ -- 265
-- -- 76
-* -- 1219
-:= -- 4385
+            1083 strings with 14189 characters,
+and the built_in function-call counts, 28108 in all, are:
+= -- 2367
+> -- 496
+< -- 234
++ -- 273
+- -- 77
+* -- 1254
+:= -- 4462
 add.period$ -- 90
 call.type$ -- 45
-change.case$ -- 27
-chr.to.int$ -- 459
+change.case$ -- 28
+chr.to.int$ -- 483
 cite$ -- 45
-duplicate$ -- 2007
-empty$ -- 2363
-format.name$ -- 102
-if$ -- 6421
+duplicate$ -- 2042
+empty$ -- 2379
+format.name$ -- 104
+if$ -- 6552
 int.to.chr$ -- 0
 int.to.str$ -- 45
-missing$ -- 336
+missing$ -- 340
 newline$ -- 162
 num.names$ -- 45
-pop$ -- 738
+pop$ -- 737
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2262
+skip$ -- 2304
 stack$ -- 0
-substring$ -- 1112
-swap$ -- 1582
-text.length$ -- 70
+substring$ -- 1169
+swap$ -- 1627
+text.length$ -- 73
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 45
 warning$ -- 0
-while$ -- 127
+while$ -- 131
 width$ -- 47
-write$ -- 440
+write$ -- 444
 (There was 1 warning)

@@ -625,165 +625,165 @@ We are now ready to prove the equivalence between both problems:
     The above result is important because, as we will see, the Method of Fundamental Solutions only addresses the solution of each subdomain \(\Omega_i\) independently (for which we have density and convergence results for functions in \(H^1\)) while enforcing the interface conditions. By the result above we're, in fact, in the conditions of our numerical method since each function belongs to a closed subspace of \(H^1(\Omega_i)\) for \(i=1, 2\).
 \end{remark}
 
-\textit{Posteriori estimate}:
+% \textit{Posteriori estimate}:
 
-We now look to prove that the error obtained in the numerical approximation using the MFS only depends on the boundary and interface error. With that in mind, we start by introducing some auxiliary results and concepts that we need. See \cite{salsa2016partial}, \cite{evans2022partial} or \cite{huguinho}.
-\begin{lemma}\label{rep_c2}
-    Let \(\Omega \subset \mathbb{R}^d\) be a smooth, bounded domain and \(u \in C^2(\overline{\Omega})\). Then, for every \(x \in \Omega\),
-    \[
-    u(x) = -\int_\Omega \Phi(x-y)\Delta u(y) dy + \int_{\partial \Omega} \Phi(x-y)\frac{\partial u}{\partial n}(y) - u(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
-    \]
-\end{lemma}
-\begin{proof}
-    See Theorem 3.11 in \cite{sauvigny2012partial}.\footnote{The proof given in the reference assumes weaker assumptions than the ones listed here. This lemma can be proven just assuming that \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\), \(\Omega\) is a \textit{normal} domain (like rectangles), and we are in the conditions of the Divergence Theorem.}
-\end{proof}
-\begin{lemma}\label{phi}
-    Consider \(u \in C^2(\overline{\Omega})\) in the same conditions as in Lemma \ref{rep_c2}. Assume that there exists \(\varphi(x, \cdot) \in C^2(\overline{\Omega})\) such that
-    \[
-    \begin{cases}
-        \Delta_y \varphi = 0, \; y \in \Omega\\
-        \varphi(x, y) = \Phi(x-y), \; y \in \partial \Omega 
-    \end{cases}    
-    \]
-    for every \(x \in \Omega\). Then 
-    \[
-    \int_{\partial\Omega} \Phi(x-y)\frac{\partial u}{\partial n}(y) d\sigma(y) = \int_\Omega \varphi(x, y)\Delta u(y) dy  + \int_{\partial\Omega} \frac{\partial \varphi}{\partial n_y}(x,y) u(y) d\sigma(y).
-    \]
-\end{lemma}
-\begin{proof}
-    Using Green's third identity we find that
-    \begin{align*}
-    \int_\Omega \underbrace{\Delta_y \varphi(x, y) u(y)}_{=0} - \varphi(x, y)\Delta u(y)dy &= \int_{\partial\Omega} \frac{\partial \varphi}{\partial n_y}(x,y) u(y) - \varphi(x, y)\frac{\partial u}{\partial n}(y)  d\sigma(y)\\
-    &\int_{\partial\Omega} \frac{\partial \Phi}{\partial n_y}(x-y) u(y) - \Phi(x-y)\frac{\partial u}{\partial n}(y)  d\sigma(y)
-\end{align*}
-as we wanted.
-\end{proof}
-\begin{definition}[Green's function]
-    With the same assumptions as in Lemma \ref{phi}, we define the Green's function of \(\Omega\) as
-    \[
-    G(x, y) = \Phi(x-y) - \phi(x, y), \; \forall x \in \Omega, y \in \overline{\Omega}, x \neq y   
-    \]
-    which satisfies 
-    \[
-        \begin{cases}
-            \Delta_y G(x,y) = \delta_x, \; y \in \Omega\\
-            G(x, y) = 0, \; y \in \partial \Omega 
-        \end{cases}.
-    \]
-    We say that the fundamental solution \(\Phi(x-y)\) is the singular part of \(G\) and \(\varphi(x,y)\) is the regular part.
-\end{definition}
-\begin{remark}\label{remarck_green}
-    The existence of the Green function for a general domain \(\Omega\) depends on the solvability of the problem 
-    \[
-        \begin{cases}
-            \Delta_y \varphi = 0, \; y \in \Omega\\
-            \varphi(x, y) = \Phi(x-y), \; y \in \partial \Omega 
-        \end{cases}       
-    \]
-    which can be asserted for a Lipschitz domain. See Theorem 3.8 in \cite{salsa2016partial}\footnote{Observe that \(\forall y \in \partial \Omega, \; \phi(x, y) = \Phi(x-y)\) is never singular since \(x \in \Omega\)}.
+% We now look to prove that the error obtained in the numerical approximation using the MFS only depends on the boundary and interface error. With that in mind, we start by introducing some auxiliary results and concepts that we need. See \cite{salsa2016partial}, \cite{evans2022partial} or \cite{huguinho}.
+% \begin{lemma}\label{rep_c2}
+%     Let \(\Omega \subset \mathbb{R}^d\) be a smooth, bounded domain and \(u \in C^2(\overline{\Omega})\). Then, for every \(x \in \Omega\),
+%     \[
+%     u(x) = -\int_\Omega \Phi(x-y)\Delta u(y) dy + \int_{\partial \Omega} \Phi(x-y)\frac{\partial u}{\partial n}(y) - u(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
+%     \]
+% \end{lemma}
+% \begin{proof}
+%     See Theorem 3.11 in \cite{sauvigny2012partial}.\footnote{The proof given in the reference assumes weaker assumptions than the ones listed here. This lemma can be proven just assuming that \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\), \(\Omega\) is a \textit{normal} domain (like rectangles), and we are in the conditions of the Divergence Theorem.}
+% \end{proof}
+% \begin{lemma}\label{phi}
+%     Consider \(u \in C^2(\overline{\Omega})\) in the same conditions as in Lemma \ref{rep_c2}. Assume that there exists \(\varphi(x, \cdot) \in C^2(\overline{\Omega})\) such that
+%     \[
+%     \begin{cases}
+%         \Delta_y \varphi = 0, \; y \in \Omega\\
+%         \varphi(x, y) = \Phi(x-y), \; y \in \partial \Omega 
+%     \end{cases}    
+%     \]
+%     for every \(x \in \Omega\). Then 
+%     \[
+%     \int_{\partial\Omega} \Phi(x-y)\frac{\partial u}{\partial n}(y) d\sigma(y) = \int_\Omega \varphi(x, y)\Delta u(y) dy  + \int_{\partial\Omega} \frac{\partial \varphi}{\partial n_y}(x,y) u(y) d\sigma(y).
+%     \]
+% \end{lemma}
+% \begin{proof}
+%     Using Green's third identity we find that
+%     \begin{align*}
+%     \int_\Omega \underbrace{\Delta_y \varphi(x, y) u(y)}_{=0} - \varphi(x, y)\Delta u(y)dy &= \int_{\partial\Omega} \frac{\partial \varphi}{\partial n_y}(x,y) u(y) - \varphi(x, y)\frac{\partial u}{\partial n}(y)  d\sigma(y)\\
+%     &\int_{\partial\Omega} \frac{\partial \Phi}{\partial n_y}(x-y) u(y) - \Phi(x-y)\frac{\partial u}{\partial n}(y)  d\sigma(y)
+% \end{align*}
+% as we wanted.
+% \end{proof}
+% \begin{definition}[Green's function]
+%     With the same assumptions as in Lemma \ref{phi}, we define the Green's function of \(\Omega\) as
+%     \[
+%     G(x, y) = \Phi(x-y) - \phi(x, y), \; \forall x \in \Omega, y \in \overline{\Omega}, x \neq y   
+%     \]
+%     which satisfies 
+%     \[
+%         \begin{cases}
+%             \Delta_y G(x,y) = \delta_x, \; y \in \Omega\\
+%             G(x, y) = 0, \; y \in \partial \Omega 
+%         \end{cases}.
+%     \]
+%     We say that the fundamental solution \(\Phi(x-y)\) is the singular part of \(G\) and \(\varphi(x,y)\) is the regular part.
+% \end{definition}
+% \begin{remark}\label{remarck_green}
+%     The existence of the Green function for a general domain \(\Omega\) depends on the solvability of the problem 
+%     \[
+%         \begin{cases}
+%             \Delta_y \varphi = 0, \; y \in \Omega\\
+%             \varphi(x, y) = \Phi(x-y), \; y \in \partial \Omega 
+%         \end{cases}       
+%     \]
+%     which can be asserted for a Lipschitz domain. See Theorem 3.8 in \cite{salsa2016partial}\footnote{Observe that \(\forall y \in \partial \Omega, \; \phi(x, y) = \Phi(x-y)\) is never singular since \(x \in \Omega\)}.
 
-    Assuming that the domain admits a Green function, then we can improve on Lemma \ref{rep_c2}. Given \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\) we can represent it as
-    \[
-        u(x) =  \int_{\Omega} G(x, y)\Delta u(y) \sigma(y) -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y) u(y) \sigma(y).
-    \]
-    In particular, if \(u\) satisfies the Poisson equation with Dirichlet boundary conditions, then
-    \[
-        u(x) =  \int_{\Omega} G(x, y) f(y) \sigma(y) -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y) g(y) \sigma(y).
-    \]
+%     Assuming that the domain admits a Green function, then we can improve on Lemma \ref{rep_c2}. Given \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\) we can represent it as
+%     \[
+%         u(x) =  \int_{\Omega} G(x, y)\Delta u(y) \sigma(y) -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y) u(y) \sigma(y).
+%     \]
+%     In particular, if \(u\) satisfies the Poisson equation with Dirichlet boundary conditions, then
+%     \[
+%         u(x) =  \int_{\Omega} G(x, y) f(y) \sigma(y) -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y) g(y) \sigma(y).
+%     \]
 
-\end{remark}
+% \end{remark}
 
-\begin{lemma}\label{super_lemma}
-    Let \(\Omega\) be a smooth, open and bounded set. Then \(\forall x \in \Omega, y \in \partial \Omega\)
-    \begin{align*}
-        &\frac{\partial G}{\partial n_y}(x, y) < 0\\ 
-        &\frac{\partial \Phi}{\partial n_y}(x-y) < 0.
-    \end{align*}
-\end{lemma}
-\begin{proof}
-    Let \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\) be a solution of 
-    \[
-    \begin{cases}
-        \Delta u(x) = 0, x \in \Omega\\
-        u(x) = g(x), x \in \partial \Omega
-    \end{cases}
-    \]
-    where \(g\) is a nonnegative and arbitrary continuous function (it is known that such \(u\) exists). By the maximum principle (applied to \(-u\)) we know that \(u(x) > 0\). Since \(u\) can be represented by
-    \[
-    u(x) = -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y)g(y) \sigma(y)
-    \]
-    we find that the integral above is negative, which implies that \(\frac{\partial G}{\partial n_y}(x, y)\) must also be negative because \(g\) is arbitrary.
-    To prove that
-    \[
-        \frac{\partial \Phi}{\partial n_y}(x-y) < 0    
-    \]
-    it suffices to notice that \(\Phi\) is radially symmetric and \(\Phi(x) = \Phi(r)\), with \(r \in \mathbb{R}_0^+\) and \(\Phi'(r) = -\frac{1}{2 \pi r} < 0\).
-\end{proof}
-Let \(u = (u_1, u_2)\) be the solution of \eqref{decomp_prob} and \(\Tilde{u} = (\Tilde{u}_1, \Tilde{u}_2)\) the numerical approximation given by the method of fundamental solutions. Then, we have that
-\begin{align}
-    \begin{split}
-        \begin{cases}
-            -\Delta u_i &= 0, \; \text{in }\Omega_i\\
-            u_1 &= u_2, \; \text{on }\gamma\\
-            \frac{\partial u_1}{\partial n} &= \frac{\partial u_2}{\partial n}, \; \text{on }\gamma\\
-            u_i &= 0, \; \text{on }\Gamma_i
-        \end{cases}
-    \end{split}
-    \quad
-    \begin{split}
-        \begin{cases}
-            -\Delta \Tilde{u}_i &= 0, \; \text{in }\Omega_i\\
-            \Tilde{u}_1 &= \Tilde{u}_2 + \Tilde{g}_1, \; \text{on }\gamma\\
-            \frac{\partial \Tilde{u}_1}{\partial n} &= \frac{\partial \Tilde{u}_2}{\partial n} + \Tilde{g}_2, \; \text{on }\gamma\\
-            \Tilde{u}_i &=  \Tilde{h}_i, \; \text{on }\Gamma_i
-        \end{cases}
-    \end{split}
-\end{align}
-where \(\Tilde{g}_i \in L^\infty(\gamma), \Tilde{h}_1 \in L^\infty(\Gamma_i)\) are the numerical approximation at \(\gamma\) and \(\Gamma_i\) (we recall that our numerical approximation satisfies \eqref{decomp_poisson} in the interior of each \(\Omega_i\) by construction).
+% \begin{lemma}\label{super_lemma}
+%     Let \(\Omega\) be a smooth, open and bounded set. Then \(\forall x \in \Omega, y \in \partial \Omega\)
+%     \begin{align*}
+%         &\frac{\partial G}{\partial n_y}(x, y) < 0\\ 
+%         &\frac{\partial \Phi}{\partial n_y}(x-y) < 0.
+%     \end{align*}
+% \end{lemma}
+% \begin{proof}
+%     Let \(u \in C^2(\Omega)\cap C^1(\overline{\Omega})\) be a solution of 
+%     \[
+%     \begin{cases}
+%         \Delta u(x) = 0, x \in \Omega\\
+%         u(x) = g(x), x \in \partial \Omega
+%     \end{cases}
+%     \]
+%     where \(g\) is a nonnegative and arbitrary continuous function (it is known that such \(u\) exists). By the maximum principle (applied to \(-u\)) we know that \(u(x) > 0\). Since \(u\) can be represented by
+%     \[
+%     u(x) = -\int_{\partial\Omega} \frac{\partial G}{\partial n_y}(x, y)g(y) \sigma(y)
+%     \]
+%     we find that the integral above is negative, which implies that \(\frac{\partial G}{\partial n_y}(x, y)\) must also be negative because \(g\) is arbitrary.
+%     To prove that
+%     \[
+%         \frac{\partial \Phi}{\partial n_y}(x-y) < 0    
+%     \]
+%     it suffices to notice that \(\Phi\) is radially symmetric and \(\Phi(x) = \Phi(r)\), with \(r \in \mathbb{R}_0^+\) and \(\Phi'(r) = -\frac{1}{2 \pi r} < 0\).
+% \end{proof}
+% Let \(u = (u_1, u_2)\) be the solution of \eqref{decomp_prob} and \(\Tilde{u} = (\Tilde{u}_1, \Tilde{u}_2)\) the numerical approximation given by the method of fundamental solutions. Then, we have that
+% \begin{align}
+%     \begin{split}
+%         \begin{cases}
+%             -\Delta u_i &= 0, \; \text{in }\Omega_i\\
+%             u_1 &= u_2, \; \text{on }\gamma\\
+%             \frac{\partial u_1}{\partial n} &= \frac{\partial u_2}{\partial n}, \; \text{on }\gamma\\
+%             u_i &= 0, \; \text{on }\Gamma_i
+%         \end{cases}
+%     \end{split}
+%     \quad
+%     \begin{split}
+%         \begin{cases}
+%             -\Delta \Tilde{u}_i &= 0, \; \text{in }\Omega_i\\
+%             \Tilde{u}_1 &= \Tilde{u}_2 + \Tilde{g}_1, \; \text{on }\gamma\\
+%             \frac{\partial \Tilde{u}_1}{\partial n} &= \frac{\partial \Tilde{u}_2}{\partial n} + \Tilde{g}_2, \; \text{on }\gamma\\
+%             \Tilde{u}_i &=  \Tilde{h}_i, \; \text{on }\Gamma_i
+%         \end{cases}
+%     \end{split}
+% \end{align}
+% where \(\Tilde{g}_i \in L^\infty(\gamma), \Tilde{h}_1 \in L^\infty(\Gamma_i)\) are the numerical approximation at \(\gamma\) and \(\Gamma_i\) (we recall that our numerical approximation satisfies \eqref{decomp_poisson} in the interior of each \(\Omega_i\) by construction).
 
-We now state and prove the desired \textit{Posteriori} estimate.
-\begin{theorem}
-    Consider \(u\) and \(\Tilde{u}\) defined as above and assume that \(\Omega\) is a smooth and bounded domain of \(\mathbb{R}^2\). Then, there exists a constant \(C > 0\) that only depends on the domains \(\Omega_1\) and \(\Omega_2\) such that
-    \[
-    \norm*{u-\Tilde{u}} \leq C(\norm*{\Tilde{g}_1} + \norm*{\Tilde{g}_2} + \norm*{\Tilde{h}_1} + \norm*{\Tilde{h}_2})
-    \]
-\end{theorem}
-\begin{proof}
-    Using the representation Lemma \ref{rep_c2} we find that
-    \begin{align*}
-        &u_1(x) = \int_{\Gamma_1} \Phi(x-y)\frac{\partial u_1}{\partial n_1}(y) d\sigma(y)+\int_{\gamma} \Phi(x-y)\frac{\partial u_1}{\partial n}(y) - u_1(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
-        &u_2(x) = \int_{\Gamma_2} \Phi(x-y)\frac{\partial u_2}{\partial n_2}(y) d\sigma(y)-\Big(\int_{\gamma} \Phi(x-y)\frac{\partial u_2}{\partial n}(y) - u_2(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\Big)
-    \end{align*}
-    where we used the fact that \(u_1\) and \(u_2\) vanish on the boundaries \(\Gamma_1\) and \(\Gamma_2\), respectively, and \(\frac{\partial u_2}{\partial n_2} = -\frac{\partial u_2}{\partial n}\) since \(n = n_1 = n_2\) on the interface.
-    Analogously, we can represent \(\Tilde{u}_1\) and \(\Tilde{u}_2\) in the integral form
-    \begin{align*}
-        &\Tilde{u}_1(x) =  \int_{\Gamma_1} \Phi(x-y)\frac{\partial \Tilde{u}_1}{\partial n_1}(y) - \Tilde{h}_1(y) \frac{\partial \Phi}{\partial n_1}(x-y) d\sigma(y) + \int_{\gamma} \Phi(x-y)\frac{\partial \Tilde{u}_1}{\partial n}(y) - \Tilde{u}_1(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
-        &\Tilde{u}_2(x) = \int_{\Gamma_2} \Phi(x-y)\frac{\partial \Tilde{u}_2}{\partial n_2}(y) - \Tilde{h}_2(y) \frac{\partial \Phi}{\partial n_2}(x-y) d\sigma(y) -\Big(\int_{\gamma} \Phi(x-y)\frac{\partial \Tilde{u}_2}{\partial n}(y) - \Tilde{u}_2(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\Big)
-    \end{align*}
+% We now state and prove the desired \textit{Posteriori} estimate.
+% \begin{theorem}
+%     Consider \(u\) and \(\Tilde{u}\) defined as above and assume that \(\Omega\) is a smooth and bounded domain of \(\mathbb{R}^2\). Then, there exists a constant \(C > 0\) that only depends on the domains \(\Omega_1\) and \(\Omega_2\) such that
+%     \[
+%     \norm*{u-\Tilde{u}} \leq C(\norm*{\Tilde{g}_1} + \norm*{\Tilde{g}_2} + \norm*{\Tilde{h}_1} + \norm*{\Tilde{h}_2})
+%     \]
+% \end{theorem}
+% \begin{proof}
+%     Using the representation Lemma \ref{rep_c2} we find that
+%     \begin{align*}
+%         &u_1(x) = \int_{\Gamma_1} \Phi(x-y)\frac{\partial u_1}{\partial n_1}(y) d\sigma(y)+\int_{\gamma} \Phi(x-y)\frac{\partial u_1}{\partial n}(y) - u_1(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
+%         &u_2(x) = \int_{\Gamma_2} \Phi(x-y)\frac{\partial u_2}{\partial n_2}(y) d\sigma(y)-\Big(\int_{\gamma} \Phi(x-y)\frac{\partial u_2}{\partial n}(y) - u_2(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\Big)
+%     \end{align*}
+%     where we used the fact that \(u_1\) and \(u_2\) vanish on the boundaries \(\Gamma_1\) and \(\Gamma_2\), respectively, and \(\frac{\partial u_2}{\partial n_2} = -\frac{\partial u_2}{\partial n}\) since \(n = n_1 = n_2\) on the interface.
+%     Analogously, we can represent \(\Tilde{u}_1\) and \(\Tilde{u}_2\) in the integral form
+%     \begin{align*}
+%         &\Tilde{u}_1(x) =  \int_{\Gamma_1} \Phi(x-y)\frac{\partial \Tilde{u}_1}{\partial n_1}(y) - \Tilde{h}_1(y) \frac{\partial \Phi}{\partial n_1}(x-y) d\sigma(y) + \int_{\gamma} \Phi(x-y)\frac{\partial \Tilde{u}_1}{\partial n}(y) - \Tilde{u}_1(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
+%         &\Tilde{u}_2(x) = \int_{\Gamma_2} \Phi(x-y)\frac{\partial \Tilde{u}_2}{\partial n_2}(y) - \Tilde{h}_2(y) \frac{\partial \Phi}{\partial n_2}(x-y) d\sigma(y) -\Big(\int_{\gamma} \Phi(x-y)\frac{\partial \Tilde{u}_2}{\partial n}(y) - \Tilde{u}_2(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\Big)
+%     \end{align*}
 
-    \begin{align*}
-        (u_1-\Tilde{u}_1)(x) &= \int_{\Gamma_1} \Phi(x-y)\Big(\frac{\partial u_1}{\partial n_1}(y)-\frac{\partial \Tilde{u}_1}{\partial n_1}(y)\Big)d\sigma(y) + \int_{\Gamma_1}\Tilde{h}_1(y) \frac{\partial \Phi}{\partial n_1}(x-y) d\sigma(y)\\
-        &+ \int_{\gamma} \Phi(x-y)\Big(\frac{\partial u_1}{\partial n}(y)-\frac{\partial \Tilde{u}_1}{\partial n}(y)\Big) - \Big(u_1(y)-\Tilde{u}_1(y)\Big) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
-    \end{align*}
-    \begin{align*}
-        (u_2-\Tilde{u}_2)(x) &= \int_{\Gamma_2} \Phi(x-y)\Big(\frac{\partial u_2}{\partial n_2}(y)-\frac{\partial \Tilde{u}_2}{\partial n_2}(y)\Big)d\sigma(y) + \int_{\Gamma_2}\Tilde{h}_2(y) \frac{\partial \Phi}{\partial n_2}(x-y) d\sigma(y)\\
-        &+\int_{\gamma} -\Phi(x-y)\Big(\frac{\partial u_2}{\partial n}(y)-\frac{\partial \Tilde{u}_2}{\partial n}(y)\Big) + \Big(u_2(y)-\Tilde{u}_2(y)\Big) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
-    \end{align*}
-    Since,
-    \[
-        (u-\Tilde{u})(x) = \chi_{\Omega_1}(u_1-\Tilde{u}_1)(x) + \chi_{\Omega_2}(u_2-\Tilde{u}_2)(x) 
-    \]
-    and writing
-    \[
-    \Tilde{h}(x) = \begin{cases}
-        \Tilde{h}_1(x), \Gamma_1\\
-        \Tilde{h}_2(x), \Gamma_2
-    \end{cases}  
-    \]
-    \begin{align*}
-        (u-\Tilde{u})(x) &= \int_{\partial\Omega} \Phi(x-y)\Big(\frac{\partial u}{\partial n}(y)-\frac{\partial \Tilde{u}}{\partial n}(y)\Big)d\sigma(y) + \int_{\partial\Omega}\Tilde{h}(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
-        &-\int_{\gamma} \Phi(x-y)\Tilde{g}_2 - \Tilde{g}_1\frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
-    \end{align*}
+%     \begin{align*}
+%         (u_1-\Tilde{u}_1)(x) &= \int_{\Gamma_1} \Phi(x-y)\Big(\frac{\partial u_1}{\partial n_1}(y)-\frac{\partial \Tilde{u}_1}{\partial n_1}(y)\Big)d\sigma(y) + \int_{\Gamma_1}\Tilde{h}_1(y) \frac{\partial \Phi}{\partial n_1}(x-y) d\sigma(y)\\
+%         &+ \int_{\gamma} \Phi(x-y)\Big(\frac{\partial u_1}{\partial n}(y)-\frac{\partial \Tilde{u}_1}{\partial n}(y)\Big) - \Big(u_1(y)-\Tilde{u}_1(y)\Big) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
+%     \end{align*}
+%     \begin{align*}
+%         (u_2-\Tilde{u}_2)(x) &= \int_{\Gamma_2} \Phi(x-y)\Big(\frac{\partial u_2}{\partial n_2}(y)-\frac{\partial \Tilde{u}_2}{\partial n_2}(y)\Big)d\sigma(y) + \int_{\Gamma_2}\Tilde{h}_2(y) \frac{\partial \Phi}{\partial n_2}(x-y) d\sigma(y)\\
+%         &+\int_{\gamma} -\Phi(x-y)\Big(\frac{\partial u_2}{\partial n}(y)-\frac{\partial \Tilde{u}_2}{\partial n}(y)\Big) + \Big(u_2(y)-\Tilde{u}_2(y)\Big) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
+%     \end{align*}
+%     Since,
+%     \[
+%         (u-\Tilde{u})(x) = \chi_{\Omega_1}(u_1-\Tilde{u}_1)(x) + \chi_{\Omega_2}(u_2-\Tilde{u}_2)(x) 
+%     \]
+%     and writing
+%     \[
+%     \Tilde{h}(x) = \begin{cases}
+%         \Tilde{h}_1(x), \Gamma_1\\
+%         \Tilde{h}_2(x), \Gamma_2
+%     \end{cases}  
+%     \]
+%     \begin{align*}
+%         (u-\Tilde{u})(x) &= \int_{\partial\Omega} \Phi(x-y)\Big(\frac{\partial u}{\partial n}(y)-\frac{\partial \Tilde{u}}{\partial n}(y)\Big)d\sigma(y) + \int_{\partial\Omega}\Tilde{h}(y) \frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)\\
+%         &-\int_{\gamma} \Phi(x-y)\Tilde{g}_2 - \Tilde{g}_1\frac{\partial \Phi}{\partial n}(x-y) d\sigma(y)
+%     \end{align*}
 
 
     % where we used the fact that \(\Tilde{u}_i = \Tilde{h}_i\) on \(\Gamma_i\).  To deal with the boundary term \(\int_{\Gamma_i} \Phi(x-y)\frac{\partial \Tilde{u}_i}{\partial n_i}(y) d\sigma(y)\), we make use of Lemma \ref{phi} which allow us to rewrite
@@ -841,4 +841,4 @@ We now state and prove the desired \textit{Posteriori} estimate.
     % \[
     %     \norm{(u-\Tilde{u})(x)}_{L^\infty(\Omega)} \leq M(\norm*{\Tilde{g}_2}_{L^\infty(\gamma)} + \norm*{\Tilde{g}_1}_{L^\infty(\gamma)} + \norm*{\Tilde{h}_1}_{L^\infty(\Gamma_1)} + \norm*{\Tilde{h}_2}_{L^\infty(\Gamma_2)}).
     % \]
-\end{proof}
+% \end{proof}

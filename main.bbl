@@ -177,15 +177,6 @@ A.~Quarteroni and A.~Valli, \emph{Domain decomposition methods for partial
 R.~A. Adams and J.~J. Fournier, \emph{Sobolev spaces}.\hskip 1em plus 0.5em
   minus 0.4em\relax Elsevier, 2003.
 
-\bibitem{salsa2016partial}
-S.~Salsa, \emph{Partial differential equations in action: from modelling to
-  theory}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, vol.~99.
-
-\bibitem{sauvigny2012partial}
-F.~Sauvigny, \emph{Partial Differential Equations 1: Foundations and Integral
-  Representations}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science \&
-  Business Media, 2012.
-
 \bibitem{alves2009choice}
 C.~J. Alves, ``On the choice of source points in the method of fundamental
   solutions,'' \emph{Engineering Analysis with Boundary Elements}, vol.~33,
@@ -202,6 +193,10 @@ R.~Kress, \emph{Linear Integral Equations}, ser. Applied Mathematical
 \bibitem{colton2013integral}
 D.~Colton and R.~Kress, \emph{Integral equation methods in scattering
   theory}.\hskip 1em plus 0.5em minus 0.4em\relax SIAM, 2013.
+
+\bibitem{salsa2016partial}
+S.~Salsa, \emph{Partial differential equations in action: from modelling to
+  theory}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, vol.~99.
 
 \bibitem{svilen_phd}
 S.~Valtchev, ``Numerical analysis of methods with fundamental solutions for
@@ -238,5 +233,9 @@ A.~H. Barnett and T.~Betcke, ``Stability and convergence of the method of
 C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
   the calculation of eigenfrequencies and eigenmodes of 2d simply connected
   shapes,'' \emph{CMC-TECH SCIENCE PRESS-}, vol.~2, no.~4, p. 251, 2005.
+
+\bibitem{betcke2005reviving}
+T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
+  \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
 
 \end{thebibliography}
