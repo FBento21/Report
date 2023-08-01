@@ -7,3 +7,4 @@ eigenfrequency
 holomorphic
 eigenfrequencies
 isoperimetric
+analyticity

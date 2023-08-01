@@ -14,10 +14,14 @@
 \contentsline {xchapter}{Conducted Numerical Simulations}{59}{chapter.5}%
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Configuration of the boundary, source and interface points. Each domain has 600 boundary points, 377 source points and the common interface has 100 points.\relax }}{63}{figure.caption.13}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Numerical approximation of the BVP \eqref {transmission_disk} under the conditions presented in Figure \ref {transmission_disk_col}\relax }}{63}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Numerical simulation with \(k_1=1\).\relax }}{65}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Numerical simulation with \(k_1=2\).\relax }}{65}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Numerical simulation with \(k_1=5\).\relax }}{65}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces L-shape domain with vertical interface. Configuration of the boundary, source and interface points.\relax }}{66}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{65}{chapter.6}%
-\contentsline {xchapter}{}{75}{chapter*.19}%
+\contentsline {xchapter}{Conclusion}{67}{chapter.6}%
+\contentsline {xchapter}{}{77}{chapter*.22}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{77}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{79}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{85}{appendix.B}%
+\contentsline {xchapter}{A Large Table}{87}{appendix.B}%

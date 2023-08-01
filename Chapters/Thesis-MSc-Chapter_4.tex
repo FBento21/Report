@@ -153,7 +153,6 @@ and is easy so see that the exact solution of Equation \eqref{transmission_disk}
       \label{transmission_disk_plot}
     \end{minipage}
 \end{figure}
-  
 
 The absolute error between the approximate solution and the exact solution can then be calculated for each domain point. The sample points to compute the absolute error were generated in a uniform grid and were also used to plot Figure \ref{transmission_disk_plot}. The method described at the end of the subchapter \ref{density_proofs_section} was used to place the source points, where \(\eta=0.3\).
 
@@ -190,10 +189,76 @@ The absolute error between the approximate solution and the exact solution can t
     \label{tab:transmission_results_2}
 \end{table}
 
-The numerical results presented in the Tables \ref{tab:transmission_results_1} and \ref{tab:transmission_results_2} are still not the optimal ones: if one considers a larger value of \(\eta\), they increase in more than two orders of magnitude. The ``corner'' source points added in Figure (below and above the interface) \ref{transmission_disk_col} also play a role in the accuracy of the method. In Figure \ref{transmission_disk_col}, observe that the source points for one of the domains can be inside the other domain, as the solution will be split into two parts.
+The numerical results presented in Tables \ref{tab:transmission_results_1} and \ref{tab:transmission_results_2} are not yet optimal. When considering a larger value of \(\eta\), the results increase by more than two orders of magnitude, but this also leads to a significant increase in the already very high condition number (see Table \ref{tab:transmission_results_2}), as expected. Despite this, the results show great promise, which was anticipated due to the analyticity of the domain.
+
+As mentioned previously, the Method of Fundamental Solutions (MFS) yields better results in highly regular domains, even when considering curved geometries. However, increasing the number of boundary and interface collocation points improves the accuracy of the solution. It is important to note that a larger number of points also escalates the condition number, making the problem more challenging to solve accurately.
+
+The inclusion of the ``corner'' source points, as depicted in Figure \ref{transmission_disk_col}, also significantly impacts the method's accuracy. These source points above and below the interface (\ref{transmission_disk_col}) are strategically added, in order to capture the behavior near the interface corner. In Figure \ref{transmission_disk_col}, observe that the source points for one of the domains can be inside the other domain, as the solution will be split into two parts.
 
 \subsection{Results for the rectangle}
 
+In this subsection a rectangular domain \([-1, -0.5] \times [1, 0.5]\) with a vertical interface along the line \(x=0\) is considered. We are now interested to study the problem for \(k_1 \neq k_2\) where \(k_2=1\) is fixed. The results below were conducted with 600 boundary points and 404 source points for each domain. The number of interface points is 150 and \(\eta=0.08\).
+
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Images/Transmission/Rectangle_contour_600_150_k1_1.png}
+      \caption{Numerical simulation with  \(k_1=1\).}
+      \label{transmission_rectangle_plot_k1_1}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Images/Transmission/Rectangle_contour_600_150_k1_2.png}
+      \caption{Numerical simulation with \(k_1=2\).}
+      \label{transmission_rectangle_plot_k1_2}
+    \end{minipage}
+    
+    \vspace{0.5cm} % Add some vertical space between the rows of figures
+    
+    \begin{minipage}{.6\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Images/Transmission/Rectangle_contour_600_150_k1_5.png}
+      \caption{Numerical simulation with  \(k_1=5\).}
+      \label{transmission_rectangle_plot_k1_5}
+    \end{minipage}
+    
+    \caption*{Numerical approximations of the BVP for a rectangular domain with different \(k_1\) values.}
+    \label{transmission_rectangle_plots}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccccc}
+      \toprule
+      \multirow{2}{*}{\textbf{\(k_1\) value}} & \multicolumn{2}{c}{\textbf{Boundary Error}} & \multicolumn{2}{c}{\textbf{Interface Errors}} & \multirow{2}{*}{\textbf{Condition number}} \\
+      \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+      & \textbf{Domain 1} & \textbf{Domain 2} & \textbf{\(C^0\)} & \textbf{\(C^1\)} & \\
+      \midrule
+      1 & $7.775\times10^{-8}$ & $7.779\times10^{-8}$ & $4.732\times10^{-9}$ & $7.589\times10^{-9}$ & $2.331\times 10^{13}$\\
+      2 & $4.398\times10^{-8}$ & $8.614\times10^{-8}$ & $2.499\times10^{-6}$ & $7.868\times10^{-8}$ & $3.623\times 10^{13}$\\
+      3 & $2.181\times10^{-8}$ & $1.036\times10^{-7}$ & $3.838\times10^{-6}$ & $1.551\times10^{-7}$ & $8.182\times 10^{13}$\\
+      \bottomrule
+    \end{tabular}
+    \caption{Numerical error on the interface \(\gamma\). The condition number of the matrix is also presented.}
+    \label{tab:transmission_results_rectangle}
+\end{table}
+
+In Figures \ref{transmission_rectangle_plot_k1_1}, \ref{transmission_rectangle_plot_k1_2} and \ref{transmission_rectangle_plot_k1_5} we present the numerical approximation for different \(k_1\) values. Observe that increasing \(k_1\) breaks the symmetry of the solution which shifts from \(\Omega_1\) (the domain on the left) and \(\Omega_2\) (the domain on the right). Table \ref{tab:transmission_results_rectangle} summarizes the results for different \(k_1\) values. While the results are slightly worst that the previous ones due to the worst domain regularity, they still preserve high accuracy. It is worth to remark that for different values of \(k_1\) and \(k_2\) decreases the accuracy of the method. This is also to be expected, since we are dealing with a discontinuous source function which decreases the regularity of the solution. 
+
+Notice that the condition number for the rectangle is smaller than the one presented in Table \ref{tab:transmission_results_2} for the unit disk. This is a consequence of a smaller value of \(\eta\), which in this case appears to be optimal, since increasing its value decreases the overall accuracy. 
+
 \subsection{Results for an L-shape domain with enrichment}
+
+In the previous subsection a domain with corners was analyzed. However, it still preserved some regularity and the MFS with classical basis functions was able to capture its corner's behavior, as explained in Remark \ref{particular_solutions}. In what follows, we are going to study the case of an L-shape, a non-convex domain with singular corners. Two different interfaces will be considered: first, the usual interface along the line \(x=0\); then, along its symmetry axis with the line \(y=\frac{1}{2}x\).
+
+Consider the L-shape given in Figure \ref{transmission_L_shape_config}. The left and the right subdomains are \(\Omega_1\) and \(\Omega_2\), respectively. Again, the number of interface points is 150 and the number of source points for each domain is 428. The number of boundary collocation points for \(\Omega_1\) and \(\Omega_2\) are 710 and 639, respectively. 
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Images/Transmission/L_shape_2_rectangles_col_points.png}
+        \caption{L-shape domain with vertical interface. Configuration of the boundary, source and interface points.}
+        \label{transmission_L_shape_config}
+\end{figure}
 
 \subsection{Results for the smooth domains}
