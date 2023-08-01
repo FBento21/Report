@@ -70,7 +70,11 @@ By Theorem \ref{malgrange-ehrenpreis} we know that both equations \eqref{laplace
         \frac{e^{i \sqrt{\lambda} \norm*{x}}}{4 \pi \norm*{x}}, & d > 2
     \end{cases}    
     \]
-    is the fundamental solution of equation \eqref{helmholtz_equation}, where \(H_0^{(1)}\) is the Hankel function of first kind and order 0.
+    is the fundamental solution of equation \eqref{helmholtz_equation}, where \(H_0^{(1)}\) is the Hankel function of first kind and order 0, given by
+    \[
+        H_0^{(1)}(x) = J_0(x) + i Y_0(x),
+    \]
+    where \(J_0\) and \(Y_0\) are the Bessel functions of first and second kind with order zero, respectively.
 \end{proposition}
 
 If one considers the eigenfrequency form of the Helmholtz equation, then the fundamental solution in Proposition \eqref{helm_fund_sol} would change accordingly.
@@ -79,33 +83,33 @@ If one considers the eigenfrequency form of the Helmholtz equation, then the fun
 
 In this subsection some important results regarding shape optimization are presented. More precisely, we are interested in problems of the form
 \begin{equation}\label{shape_prob}
-    \min\{F(\lambda_1(\Omega),\dots, \lambda_k(\Omega)): \abs{\Omega} = c\},
+    \min\{F(\lambda_1(\Omega),\dots, \lambda_k(\Omega)): \abs{\Omega} = c, \Omega \subset \mathbb{R}^d\},
 \end{equation}
-where \(F\) is a function of the first \(k\) eigenvalues of the Helmholtz equation \eqref{helmholtz_equation} and \(c > 0\).
+where \(F\) is a function of the first \(k\) eigenvalues of the Helmholtz equation \eqref{helmholtz_equation} and \(c > 0\). We point the reader to \cite{henrot2006extremum} and \cite{henrot2017shape} to more details.
 
 \begin{theorem}[Faber-Krahn inequality]\label{faber-krahn}
-    The ball of volume \(c\) minimizes the first eigenvalue \(\lambda_1\) of \eqref{helmholtz_equation} over all open and bounded domains \(\Omega \subset \mathbb{R}^d\), that is
+    Let \(B\) be a ball of volume \(c\). Then, among all domains \(\Omega\) of volume \(c\) we have that,
     \[
-    \min\{\lambda_1(\Omega): \abs{\Omega} = c\}.
+    \lambda_1(B) = \min\{\lambda_1(\Omega): \abs{\Omega} = c\}.
     \]
-    In particular, it can be shown that
+    In particular, as proved by Krahn in \cite{krahn1926minimaleigenschaften}, the corresponding isoperimetric inequality
     \[
-    \lambda_1 \geq \frac{\pi j_{\frac{d}{2}-1,1}^2}{c}    
+        \lambda_1(\Omega) \geq \left(\frac{C_d}{c}\right)^\frac{d}{2}j_{d/2-1, 1},
     \]
-    where \(j_{n, k}\) is the \(k\)-th zero of the Bessel function \(J_n\).
+    where \(C_d\) is the volume of the \(d\)-dimensional unit ball and \(j_{p,1}\) is the first positive zero of the Bessel function \(J_p\), holds.
 \end{theorem}
 
-Theorem \ref*{faber-krahn} is a classic form of an isoperimetric inequality, conjectured for the first time by Lord Rayleigh. More recently, a reverse of the Faber-Krahn inequality was proven in \cite{freitas2008sharp},
+Theorem \eqref{faber-krahn} is a classic form of an isoperimetric inequality, conjectured for the first time by Lord Rayleigh. More recently, a reverse of the Faber-Krahn inequality was proven in \cite{freitas2008sharp}.
 \begin{theorem}\label{reverse_faber-krahn}
     Let \(\Omega\) be a bounded convex domain of \(\mathbb{R}^d\) and denote the inradius of \(\Omega\) (radius of the largest ball contained within the domain) by \(\rho_\Omega\). Then,
     \[
-    \lambda(\Omega) \leq \frac{\abs{\partial \Omega}}{d \rho_\Omega \abs{\Omega}} \lambda(\mathbb{D})
+    \lambda_1(\Omega) \leq \frac{\abs{\partial \Omega}}{d \rho_\Omega \abs{\Omega}} \lambda_1(\mathbb{D})
     \]
 \end{theorem}   
 
-While Faber-Krahn inequality deals with the first eigenvalue of the Helmholtz equation, other results have been uncovered for the second and third eigenvalues:
+While Faber-Krahn inequality deals with the first eigenvalue of the Laplace operator, other results have been uncovered for the second and third eigenvalues:
 
-\begin{theorem}[Krahn-Szeg\H{o}]
+\begin{theorem}[Krahn-Szeg\H{o}]\label{krahn_szego}
     The domain that minimizes the quantity
     \[
     \min\{\lambda_2(\Omega): \abs{\Omega} = c\}
@@ -113,63 +117,88 @@ While Faber-Krahn inequality deals with the first eigenvalue of the Helmholtz eq
     consists of two equal and disjoint balls of volume \(\frac{c}{2}\).
 \end{theorem}
 
-\begin{theorem}[Bucur-Henrot]
-    There exists a domain \(\Omega\) that minimizes the quantity
+A result regarding the topology of a given domain \(\Omega\) and its connection with the minimization of each eigenvalue \(\lambda_k\) was given by Wolf and Keller in \cite{wolf1994range}. Roughly speaking, the result states that if a minimizer of \(\lambda_k\) is not connected, then each connected component must be a minimizer for a lower eigenvalue.
+\begin{theorem}[Wolf-Keller]\label{wolf_keller}
+    Let \(\Omega_k^\star\) be the union of two disjoint domains, each of them with positive volume. Then,
     \[
-    \min\{\lambda_3(\Omega): \abs{\Omega} = c\}.
+        \lambda_k^\star = (\lambda_i^\star)^\frac{d}{2} + (\lambda_{k-i}^\star)^\frac{d}{2} = \min_{1 \leq j \leq \frac{k-1}{2}}((\lambda_j^\star)^\frac{d}{2} + (\lambda_{k-j}^\star)^\frac{d}{2}),
+    \]
+    where \(i\) is a value of \(j \leq \frac{k-1}{2}\) that minimizes \(\lambda_i^\star + \lambda_{k-i}^\star\). Furthermore,
+    \[
+        \Omega_k^\star = \left[\left(\frac{\lambda_i^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_i^\star \bigcup \left(\frac{\lambda_{k-i}^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_{k-i}^\star \right]
     \]
 \end{theorem}
 
-More recently, Bucur (see \cite{bucur2012minimization}) was able to assert the existence of, at least, one solution to problem \eqref{shape_prob}. More specifically we can state the following theorem:
+The generalization of the Theorems \eqref{faber-krahn} and \eqref{krahn_szego} becomes harder to prove for high order eigenvalues. Bucur and Henrot proved in \cite{henrot2000minimization} that there exists a domain \(\Omega\) that minimizes \(\lambda_3\), and it is conjectured to be the disk\footnote{Notice that \(\Omega_3\) must be connected in dimension \(2\). Otherwise, by Theorem \eqref{wolf_keller}, \(\Omega_3\) would be the union of the domains that minimize \(\lambda_1\) and \(\lambda_2\) (see Theorems \eqref{faber-krahn} and \eqref{krahn_szego}), where one can explicitly compute \(\lambda_3 = \lambda_1 + \lambda_2 \approx 51.504\). However, this would be a contradiction since the eigenvalue of the unit disk is \(\lambda_3(\mathbb{D}) \approx 46.125\), when considering unitary measure \(c=1\). For three dimensions the result is the same, but for \(d \geq 4\) one cannot conclude anything.}.
+% \begin{theorem}[Bucur-Henrot]
+%     There exists a domain \(\Omega\) that minimizes the quantity
+%     \[
+%     \min\{\lambda_3(\Omega): \abs{\Omega} = c\}.
+%     \]
+% \end{theorem}
+In \cite{bucur2012minimization}, Bucur was able to assert the existence of, at least, one solution to problem \eqref{shape_prob}.
 \begin{theorem}[Bucur]
     For every \(k \in \mathbb{N}\) problem
     \[
     \min\{\lambda_k(\Omega): \abs{\Omega} = c\}
     \]
-    as at least one solution. Moreover, every solution is bounded and has finite perimeter.
+    has at least one solution. Moreover, every solution is bounded and has finite perimeter.
 \end{theorem}
 
-In this work we are also interested in the study of the eigenvalues of polygonal domains like triangles and quadrilaterals. An important property of these domains is the fact that they allow for the so-called \textit{Steiner symmetrization} which preserves the area of these polygons while decreasing the perimeter and the first eigenvalue. This type of transformation allow us to state the following result:
+In \cite{mazzoleni2013existence}, Mazzoleni and Pratelli were able to generalize the above results for (\textit{quasi}-)open sets and for a general functional \(F\) considered in \eqref{shape_prob} (see the reference for more details and definition of a quasi-open set).
+\begin{theorem}[Mazzoleni-Pratelli]
+    Let \(k \in \mathbb{N}\) and suppose that \(F:\mathbb{R}^k \rightarrow \mathbb{R}\) in \eqref{shape_prob} is lower semicontinuous, increasing in each variable. Then, among the quasi-open sets, there exists a bounded minimizer \(\Omega\) for the problem \eqref{shape_prob}. More precisely, a minimizer \(\Omega\) is contained in a cube of side \(R\), where \(R\) depends on \(k\) and on the dimension of the space \(d\), but not on \(F\).
+\end{theorem}
+
+In this work, we are also interested in studying the eigenvalues of polygonal domains, such as triangles and quadrilaterals. An important result concerning these domains is the fact that they are invariant under the so-called \textit{Steiner symmetrization} (in the sense that the Steiner symmetrization of a triangle or a quadrilateral is still a triangle or a quadrilateral, respectively), which preserves their area while decreasing the perimeter and its first eigenvalue. This type of transformation enables us to state the following result:
+
 \begin{theorem}[Pólya-Szég\H{o}]
-    The quantity \(\lambda_1 \abs{\Omega}\) is minimized for equilateral triangles among every triangle where the inequality
+    The quantity \(\lambda_1\) is minimized for equilateral triangles among all triangles, where the inequality
     \[
     \frac{4 \pi^2}{\sqrt{3}} \leq  \lambda_1(T)
     \]
     holds for every triangle \(T\) of area \(1\).
-    Analogously, \(\lambda_1 \abs{\Omega}\) is minimized for the square among every quadrilateral.
+    Analogously, \(\lambda_1\) is minimized for the square among all quadrilaterals.
 \end{theorem}
 
-Related to triangles, we can also cite the recent work of Serrano and Orriols (\cite{gomez2021any}) based on a previous work of Antunes and Freitas (\cite{antunes2011inverse}) conjectured that the three first eigenvalues define the shape of a triangle (such result resembles a lot the famous Marc Kac question (\cite{kac1966can}) if one can "hear the shape of a drum", that is, if given the frequencies produced by a drum one could identify the drum's shape, which has proven to be false (see \cite{gordon1992isospectral})). In any case, Serano and Orriols were able to show that not any three eigenvalues suffice to fully characterize the shape of a triangle:
+However, an analogous result for the \(n\)-side polygon is still an open problem conjectured by Pólya and Szég\H{o} in \cite{polya1951isoperimetric}.
+\begin{conjecture}\label{polya_szego_conjecture}
+    Let \(n \geq 5\) and consider the class of \(n\)-side polygons. Then, the regular \(n\)-side polygon has the least first eigenvalue among all \(n\)-side polygons with fixed area.
+\end{conjecture}
+
+Very recently, Bogosel and Bucur proved in \cite{bogosel2022polygonal} that Conjecture \eqref{polya_szego_conjecture} can be reduced to a finite number of certified numerical computations with machine precision, and performed them for \(k=5, 6, 7, 8\).
+
+Related to triangles, we can also cite the recent work of Serrano and Orriols in \cite{gomez2021any}, which was based on the previous work of Antunes and Freitas \cite{antunes2011inverse} who conjectured that the first three eigenvalues are enough to define the shape of a triangle (such result resembles the famous Marc Kac question if one can "hear the shape of a drum" in \cite{kac1966can}, that is, if given the frequencies produced by a drum one could identify the drum's shape, which has proven to be false, see \cite{gordon1992isospectral} for more details). In any case, Serano and Orriols were able to show that not any three eigenvalues suffice to fully characterize the shape of a triangle.
 \begin{theorem}[Serrano-Orriols]
     There exist two triangles \(T_A\) and \(T_B\) not isometric to each other such that \(\lambda_i(T_A) = \lambda_i(T_B)\), for \(i=1, 2, 4\).    
 \end{theorem}
 
-Other important results in this area are related with the racio and gap between the first eigenvalues.
+Other important results in this area are related with the ratio and the gap between the first and the second eigenvalues.
 \begin{theorem}[Ashbaugh-Benguria]
     The solution of the maximization problem
     \[
-    \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \abs{\Omega} < \infty \Big\}
+    \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^d, \Omega \text{ open} \Big\}
     \]
     is the ball. In particular, it can be shown that
     \[
-    \frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}  \leq \frac{j_{\frac{n}{2},1}^2}{j_{\frac{n}{2}-1,1}^2}.
+    \frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}  \leq \frac{j_{\frac{d}{2},1}^2}{j_{\frac{d}{2}-1,1}^2}.
     \]
 \end{theorem}
 
 \begin{remark}
-    Note that in theorem above we do not make any constraint regarding the volume of our domain (except finite measure). This easily follows from the variational form given in Theorem \ref*{properties_helm} and the fact that we are now considering a ratio between two eigenvalues in the same domain.
+    Note that in theorem above we do not make any constraint regarding the volume of our domain (except finite measure). This as consequence of the homogeneity proven in Corollary \eqref{lap_homo} and the fact that we are now considering a ratio between two eigenvalues in the same domain.
 \end{remark}
 
 
 % #############################################################################
 \section{The Dirac Operator}
  
-Motivated by recent advancements in nuclear, molecular physics and the discovery of very interesting electrical, mechanical and thermal properties, Dirac materials have resurged a lot of attention in the Dirac equation. Discovered by Paul Dirac in 1928 (\cite{dirac1928quantum}), Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, while explaining the weird phenomena that today is known as \textit{spin}.
-Capable of describe the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), one can determine the energy states by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\)
+Motivated by recent advancements in nuclear, molecular physics and the discovery of very interesting electrical, mechanical and thermal properties, Dirac materials have resurged a lot of attention in the Dirac equation. Presented by Paul Dirac in its 1928 article \cite{dirac1928quantum}, Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, while explaining the weird phenomena that today is known as \textit{spin}, while predicting the existence \textit{antimatter}.
+Capable of describe the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), one can determine the energy states by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\) for \(\Omega \subset \mathbb{R}^2\),
 \begin{equation}\label{dirac_eq}
-    \hat{H} u = E u \quad \text{with} \quad \hat{H}=c \, \mathbf{a} \cdot \mathbf{p} + m c^2 \beta + V(x)\mathbb{I}_4,\footnote{In the following, we will be using natural units, with \(c=1\).}
+    \hat{H} u = E u \quad \text{with} \quad \hat{H}=c \, \mathbf{a} \cdot \mathbf{p} + m c^2 \mathbf{\beta} + V(x)\mathbb{I}_4,
 \end{equation}
-where \(\mathbf{p} = -i \nabla\) is the momentum operator, \(c\) is the speed of light, \(m\) is the electron mass, \(E\) is the electron energy, \(V(x)\) is the vector potential and \(u \in L^2(\Omega, \mathbb{C}^2)\) is a four-spinor. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger equation, it has a matrix structure that is given by Pauli matrices
+where \(\mathbf{p} = -i \nabla\) is the momentum operator, \(c\) is the speed of light, \(m\) is the electron mass, \(E\) is the electron energy, \(V(x)\) is the vector potential and \(u \in L^2(\Omega, \mathbb{C}^2)\) is a four-spinor\footnote{In what follows, we will be using natural units, where \(c=1\).}. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger's equation, it has a matrix structure that is given by the Pauli matrices
 \[
 \sigma_x = \begin{bmatrix}
     0 & 1\\
@@ -183,7 +212,7 @@ where \(\mathbf{p} = -i \nabla\) is the momentum operator, \(c\) is the speed of
     0 & -1
 \end{bmatrix}
 \]
-which can be found incorporated in the \(4 \times 4\) matrices \(\mathbf{a}\) and \(\beta\):
+which can be incorporated in the \(4 \times 4\) matrices \(\mathbf{a}\) and \(\mathbf{\beta}\):
 \[
 a_i = \begin{bmatrix}
     0 & \sigma_i\\
@@ -191,7 +220,7 @@ a_i = \begin{bmatrix}
 \end{bmatrix} \qquad
 \beta = \begin{bmatrix}
     \mathbb{I}_2 & 0\\
-    0 & \mathbb{I}_2
+    0 & -\mathbb{I}_2
 \end{bmatrix}.
 \]
 
@@ -199,7 +228,7 @@ Setting the potential \(V(x)=0\) and considering \(\Omega \subset \mathbb{R}^2\)
 \begin{equation}\label{dirac}
     \begin{bmatrix}
         m & -i(\partial_1 - i \partial_2)\\
-        -i(\partial_1 + i \partial_2) & m
+        -i(\partial_1 + i \partial_2) & -m
     \end{bmatrix}
     \begin{bmatrix}
         u_1(x)\\
@@ -211,30 +240,31 @@ Setting the potential \(V(x)=0\) and considering \(\Omega \subset \mathbb{R}^2\)
     u_2(x)
     \end{bmatrix}
 \end{equation}
-where we let \(u(x)=\begin{bmatrix}
+where we let \(\mathbf{u}(x)=\begin{bmatrix}
     u_1(x)\\
     u_2(x)
     \end{bmatrix}\).
-In particular, we are interested in studying the so-called \textit{infinite-mass boundary conditions} which are implemented through the operator domain
-\[
-D(\hat{H}) = \{u \in H^1(\Omega, \mathbb{C}^2): u_2 = i(n_1+i n_2)u_1 \text{ on } \Omega\}.
-\]
-For a point \(x \in \partial \Omega\), we denote by \(n(x) = \begin{pmatrix}
+In particular, we are interested in studying it under the so-called \textit{infinite-mass boundary conditions}. For a point \(x \in \Gamma = \partial\Omega\), we denote by \(\mathbf{n}(x) = \begin{pmatrix}
     n_1(x), n_2(x)
-\end{pmatrix}^T\) the outward unit vector to \(\Omega\) and \(\tau(x) = \begin{pmatrix}
+\end{pmatrix}^T\) the outward unit vector to \(\Omega\), and define the operator domain
+\[
+D(\hat{H}) = \{u \in H^1(\Omega, \mathbb{C}^2): u_2 = i(n_1+i n_2)u_1 \text{ on } \Gamma\}.
+\]
+
+Let \(\mathbf{\tau}(x) = \begin{pmatrix}
     n_2(x), -n_1(x)
-\end{pmatrix}^T\) the unit tangent such that \((\tau(x), n(x))\) is a positively-oriented orthonormal basis of \(\mathbb{R}^2\). Considering the arc-length parametrization of \(\partial \Omega\) given by the map
+\end{pmatrix}^T\) be the unit tangent vector to some point \(x \in \Gamma\) such that \((\mathbf{\tau}(x), \mathbf{n}(x))\) is a positively-oriented orthonormal basis of \(\mathbb{R}^2\). Considering the arc-length parametrization of \(\Gamma\) given by the map
 \[
 s: [0, L) \rightarrow \mathbb{R}^2, \quad s(t) = \int_0^t \norm{r'(\sigma)} d\sigma
 \]
-where \(L\) represents the arc-length of \(\partial \Omega\) and \(r\) is a parametrization of \(\partial\Omega\), we denote by \(\kappa:\partial\Omega \rightarrow \mathbb{R}\) the signed curvature of \(\partial\Omega\) where the \textit{Frenet-Serret} formula (we dropped the dependency of \(s\) in the parameter \(t\))
+where \(L\) represents the arc-length of \(\Gamma\) and \(r\) is a parametrization of \(\Gamma\), we denote by \(\kappa:\Gamma \rightarrow \mathbb{R}\) the signed curvature of \(\Gamma\) where the \textit{Frenet-Serret} formula (we dropped the dependency of \(s\) in the parameter \(t\))
 \[
-    \frac{\partial\tau}{\partial s}=\kappa(s)n(s)
+    \frac{\partial\mathbf{\tau}}{\partial s}=\kappa(s)\mathbf{n}(s)
 \]
-holds. Just like the Helmholtz operator above, we start by stating some major properties regarding Dirac Operator.
+holds. Similar to the Theorem \eqref{spec_lap_pre}, some general results regarding the spectrum of the Dirac operator can also be stated.
 
 \begin{proposition}
-    The eigenvalues and eigenfunctions of equation \eqref{dirac} have the following properties:
+    Consider the eigenvalue problem stated in \eqref{dirac}. Then, the following results hold, \footnote{Notice that we changed the eigenvalue notation \(E\) to \(\lambda\). Not only for coherence reasons, but also because we are mainly interested in the mathematical description of the problem, and not in the physical intuition behind it (the energy of a spin-\(\frac{1}{2}\) particle).}
     \begin{itemize}
         \item The eigenvalues are real and the spectrum of the Dirac operator is discrete. Also, the spectrum is symmetric with respect to zero and the eigenvalues can be arranged as follows
         \[
@@ -242,12 +272,12 @@ holds. Just like the Helmholtz operator above, we start by stating some major pr
         \]
         \item The principal (first) eigenvalue can be described using the variational form
         \[
-        \lambda_1^2 = \min_{0 \neq u \in D(\hat{H})}\frac{\norm*{\nabla u}_2^2 + m^2 \norm{u}_2^2 + m \norm{\gamma u}_2^2}{\norm{u}_2^2}
+        \lambda_1^2 = \min_{0 \neq u \in D(\hat{H})}\frac{\norm*{\nabla u}_{L^2(\Omega)}^2 + m^2 \norm{u}_{L^2(\Omega)}^2 + m \norm{\gamma_0 u}_{L^2(\partial\Omega)}^2}{\norm{u}_{L^2(\Omega)}^2},
         \]
-        where \(\gamma: H^1(\Omega, \mathbb{C}^2) \rightarrow L^2(\partial\Omega, \mathbb{C}^2)\) denotes the trace of \(u\).
-        \item Assuming \(m=0\) and \(\Omega = \mathbb{D}\), we have that the first eigenvalue is the solution to the equation
+        where \(\gamma_0: H^1(\Omega, \mathbb{C}^2) \rightarrow L^2(\Gamma, \mathbb{C}^2)\) denotes the trace of \(u\);
+        \item Let \(m=0\) and \(\Omega\) to be the unit disk \(\mathbb{D}\).Then, we have that the first eigenvalue is the solution to the equation
         \[
-        J_0(\lambda) = J_1(\lambda)
+        J_0(\lambda) = J_1(\lambda),
         \]
         and the associated eigenfunction is (in polar coordinates)
         \[
@@ -256,7 +286,7 @@ holds. Just like the Helmholtz operator above, we start by stating some major pr
             i e^{i \theta}J_1(\lambda r)
         \end{pmatrix}.    
         \]
-        For future comparison, the numerical approximation of \(\lambda\) is \(\lambda \approx 1.434696\).
+        For future comparison, its numerical approximation is \(\lambda \approx 1.434696\), where we recall that \(J_p\) is the Bessel function of first kind of order \(p\).
     \end{itemize}
 \end{proposition}
 
@@ -265,13 +295,13 @@ The following proposition regarding the lack of separable solutions of the Dirac
 \begin{lemma}\label{lemma_sep_norm}
     Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then we have
     \begin{equation}\label{sep_norm}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\partial\Omega)}^2 -\frac{1}{2}\int_{\partial\Omega}\kappa \abs{u}^2 d\sigma
+        \norm*{\hat{H}u}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\partial\Omega)}^2 -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
     \end{equation}
 \end{lemma}
 \begin{proof}
     Recalling the \(L^2(\Omega)\) inner product for complex functions
     \[
-    (f, g)_{L^2(\partial\Omega)} = \int_\Omega f \bar{g} dx,
+    (f, g)_{L^2(\Omega)} = \int_\Omega f \bar{g} dx,
     \]
     \eqref{sep_norm} can be rewritten as 
     \begin{align}
@@ -466,7 +496,7 @@ In the same vain, in \cite{vu2023spectral} very similar results were proven for 
     \end{enumerate}
 \end{conjecture}
 
-\section{A domain decomposition problem}
+\section{A domain decomposition problem}\label{domain_decomp_problem}
 
 We now consider the polygonal domain \(\Omega \subset \mathbb{R}^2\) which we divide into two non-overlapping regions \(\Omega_1\) and \(\Omega_2\) such that \(\overline{\Omega} = \overline{\Omega_1} \cup \overline{\Omega_2}\). We denote their common boundary by \(\gamma = \partial\Omega_1 \cap \partial\Omega_2\) and denote by \(\Gamma_i = \partial\Omega_1\setminus{\gamma}\) the boundary of each domain \(\Omega_1\) minus the common boundary. The problem we address this section is to find functions \(u_1, u_2\) such that
 \begin{align}\label{decomp_prob}
@@ -551,7 +581,7 @@ Finally, for the continuity on the interface we just enforce that \(u_1 = u_2\) 
 \end{remark}
 
 We are now ready to prove the equivalence between both problems:
-\begin{theorem}
+\begin{theorem}\label{equivalence_transmission}
     Problem \eqref{weak_poisson} is equivalent to \eqref{weak_decomp}.
 \end{theorem}
 \begin{proof}

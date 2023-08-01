@@ -183,6 +183,11 @@ Finally, if the normed space is complete for the induced norm, then we say that 
     \[
     (f, g)_{L^2(\Omega)} = \int_\Omega f(x)g(x) dx.
     \]
+    If considering complex-valued functions, the inner product is given by
+    \[
+        (f, g)_{L^2(\Omega)} = \int_\Omega f(x)\overline{g}(x) dx,
+    \]
+    where a bar over an expression represents the complex conjugate of the scalar (function).
 \end{example}
 While working within the framework of Hilbert spaces, proving the density of a subspace \(M \subset H\) is more intuitive and can be derived straightforwardly. It may be of interest to the reader to compare the following results with Definition \eqref{banach_ortho_def} and Lemma \eqref{banach_ortho_lemma}.
 \begin{theorem}\label{hilb_decomp}
@@ -657,4 +662,33 @@ The study of the spectrum of the following equation is of major importance throu
 \begin{remark}
     Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
 \end{remark}
+
+\begin{corollary}[Homogeneity]\label{lap_homo}
+    Let \(\alpha > 0\). Consider the set
+    \[
+        \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
+    \]
+    i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
+    Then, for all \(n \in \mathbb{N}\),
+    \[
+        \alpha^2 \lambda_n(\alpha \Omega) = \lambda(\Omega),
+    \]
+    where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
+\end{corollary}
+
+\begin{proof}
+    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \phi(\Omega)\). Then,
+    \begin{equation*}
+        \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} u(x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx},
+    \end{equation*}
+    via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
+    \[
+        \nabla v(x) = \alpha \nabla u (\alpha x)
+    \]
+    and
+    \begin{equation*}
+        \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} v(x)^2 dx} = \lambda_n(\Omega).
+    \end{equation*}
+    
+\end{proof}
 

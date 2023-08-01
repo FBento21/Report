@@ -8,139 +8,192 @@
 % The following line allows to ref this chapter
 \label{chap:implement}
 
-% Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede. 
-% % #############################################################################
-% \section{Poisson Equation using MFS-B}
-% Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna. Phasellus luctus venenatis magna. Vivamus eget lacus. Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, fermentum id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim. Cras lobortis tempor velit. Phasellus nec diam ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lobortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.:
+Thinks to do:
+\begin{enumerate}
+    \item Dirac
+    \begin{enumerate}
+        \item Result against the ball with m=0 (accuracy)
+        \item Results for quadrilaterals and Conjecture
+        \item Results for triangles and Conjecture
+        \item Results for smooth domains
+        \item Third eigenvalue method
+    \end{enumerate}
+    \item Transmission
+    \begin{enumerate}
+        \item (WE STILL NEED PROOF!)
+        \item Results against known function
+        \item Results for rectangle
+        \item Results for L + particular solutions
+        \item Results for smooth domains
+    \end{enumerate}
+\end{enumerate}
 
-% \begin{itemize}
-% \item{Technology Research and Related Works}
-% \item{Requirements Gathering and Study}
-% \item{Design of the Architecture}
-% \item{Implementation Process}
-% \item{Testing and Functional Validation}
-% \end{itemize}
-
-% Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi. Integer volutpat ligula eget enim. Suspendisse vitae arcu. Quisque pellentesque. Nullam consequat, sem vitae rhoncus tristique, mauris nulla fermentum est, bibendum ullamcorper sapien magna et quam. Sed dapibus vehicula odio. Proin bibendum gravida nisl. Fusce lorem. Phasellus sagittis, nulla in hendrerit laoreet, libero lacus feugiat urna, eget hendrerit pede magna vitae lorem. Praesent mauris.
-% % #############################################################################
-% \section{Poisson Equation using MFS-D}
-% Cras sed ante. Phasellus in massa. Curabitur dolor eros, gravida et, hendrerit ac, cursus non, massa. Aliquam lorem. In hac habitasse platea dictumst. Cras eu mauris \Cref{time_control_algorithm}\todo[color=cyan!40, author=RC, fancyline]{Notice the reference to the Algorithm construct}{}. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. Vivamus elit eros, ullamcorper a, adipiscing sit amet, porttitor ut, nibh. 
-
-% \begin{algorithm}[ht]
-% \DontPrintSemicolon
-% \Begin{
-% $nextBitrate \longleftarrow nextDownloadLevel$\;
-% $nextBitrate \longleftarrow GetNextBitrate()$\;
-% $cpuLoad \longleftarrow GetCpuLoad()$\;
-% $bitrateDelta \longleftarrow getBitrateDelta(currentBitrate, nextBitrate)$\;
-% \BlankLine
-% \If{$bitrateDelta > maxThreshold$}{
-%      $SetBitrate(nextBitrate)$\;
-%    }
-% \BlankLine
-%   \If{$minThreshold < bitrateDelta < maxThreshold$ {\bf and} $numAttemps < 2$}{ 
-%        $numAttemps \longleftarrow numAttemps + 1$\;
-%        }{
-%        \uElseIf{$minThreshold < bitrateDelta < maxThreshold$ {\bf and} $numAttemps = 2$}{
-%        $numAttemps \longleftarrow 0$\;
-%        }
-%        \Else{$SetBitrate(nextBitrate)$}
-%       }
-%   \If{$0 < bitrateDelta < minThreshold$ {\bf and} $numAttemps < 3$}{
-%        $numAttemps \longleftarrow numAttemps + 1$\;
-%        }{
-%        \uElseIf{$0 < bitrateDelta < minThreshold$ {\bf and} $numAttemps = 3$}{
-%        $SetBitrate(nextBitrate)$\;
-%        }
-%        }
-% }
-% \caption{Time Control Strategy}
-% \label{time_control_algorithm}
-% \end{algorithm}
+\section{Dirac equation simulations}
 
 
-% Maecenas adipiscing mollis massa. Nunc ut dui eget nulla venenatis aliquet. Sed luctus posuere justo. Cras vehicula varius turpis. Vivamus eros metus, tristique sit amet, molestie dignissim, malesuada et, urna..
-% % #############################################################################
-% \section{Helmholtz Equation using MFS-B}
-% Cras sed ante. Phasellus in massa. Curabitur dolor eros, gravida et, hendrerit ac, cursus non, massa. Aliquam lorem. In hac habitasse platea dictumst. Cras eu mauris. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. 
+\section{Transmission problem simulations}
 
-% Vivamus elit eros, ullamcorper a, adipiscing sit amet, porttitor ut, nibh. Maecenas adipiscing mollis massa. Nunc ut dui eget nulla venenatis aliquet. Sed luctus posuere justo. Cras vehicula varius turpis. Vivamus eros metus, tristique sit amet, molestie dignissim, malesuada et, urna.
+For the Transmission problem, we now consider the set of equations studied previously in the subchapter \ref{domain_decomp_problem}, given by
 
-% Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. Cras vehicula varius turpis.
+\begin{align}\label{transmission_num}
+    \begin{split}
+    - \nabla k_i \nabla u_i &= f_i, \; \text{in }\Omega_i\\
+    u_1 - u_2 &= 0, \; \text{on }\gamma\\
+    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} &= 0, \; \text{on }\gamma\\
+    u_i &= 0, \; \text{on }\Gamma_i.
+    \end{split}
+\end{align}
+
+Like before, the domain \(\Omega \subset \mathbb{R}^2\) is divided into two non-overlapping regions \(\Omega_1\) and \(\Omega_2\) such that \(\overline{\Omega} = \overline{\Omega_1} \cup \overline{\Omega_2}\). Their common boundary is denoted by \(\gamma = \partial\Omega_1 \cap \partial\Omega_2\) and the boundary of each domain (minus the common boundary) is also denoted by \(\Gamma_i = \partial\Omega_1\setminus{\gamma}\). In what follows, the source functions \(f_i\) of each domain are constant\footnote{In this work we only considered \(f_i=1\). In any case, we are still working with a general discontinuous source function (if \(k_1 \neq k_2\)). Working with different \textit{continuous} source functions should make no difference in the result. We will also present how to deal with general and continuous source functions.}, and we took \(f_i = 1\). Recall that \(k_1 \geq k_2 > 0\) are constants and \(n_i\) is the (normalized) outward normal to each domain subdomain \(\Omega_i, i=1, 2\), where we shall write \(n=n_1=-n_2\) when we are restricted to the interface.
+
+The procedure presented here is based on \cite{alves2005new} and \cite{alves2021domain}. Given that \(f_i = 1\) for each \(i=1, 2\), a solution of \eqref{transmission_num} can be found by taking the following steps:
+\begin{enumerate}
+    \item Find a solution for the non-homogeneous problem
+    \[
+        \begin{cases}
+            -\Delta u_1^{NH} = \frac{1}{k_1}\\
+            -\Delta u_2^{NH} = \frac{1}{k_2}.
+        \end{cases}
+    \]
+    This can easily be done, and we have
+    \[
+        \begin{cases}
+            u_1^{NH} = -\frac{x_1^2 + x_2^2}{4k_1}\\
+            u_2^{NH} = -\frac{x_1^2 + x_2^2}{4k_2};
+        \end{cases}
+    \]
+    \item Then we solve the homogeneous problem
+    \begin{align}\label{transmission_num_homo}
+        \begin{split}
+        - \nabla k_i \nabla u_i^H &= 0, \; \text{in }\Omega_i\\
+        u_1^H - u_2^H &= u_2^{NH}- u_1^{NH}, \; \text{on }\gamma\\
+        k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} &= u_2^{NH} - u_1^{NH}, \; \text{on }\gamma\\
+        u_i &= - u_i^{NH}, \; \text{on }\Gamma_i;
+        \end{split}
+    \end{align}
+    \item Finally, the solution of \eqref{transmission_num} is \(u_i = u_i^H + u_i^{NH}\).
+\end{enumerate}
+For general source functions, the steps above can also be used: however, it may not be possible to find an analytical solution in first step. In this case, \textbf{1.} must be solved numerically. A popular choice is to use radial basis functions (RBFs) (see \cite{golberg1996improved} for example), like the thin plate spline
+\[
+    \varphi(r) = r^2 \log r,     
+\]
+and find the coefficients \(\alpha_j\) in \(f_i(x_k) = \tilde{f}_i(x_k) = \sum_{j=1}^{n} \alpha_j \varphi_j(x_k)\) using least square methods, where \(x_k\) are collocation points. Finally, one can analytically solve the equation \(-\Delta \Psi_j = \varphi_j\) to recover the non-homogeneous solutions \(u_1^{NH}\) and \(u_2^{NH}\). In \cite{alves2005new} and \cite{alves2021domain} a different approach was suggested using the fundamental solutions of the Helmholtz equation instead of the classical RBFs; that method is known today as \textit{Kansa MFS method}.
+
+In what follows, the numerical results illustrate the accuracy of the method in simply connected 2D domains. Let \(N_i\) denote the number of source points for each domain \(i\), such that \(N=N_1+N_2\). We denote the approximate solution by
+\[
+    \tilde{u} = \begin{cases}
+        \tilde{u}_1, & \text{in } \Omega_1\\
+        \tilde{u}_2, & \text{in } \Omega_2,
+    \end{cases}
+\]
+where
+\begin{align*}
+    &\tilde{u}_1(x) = \sum_{j=1}^{N_1} \alpha^{(1)}_j \Phi\left(x-y_j^{(1)}\right)\\
+    &\tilde{u}_2(x) = \sum_{j=1}^{N_2} \alpha^{(2)}_j \Phi\left(x-y_j^{(1)}\right).
+\end{align*}
+Let \(M_i\) be the number of boundary collocation points \(x^{(i)}_{m}\) for each \(\Omega_i\) and \(M=M_1+M_2\). We also consider \(Q\) interface points \(z_q \in \gamma\) with \(q=1,\dots,Q\). Then, a full block system is written as
+\begin{equation}\label{mfs_transmission_classical_matrices_system}
+    \renewcommand{\arraystretch}{1.75} % Increase spacing between rows of the matrices
+    \begin{bmatrix}
+        \left[\Phi\left(x^{(1)}_{m}-y_j^{(1)}\right)\right] & [0] \\
+        [0] & \left[\Phi\left(x^{(2)}_{m}-y_j^{(2)}\right)\right] \\
+        \left[\Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-\Phi\left(z_q-y_j^{(2)}\right)\right] \\
+        \left[k_1\partial_n \Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-k_2 \partial_n \Phi\left(z_q-y_j^{(2)}\right)\right]
+    \end{bmatrix}
+    \begin{bmatrix}
+        \left[\alpha^{(1)}_j\right]\\
+        \left[\alpha^{(2)}_j\right]
+    \end{bmatrix}=
+    \begin{bmatrix}
+        \left[-u_1^{NH}(x^{(1)}_{m})\right]\\
+        \left[-u_2^{NH}(x^{(2)}_{m})\right]\\
+        \left[u_2^{NH}(z_q)-u_1^{NH}(z_q)\right]\\
+        \left[k_2 \partial_n u_2^{NH}(z_q)- k_1 \partial_n u_1^{NH}(z_q)\right]\\
+    \end{bmatrix}
+\end{equation}
+
+Most of the examples below do not have analytical solution: only in the subsection \ref{transmission_val_subsection}, when we test the results against a known solution, we are able to find the absolute error. In the other cases we are only interested in the relative error, i.e, the boundary error (against which we can compare since \(u_i=0\) in \(\Gamma_i\)) and the interface error by checking the transmission conditions on \(\gamma\):
+\begin{itemize}
+    \item \(\norm*{\tilde{u}_i - 0}_{L^2(\Gamma_i)}\), \(i=1, 2\): boundary collocation error;
+    \item \(\norm*{\tilde{u}_1 - \tilde{u}_2}_{L^2(\gamma)}\), \(i=1, 2\): continuity error (\(C^0\)) of \(\tilde{u}\) across \(\gamma\);
+    \item \(\norm*{k_1 \partial_n\tilde{u}_1 - k_2 \partial_n\tilde{u}_2}_{L^2(\gamma)}\), \(i=1, 2\): continuity error \(C^1\) of \(\partial_n\tilde{u}\) across \(\gamma\).
+\end{itemize}
+From a numerical point of view, let \(\mathcal{I}\) be the sample of test points. The \(L^2\) norm is discretized into the Root Mean Squared Error (RMSE) which is equivalent to the \(l^2\) norm and is given by
+\[
+    \norm*{u-\tilde{u}}= \sqrt{\frac{1}{\#\mathcal{I}} \sum_{z \in \mathcal{I}} \abs{u(z)-\tilde{u}(z)}^2}.
+\]
+For every result below the number of sample test points is 5 times larger than the sample used to find the coefficients of the MFS. 
+
+\subsection{Numerical validation of the method}\label{transmission_val_subsection}
+
+First, we start by testing the numerical algorithm for the unit disk \(\mathbb{D}\), with \(k_1=k_2=1\). From Theorem \eqref{equivalence_transmission}, we know that the system of differential equations \eqref{transmission_num} is equivalent to the Poisson equation
+\begin{align}\label{transmission_disk}
+    \begin{split}
+        -\Delta u = 1, & \text{ in } \mathbb{D}\\
+        u = 0, & \text{ on } \partial\mathbb{D},
+    \end{split}
+\end{align}
+and is easy so see that the exact solution of Equation \eqref{transmission_disk} is given in polar coordinates by \(u(r, \theta) = \frac{1-r^2}{4}\). 
+
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{Images/Transmission/Circle_val_col_points_600_150.png}
+      \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
+      \captionof{figure}{Configuration of the boundary, source and interface points. Each domain has 600 boundary points, 377 source points and the common interface has 100 points.}
+      \label{transmission_disk_col}
+    \end{minipage}%
+    %\hspace{0.5cm} % Add some horizontal space between the figures
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{Images/Transmission/Circle_val_contour_600_150.png}
+      \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
+      \captionof{figure}{Numerical approximation of the BVP \eqref{transmission_disk} under the conditions presented in Figure \ref{transmission_disk_col}}
+      \label{transmission_disk_plot}
+    \end{minipage}
+\end{figure}
+  
+
+The absolute error between the approximate solution and the exact solution can then be calculated for each domain point. The sample points to compute the absolute error were generated in a uniform grid and were also used to plot Figure \ref{transmission_disk_plot}. The method described at the end of the subchapter \ref{density_proofs_section} was used to place the source points, where \(\eta=0.3\).
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{Boundary/Interface Points}} & \multicolumn{2}{c}{\textbf{Boundary Error}} & \multicolumn{2}{c}{\textbf{Absolute Error}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & \textbf{Domain 1} & \textbf{Domain 2} & \textbf{Domain 1} & \textbf{Domain 2} \\
+        \midrule
+        600/150 & $9.759\times10^{-12}$ & $9.541\times10^{-12}$ & $1.465\times10^{-11}$ & $1.439\times10^{-11}$ \\
+        500/100 & $3.667\times10^{-11}$ & $3.945\times10^{-11}$ & $9.382\times10^{-11}$ & $9.310\times10^{-11}$ \\
+        412/100 & $3.721\times10^{-11}$ & $5.036\times10^{-11}$ & $9.652\times10^{-11}$ & $9.584\times10^{-11}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Numerical errors for the boundary and the whole Domains \(\Omega_1\) and \(\Omega_2\)}
+    \label{tab:transmission_results_1}
+\end{table}
 
 
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc}
+      \toprule
+      \textbf{Boundary/Interface Points} & \textbf{Interface \(C^0\) Error} & \textbf{Interface \(C^1\) Error} & \textbf{Condition number} \\
+      \midrule
+      600/150 & $6.945\times10^{-11}$ & $1.841\times10^{-11}$ & $2.528\times 10^{19}$\\
+      500/100 & $3.910\times10^{-10}$ & $1.100\times10^{-10}$ & $2.382\times 10^{18}$\\
+      412/100 & $4.035\times10^{-10}$ & $1.342\times10^{-10}$ & $7.597\times 10^{17}$\\
+      \bottomrule
+    \end{tabular}
+    \caption{Numerical error on the interface \(\gamma\). The condition number of the matrix is also presented.}
+    \label{tab:transmission_results_2}
+\end{table}
 
-% \begin{minipage}[c]{1.0\textwidth}
-% %\begin{center}
-% \centering
-% \begin{lstlisting}[language = C++, numbers = none, escapechar = !,
-%     basicstyle = \ttfamily\bfseries, linewidth = .6\linewidth, frame=tb, caption={A listing with a Tikz picture overlayed}, captionpos=b, label=tikzlist] 
-%  int!
-%    \tikz[remember picture] \node [] (a) {};
-%  !puissance!
-%    \tikz[remember picture] \node [] (b) {};
-%  !(int x,!
-%    \tikz[remember picture] \node [] (c){};
-%  !int n) { 
+The numerical results presented in the Tables \ref{tab:transmission_results_1} and \ref{tab:transmission_results_2} are still not the optimal ones: if one considers a larger value of \(\eta\), they increase in more than two orders of magnitude. The ``corner'' source points added in Figure (below and above the interface) \ref{transmission_disk_col} also play a role in the accuracy of the method. In Figure \ref{transmission_disk_col}, observe that the source points for one of the domains can be inside the other domain, as the solution will be split into two parts.
 
-%      int i, p = 1; !\tikz[remember picture] \node [] (d){};!           
+\subsection{Results for the rectangle}
 
-%      for (i = 1; i <= n; i++) 
-%        p = p * x; !\tikz[remember picture] \node [inner xsep = 40pt] (e){};! 
+\subsection{Results for an L-shape domain with enrichment}
 
-%      return p; !
-%        \tikz[remember picture] \node [] (f){};!  
-%  }
-% \end{lstlisting}
-
-% \begin{tikzpicture}[remember picture, overlay,
-%     every edge/.append style = { ->, thick, >=stealth,
-%                                   darkgray, dashed, line width = 1pt },
-%     every node/.append style = { align = center, minimum height = 10pt,
-%                                  font = \bfseries, fill= green!20},
-%                   text width = 2.5cm ]
-%   \node [above left = .75cm and -.75 cm of a,text width = 2.2cm]
-%                              (A) {return value type};
-%   \node [right = 0.25cm of A, text width = 1.9cm]
-%                              (B) {function name};
-%   \node [right = 0.5cm of B] (C) {list of formal parameters};
-%   \node [right = 4.cm of d]  (D) {local variables declaration};
-%   \node [right = 2.cm of e]  (E) {instructions};
-%   \node [right = 5.cm of f]  (F) {instruction \texttt{\bfseries return}};  
-%   \draw (A.south) + (0, 0) coordinate(x1) edge (x1|-a.north);
-%   \draw (B.south) + (0, 0) coordinate(x2) edge (x2|-b.north);
-%   \draw (C.south) + (0, 0) coordinate(x3) edge (x3|-c.north);
-%   \draw (D.west) edge (d.east) ;
-%   \draw (E.west) edge (e.east) ;  
-%   \draw (F.west) edge (f.east) ;
-% \end{tikzpicture}
-% %\end{center}
-% \end{minipage}
-
-% \textcolor{violet}{And here another method (\Cref{tikzlist}) for mixing (overlay) a picture with a listing of code.}
-% % #############################################################################
-% \subsection{User Interface}
-% Donec semper turpis sed diam. Sed consequat ligula nec tortor. Integer eget sem. Ut vitae enim eu est vehicula gravida. Morbi ipsum ipsum, porta nec, tempor id, auctor vitae, purus. Pellentesque neque. Nulla luctus erat vitae libero. Integer nec enim. Phasellus aliquam enim et tortor. Quisque aliquet, quam elementum condimentum feugiat, tellus odio consectetuer wisi, vel nonummy sem neque in elit. Curabitur eleifend wisi iaculis ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non velit non ligula laoreet ultrices. Praesent ultricies facilisis nisl. Vivamus luctus elit sit amet mi. Phasellus pellentesque, erat eget elementum volutpat, dolor nisl porta neque, vitae sodales ipsum nibh in ligula. Maecenas mattis pulvinar diam. Curabitur sed leo..
-
-% Cras eu mauris. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. Vivamus elit eros, ullamcorper a, adipiscing sit amet, porttitor ut, nibh. Maecenas adipiscing mollis massa. Nunc ut dui eget nulla venenatis aliquet. Sed luctus posuere justo. Cras vehicula varius turpis. 
-% % #############################################################################
-% \subsection{Vivamus luctus elit sit amet mi}
-% Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin molestie tortor eu velit. Aliquam erat volutpat. Nullam ultrices, diam tempus vulputate egestas, eros pede varius leo, sed imperdiet lectus est ornare odio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin consectetuer velit in dui. Phasellus wisi purus, interdum vitae, rutrum accumsan, viverra in, velit. Sed enim risus, congue non, tristique in, commodo eu, metus. Aenean tortor mi, imperdiet id, gravida eu, posuere eu, felis. 
-
-% Mauris sollicitudin, turpis in hendrerit sodales, lectus ipsum pellentesque ligula, sit amet scelerisque urna nibh ut arcu. Aliquam in lacus. 
-
-% \Cref{fig:ui_playout,fig:ui_loading}\todo[color=cyan!40, author=RC, fancyline]{A figure with Subfigures}{} proin at eros non eros adipiscing mollis.
-
-% \begin{figure}[htbp]
-% 	\centering
-% 	\subfigure[Media Loading Window]{\label{fig:ui_loading} 		\includegraphics[width=0.3\textwidth]{./Images/ui_loading}} \qquad
-% 	\subfigure[Play-out Session UI]{\label{fig:ui_playout}
-% 		\includegraphics[width=0.3\textwidth]{./Images/ui_playout}}
-% 	\caption{Complete User Interface}
-% 	\label{fig:user_interface}
-% \end{figure}
-
-% Vestibulum ante ipsum primis in \ac{UI} faucibus orci luctus et ultrices posuere cubilia Curae; Nulla placerat aliquam wisi. Mauris viverra odio. Quisque fermentum pulvinar odio. Proin posuere est vitae ligula. Etiam euismod. Cras a eros.
-
-
-
+\subsection{Results for the smooth domains}

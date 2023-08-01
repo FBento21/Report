@@ -9,7 +9,7 @@
 \label{chap:numerical}
 % #############################################################################
 
-\section{Density and linear independence results}
+\section{Density and linear independence results}\label{density_proofs_section}
 
 The method of Fundamental Solutions is the base method to be implemented throughout this work. As a meshless method, it does not involve any kind of domain discretization (into some mesh) like in finite differences or finite elements methods. Instead, the problem is now of point placement. Since the mesh creation is one of the most computational expensive parts of the methods above, one of the main advantages of the MFS is exactly the lack of it. 
 
@@ -476,12 +476,12 @@ For the Helmholtz equation, the MFS convergence and stability results resemble t
     where \(C\) is a constant that not depends on \(N\).
 \end{theorem}
 To solve the Helmholtz equation with the MFS, one must start by computing the eigenvalues \(\lambda\) (or the eigenfrequencies \(k\), with \(\lambda = k^2\)) first. In order to achieve that, recall that the Helmholtz equation
-\[
+\begin{equation}\label{helm_dirichlet}
     \begin{cases}
-        -\Delta u = \lambda u, \text{ in } \Omega\\
+        -\Delta u = k^2 u, \text{ in } \Omega\\
         u = 0, \text{ on } \partial \Omega
     \end{cases}
-\]
+\end{equation}
 is well-posed when \(\lambda\) is not an eigenvalue, and in that case the nullspace of the single layer potential operator
 \[
     S_k \varphi(y) = \int_{\hat{\Gamma}} \Phi_k(x-y)\varphi(x) d\sigma(x) 
@@ -501,11 +501,87 @@ This theorem can be used to search for the eigenvalues/eigenfrequencies of the L
     \item if \(A(k)\) is a square matrix (with \(M=N\)), one can compute the determinant of \(A(k)\). Since the components of \(A(k)\) are complex numbers, then its determinant is also a complex number, and we consider its absolute value. In any case, instead of working with \(\abs{\determinant A(k)}\), since this value is very small, one must work with its logarithm and consider the function \(d(k) = \log \abs{\determinant A(k)}\);
     \item if \(A(k)\) is an \(M\times N\) rectangular matrix, with \(M > N\), one considers the smallest singular value, which we denote by \(\sigma_N(k)\), where the singular values of \(A(k)\) are assumed to be in decreasing order \(\sigma_1(k) \geq \dots \geq \sigma_N(k)\). We emphasize that we only work with this case.
 \end{enumerate}
-Therefore, in order to find the eigenvalues/eigenfrequencies of the Laplace operator, one must find the singularities of the functions \(d(k)\) or \(\sigma_N(k)\) for the first and second cases above, respectively.
+Therefore, in order to find the eigenvalues/eigenfrequencies of the Laplace operator, one must find the singularities of the functions \(d(k)\) or \(\sigma_N(k)\) for the first and second cases above, respectively, i.e, study the local minima of the functions \(d(k)\) or \(\sigma_N(k)\) which, in very regular domains, should approach zero.
+
+To search for these singularities, a simple direct search algorithm was developed to bracket the set of local minima in a given interval. The iterative algorithm used is based on the Golden Ratio Search already used in \cite{alves2005method}. First, consider the graph of \(\sigma_N(k)\) in a given interval \(I=(a, b)\) (which likely has more than one local minima) and fix (a relatively large) step size \(h\). Let \(I_{M_0}^0 = \{a_0^0, \dots, a_{M_0}^0\}\) be the discretization of \(I_{M_0}^0\) in \({M_0}\) points spaced by \(h\) in the zeroth iteration, and denote the set of local minimums of \(I_{M_0}\) by \(X^0_K = \{x_0^0, \dots, x_K^0\} \subset I_{M_0}\), i.e, \(\forall i = 1,\dots,K\) there exists \(c^0, d^0 \in I_{M_0}^0\) such that \(c^0 = x_i^0 - h\), \(d^0 = x_i^0 + h\) and \(x_i < \min(c^0, d^0) \). Then, for each \(x_i^0\), \(I_{M_0}^0\) is enlarged with the middle points between \(c^0\) and \(x_i^0\), \(d^0\) and \(x_i^0\), and it is denoted by \(\tilde{I}_{M_1}^1\) (notice that \(M_0 < M_1\))\footnote{Given the nature of the algorithm, one can also consider the left adjacent point to \(c^0\), which we denote by \(e_0 \in I^0_{M_0}\), compute and add their middle point to \(\tilde{I}_{M_1}^1\)}. Finally, we sort \(\tilde{I}_{M_1}^1\) in an increasing order and repeat the process for a specified depth \(d\). When the maximum depth is attained, one was able to successfully find small intervals which bracket \textit{each local minimum} of \(\sigma_N\) in \(I\), and it is now possible to apply a direct search method to find it to any desired precision: in this work, Brent's method was used \cite{brent1971algorithm}, although Golden Ratio Search is also possible. The general form of the algorithm is given below.
+
+\begin{algorithm}[ht]
+    \DontPrintSemicolon
+    Set maximum depth \(d\)\;
+    Set step size \(h\)\;
+    Set bracketing interval \(I=(a, b)\)\;
+    \Begin{
+    Discretize \(I\) into \(I_{M_0}^0 = \{a_0^0,\dots,a_{M_0}^0\}\), where \(a_{j+1} = a_j + h\) for each \(j = 1,\dots M_0\)\;
+    Set \(s=0\)\;
+    \BlankLine
+    \CommentSty{(Bracketing step)}\;
+    \While{\(s < d\)}{
+        Compute \(X^s_{K_s} = \{x_0^s, \dots, x_{K_s}^s\}\), the set of local minima of \(I_{M_s}^s\)\;
+        Let \(E\) be an empty array\;
+        \ForEach{\(x \in X^s_{K_s}\)}{
+            Consider the adjacent points to \(x\) given by \(c, d \in I^s_{M_s}\) such that \(c < x <d\)\;
+            Consider the left adjacent point to \(c\), denoted by \(e\)\;
+            Compute \(\tilde{c} = \frac{c+x}{2}\)\;
+            Compute \(\tilde{d} = \frac{d+x}{2}\)\;
+            Compute \(\tilde{e} = \frac{e+c}{2}\)\;
+            Append \(\tilde{c}\), \(\tilde{d}\) and \(\tilde{e}\) to \(E\)\;
+            }
+        Let \(\tilde{I}^{s+1}_{M_{s+1}} = I^s_{M_s} \cup E\)\;
+        Define \(I^{s+1}_{M_{s+1}} = sort(\tilde{I}^{s+1}_{M_{s+1}})\)\;
+        \(s \leftarrow s+1\)\;
+        }
+        \BlankLine
+        \CommentSty{(Direct search step)}\;
+        Let E be an empty array\;
+        \ForEach{\(x \in X^d_{K_d}\)}{
+            Consider the adjacent points to \(x\) given by \(c, d \in I^d_{M_d}\) such that \(c < x <d\)\;
+            \(\lambda = Brent(c, d)\)\;
+            Append \(\lambda\) to E\;
+        }
+        \Return{E}
+    }
+    \caption{Direct Bracketing Algorithm}
+    \label{time_control_algorithm}
+\end{algorithm}
+
+\begin{remark}
+    Although the algorithm above was enough, we point some problems and possible changes to consider. First, there are no guarantees regarding the eigenvalues found: this depends on the chosen interval and on the step. For example, if the first eigenvalue is not in the chosen interval, it will never be found. One may also find a ``jump'' if two eigenvalues are arbitrarily close but the algorithm just found one of them: this is the case when an eigenvalue has multiplicity bigger than one, which depends on the domain. However, this last case is easy to spot if one considers the one parameter transformation between the domain \(\Omega\) and the unitary disk \(\mathbb{D}\) given by
+    \[
+        \Omega(t) = (1-t)\mathbb{D} + t \Omega, \, t \in (0, 1),
+    \]
+    since the graph of the eigenvalues is continuous in respect to \(t\). Regarding the complexity of the algorithm, the objective is to evaluate the function \(\sigma_N(k)\) the \textit{least} amount of time: a brute-force approach with a very small step is not feasible since each evaluation takes some time for big complex valued matrices. However, we note that the algorithm can be improved by just considering the initial point \(a\) and ``walking forward'' with step size \(h\). In that case, one could bracket each local minimum individually and only leaving to the main loop when the maximum depth was reached for each local minimum initially found. The loop would \textbf{break} when the number of eigenvalues found attains a prescribed value.
+\end{remark}
+
+Before introducing a new technique to improve the condition of the system, we state a posteriori estimate based on a result proved by Moler and Payne in \cite{moler1968bounds}.
+\begin{theorem}
+    Let \(\tilde{k}\) and \(\tilde{u} \in C^2(\Omega) \cap C(\overline{\Omega})\) be an approximate eigenfrequency and eigenfunction which satisfy the following problem:
+    \[
+    \begin{cases}
+        -\Delta \tilde{u} = k^2 u, &\text{ in } \Omega\\
+        u = \xi(x), &\text{ on } \Gamma.
+    \end{cases}    
+    \]
+    Then, there exists an eigenfrequency \(k_n\) of \eqref{helm_dirichlet} such that
+    \[
+        \frac{\abs{{k_n} - {\tilde{k}}}}{\abs{k_n}} \leq \theta
+    \]
+    where
+    \[
+        \theta = \frac{\sqrt{\abs{\Omega}} \norm*{\xi}_{L^\infty (\Gamma)}}{\norm{\tilde{u}}_{L^2(\Omega)}}.
+    \]
+    If, in addition, \(\tilde{u}_{L^2(\Omega)}\) and \(u\) is the normalized orthogonal projection of \(\tilde{u}\) onto the eigenspace of \(k_n\), then
+    \[
+        \norm{\tilde{u} - u}_{L^2(\Omega)} \leq \frac{\theta}{\rho_n}\left(1+\frac{\theta^2}{\rho_n^2}\right)^\frac{1}{2},
+    \]
+    where
+    \[
+        \rho_n = \min_{k_n \neq k_p} \frac{\abs{k^2_p - \tilde{k}^2}}{k^2_p}, \text{ for } p \in \mathbb{N}.
+    \]
+\end{theorem}
 
 \subsection{The Subspace Angle Technique}
 
-Again, one of the drawbacks of this method is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the MFS only needs the boundary data to approximate the solution of the BVP, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
+As stated before, one of the drawbacks of this method is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the MFS only needs the boundary data to approximate the solution of the BVP, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
 To solve the first problem, we add additional interior points in order to over determine the system; and for the second problem we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
 \[

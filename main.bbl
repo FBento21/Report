@@ -108,16 +108,54 @@ D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}.\hskip
 M.~Reed and B.~Simon, \emph{II: Fourier Analysis, Self-Adjointness}.\hskip 1em
   plus 0.5em minus 0.4em\relax Elsevier, 1975, vol.~2.
 
+\bibitem{henrot2006extremum}
+A.~Henrot, \emph{Extremum problems for eigenvalues of elliptic
+  operators}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science \&
+  Business Media, 2006.
+
+\bibitem{henrot2017shape}
+------, \emph{Shape optimization and spectral theory}.\hskip 1em plus 0.5em
+  minus 0.4em\relax De Gruyter Open, 2017.
+
+\bibitem{krahn1926minimaleigenschaften}
+E.~Krahn, ``{\"U}ber minimaleigenschaften der kugel in drei und mehr
+  dimensionen,'' \emph{(No Title)}, 1926.
+
 \bibitem{freitas2008sharp}
 P.~Freitas and D.~Krej{\v{c}}i{\v{r}}{\'\i}k, ``A sharp upper bound for the
   first dirichlet eigenvalue and the growth of the isoperimetric constant of
   convex domains,'' \emph{Proceedings of the American Mathematical Society},
   vol. 136, no.~8, pp. 2997--3006, 2008.
 
+\bibitem{wolf1994range}
+S.~A. Wolf and J.~B. Keller, ``Range of the first two eigenvalues of the
+  laplacian,'' \emph{Proceedings of the Royal Society of London. Series A:
+  Mathematical and Physical Sciences}, vol. 447, no. 1930, pp. 397--412, 1994.
+
+\bibitem{henrot2000minimization}
+A.~Henrot and D.~Bucur, ``Minimization of the third eigenvalue of the dirichlet
+  laplacian,'' \emph{Proceedings of the Royal Society of London. Series A:
+  Mathematical, Physical and Engineering Sciences}, vol. 456, no. 1996, pp.
+  985--996, 2000.
+
 \bibitem{bucur2012minimization}
 D.~Bucur, ``Minimization of the k-th eigenvalue of the dirichlet laplacian,''
   \emph{Archive for Rational Mechanics and Analysis}, vol. 206, no.~3, pp.
   1073--1083, 2012.
+
+\bibitem{mazzoleni2013existence}
+D.~Mazzoleni and A.~Pratelli, ``Existence of minimizers for spectral
+  problems,'' \emph{Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}, vol.
+  100, no.~3, pp. 433--453, 2013.
+
+\bibitem{polya1951isoperimetric}
+G.~P{\'o}lya and G.~Szeg{\"o}, \emph{Isoperimetric inequalities in mathematical
+  physics}.\hskip 1em plus 0.5em minus 0.4em\relax Princeton University Press,
+  1951, no.~27.
+
+\bibitem{bogosel2022polygonal}
+B.~Bogosel and D.~Bucur, ``On the polygonal faber-krahn inequality,''
+  \emph{arXiv preprint arXiv:2203.16409}, 2022.
 
 \bibitem{gomez2021any}
 J.~G{\'o}mez-Serrano and G.~Orriols, ``Any three eigenvalues do not determine a
@@ -234,6 +272,15 @@ C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
   the calculation of eigenfrequencies and eigenmodes of 2d simply connected
   shapes,'' \emph{CMC-TECH SCIENCE PRESS-}, vol.~2, no.~4, p. 251, 2005.
 
+\bibitem{brent1971algorithm}
+R.~P. Brent, ``An algorithm with guaranteed convergence for finding a zero of a
+  function,'' \emph{The computer journal}, vol.~14, no.~4, pp. 422--425, 1971.
+
+\bibitem{moler1968bounds}
+C.~Moler and L.~Payne, ``Bounds for eigenvalues and eigenvectors of symmetric
+  operators,'' \emph{SIAM Journal on Numerical Analysis}, vol.~5, no.~1, pp.
+  64--70, 1968.
+
 \bibitem{betcke2005reviving}
 T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
   \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
@@ -243,5 +290,16 @@ P.~R. Antunes and S.~S. Valtchev, ``A meshfree numerical method for acoustic
   wave propagation problems in planar domains with corners and cracks,''
   \emph{Journal of Computational and Applied Mathematics}, vol. 234, no.~9, pp.
   2646--2662, 2010.
+
+\bibitem{alves2021domain}
+C.~J. Alves, N.~F. Martins, and S.~S. Valtchev, ``Domain decomposition methods
+  with fundamental solutions for helmholtz problems with discontinuous source
+  terms,'' \emph{Computers \& Mathematics with Applications}, vol.~88, pp.
+  16--32, 2021.
+
+\bibitem{golberg1996improved}
+M.~A. Golberg, C.-S. Chen, and S.~Karur, ``Improved multiquadric approximation
+  for partial differential equations,'' \emph{Engineering Analysis with
+  boundary elements}, vol.~18, no.~1, pp. 9--17, 1996.
 
 \end{thebibliography}

@@ -4,18 +4,20 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Some Preliminary Results}{3}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{21}{chapter.3}%
+\contentsline {xchapter}{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{23}{chapter.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{The Method of Fundamental Solutions}{37}{chapter.4}%
+\contentsline {xchapter}{The Method of Fundamental Solutions}{39}{chapter.4}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conducted Numerical Simulations}{55}{chapter.5}%
+\contentsline {xchapter}{Conducted Numerical Simulations}{59}{chapter.5}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{63}{table.caption.14}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{64}{table.caption.15}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{57}{chapter.6}%
-\contentsline {xchapter}{}{65}{chapter*.15}%
+\contentsline {xchapter}{Conclusion}{65}{chapter.6}%
+\contentsline {xchapter}{}{75}{chapter*.19}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{67}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{77}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{75}{appendix.B}%
-\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{76}{table.caption.16}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{76}{table.B.2}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{78}{table.caption.17}%
+\contentsline {xchapter}{A Large Table}{85}{appendix.B}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{86}{table.caption.20}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{86}{table.B.2}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{88}{table.caption.21}%

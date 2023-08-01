@@ -4,18 +4,20 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Some Preliminary Results}{3}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{21}{chapter.3}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A wedge domain with an interior angle \(\theta \).\relax }}{29}{figure.caption.9}%
+\contentsline {xchapter}{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{23}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A wedge domain with an interior angle \(\theta \).\relax }}{33}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{The Method of Fundamental Solutions}{37}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A wedge domain with an interior angle \(\Theta \).\relax }}{48}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rotation of the wedge domain. Image taken from \cite {li2000singularities}.\relax }}{50}{figure.caption.11}%
+\contentsline {xchapter}{The Method of Fundamental Solutions}{39}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A wedge domain with an interior angle \(\Theta \).\relax }}{50}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rotation of the wedge domain. Image taken from \cite {li2000singularities}.\relax }}{52}{figure.caption.11}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conducted Numerical Simulations}{55}{chapter.5}%
+\contentsline {xchapter}{Conducted Numerical Simulations}{59}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Configuration of the boundary, source and interface points. Each domain has 600 boundary points, 377 source points and the common interface has 100 points.\relax }}{63}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Numerical approximation of the BVP \eqref {transmission_disk} under the conditions presented in Figure \ref {transmission_disk_col}\relax }}{63}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{57}{chapter.6}%
-\contentsline {xchapter}{}{65}{chapter*.15}%
+\contentsline {xchapter}{Conclusion}{65}{chapter.6}%
+\contentsline {xchapter}{}{75}{chapter*.19}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{67}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{77}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{75}{appendix.B}%
+\contentsline {xchapter}{A Large Table}{85}{appendix.B}%
