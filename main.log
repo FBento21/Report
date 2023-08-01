@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.23)  1 AUG 2023 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.23)  1 AUG 2023 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1567,7 +1567,7 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42] [43] [44] [45] [46] [47] [48] [49] [50]
-<Images/rotated_wedge.png, id=983, 288.07625pt x 188.705pt>
+<Images/rotated_wedge.png, id=988, 288.07625pt x 188.705pt>
 File: Images/rotated_wedge.png Graphic file (type png)
 <use Images/rotated_wedge.png>
 Package pdftex.def Info: Images/rotated_wedge.png  used on input line 415.
@@ -1599,7 +1599,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62]
-<Images/Transmission/Circle_val_col_points_600_150.png, id=1119, 463.9734pt x 380.1402pt>
+<Images/Transmission/Circle_val_col_points_600_150.png, id=1124, 463.9734pt x 380.1402pt>
 File: Images/Transmission/Circle_val_col_points_600_150.png Graphic file (type png)
 <use Images/Transmission/Circle_val_col_points_600_150.png>
 Package pdftex.def Info: Images/Transmission/Circle_val_col_points_600_150.png  used on input line 142.
@@ -1609,45 +1609,53 @@ Underfull \hbox (badness 1107) in paragraph at lines 144--144
 \OT1/phv/m/n/9 and in-ter-face points. Each do-main
  []
 
-<Images/Transmission/Circle_val_contour_600_150.png, id=1120, 482.7636pt x 369.2997pt>
+<Images/Transmission/Circle_val_contour_600_150.png, id=1125, 482.7636pt x 369.2997pt>
 File: Images/Transmission/Circle_val_contour_600_150.png Graphic file (type png)
 <use Images/Transmission/Circle_val_contour_600_150.png>
 Package pdftex.def Info: Images/Transmission/Circle_val_contour_600_150.png  used on input line 150.
 (pdftex.def)             Requested size: 227.62204pt x 174.12311pt.
 [63 <./Images/Transmission/Circle_val_col_points_600_150.png> <./Images/Transmission/Circle_val_contour_600_150.png>]
-<Images/Transmission/Rectangle_contour_600_150_k1_1.png, id=1139, 497.9403pt x 376.5267pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_1.png, id=1144, 497.9403pt x 376.5267pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_1.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_1.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_1.png  used on input line 206.
 (pdftex.def)             Requested size: 227.62204pt x 172.11852pt.
-<Images/Transmission/Rectangle_contour_600_150_k1_2.png, id=1140, 505.89pt x 382.3083pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_2.png, id=1145, 505.89pt x 382.3083pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_2.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_2.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_2.png  used on input line 212.
 (pdftex.def)             Requested size: 227.62204pt x 172.01964pt.
-<Images/Transmission/Rectangle_contour_600_150_k1_5.png, id=1141, 497.9403pt x 376.5267pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_5.png, id=1146, 497.9403pt x 376.5267pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_5.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_5.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_5.png  used on input line 221.
 (pdftex.def)             Requested size: 273.14922pt x 206.54451pt.
  [64] [65 <./Images/Transmission/Rectangle_contour_600_150_k1_1.png> <./Images/Transmission/Rectangle_contour_600_150_k1_2.png> <./Images/Transmission/Rectangle_contour_600_150_k1_5.png>]
-<Images/Transmission/L_shape_2_rectangles_col_points.png, id=1161, 564.4287pt x 385.1991pt>
+<Images/Transmission/L_shape_2_rectangles_col_points.png, id=1166, 640.3122pt x 643.203pt>
 File: Images/Transmission/L_shape_2_rectangles_col_points.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_rectangles_col_points.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_rectangles_col_points.png  used on input line 259.
-(pdftex.def)             Requested size: 318.66946pt x 217.48506pt.
-) (./Chapters/Thesis-MSc-Chapter_5.tex) [66 <./Images/Transmission/L_shape_2_rectangles_col_points.png>] (./Chapters/Thesis-MSc-Chapter_6.tex
+(pdftex.def)             Requested size: 227.62204pt x 228.64781pt.
+<Images/Transmission/L_shape_2_rectangles_k1_5.png, id=1169, 505.89pt x 376.5267pt>
+File: Images/Transmission/L_shape_2_rectangles_k1_5.png Graphic file (type png)
+<use Images/Transmission/L_shape_2_rectangles_k1_5.png>
+Package pdftex.def Info: Images/Transmission/L_shape_2_rectangles_k1_5.png  used on input line 268.
+(pdftex.def)             Requested size: 318.66946pt x 237.18434pt.
+ [66 <./Images/Transmission/L_shape_2_rectangles_col_points.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67 <./Images/Transmission/L_shape_2_rectangles_k1_5.png>]) (./Chapters/Thesis-MSc-Chapter_5.tex) [68] (./Chapters/Thesis-MSc-Chapter_6.tex
 Chapter 6.
 \openout6 = `main.mtc'.
 
 \openout6 = `main.mtc'.
 
-(./main.mtc6) [67
+(./main.mtc6) [69
 
 
 ]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 11.
- [68]) [69] [70
+ [70]) [71] [72
 
 ] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 52--54
@@ -1659,7 +1667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--54
 \OT1/phv/m/n/10 / / ulisboa-[]my . sharepoint . com/ : b : /g / personal / ist27898[]tecnico[]ulisboa[]pt /
  []
 
-[71
+[73
 
 ]
 Underfull \hbox (badness 1215) in paragraph at lines 147--150
@@ -1671,7 +1679,7 @@ Underfull \hbox (badness 6284) in paragraph at lines 157--159
 []\OT1/phv/m/n/10 B. Bo-gosel and D. Bu-cur, ``On the polyg-o-nal faber-krahn in-equal-ity,'' \OT1/phv/m/sl/10 arXiv preprint
  []
 
-[72] [73] [74]) [75] [76
+[74] [75] [76]) [77] [78
 
 ]
 No file main.gls.
@@ -1683,10 +1691,10 @@ Overfull \hbox (32.13301pt too wide) in paragraph at lines 243--243
 []\OT1/phv/m/n/10 If you don't want this glos-sary, add \OT1/cmtt/m/n/10 nomain \OT1/phv/m/n/10 to your pack-age op-tion list when you load \OT1/cmtt/m/n/10 glossaries-extra.sty\OT1/phv/m/n/10 .
  []
 
-[77
+[79
 
 
-] [78
+] [80
 
 ] (./Chapters/Thesis-MSc-AppendixA.tex
 Appendix A.
@@ -1702,9 +1710,9 @@ File: omlphv.fd
 )
 LaTeX Font Info:    Font shape `OML/phv/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 11.
- [79
+ [81
 
-] (./tables_and_code/example.asm.txt [80])
+] (./tables_and_code/example.asm.txt [82])
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
@@ -1722,27 +1730,27 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 LaTeX Info: Symbol \texttildelow not provided by
             font family ptm in TS1 encoding.
             Default family used instead on input line 50.
- [81] (./tables_and_code/function.m) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ [83] (./tables_and_code/function.m) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
- [82]
+ [84]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 104.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [83] [84] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ [85] [86] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)) [85] [86
+)) [87] [88
 
 ] (./Chapters/Thesis-MSc-AppendixB.tex
 Appendix B.
-(./tables_and_code/table_example.tex) [87
+(./tables_and_code/table_example.tex) [89
 
-] [88] [89]) [90]
+] [90] [91]) [92]
 \Changes@OutFile=\write13
 \openout13 = `main.soc'.
 
@@ -1775,7 +1783,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[91
+[93
 
 ] (./main.aux
 Package cleveref Info: loaded `english' language definitions on input line 28.
@@ -1784,21 +1792,21 @@ Package cleveref Info: loaded `english' language definitions on input line 28.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3FA84B8E12612FDD7707E44232764D79;8134.
+(rerunfilecheck)             Checksum: F43BA65066239449AF453B6CEB378ADB;8134.
  ) ) 
 Here is how much of TeX's memory you used:
- 52060 strings out of 476091
- 1010032 string characters out of 5794081
+ 52080 strings out of 476091
+ 1010703 string characters out of 5794081
  1999330 words of memory out of 5000000
- 70610 multiletter control sequences out of 15000+600000
+ 70624 multiletter control sequences out of 15000+600000
  564838 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  95i,18n,122p,2382b,3099s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (111 pages, 954276 bytes).
+Output written on main.pdf (113 pages, 1007098 bytes).
 PDF statistics:
- 1780 PDF objects out of 2073 (max. 8388607)
- 1564 compressed objects within 16 object streams
- 640 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1802 PDF objects out of 2073 (max. 8388607)
+ 1582 compressed objects within 16 object streams
+ 645 named destinations out of 1000 (max. 500000)
+ 399 words of extra memory for PDF output out of 10000 (max. 10000000)
 

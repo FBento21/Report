@@ -332,7 +332,7 @@ Another interesting remark, is the condition \(R \neq 1\), which is in direct co
 \]
 no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it is impossible to approximate any harmonic function which does not vanish on the origin. However, this is not the case if we add the basis function \(1\), which was used to prove the density result. While this almost never interferes with the numerical approximations in the next chapters, it will be considered nevertheless by a reason of coherence. This is the reason why a column of ones was added in the matrix \(A\).
 
-\subsection{An enrichment technique}
+\subsection{An enrichment technique}\label{m_particular_solutions}
 
 Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical MFS method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions which display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique which allows for singularity treatment. In the same vein as in the Proposition \eqref{dirac_not_polar}, we reintroduce the notion of a wedge domain and consider some wedge like domain with interior angle \(\Theta\).
     

@@ -12,13 +12,14 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{63}{table.caption.14}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{64}{table.caption.15}%
 \contentsline {table}{\numberline {5.3}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{64}{table.caption.17}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{66}{table.caption.20}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{67}{chapter.6}%
-\contentsline {xchapter}{}{77}{chapter*.22}%
+\contentsline {xchapter}{Conclusion}{69}{chapter.6}%
+\contentsline {xchapter}{}{79}{chapter*.24}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{79}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{81}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{87}{appendix.B}%
-\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{88}{table.caption.23}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{88}{table.B.2}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{90}{table.caption.24}%
+\contentsline {xchapter}{A Large Table}{89}{appendix.B}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{90}{table.caption.25}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{90}{table.B.2}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{92}{table.caption.26}%

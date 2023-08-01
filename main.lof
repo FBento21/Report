@@ -18,10 +18,11 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Numerical simulation with \(k_1=2\).\relax }}{65}{figure.caption.16}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Numerical simulation with \(k_1=5\).\relax }}{65}{figure.caption.16}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces L-shape domain with vertical interface. Configuration of the boundary, source and interface points.\relax }}{66}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Numerical approximation of the BVP for an L-shape domain with interface along \(x=0\) and \(k_1=5\).\relax }}{67}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{67}{chapter.6}%
-\contentsline {xchapter}{}{77}{chapter*.22}%
+\contentsline {xchapter}{Conclusion}{69}{chapter.6}%
+\contentsline {xchapter}{}{79}{chapter*.24}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{79}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{81}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{87}{appendix.B}%
+\contentsline {xchapter}{A Large Table}{89}{appendix.B}%

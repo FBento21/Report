@@ -256,9 +256,82 @@ Consider the L-shape given in Figure \ref{transmission_L_shape_config}. The left
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=0.7\linewidth]{Images/Transmission/L_shape_2_rectangles_col_points.png}
+        \includegraphics[width=0.5\linewidth]{Images/Transmission/L_shape_2_rectangles_col_points.png}
         \caption{L-shape domain with vertical interface. Configuration of the boundary, source and interface points.}
         \label{transmission_L_shape_config}
 \end{figure}
+
+In Table \ref{tab:transmission_results_L_shape_rectangles}, the results without resorting to enrichment are presented. It is evident that the method yields poorer results due to the lower regularity of the domain. Particularly, the interface error (mainly the \(C^0\) error) is significantly higher compared to previous cases. In fact, it appears that the domain itself poses more challenges than the discontinuous source function when considering different values for \(k_1\) and \(k_2\). In Figure \ref{transmission_L_shape_k1_5} it is even possible to see that already exists some small jump near the edges of the interface.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/Transmission/L_shape_2_rectangles_k1_5.png}
+    \caption{Numerical approximation of the BVP for an L-shape domain with interface along \(x=0\) and \(k_1=5\).}
+    \label{transmission_L_shape_k1_5}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccccc}
+      \toprule
+      \multirow{2}{*}{\textbf{\(k_1\) value}} & \multicolumn{2}{c}{\textbf{Boundary Error}} & \multicolumn{2}{c}{\textbf{Interface Errors}} & \multirow{2}{*}{\textbf{Condition number}} \\
+      \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+      & \textbf{Domain 1} & \textbf{Domain 2} & \textbf{\(C^0\)} & \textbf{\(C^1\)} & \\
+      \midrule
+      1 & $7.057\times10^{-5}$ & $1.156\times10^{-4}$ & $2.686\times10^{-3}$ & $8.639\times10^{-5}$ & $4.020\times 10^{12}$ \\
+      2 & $7.173\times10^{-5}$ & $1.372\times10^{-4}$ & $3.766\times10^{-3}$ & $2.881\times10^{-5}$ & $5.799\times 10^{12}$ \\
+      3 & $7.228\times10^{-5}$ & $1.245\times10^{-4}$ & $3.473\times10^{-3}$ & $3.403\times10^{-4}$ & $1.256\times 10^{13}$ \\
+      \bottomrule
+    \end{tabular}
+    \caption{Numerical error on the interface \(\gamma\). The condition number of the matrix is also presented.}
+    \label{tab:transmission_results_L_shape_rectangles}
+\end{table}
+
+One of the major problems for the method is the behavior of the solution near the degenerate corner with \(\pi\) radians in \(\Omega_1\), where some singularity may exist due to the different boundary conditions imposed there. Notice that for \(\Omega_2\) there exists no problem since the interface edge makes a right angle with the adjacent edges. Therefore, we consider some particular solutions which describe the solution in the domain \(\Omega_1\). In this case, we are going to use Dirichlet-Neummann particular solutions, like the ones presented in \ref{m_particular_solutions}, centered in the singular corner. Let
+\begin{equation}\label{pat_sol_L_shape_rect}
+    v_k(r, \theta) = \alpha_k r^{\alpha_k} \sin(\alpha_k(\theta - \theta_1))
+\end{equation}
+where
+\[
+    \alpha_k = \frac{k+\frac{1}{2}\pi}{\Theta},
+\]
+\(\theta_1 = \frac{\pi}{2}\) is the angle shift, \(\Theta = \pi\) is the total angle amplitude,  and the coordinates \(r\) and \(\theta\) are given in polar coordinates by
+\[
+    r(x,y) = \sqrt{x^2+y^2} \quad \theta(x,y)=\begin{cases}
+        \arctan(\frac{y}{x}),& \text{if} \arctan(\frac{y}{x})>0\\
+        \arctan(\frac{y}{x})+2\pi,& \text{if} \arctan(\frac{y}{x})\leq0.
+    \end{cases}
+\]
+By differentiating Equation \eqref{pat_sol_L_shape_rect} in cartesian coordinates and substituting polar coordinates again we find that
+\begin{equation*}
+    \nabla v_k(r, \theta) = \left(-\frac{(2 \pi  k+\pi )^2 r^{\frac{2 \pi  k+\pi }{2 \Theta }} \sin \left(\theta +\frac{\pi  \left(k+\frac{1}{2}\right) (s-\theta )}{\Theta }\right)}{4 \Theta ^2 r},\frac{(2 \pi  k+\pi )^2 r^{\frac{2 \pi  k+\pi }{2 \Theta }} \cos \left(\theta +\frac{\pi  \left(k+\frac{1}{2}\right) (s-\theta )}{\Theta }\right)}{4 \Theta ^2 r}\right).
+\end{equation*}
+Finally, considering the truncated expansion
+\[
+    \phi(r,\theta)=\sum_{k=1}^{P} \beta_k v_k(r, \theta),
+\]
+and expanding the matrix in \eqref{mfs_transmission_classical_matrices_system}, one can write
+\begin{align*}
+    \renewcommand{\arraystretch}{1.75} % Increase spacing between rows of the matrices
+    \begin{bmatrix}
+        \left[\Phi\left(x^{(1)}_{m}-y_j^{(1)}\right)\right] & [0] & \left[\phi(r\left(x_m\right),\theta\left(x_m\right))\right]\\
+        [0] & \left[\Phi\left(x^{(2)}_{m}-y_j^{(2)}\right)\right] & \left[0\right]\\
+        \left[\Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-\Phi\left(z_q-y_j^{(2)}\right)\right] & \left[\phi(r\left(z_k\right),\theta\left(z_q\right))\right]\\
+        \left[k_1\partial_n \Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-k_2 \partial_n \Phi\left(z_q-y_j^{(2)}\right)\right] & \left[k_1 \partial_n\phi(r\left(x_m\right),\theta\left(x_m\right))\right]
+    \end{bmatrix}
+    \begin{bmatrix}
+        \left[\alpha^{(1)}_j\right]\\
+        \left[\alpha^{(2)}_j\right]\\
+        \left[\beta_k\right]
+    \end{bmatrix}=\\
+    \renewcommand{\arraystretch}{1.75} % Increase spacing between rows of the matrices
+    \begin{bmatrix}
+        \left[-u_1^{NH}(x^{(1)}_{m})\right]\\
+        \left[-u_2^{NH}(x^{(2)}_{m})\right]\\
+        \left[u_2^{NH}(z_q)-u_1^{NH}(z_q)\right]\\
+        \left[k_2 \partial_n u_2^{NH}(z_q)- k_1 \partial_n u_1^{NH}(z_q)\right]\\
+    \end{bmatrix}
+\end{align*}
+
 
 \subsection{Results for the smooth domains}
