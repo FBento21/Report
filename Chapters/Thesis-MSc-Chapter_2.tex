@@ -186,7 +186,7 @@ Other important results in this area are related with the ratio and the gap betw
 \end{theorem}
 
 \begin{remark}
-    Note that in theorem above we do not make any constraint regarding the volume of our domain (except finite measure). This as consequence of the homogeneity proven in Corollary \eqref{lap_homo} and the fact that we are now considering a ratio between two eigenvalues in the same domain.
+    Note that in the Theorem above we do not make any constraint regarding the volume of our domain (except finite measure). This as consequence of the homogeneity proven in Corollary \eqref{lap_homo} and the fact that we are now considering a ratio between two eigenvalues in the same domain.
 \end{remark}
 
 
@@ -196,9 +196,9 @@ Other important results in this area are related with the ratio and the gap betw
 Motivated by recent advancements in nuclear, molecular physics and the discovery of very interesting electrical, mechanical and thermal properties, Dirac materials have resurged a lot of attention in the Dirac equation. Presented by Paul Dirac in its 1928 article \cite{dirac1928quantum}, Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, while explaining the weird phenomena that today is known as \textit{spin}, while predicting the existence \textit{antimatter}.
 Capable of describe the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), one can determine the energy states by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\) for \(\Omega \subset \mathbb{R}^2\),
 \begin{equation}\label{dirac_eq}
-    \hat{H} u = E u \quad \text{with} \quad \hat{H}=c \, \mathbf{a} \cdot \mathbf{p} + m c^2 \mathbf{\beta} + V(x)\mathbb{I}_4,
+    \hat{H} \mathbf{u} = E \mathbf{u} \quad \text{with} \quad \hat{H}= -i (\mathbf{\sigma} \cdot \mathbf{\nabla}) + \left(m + V(x)\right) \mathbb{I}_2,
 \end{equation}
-where \(\mathbf{p} = -i \nabla\) is the momentum operator, \(c\) is the speed of light, \(m\) is the electron mass, \(E\) is the electron energy, \(V(x)\) is the vector potential and \(u \in L^2(\Omega, \mathbb{C}^2)\) is a four-spinor\footnote{In what follows, we will be using natural units, where \(c=1\).}. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger's equation, it has a matrix structure that is given by the Pauli matrices
+where \(\mathbf{\nabla}\) is the gradient operator, \(m\) is the particle mass, \(E\) its energy, \(V(x)\) is some external potential and \(\mathbf{u} \in L^2(\Omega, \mathbb{C}^2)\) is a two-component spinor. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger's equation, it has a matrix structure that is given by the Pauli matrices
 \[
 \sigma_x = \begin{bmatrix}
     0 & 1\\
@@ -206,23 +206,9 @@ where \(\mathbf{p} = -i \nabla\) is the momentum operator, \(c\) is the speed of
 \end{bmatrix} \qquad \sigma_y = \begin{bmatrix}
     0 & -i\\
     i & 0
-\end{bmatrix} \qquad
-\sigma_z = \begin{bmatrix}
-    1 & 0\\
-    0 & -1
 \end{bmatrix}
 \]
-which can be incorporated in the \(4 \times 4\) matrices \(\mathbf{a}\) and \(\mathbf{\beta}\):
-\[
-a_i = \begin{bmatrix}
-    0 & \sigma_i\\
-    \sigma_i & 0
-\end{bmatrix} \qquad
-\beta = \begin{bmatrix}
-    \mathbb{I}_2 & 0\\
-    0 & -\mathbb{I}_2
-\end{bmatrix}.
-\]
+which can be incorporated in \(\sigma = (\sigma_1, \sigma_2)\).    
 
 Setting the potential \(V(x)=0\) and considering \(\Omega \subset \mathbb{R}^2\) be a bounded and open domain with \(C^3\) boundary, we can rewrite equation \eqref{dirac_eq} in the form    
 \begin{equation}\label{dirac}
@@ -244,7 +230,7 @@ where we let \(\mathbf{u}(x)=\begin{bmatrix}
     u_1(x)\\
     u_2(x)
     \end{bmatrix}\).
-In particular, we are interested in studying it under the so-called \textit{infinite-mass boundary conditions}. For a point \(x \in \Gamma = \partial\Omega\), we denote by \(\mathbf{n}(x) = \begin{pmatrix}
+In particular, we are interested in studying it under the so-called \textit{infinite-mass boundary conditions}. We point the reader to \cite{lotoreichik2019sharp}, \cite{briet2022spectral} and \cite{antunes2021variational} for more details about this type of boundary conditions and the results below. For a point \(x \in \Gamma = \Gamma\), we denote by \(\mathbf{n}(x) = \begin{pmatrix}
     n_1(x), n_2(x)
 \end{pmatrix}^T\) the outward unit vector to \(\Omega\), and define the operator domain
 \[
@@ -263,8 +249,8 @@ where \(L\) represents the arc-length of \(\Gamma\) and \(r\) is a parametrizati
 \]
 holds. Similar to the Theorem \eqref{spec_lap_pre}, some general results regarding the spectrum of the Dirac operator can also be stated.
 
-\begin{proposition}
-    Consider the eigenvalue problem stated in \eqref{dirac}. Then, the following results hold, \footnote{Notice that we changed the eigenvalue notation \(E\) to \(\lambda\). Not only for coherence reasons, but also because we are mainly interested in the mathematical description of the problem, and not in the physical intuition behind it (the energy of a spin-\(\frac{1}{2}\) particle).}
+\begin{proposition}\label{dirac_properties}
+    Consider the eigenvalue problem stated in \eqref{dirac}. Then, the following results hold, \footnote{Notice that we changed the eigenvalue notation \(E\) to \(\lambda\). Not only for coherence reasons, but also because we are mainly interested in the mathematical description of the problem, and not in the physical intuition behind it.}
     \begin{itemize}
         \item The eigenvalues are real and the spectrum of the Dirac operator is discrete. Also, the spectrum is symmetric with respect to zero and the eigenvalues can be arranged as follows
         \[
@@ -272,21 +258,21 @@ holds. Similar to the Theorem \eqref{spec_lap_pre}, some general results regardi
         \]
         \item The principal (first) eigenvalue can be described using the variational form
         \[
-        \lambda_1^2 = \min_{0 \neq u \in D(\hat{H})}\frac{\norm*{\nabla u}_{L^2(\Omega)}^2 + m^2 \norm{u}_{L^2(\Omega)}^2 + m \norm{\gamma_0 u}_{L^2(\partial\Omega)}^2}{\norm{u}_{L^2(\Omega)}^2},
+        \lambda_1^2 = \min_{0 \neq u \in D(\hat{H})}\frac{\norm*{\nabla u}_{L^2(\Omega)}^2 + m^2 \norm{u}_{L^2(\Omega)}^2 + m \norm{\gamma_0 u}_{L^2(\Gamma)}^2}{\norm{u}_{L^2(\Omega)}^2},
         \]
-        where \(\gamma_0: H^1(\Omega, \mathbb{C}^2) \rightarrow L^2(\Gamma, \mathbb{C}^2)\) denotes the trace of \(u\);
-        \item Let \(m=0\) and \(\Omega\) to be the unit disk \(\mathbb{D}\).Then, we have that the first eigenvalue is the solution to the equation
+        where \(\gamma_0: H^1(\Omega, \mathbb{C}^2) \rightarrow H^{\frac{1}{2}}(\Gamma, \mathbb{C}^2)\) denotes the trace of \(u\);
+        \item Let \(m=0\) and \(\Omega\) be the unit disk \(\mathbb{D}\). Then, we have that the first eigenvalue is the solution to the equation
         \[
-        J_0(\lambda) = J_1(\lambda),
+        J_0(\lambda_1) = J_1(\lambda_1),
         \]
         and the associated eigenfunction is (in polar coordinates)
         \[
         u(r, \theta) = \begin{pmatrix}
-            J_0(\lambda r)\\
-            i e^{i \theta}J_1(\lambda r)
+            J_0(\lambda_1 r)\\
+            i e^{i \theta}J_1(\lambda_1 r)
         \end{pmatrix}.    
         \]
-        For future comparison, its numerical approximation is \(\lambda \approx 1.434696\), where we recall that \(J_p\) is the Bessel function of first kind of order \(p\).
+        For future comparison, its numerical approximation is \(\lambda_1 \approx 1.434695650819\), where we recall that \(J_p\) is the Bessel function of first kind of order \(p\).
     \end{itemize}
 \end{proposition}
 
@@ -295,7 +281,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
 \begin{lemma}\label{lemma_sep_norm}
     Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then we have
     \begin{equation}\label{sep_norm}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\partial\Omega)}^2 -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
+        \norm*{\hat{H}u}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\Gamma)}^2 -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
     \end{equation}
 \end{lemma}
 \begin{proof}
@@ -305,7 +291,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \]
     \eqref{sep_norm} can be rewritten as 
     \begin{align}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u_1}_{L^2(\Omega)} + m^2 \norm*{u_2}_{L^2(\Omega)} \label{sep_norm_1}\\ 
+        \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u_1}_{L^2(\Omega)}^2 + m^2 \norm*{u_2}_{L^2(\Omega)}^2 \label{sep_norm_1}\\ 
         & + i m \int_\Omega u_1(\partial_1 + i \partial_2)\bar{u}_2dx - i m \int_\Omega \bar{u}_1(\partial_1 - i \partial_2)u_2 dx \label{sep_norm_2}\\ 
         & + i m \int_\Omega \bar{u}_2(\partial_1 + i \partial_2)u_1 dx - i m \int_\Omega u_2(\partial_1 - i \partial_2)\bar{u}_1 dx \label{sep_norm_3}\\ 
         & +\norm*{(\partial_1 - i \partial_2)u_2}_{L^2(\Omega)}^2 + \norm*{(\partial_1 + i \partial_1)u_1}_{L^2(\Omega)}^2. \label{sep_norm_4}
@@ -314,60 +300,60 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \begin{itemize}
         \item For \eqref{sep_norm_1} we directly have
                 \[
-                m^2 \norm*{u}_{L^2(\Omega)}.
+                    m^2 \norm*{u_1}_{L^2(\Omega)}^2 + m^2 \norm*{u_2}_{L^2(\Omega)}^2 = m^2 \norm*{u}_{L^2(\Omega)}^2.
                 \]
-        \item For \eqref{sep_norm_2} we integrate by parts the first part:
+        \item For \eqref{sep_norm_2} we integrate by parts the first term:
                 \[
-                \int_\Omega u_1(\partial_1 + i \partial_2)\bar{u}_2dx = \int_{\partial\Omega} u_1\bar{u}_2(1+i)d\sigma - \int_\Omega \bar{u}_2(\partial_1 + i \partial_2)u_1dx
+                \int_\Omega u_1(\partial_1 + i \partial_2)\bar{u}_2dx = \int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_\Omega \bar{u}_2(\partial_1 + i \partial_2)u_1dx
                 \]
-            where the last part cancels with the first part of \eqref{sep_norm_3}.
-        \item Analogously, for \eqref{sep_norm_3} we obtain a similar result for the last part
+            where the last term cancels with the first term of \eqref{sep_norm_3}.
+        \item Analogously, for \eqref{sep_norm_3} we obtain a similar result for the last term
                 \[
-                \int_\Omega u_2(\partial_1 - i \partial_2)\bar{u}_1dx = \int_{\partial\Omega} u_2\bar{u}_1(1-i)d\sigma - \int_\Omega \bar{u}_1(\partial_1 - i \partial_2)u_2dx 
+                \int_\Omega u_2(\partial_1 - i \partial_2)\bar{u}_1dx = \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma - \int_\Omega \bar{u}_1(\partial_1 - i \partial_2)u_2dx 
                 \]
-                where the last part cancels with the last part of \eqref{sep_norm_2}.
+                where the last term cancels with the last term of \eqref{sep_norm_2}.
         \item For \eqref{sep_norm_4} we firstly deduced the following property:
                 \[
-                \Im \Big(\int_\Omega \partial_1 v \partial_2 \bar{v}dx\Big) = \frac{1}{2 i} \int_{\partial\Omega} \bar{v} \partial_\tau v d \sigma, \; \forall v \in H^2(\Omega),
+                \Im \Big(\int_\Omega \partial_1 v \partial_2 \bar{v}dx\Big) = \frac{1}{2 i} \int_{\Gamma} \bar{v} \partial_\tau v d \sigma, \; \forall v \in H^2(\Omega),
                 \]
                 where \(\partial_\tau v= \tau \cdot \nabla v\), which can be obtained using integration by parts.
-                Then, for each part we have
+                Then, for each term we have
                 \begin{align*}
                 \norm*{(\partial_1 - i \partial_2)u_2}_{L^2(\Omega)}^2 &= \norm*{\nabla u_2}_{L^2(\Omega)}^2 + i \Big(\int_\Omega \partial_1 u_2 \partial_2 \bar{u}_2dx - \int_\Omega \partial_2 u_2 \partial_1 \bar{u}_2dx\Big)\\
-                & = \norm*{\nabla u_2}_{L^2(\Omega)}^2 + i\int_{\partial\Omega} \bar{u}_2 \partial_\tau u_2 d \sigma
+                & = \norm*{\nabla u_2}_{L^2(\Omega)}^2 + i\int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma
                 \end{align*}
                 \vspace*{-1cm}
                 \begin{align*}
                 \norm*{(\partial_1 + i \partial_2)u_1}_{L^2(\Omega)}^2 &= \norm*{\nabla u_1}_{L^2(\Omega)}^2 - i \Big(\int_\Omega \partial_1 u_1 \partial_2 \bar{u}_1dx - \int_\Omega \partial_2 u_1 \partial_1 \bar{u}_1dx\Big)\\
-                & = \norm*{\nabla u_1}_{L^2(\Omega)}^2 - i\int_{\partial\Omega} \bar{u}_1 \partial_\tau u_1 d \sigma
+                & = \norm*{\nabla u_1}_{L^2(\Omega)}^2 - i\int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma
                 \end{align*}
                 where we used the property above.
     \end{itemize}
     As such, we can write everything as
     \begin{align*}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u}_{L^2(\Omega)} + i m \Big(\int_{\partial\Omega} u_1\bar{u}_2(1+i)d\sigma - \int_{\partial\Omega} u_2\bar{u}_1(1-i)d\sigma \Big)\\
-        & + \norm*{\nabla u}_{L^2(\Omega)} + i\Big( \int_{\partial\Omega} \bar{u}_2 \partial_\tau u_2 d \sigma -  \int_{\partial\Omega} \bar{u}_1 \partial_\tau u_1 d \sigma \Big).
+        \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u}_{L^2(\Omega)}^2 + i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big)\\
+        & + \norm*{\nabla u}_{L^2(\Omega)} + i\Big( \int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  \int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma \Big).
     \end{align*}
     Finally, using the boundary conditions \(u_2 = i(n_1 + i n_2)u_1\), we conclude that
     \begin{align*}
-    i m \Big(\int_{\partial\Omega} u_1\bar{u}_2(1+i)d\sigma - \int_{\partial\Omega} u_2\bar{u}_1(1-i)d\sigma \Big) = \norm*{\gamma u}_{L^2(\partial\Omega)}^2
+    i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big) = \norm*{\gamma u}_{L^2(\Gamma)}^2
     \end{align*}
     while
     \begin{align*}
-    i\int_{\partial\Omega} \bar{u}_2 \partial_\tau u_2 d \sigma -  i\int_{\partial\Omega} \bar{u}_1 \partial_\tau u_1 d \sigma = -\frac{1}{2}\int_{\partial\Omega}\kappa \abs{u}^2 d\sigma
+    i\int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  i\int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma = -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
     \end{align*}
-    where we used the Frenet-Serret formula above and the fact that at \(\partial\Omega\) we have \(\abs{u_1}^2=\abs{u_2}^2\).
+    where we used the Frenet-Serret formula above and the fact that at \(\Gamma\) we have \(\abs{u_1}^2=\abs{u_2}^2\).
 \end{proof}
 
 \begin{proposition}\label{dirac_not_polar}
     Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions.
 \end{proposition}
 \begin{proof}
-    We start by showing that \(\abs*{\lambda}>m\) for any eigenvalue \(\lambda\) if \(\kappa = 0\) a.e. Assuming that there exists an eigenvalue \(\lambda\) associated with an eigenfunction \(u\) such that \(\abs{\lambda} \leq m\), by using Lemma \ref*{lemma_sep_norm} we get that 
+    We start by showing that \(\abs*{\lambda}>m\) for any eigenvalue \(\lambda\) if \(\kappa = 0\) a.e. Assuming that there exists an eigenvalue \(\lambda\) associated with an eigenfunction \(u\) such that \(\abs{\lambda} \leq m\), by Lemma \ref{lemma_sep_norm} we get that 
     \[
-    \norm*{\nabla u }_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\partial\Omega)}^2 \leq 0 \implies \norm*{\nabla u }_{L^2(\Omega)} = 0 \land m \norm*{\gamma u}_{L^2(\partial\Omega)} = 0
+    \norm*{\nabla u }_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\Gamma)}^2 \leq 0 \implies \norm*{\nabla u }_{L^2(\Omega)} = 0 \land m \norm*{\gamma u}_{L^2(\Gamma)} = 0
     \]
-    and \(u\) must be a constant, which does not satisfy the boundary conditions.
+    and \(u\) must be a constant, which does not satisfy the boundary conditions (unless \(u=0\), which would satisfy the conditions above, but it is not considered).
 
     Since \(u \in H^2(\Omega)\), using \eqref{dirac}, we can express \(u_2\) as
     \[
@@ -377,7 +363,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \begin{equation}\label{helm_system}
         \begin{cases}
             &-\Delta u_1 = (\lambda^2 - m^2)u_1, \; \text{ in } \Omega\\
-            & i (\partial_1 + i\partial_2)u_1 + (\lambda + m)i(n_1 + i n_2)u_1 = 0, \; \text{ on } \Omega.
+            & i (\partial_1 + i\partial_2)u_1 + (\lambda + m)i(n_1 + i n_2)u_1 = 0, \; \text{ on } \Gamma.
         \end{cases}      
     \end{equation}
     The rest of the proof will have in consideration two domain types: triangular (on a wedge) and rectangular.
@@ -391,7 +377,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     % \begin{equation}\label{helm_polar_disk}
     %     \begin{cases}
     %         &\Big(\partial_r^2 + \frac{1}{r}\partial_r +\frac{1}{r^2}\partial_\theta^2 \Big)u_1 = (\lambda^2 - m^2)u_1, \; \text{ in } \Omega\\
-    %         & i (\cos \theta\partial_r -\frac{1}{r}\sin \theta \partial_\theta + i(\sin \theta\partial_r +\frac{1}{r}\cos \theta \partial_\theta))u_1 + (\lambda + m)i(\cos \theta + i \sin \theta)u_1 = 0, \; \text{ on } \partial\Omega
+    %         & i (\cos \theta\partial_r -\frac{1}{r}\sin \theta \partial_\theta + i(\sin \theta\partial_r +\frac{1}{r}\cos \theta \partial_\theta))u_1 + (\lambda + m)i(\cos \theta + i \sin \theta)u_1 = 0, \; \text{ on } \Gamma
     %     \end{cases}.      
     % \end{equation}
     % Assuming that there exists a separable solution \(u_1(r, \theta) = R(r)T(\theta)\) of \eqref{helm_polar_disk}, one finds the following equation:
@@ -412,7 +398,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     % \]
     % a contradiction.
 
-    \item Consider \(\Omega\) to be a wedge domain with angle \(\theta\) (see Figure \ref*{wedge}):
+    \item Consider \(\Omega\) to be a wedge domain with angle \(\theta\) (see Figure \ref{wedge}):
     
     \begin{figure}[H]
     \centering
@@ -467,7 +453,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
 \end{proof}
 
 \begin{remark}
-    A careful reader will note that two important details are being overlooked: triangular domains or quadrilaterals do not have the required smoothness to obtain the formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We point to \cite{vu2023spectral}, where such details can be found for triangles, but are analogous for quadrilaterals.
+    A careful reader will note that two important details are being overlooked: triangular domains or quadrilaterals do not have the required smoothness to obtain the formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We point to \cite{vu2023spectral}, where such details can be found for triangles, but are any two-dimensional polygon.
 \end{remark}
 
 We now present some open conjectures that we try numerically address in this work:

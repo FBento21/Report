@@ -271,7 +271,7 @@ where \(\eta>0\) is some small coefficient which controls the distance from each
 \section{Numerical approach for the Laplace Equation}\label{n_a_mfs_lap}
 Given the results above, it is possible to numerically solve the Laplace and Helmholtz equations for any boundary data \(g(x)\) if we are able to find the coefficients in the discretization of the single layer potential. For simplicity, we still assume Dirichlet boundary conditions. Let \(N\) be the number of source points and \(M\) the number of colocation points on the boundary, denoted by \(x_1,\dots,x_i,\dots,x_M\) with \(i=1,\dots,M\). Then, we solve the discretized equation
 \[
-    \tilde{u}(x_i) = \sum_{j=1}^{N} \alpha_j \Phi(x-y_j) + \alpha_{N+1} = g(x_i)    
+    \tilde{u}(x_i) = \sum_{j=1}^{N} \alpha_j \Phi(x_i-y_j) + \alpha_{N+1} = g(x_i)    
 \]
 with respect to the coefficients \(\alpha_j\). Defining \(g_i \coloneq g(x_i), \, i=1,\dots,M\), notice that the equation above can be rewritten in the matricial form
 \begin{equation}\label{mfs_m_system}
@@ -541,7 +541,7 @@ To search for these singularities, a simple direct search algorithm was develope
         \Return{E}
     }
     \caption{Direct Bracketing Algorithm}
-    \label{time_control_algorithm}
+    \label{direct_bracketing_algorithm}
 \end{algorithm}
 
 \begin{remark}

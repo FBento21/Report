@@ -19,16 +19,20 @@
 \contentsline {subsection}{\numberline {4.3.1}The Subspace Angle Technique}{56}{subsection.4.3.1}%
 \contentsline {chapter}{\numberline {5}Conducted Numerical Simulations}{59}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Dirac equation simulations}{60}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Transmission problem simulations}{60}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Numerical validation of the method}{63}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Results for the rectangle}{64}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Results for an L-shape domain with enrichment}{65}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Results for the smooth domains}{68}{subsection.5.2.4}%
-\contentsline {chapter}{\numberline {6}Conclusion}{69}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Conclusions}{70}{section.6.1}%
-\contentsline {section}{\numberline {6.2}System Limitations and Future Work}{71}{section.6.2}%
-\contentsline {chapter}{Bibliography}{73}{section.6.2}%
-\contentsline {chapter}{Glossary}{79}{section*.23}%
-\contentsline {xchapter}{}{79}{chapter*.24}%
-\contentsline {chapter}{\numberline {A}Code of Project}{81}{appendix.A}%
-\contentsline {chapter}{\numberline {B}A Large Table}{89}{appendix.B}%
+\contentsline {subsection}{\numberline {5.1.1}Method validation}{60}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Quadrilateral results}{63}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Triangle results}{63}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Smooth domain results}{63}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Transmission problem simulations}{67}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Numerical validation of the method}{70}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Results for the rectangle}{71}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Results for an L-shape domain with enrichment}{72}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Results for the smooth domains}{78}{subsection.5.2.4}%
+\contentsline {chapter}{\numberline {6}Conclusion}{79}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusions}{80}{section.6.1}%
+\contentsline {section}{\numberline {6.2}System Limitations and Future Work}{81}{section.6.2}%
+\contentsline {chapter}{Bibliography}{83}{section.6.2}%
+\contentsline {chapter}{Glossary}{89}{section*.35}%
+\contentsline {xchapter}{}{89}{chapter*.36}%
+\contentsline {chapter}{\numberline {A}Code of Project}{91}{appendix.A}%
+\contentsline {chapter}{\numberline {B}A Large Table}{99}{appendix.B}%

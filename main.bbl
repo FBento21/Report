@@ -181,10 +181,21 @@ P.~A.~M. Dirac, ``The quantum theory of the electron,'' \emph{Proceedings of
   the Royal Society of London. Series A, Containing Papers of a Mathematical
   and Physical Character}, vol. 117, no. 778, pp. 610--624, 1928.
 
+\bibitem{lotoreichik2019sharp}
+V.~Lotoreichik and T.~Ourmi{\`e}res-Bonafos, ``A sharp upper bound on the
+  spectral gap for graphene quantum dots,'' \emph{Mathematical Physics,
+  Analysis and Geometry}, vol.~22, pp. 1--30, 2019.
+
 \bibitem{briet2022spectral}
 P.~Briet and D.~Krej{\v{c}}i{\v{r}}{\'\i}k, ``Spectral optimization of dirac
   rectangles,'' \emph{Journal of Mathematical Physics}, vol.~63, no.~1, p.
   013502, 2022.
+
+\bibitem{antunes2021variational}
+P.~R. Antunes, R.~D. Benguria, V.~Lotoreichik, and T.~Ourmi{\`e}res-Bonafos,
+  ``A variational formulation for dirac operators in bounded domains.
+  applications to spectral geometric inequalities,'' \emph{Communications in
+  Mathematical Physics}, vol. 386, no.~2, pp. 781--818, 2021.
 
 \bibitem{vu2023spectral}
 T.~Vu, ``Spectral inequality for dirac right triangles,'' \emph{arXiv preprint
@@ -200,11 +211,6 @@ D.~Krejcirik, S.~Larson, and V.~Lotoreichik, ``Problem list of the aim
 R.~D. Benguria, S.~Fournais, E.~Stockmeyer, and H.~Van Den~Bosch, ``Spectral
   gaps of dirac operators describing graphene quantum dots,''
   \emph{Mathematical Physics, Analysis and Geometry}, vol.~20, pp. 1--12, 2017.
-
-\bibitem{lotoreichik2019sharp}
-V.~Lotoreichik and T.~Ourmi{\`e}res-Bonafos, ``A sharp upper bound on the
-  spectral gap for graphene quantum dots,'' \emph{Mathematical Physics,
-  Analysis and Geometry}, vol.~22, pp. 1--30, 2019.
 
 \bibitem{quarteroni1999domain}
 A.~Quarteroni and A.~Valli, \emph{Domain decomposition methods for partial
@@ -290,6 +296,10 @@ P.~R. Antunes and S.~S. Valtchev, ``A meshfree numerical method for acoustic
   wave propagation problems in planar domains with corners and cracks,''
   \emph{Journal of Computational and Applied Mathematics}, vol. 234, no.~9, pp.
   2646--2662, 2010.
+
+\bibitem{kato2013perturbation}
+T.~Kato, \emph{Perturbation theory for linear operators}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer Science \& Business Media, 2013, vol. 132.
 
 \bibitem{alves2021domain}
 C.~J. Alves, N.~F. Martins, and S.~S. Valtchev, ``Domain decomposition methods

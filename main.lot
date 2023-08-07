@@ -9,17 +9,21 @@
 \contentsline {xchapter}{The Method of Fundamental Solutions}{39}{chapter.4}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conducted Numerical Simulations}{59}{chapter.5}%
-\contentsline {table}{\numberline {5.1}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{63}{table.caption.14}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{64}{table.caption.15}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{64}{table.caption.17}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{66}{table.caption.20}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Eigenvalues for different values of \(N\) and the measured absolute error.\relax }}{61}{table.caption.14}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{70}{table.caption.22}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{71}{table.caption.23}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{71}{table.caption.25}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{73}{table.caption.27}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{75}{table.caption.28}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{76}{table.caption.30}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{76}{table.caption.31}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{69}{chapter.6}%
-\contentsline {xchapter}{}{79}{chapter*.24}%
+\contentsline {xchapter}{Conclusion}{79}{chapter.6}%
+\contentsline {xchapter}{}{89}{chapter*.36}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Code of Project}{81}{appendix.A}%
+\contentsline {xchapter}{Code of Project}{91}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{A Large Table}{89}{appendix.B}%
-\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{90}{table.caption.25}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{90}{table.B.2}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{92}{table.caption.26}%
+\contentsline {xchapter}{A Large Table}{99}{appendix.B}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Example table\relax }}{100}{table.caption.37}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Example of a very long table spreading in several pages}}{100}{table.B.2}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Sample Table.\relax }}{102}{table.caption.38}%
