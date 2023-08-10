@@ -38,8 +38,8 @@
  "pagehypersf"
  "hypertt"
  "pagehypertt"
- "hyperbf"
- "pagehyperbf"
+ "hype\ac{RBF}"
+ "pagehype\ac{RBF}"
  "hypermd"
  "pagehypermd"
  "hyperit"
@@ -328,7 +328,7 @@
 \providecommand*\glsXpageXhyperrm[2]{\setentrycounter[#1]{page}\hyperrm{#2}}
 \providecommand*\glsXpageXhypersf[2]{\setentrycounter[#1]{page}\hypersf{#2}}
 \providecommand*\glsXpageXhypertt[2]{\setentrycounter[#1]{page}\hypertt{#2}}
-\providecommand*\glsXpageXhyperbf[2]{\setentrycounter[#1]{page}\hyperbf{#2}}
+\providecommand*\glsXpageXhype\ac{RBF}[2]{\setentrycounter[#1]{page}\hype\ac{RBF}{#2}}
 \providecommand*\glsXpageXhypermd[2]{\setentrycounter[#1]{page}\hypermd{#2}}
 \providecommand*\glsXpageXhyperit[2]{\setentrycounter[#1]{page}\hyperit{#2}}
 \providecommand*\glsXpageXhyperup[2]{\setentrycounter[#1]{page}\hyperup{#2}}
@@ -394,9 +394,9 @@
 (markup-locref :open "~n\glsXpageXhypertt" 
  :close "" 
  :attr "pagehypertt")
-(markup-locref :open "~n\glsXpageXhyperbf" 
+(markup-locref :open "~n\glsXpageXhype\ac{RBF}" 
  :close "" 
- :attr "pagehyperbf")
+ :attr "pagehype\ac{RBF}")
 (markup-locref :open "~n\glsXpageXhypermd" 
  :close "" 
  :attr "pagehypermd")

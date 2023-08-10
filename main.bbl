@@ -26,6 +26,31 @@ Z.-C. Li and T.-T. Lu, ``Singularities and treatments of elliptic boundary
   value problems,'' \emph{Mathematical and Computer Modelling}, vol.~31, no.
   8-9, pp. 97--145, 2000.
 
+\bibitem{alves2013method}
+C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
+  some inverse eigenproblems,'' \emph{SIAM Journal on Scientific Computing},
+  vol.~35, no.~3, pp. A1689--A1708, 2013.
+
+\bibitem{reutskiy2006method}
+S.~Y. Reutskiy, ``The method of fundamental solutions for helmholtz eigenvalue
+  problems in simply and multiply connected domains,'' \emph{Engineering
+  Analysis with Boundary Elements}, vol.~30, no.~3, pp. 150--159, 2006.
+
+\bibitem{antunes2011inverse}
+P.~R. Antunes and P.~Freitas, ``On the inverse spectral problem for euclidean
+  triangles,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
+  and Engineering Sciences}, vol. 467, no. 2130, pp. 1546--1562, 2011.
+
+\bibitem{krejcirik_larson_lotoreichik_2019}
+\BIBentryALTinterwordspacing
+D.~Krejcirik, S.~Larson, and V.~Lotoreichik, ``Problem list of the aim
+  workshop,'' 2019. [Online]. Available: \url{http://aimpl.org/shapesurface/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{betcke2005reviving}
+T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
+  \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
+
 \bibitem{rudin1991functional}
 \BIBentryALTinterwordspacing
 W.~Rudin, \emph{Functional Analysis}, ser. International series in pure and
@@ -162,11 +187,6 @@ J.~G{\'o}mez-Serrano and G.~Orriols, ``Any three eigenvalues do not determine a
   triangle,'' \emph{Journal of Differential Equations}, vol. 275, pp. 920--938,
   2021.
 
-\bibitem{antunes2011inverse}
-P.~R. Antunes and P.~Freitas, ``On the inverse spectral problem for euclidean
-  triangles,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
-  and Engineering Sciences}, vol. 467, no. 2130, pp. 1546--1562, 2011.
-
 \bibitem{kac1966can}
 M.~Kac, ``Can one hear the shape of a drum?'' \emph{The american mathematical
   monthly}, vol.~73, no. 4P2, pp. 1--23, 1966.
@@ -200,12 +220,6 @@ P.~R. Antunes, R.~D. Benguria, V.~Lotoreichik, and T.~Ourmi{\`e}res-Bonafos,
 \bibitem{vu2023spectral}
 T.~Vu, ``Spectral inequality for dirac right triangles,'' \emph{arXiv preprint
   arXiv:2302.13040}, 2023.
-
-\bibitem{krejcirik_larson_lotoreichik_2019}
-\BIBentryALTinterwordspacing
-D.~Krejcirik, S.~Larson, and V.~Lotoreichik, ``Problem list of the aim
-  workshop,'' 2019. [Online]. Available: \url{http://aimpl.org/shapesurface/}
-\BIBentrySTDinterwordspacing
 
 \bibitem{benguria2017spectral}
 R.~D. Benguria, S.~Fournais, E.~Stockmeyer, and H.~Van Den~Bosch, ``Spectral
@@ -252,6 +266,16 @@ C.~Alves and C.~Chen, ``A new method of fundamental solutions applied to
   nonhomogeneous elliptic problems,'' \emph{Advances in Computational
   Mathematics}, vol.~23, pp. 125--142, 2005.
 
+\bibitem{antunes2018reducing}
+P.~R. Antunes, ``Reducing the ill conditioning in the method of fundamental
+  solutions,'' \emph{Advances in Computational Mathematics}, vol.~44, pp.
+  351--365, 2018.
+
+\bibitem{antunes2018numerical}
+------, ``A numerical algorithm to reduce ill-conditioning in meshless methods
+  for the helmholtz equation.'' \emph{Numer. Algorithms}, vol.~79, no.~3, pp.
+  879--897, 2018.
+
 \bibitem{christiansen1981condition}
 S.~Christiansen and E.~Meister, ``Condition number of matrices derived from two
   classes of integral equations,'' \emph{Mathematical Methods in the Applied
@@ -286,10 +310,6 @@ R.~P. Brent, ``An algorithm with guaranteed convergence for finding a zero of a
 C.~Moler and L.~Payne, ``Bounds for eigenvalues and eigenvectors of symmetric
   operators,'' \emph{SIAM Journal on Numerical Analysis}, vol.~5, no.~1, pp.
   64--70, 1968.
-
-\bibitem{betcke2005reviving}
-T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
-  \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
 
 \bibitem{antunes2010meshfree}
 P.~R. Antunes and S.~S. Valtchev, ``A meshfree numerical method for acoustic

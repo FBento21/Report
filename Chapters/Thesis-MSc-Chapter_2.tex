@@ -6,7 +6,7 @@
 \fancychapter{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}
 % \cleardoublepage
 % The following line allows to ref this chapter
-\label{chap:back}
+\label{chap:problem_introduction}
 
 % #############################################################################
 Until otherwise indicated, let \(\Omega \subset \mathbb{R}^d\) be an open and bounded domain with \(C^2\) boundary, with $d \geq 2$.
@@ -174,7 +174,7 @@ Related to triangles, we can also cite the recent work of Serrano and Orriols in
 \end{theorem}
 
 Other important results in this area are related with the ratio and the gap between the first and the second eigenvalues.
-\begin{theorem}[Ashbaugh-Benguria]
+\begin{theorem}[Ashbaugh-Benguria]\label{ashbaugh-benguria theorem}
     The solution of the maximization problem
     \[
     \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^d, \Omega \text{ open} \Big\}
@@ -466,7 +466,7 @@ We now present some open conjectures that we try numerically address in this wor
     where \(\Omega^\ast\) is the disk of the same area or perimeter as \(\Omega\).
 \end{conjecture}
 Conjecture above is regarded as a hot open problem in spectral geometry \cite{krejcirik_larson_lotoreichik_2019}. In \cite{benguria2017spectral} a geometric lower bound for the first (non-negative) eigenvalue was found, while in \cite{lotoreichik2019sharp} a sharp upper bound (a reverse Faber-Krahn type inequality, like in Theorem \ref*{reverse_faber-krahn}) was proved to hold for convex domains with \(C^3\) boundary. However, due to the difficulty of the problem, simpler versions with domain restrictions to triangles and rectangles are being studied. For example, in \cite{briet2022spectral} a study for rectangles was conducted, where the conjectures below were proved under some extra hypothesis:
-\begin{conjecture}[Shape optimization in rectangles]
+\begin{conjecture}[Shape optimization in rectangles]\label{david_conjectures}
     Given \(m \geq 0\), let \(\lambda_1(a, b) = \lambda_1(\Omega_{a, b})\) denote the first eigenvalue of the Dirac Operator with infinite-mass boundary conditions in a rectangle with sides \(a\) and \(b\). Then,
     \begin{enumerate}
         \item \textit{Area constraint: } \(\lambda_1(a, \frac{1}{a}) \geq \lambda_1(1, 1), \; \forall a>0 \);
@@ -474,7 +474,7 @@ Conjecture above is regarded as a hot open problem in spectral geometry \cite{kr
     \end{enumerate}
 \end{conjecture}
 In the same vain, in \cite{vu2023spectral} very similar results were proven for triangles:
-\begin{conjecture}[Shape optimization in triangles]
+\begin{conjecture}[Shape optimization in triangles]\label{triangle_conjectures}
     Consider the triangle \(\Omega_{a, b}\) defined by the points \(O=(0, 0), A=(a, 0), B=(0, b)\) for \(a, b>0\). Then, given any \(m \geq 0\),
     \begin{enumerate}
         \item \textit{Area constraint: } \(\lambda_1(a, b) \geq \lambda(k, k),\; \forall a, b, k >0\) such that \(ab=k^2\);

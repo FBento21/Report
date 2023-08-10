@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {3.1}The Laplace Operator}{27}{section.3.1}%
 \contentsline {section}{\numberline {3.2}The Dirac Operator}{30}{section.3.2}%
 \contentsline {section}{\numberline {3.3}A domain decomposition problem}{36}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Numerical meshfree methods for PDEs}{45}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Numerical meshfree methods for \ac{PDE}s}{45}{chapter.4}%
 \contentsline {section}{\numberline {4.1}A first insight on meshfree methods}{47}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Boundary Element Method}{49}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Kansa's Method}{49}{section.4.3}%

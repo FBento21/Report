@@ -8,7 +8,7 @@ LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-07>
 ! Undefined control sequence.
 l.6 \fancychapter
-                 {Numerical meshfree methods for PDEs}
+                 {Numerical meshfree methods for \ac{PDE}s}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -23,7 +23,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.6 \fancychapter{N
-                   umerical meshfree methods for PDEs}
+                   umerical meshfree methods for \ac{PDE}s}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
