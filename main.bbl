@@ -106,6 +106,10 @@ G.~Geymonat, ``Trace theorems for sobolev spaces on lipschitz domains.
 J.~Necas, \emph{Direct methods in the theory of elliptic equations}.\hskip 1em
   plus 0.5em minus 0.4em\relax Springer Science \& Business Media, 2011.
 
+\bibitem{adams2003sobolev}
+R.~A. Adams and J.~J. Fournier, \emph{Sobolev spaces}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Elsevier, 2003.
+
 \bibitem{chen2010boundary}
 G.~Chen and J.~Zhou, \emph{Boundary element methods with applications to
   nonlinear problems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science
@@ -231,10 +235,6 @@ A.~Quarteroni and A.~Valli, \emph{Domain decomposition methods for partial
   differential equations}.\hskip 1em plus 0.5em minus 0.4em\relax Oxford
   University Press, 1999, no. BOOK.
 
-\bibitem{adams2003sobolev}
-R.~A. Adams and J.~J. Fournier, \emph{Sobolev spaces}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Elsevier, 2003.
-
 \bibitem{alves2009choice}
 C.~J. Alves, ``On the choice of source points in the method of fundamental
   solutions,'' \emph{Engineering Analysis with Boundary Elements}, vol.~33,
@@ -260,6 +260,11 @@ S.~Salsa, \emph{Partial differential equations in action: from modelling to
 S.~Valtchev, ``Numerical analysis of methods with fundamental solutions for
   acoustic and elastic wave propagation problems,'' Ph.D. dissertation,
   Universidade Técnica de Lisboa, Instituto Superior Técnico, 2008.
+
+\bibitem{smyrlis2009applicability}
+Y.-S. Smyrlis, ``Applicability and applications of the method of fundamental
+  solutions,'' \emph{Mathematics of computation}, vol.~78, no. 267, pp.
+  1399--1434, 2009.
 
 \bibitem{alves2005new}
 C.~Alves and C.~Chen, ``A new method of fundamental solutions applied to

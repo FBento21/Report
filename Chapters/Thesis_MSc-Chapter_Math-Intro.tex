@@ -1,6 +1,5 @@
 \fancychapter{Some Preliminary Results}
 % \cleardoublepage
-% The following line allows to ref this chapter
 \label{chap:Preliminaries}
 % #############################################################################
 \section{Some concepts on Banach Spaces}
@@ -11,7 +10,7 @@ This section begins by introducing preliminary concepts on Banach Spaces, which 
     \item \(\norm*{x} \geq 0, \; \forall x \in E\);
     \item \(\norm*{x} = 0 \iff x=0\).
 \end{enumerate}
-In particular, a pivotal notion is of \textit{Banach spaces}, i.e, \(E\) is a Banach space if it is a complete normed space.
+In particular, a pivotal notion is of \textit{Banach spaces}, i.e., \(E\) is a Banach space if it is a complete normed space.
 \begin{definition}\label{banach_op_def}
     Consider a linear operator \(T: E \rightarrow F\), where \(E\) and \(F\) are Banach spaces with the associated norms \(\norm*{\cdot}_E\) and \(\norm*{\cdot}_F\), respectively. Then
     \begin{enumerate}
@@ -27,7 +26,7 @@ In particular, a pivotal notion is of \textit{Banach spaces}, i.e, \(E\) is a Ba
         \[
             \norm{T} = \sup_{\substack{x \in E\\ x \neq 0}}\frac{\norm*{Tx}_F}{\norm*{x}_E}.
         \]
-        In this case we write \(T \in \mathcal{L}(E, F)\). If \(E=F\), we write \(T \in \mathcal{L}(E)\);
+        In this case, we write \(T \in \mathcal{L}(E, F)\). If \(E=F\), we write \(T \in \mathcal{L}(E)\);
 
         \item The space of linear and continuous maps from \(E\) to \(\mathbb{R}\) is the \textbf{dual space} of \(E\) denoted by \(E^\star\). If \(S \in E^\star\), its norm (the dual norm) is defined in the same manner as the operator norm above, i.e.
         \[
@@ -57,7 +56,7 @@ The main result of this section concerns the dual of a normed space. In reality,
     \]
     is surjective then \(E\) is said to be \textit{reflexive}.
 \end{definition}
-The definition above is an important detail to the justification of the Method of Fundamental Solutions. The main ingredient to justify this numerical method is the Hahn-Banach theorem.
+The definition above is an important detail in the justification of the Method of Fundamental Solutions. The main ingredient to justify this numerical method is the Hahn-Banach theorem.
 \begin{theorem}[Analytical form of Hahn-Banach Theorem]\label{hb_ana_form}
     Let \(E\) be a normed space and \(p: E \rightarrow \mathbb{R}\) a functional satisfying
     \begin{align*}
@@ -74,11 +73,11 @@ The definition above is an important detail to the justification of the Method o
     \]
 \end{theorem}
 \begin{remark}
-    The theorem mentioned above holds particular significance in Functional Analysis as it demonstrates that the dual \(E^\star\) of a normed space \(E\) possesses interesting properties that warrant further study to gain a better understanding of the underlying space \(E\). It can even be utilized to identify, although not uniquely, elements in both \(E\) and its dual \(E^\star\) through the duality pairing. This result bears resemblance to the desirable properties exhibited by Hilbert spaces, which we will explore further in this work. It is beneficial to establish density when working with the dual pairing between a Banach space and its dual. However, it is important to note that the existence of the functional \(f\) is not explicitly provided, as the proof of Theorem \eqref{hb_ana_form} relies on the Axiom of Choice (Zorn's Lemma).
+    The theorem mentioned above holds particular significance in Functional Analysis as it demonstrates that the dual \(E^\star\) of a normed space \(E\) possesses interesting properties that warrant further study to gain a better understanding of the underlying space \(E\). It can even be utilized to identify, although not uniquely, elements in both \(E\) and its dual \(E^\star\) through duality pairing. This result bears a resemblance to the desirable properties exhibited by Hilbert spaces, which we will explore further in this work. It is beneficial to establish density when working with the dual pairing between a Banach space and its dual. However, it is important to note that the existence of the functional \(f\) is not explicitly provided, as the proof of Theorem \ref{hb_ana_form} relies on the Axiom of Choice (Zorn's Lemma).
 \end{remark}
-Under some conditions, an interesting consequence of Theorem \eqref{hb_ana_form} is that two disjoint (and non-empty) convex sets can always be separated by a hyperplane in an infinite-dimensional space.
+Under some conditions, an interesting consequence of Theorem \ref{hb_ana_form} is that two disjoint (and non-empty) convex sets can always be separated by a hyperplane in an infinite-dimensional space.
 \begin{definition}
-    Let \(E\) be a normed space, \(f\) a linear functional on \(E\), and \(c \in \mathbb{R}\). An hyperplane \(H\) is a subset of \(E\) of the form
+    Let \(E\) be a normed space, \(f\) a linear functional on \(E\), and \(c \in \mathbb{R}\). A hyperplane \(H\) is a subset of \(E\) of the form
     \[
         H = \{x \in E: \langle f, x \rangle = c\}.
     \]
@@ -95,14 +94,14 @@ Notice that if \(H\) is a closed hyperplane then the linear functional \(f\) tha
     \end{align*}
 \end{definition}
 \begin{theorem}[Second geometric form of Hahn-Banach Theorem]\label{hb_geo_form}
-    Let \(A\) and \(B\) be two disjoint, non-empty and convex subsets of \(E\) such that \(A\) is closed and \(B\) is compact. Then, there exists a closed hyperplane that strictly separates \(A\) and \(B\), i.e, there exists \(f \in E^\star\) and \(c \in \mathbb{R}\) such that for every \(a \in A\) and \(b \in B\)
+    Let \(A\) and \(B\) be two disjoint, non-empty, and convex subsets of \(E\) such that \(A\) is closed and \(B\) is compact. Then, there exists a closed hyperplane that strictly separates \(A\) and \(B\), i.e, there exists \(f \in E^\star\) and \(c \in \mathbb{R}\) such that for every \(a \in A\) and \(b \in B\)
     \[
         \langle f, a \rangle < c < \langle f, b \rangle.
     \]
 \end{theorem}
-The following Lemma is a consequence of Theorem \eqref{hb_geo_form}, and it is a useful tool to prove that some linear subspace \(M \subset E\) is dense (in \(E\)). We start by introducing the notion of orthogonality of sets in Banach spaces with respect to the duality pairing.
+The following Lemma is a consequence of Theorem \ref{hb_geo_form}, and it is a useful tool to prove that some linear subspace \(M \subset E\) is dense (in \(E\)). We start by introducing the notion of orthogonality in Banach spaces concerning duality pairing.
 \begin{definition}\label{banach_ortho_def}
-    Let \(E\) be a Banach Space and \(M\) be a linear subspace of \(E\). We define the orthogonal of \(M\) in \(E\) is respect to the duality pairing as
+    Let \(E\) be a Banach Space and \(M\) be a linear subspace of \(E\). We define the orthogonal of \(M\) in \(E\) in respect to the duality pairing as
     \[
         M^\perp = \{\psi \in E^\star: \langle \psi, \varphi \rangle = 0, \; \forall \varphi \in M\}.
     \]
@@ -112,7 +111,7 @@ The following Lemma is a consequence of Theorem \eqref{hb_geo_form}, and it is a
     \]
 \end{definition}
 \begin{lemma}\label{banach_ortho_lemma}
-    Let \(M\) and \(N\) in the same conditions of the definition above. Then
+    Let \(M\) and \(N\) be in the same conditions as the definition above. Then
     \[
         (M^\perp)^\perp = \overline{M}
     \]
@@ -130,7 +129,7 @@ The following Lemma is a consequence of Theorem \eqref{hb_geo_form}, and it is a
     \[
         \overline{M} \subseteq (M^\perp)^\perp, \qquad \overline{N} \subseteq (N^\perp)^\perp
     \]
-    follow. To check that \((M^\perp)^\perp \subseteq \overline{M}\) we argue by contradiction. Let \(x_0 \in (M^\perp)^\perp\) such that \(x_0 \not \in \overline{M}\). Then, by Theorem \eqref{hb_geo_form} there exists a hyperplane with equation \(\langle f, x \rangle = c\) for some \(f \in E^\star\) and \(c \in \mathbb{R}\) that strictly separates the sets \(\{x_0\}\) and \(\overline{M}\) (both are obviously non-empty convex sets). In particular,
+    follow. To check that \((M^\perp)^\perp \subseteq \overline{M}\) we argue by contradiction. Let \(x_0 \in (M^\perp)^\perp\) such that \(x_0 \not \in \overline{M}\). Then, by Theorem \ref{hb_geo_form} there exists a hyperplane with equation \(\langle f, x \rangle = c\) for some \(f \in E^\star\) and \(c \in \mathbb{R}\) that strictly separates the sets \(\{x_0\}\) and \(\overline{M}\) (both are obviously non-empty convex sets). In particular,
     \[
         \langle f, x \rangle_{E^\star, E} < c < \langle f, x_0 \rangle_{E^\star, E}, \; \forall x \in M.
     \]
@@ -161,7 +160,7 @@ The following Lemma is a consequence of Theorem \eqref{hb_geo_form}, and it is a
 
 \section{Some concepts on Hilbert Spaces}
 % For more details c.f \cite{rudin1991functional}, \cite{brezis2011functional}, \cite{arendt2010partielle}.
-In this section we introduce some complementary results in Hilbert spaces. Once again, for more details, see \cite{rudin1991functional}, \cite{brezis2011functional} or \cite{arendt2010partielle}. Consider the field \(\mathbb{F}\) (\(\mathbb{R}\) or \(\mathbb{C}\)). We say that a vector space \(H\) is an \textit{inner product space} (or a Pre-Hilbert space) if there exists a map \((\cdot,\cdot)\) (called an \textit{inner product}) over \(\mathbb{F}\) such that
+In this section, we introduce some complementary results in Hilbert spaces. Once again, for more details, see \cite{rudin1991functional}, \cite{brezis2011functional}, or \cite{arendt2010partielle}. Consider the field \(\mathbb{F}\) (\(\mathbb{R}\) or \(\mathbb{C}\)). We say that a vector space \(H\) is an \textit{inner product space} (or a Pre-Hilbert space) if there exists a map \((\cdot,\cdot)\) (called an \textit{inner product}) over \(\mathbb{F}\) such that
 \begin{enumerate}
     \item \((x, y) = \overline{(y, x)}\) (The bar denotes complex conjugation if \(\mathbb{F} = \mathbb{C}\));
     \item \((x+y,z) = (x,z)+(y+z)\);
@@ -189,7 +188,7 @@ Finally, if the normed space is complete for the induced norm, then we say that 
     \]
     where a bar over an expression represents the complex conjugate of the scalar (function).
 \end{example}
-While working within the framework of Hilbert spaces, proving the density of a subspace \(M \subset H\) is more intuitive and can be derived straightforwardly. It may be of interest to the reader to compare the following results with Definition \eqref{banach_ortho_def} and Lemma \eqref{banach_ortho_lemma}.
+While working within the framework of Hilbert spaces, proving the density of a subspace \(M \subset H\) is more intuitive and can be derived straightforwardly. It may be of interest to the reader to compare the following results with Definition \eqref{banach_ortho_def} and Lemma \ref{banach_ortho_lemma}.
 \begin{theorem}\label{hilb_decomp}
     Consider a closed subspace \(M \subset H\). Then,
     \[
@@ -211,13 +210,13 @@ A surprising property in Hilbert spaces is the fact that every linear and contin
     \[
         T v = (u, v), \; \forall v \in H.
     \]
-    Moreover, let \(H^\star\) be the dual space of \(H\), that is, the space of all linear and continuous function from \(H\) to \(\mathbb{R}\). Then the map \(H^\star \mapsto H\) is an isometric isomorphism (which we denote by \(\approxeq\)) where
+    Moreover, let \(H^\star\) be the dual space of \(H\), that is, the space of all linear and continuous functions from \(H\) to \(\mathbb{R}\). Then the map \(H^\star \mapsto H\) is an isometric isomorphism (which we denote by \(\approxeq\)) where
     \[
         \norm*{u}_H = \norm*{T}_{H^\star}.
     \]
 \end{theorem} 
 \begin{remark}
-    Notice how the inner product in Hilbert spaces has replaced the duality pairing defined for Banach spaces. In fact, in a certain sense, Riesz Representation Theorem \eqref{riesz} allows us to make a stronger statement regarding the dual spaces of Hilbert spaces and work in a more natural framework without ever resorting to the Hahn-Banach Theorem \eqref{hb_ana_form}. For example, it is interesting to observe that the definition of orthogonality and orthogonal subspaces in Hilbert spaces (via the inner product) and Banach spaces (via the duality pairing) are essentially the same, with the distinction being an isomorphism between the Hilbert space and its dual. However, in certain cases, working with the definition of orthogonality in Banach spaces can be more useful as it allows for better generalization, such as when proving the density of a closed subspace.
+    Notice how the inner product in Hilbert spaces has replaced the duality pairing defined for Banach spaces. In fact, in a certain sense, Riesz Representation Theorem \ref{riesz} allows us to make a stronger statement regarding the dual spaces of Hilbert spaces and work in a more natural framework without ever resorting to the Hahn-Banach Theorem \ref{hb_ana_form}. For example, it is interesting to observe that the definition of orthogonality and orthogonal subspaces in Hilbert spaces (via the inner product) and Banach spaces (via the duality pairing) are essentially the same, with the distinction being an isomorphism between the Hilbert space and its dual. However, in certain cases, working with the definition of orthogonality in Banach spaces can be more useful as it allows for better generalization, such as when proving the density of a closed subspace.
 \end{remark}
 A more general and useful result in our work is the Lax-Milgram Theorem.
 \begin{definition}
@@ -229,18 +228,18 @@ A more general and useful result in our work is the Lax-Milgram Theorem.
     respectively.
 \end{definition}
 \begin{theorem}[Lax-Milgram Theorem]\label{lax-milgram}
-    Let \(a(u,v)\) be a bilinear, continuous and coercive bilinear form on \(H\). If \(T\) is a linear and continuous functional in \(H\), then there exists a unique \(u \in H\) such that
+    Let \(a(u,v)\) be a bilinear, continuous, and coercive bilinear form on \(H\). If \(T\) is a linear and continuous functional in \(H\), then there exists a unique \(u \in H\) such that
     \[
         a(u, v) = T(v), \; \forall v \in H.
     \]
 \end{theorem}
-In this section the well-known \textit{Spectral Theorem} and the \textit{Fredholm Alternative} are presented. With this in mind, we will now present key results and concepts (without proofs) that will provide the necessary foundation for stating the theorems.
+In this section, the well-known \textit{Spectral Theorem} is presented. With this in mind, we will now present key results and concepts (without proof) that will provide the necessary foundation for stating the theorems.
 \begin{definition}
     A sequence \((e_n)_{n \in \mathbb{N}} \in H\) is a Hilbert basis of \(H\) if
     \begin{enumerate}
         \item \((e_n, e_m) = \begin{cases}
-            1, \; n=m\\
-            0, \; n \neq m
+            1, & n=m\\
+            0, & n \neq m
         \end{cases}\);
         \item \(\overline{\Span\{(e_n)_{n \in \mathbb{N}}\}} = H\).
     \end{enumerate}
@@ -269,8 +268,8 @@ We now present some properties that our operators must satisfy in order to state
         \[
         (y, T x) = (T^\star y, x), \; \forall x, y \in H;
         \]
-        If \(T=T^\star\), i.e, if \(T\) and \(T^\star\) domains (and their image) coincide we say that \(T\) is \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \eqref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also comes from the Hahn-Banach Theorem \eqref{hb_ana_form}!}
-        \item As above, let \(T \in \mathcal{L}(H)\). We say that \(\lambda\) is an \textbf{eigenvalue} of \(T\) if \(N(T - \lambda I) \neq \{0\}\). In that case we say that \(\lambda \in \sigma(T)\) where \(\sigma(T)\) is called the \textbf{spectrum} of \(T\)\footnote{Remarkably, in the infinite dimensional case, the set of eigenvalues \(EV(T)\) may not coincide with the spectrum \(\sigma(T)\). \(T - \lambda I\) may fail to be invertible even if \(T - \lambda I\) is injective.}. We also say that \(u\) is an \textbf{eigenvector} associated with the eigenvalue \(\lambda\) if \(u \in N(T-\lambda I)\setminus \{0\}\).
+        If \(T=T^\star\), i.e, if \(T\) and \(T^\star\) domains (and their image) coincide we say that \(T\) is \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also comes from the Hahn-Banach Theorem \ref{hb_ana_form}!}
+        \item As above, let \(T \in \mathcal{L}(H)\). We say that \(\lambda\) is an \textbf{eigenvalue} of \(T\) if \(N(T - \lambda I) \neq \{0\}\). In that case, we say that \(\lambda \in \sigma(T)\) where \(\sigma(T)\) is called the \textbf{spectrum} of \(T\)\footnote{Remarkably, in the infinite-dimensional case, the set of eigenvalues \(EV(T)\) may not coincide with the spectrum \(\sigma(T)\). \(T - \lambda I\) may fail to be invertible even if \(T - \lambda I\) is injective.}. We also say that \(u\) is an \textbf{eigenvector} associated with the eigenvalue \(\lambda\) if \(u \in N(T-\lambda I)\setminus \{0\}\).
     \end{enumerate}
 \end{definition}
 We can derive some important properties regarding the spectrum of a compact operator and the spectrum of self-adjoint operators.
@@ -287,9 +286,9 @@ We can derive some important properties regarding the spectrum of a compact oper
     \end{itemize}
 \end{proposition}
 \begin{proposition}
-    Let \(H\) be a Hilbert space and consider a self-adjoint operator \(T\in \mathcal{L}(H)\). In this conditions, \(\sigma(T)\) is real and eigenvectors corresponding to distinct eigenvalues are orthogonal.
+    Let \(H\) be a Hilbert space and consider a self-adjoint operator \(T\in \mathcal{L}(H)\). In these conditions, \(\sigma(T)\) is real and eigenvectors corresponding to distinct eigenvalues are orthogonal.
 \end{proposition}
-It is now possible to state on of the main results of this section.
+It is now possible to state one of the main results of this section.
 \begin{theorem}[Spectral Theorem for compact and self-adjoint operators]\label{spectral_theorem}
     Let \(H\) be a separable Hilbert space of infinite dimension and let \(T \in \mathcal{L}(H)\) be a compact self-adjoint operator. Then, \(H\) admits a Hilbert basis \((e_n)_{n \in \mathbb{N}}\) such that
     \[
@@ -297,7 +296,7 @@ It is now possible to state on of the main results of this section.
     \]
     for \(\lambda_n \in \mathbb{R}\), \(\lambda_n \rightarrow 0\) as \(n \rightarrow \infty\), where \(\lambda_n\) can be assumed to be a decreasing sequence.
 \end{theorem}\label{fredholm_alt}
-% Besides Theorem \eqref{spectral_theorem}, equations of the type \((I-T)u = f\), where \(T\) is a bounded compact operator and \(f \in H\), can be studied with the help of Fredholm alternative that we now state.
+% Besides Theorem \ref{spectral_theorem}, equations of the type \((I-T)u = f\), where \(T\) is a bounded compact operator and \(f \in H\), can be studied with the help of Fredholm alternative that we now state.
 % \begin{theorem}[Fredholm Alternative]
 %     Let \(T\) be a compact operator from \(H\) to \(H\). Then
 %     \begin{enumerate}
@@ -313,12 +312,12 @@ It is now possible to state on of the main results of this section.
 %         \item or \((I-T)u = f\) as a unique solution for every \(f \in H\),
 %         \item or \(n = N(I-T) > 0\) and \((I-T)u = 0\) admits \(n\) linearly independent solutions.
 %     \end{itemize}
-%     Particularly, under the conditions of the Theorem \eqref{spectral_theorem}, if \(\lambda\) is not an eigenvalue of \(T\), then the equation \(\frac{T}{\lambda}u = u\) must have a unique solution. This result is particularly useful when studying the Laplace operator in the next chapters.
+%     Particularly, under the conditions of the Theorem \ref{spectral_theorem}, if \(\lambda\) is not an eigenvalue of \(T\), then the equation \(\frac{T}{\lambda}u = u\) must have a unique solution. This result is particularly useful when studying the Laplace operator in the next chapters.
 % \end{remark}
 
 \section{Lebesgue and Sobolev Spaces}\label{lebesgue_and_sobolev_preliminaries}
 % For more details c.f \cite{brezis2011functional}, \cite{borthwick2020spectral}, \cite{lions2012non} and \cite{evans2022partial}.
-In this section, we apply the results and concepts from the previous ones. Besides the usual references already presented, we recommend \cite{lions2012non}, \cite{huguinho} and \cite{evans2022partial}. Let $\Omega \subset \mathbb{R}^d$ be an open set. Consider a \textit{multi-index} $\alpha = (\alpha_1, \dots, \alpha_d) \in \mathbb{N}_0^d$, where $|\alpha| = \alpha_1 + \dots + \alpha_d$. Given a function defined in $\Omega$, we denote its partial derivatives of order $\alpha$ by
+In this section, we apply the results and concepts from the previous ones. Besides the usual references already presented, we recommend \cite{lions2012non}, \cite{huguinho}, and \cite{evans2022partial}. Let $\Omega \subset \mathbb{R}^d$ be an open set. Consider a \textit{multi-index} $\alpha = (\alpha_1, \dots, \alpha_d) \in \mathbb{N}_0^d$, where $|\alpha| = \alpha_1 + \dots + \alpha_d$. Given a function defined in $\Omega$, we denote its partial derivatives of order $\alpha$ by
 \[
 D^\alpha = \frac{\partial^{|\alpha|}}{\partial x_1^{\alpha_1}\dots\partial x_d^{\alpha_d}}.   
 \]
@@ -366,7 +365,7 @@ While we are not interested to define a topology in this space, we want to defin
 \begin{definition}[Space of distributions]
     The dual space of \(D(\Omega)\), denoted by \(\mathcal{D}^\star(\Omega)\), is called the space of distributions, and we say that \(T \in \mathcal{D}^\star\) is a distribution.
 \end{definition}
-A very illustrative example, with consequences when defining the duality pairing in Sobolev spaces, is that any locally integrable function \(u \in L^1_{\text{loc}}(\Omega)\) defines a distribution. In fact, it is easy to prove that the operator \(T_u\) defined by
+A very illustrative example, with consequences when defining the duality pairing in Sobolev spaces, is that any locally integrable function \(u \in L^1_{\text{loc}}(\Omega)\) defines a distribution. It is easy to prove that the operator \(T_u\) defined by
 \begin{align*}
     T_u: \mathcal{D}(\Omega) &\rightarrow \mathbb{R}\\
     \varphi &\mapsto \int_\Omega u \varphi
@@ -377,21 +376,6 @@ is linear and continuous. Therefore, one can give meaning to the action of a dis
 \]
 where the duality pairing \( \langle \cdot , \cdot \rangle_{D^\star(\Omega), D(\Omega)}\) can be seen as a generalization of the \(L^2(\Omega)\) inner product.
 
-% To study the space of distributions, and later apply these concepts to Sobolev spaces, we recall the duality pairing in Banach Spaces. Let \(E\) be a Banach space and \(E^\star\) its dual space. Then, for \(f \in E^\star\) we write \(\langle f, x \rangle\) instead of \(f(x)\), where \(\langle \cdot , \cdot \rangle\) is the \textit{duality pair} or the \textit{scalar product for the duality} \(E^\star\), \(E\). The dual space norm is given by
-% \[
-%     \norm{f} = \sup_{\substack{x \in E \\ x \neq 0}}\frac{\abs{\langle f, x \rangle}}{\norm*{x}}.
-% \]
-% It is worth remarking that, in Banach spaces, it is possible to generalize the concept of adjoint operator given above. For the sake of clarity, given an operator \(T \in \mathcal{L}(E, F)\) defined in \(D(T) \subset E\) which is dense in \(E\), we say that \(T^\star \in \mathcal{L}(F^\star, E^\star) \), also defined in \(D(T^\star) \subset F^\star\), is the \textit{dual operator} (or adjoint operator: recall the definition of adjoint operator in Hilbert spaces) of \(T\) if
-% \[
-%    \langle v, T u \rangle_{F^\star, F} = \langle T^\star v, u \rangle_{E^\star, E}, \; \forall u \in D(T), \forall v \in D(T^\star).
-% \]
-
-% Now, if one considers the space of distributions \(\mathcal{D}^\star(\Omega)\), the dual space of \(\mathcal{D}(\Omega)\), it is easy to prove that given \(u \in L_{\text{loc}}^1(\Omega)\), the map
-% \begin{align}\label{dual_dist}
-%     T_u: \mathcal{D} &\rightarrow \mathbb{R} \nonumber\\
-%     \varphi &\mapsto \langle T_u, \varphi \rangle_{\mathcal{D}^\star(\Omega)\times \mathcal{D}(\Omega)} \coloneq \int_\Omega u \varphi
-% \end{align}
-% is a distribution and we have an embedding \(L^2(\Omega) \subset L_{\text{loc}}^1(\Omega) \subset D^\star(\Omega)\), where the duality pair \(\langle \cdot , \cdot \rangle_{\mathcal{D}^\star(\Omega)\times \mathcal{D}(\Omega)}\) generalizes the \(L^2\) inner product. The bracket\(\langle \cdot, \cdot \rangle_{\mathcal{D}^\star(\Omega)\times \mathcal{D}(\Omega)}\) will be important below when we define the dual pairing in the context of Sobolev spaces.
 \begin{definition}[Sobolev Spaces]
     For \(k \in \mathbb{N}\) and \(1 \leq p \leq \infty\) we define the Sobolev space
     \[
@@ -410,11 +394,11 @@ where the duality pairing \( \langle \cdot , \cdot \rangle_{D^\star(\Omega), D(\
     \end{itemize}
 
 \end{definition}
-We say that \(D^\alpha u\) is the weak derivative of order \(\alpha\) of \(u \in L^p(\Omega)\) if \(D^\alpha u \in L^p(\Omega)\). The operator \(D^\alpha\) is well-defined as a distribution, and satisfies
+We say that \(D^\alpha u\) is the weak derivative of order \(\alpha\) of \(u \in L^p(\Omega)\) if \(D^\alpha u \in L^p(\Omega)\). The operator \(D^\alpha\) is well-defined as a distribution and satisfies
 \[
     \int_\Omega D^\alpha u \varphi = (-1)^\abs{\alpha} \int_\Omega u D^\alpha \varphi, \; \forall \varphi \in \mathcal{D}(\Omega).
 \] 
-Throughout this work we are mostly concerned with Sobolev spaces with \(p=2\). In this case, we set \(H^k(\Omega) \coloneqq W^{k, 2}(\Omega)\) which is a Hilbert space for the inner product\footnote{Observe that if \(k=0\) then \(H^0(\Omega) = L^2(\Omega)\)}
+Throughout this work, we are mostly concerned with Sobolev spaces with \(p=2\). In this case, we set \(H^k(\Omega) \coloneqq W^{k, 2}(\Omega)\) which is a Hilbert space for the inner product\footnote{Observe that if \(k=0\) then \(H^0(\Omega) = L^2(\Omega)\)}
 \[
  (u, v) \coloneqq \sum_{\abs{\alpha} \leq k} (D^\alpha u, D^\alpha v)_{L^2(\Omega)}.
 \]
@@ -441,9 +425,9 @@ The above characterization of the \(H^k(\mathbb{R}^d)\) space motivate the follo
         \norm*{u}_{H^s(\mathbb{R}^d)} = \norm*{(1+ \abs{\xi}^2)^\frac{s}{2} \hat{u}}_{L^2(\mathbb{R}^2)}.
     \]
 \end{definition}
-The definition above only holds for Sobolev spaces defined over the whole space \(\mathbb{R}^d\). In this work we are mostly concerned with the behavior over a bounded set \(\Omega \subset \mathbb{R}^d\). Unfortunately, there are multiple definitions of fractional Sobolev spaces over a bounded set that may not agree between themselves if the boundary of \(\Omega\) is not smooth enough (if the boundary fails to be parameterized by a continuous function). In any case, the following definition suffices for this work, see \cite{bogomolny1985fundamental}, \cite{chandler2017sobolev} or \cite{hewett2017note}.  
+The definition above only holds for Sobolev spaces defined over the whole space \(\mathbb{R}^d\). In this work, we are mostly concerned with the behavior over a bounded set \(\Omega \subset \mathbb{R}^d\). Unfortunately, there are multiple definitions of fractional Sobolev spaces over a bounded set that may not agree between themselves if the boundary of \(\Omega\) is not smooth enough (if the boundary fails to be parameterized by a continuous function). In any case, the following definition suffices for this work, see \cite{bogomolny1985fundamental}, \cite{chandler2017sobolev} or \cite{hewett2017note}.  
 \begin{definition}
-    Let \(\Omega \subset \mathbb{R}^d\) be a bounded set with Lipschitz boundary. We define
+    Let \(\Omega \subset \mathbb{R}^d\) be a bounded set with a Lipschitz boundary. We define
     \[
         \mathring{H}^s(\Omega) = \{v \in H^d(\mathbb{R}^d): \supp v \subset \overline{\Omega}\}
     \]
@@ -457,9 +441,9 @@ The definition above only holds for Sobolev spaces defined over the whole space 
     \]
 \end{definition}
 
-Fractional Sobolev spaces are important for our study because they are deeply related with the boundary behavior of a given function. For example, if \(u \in H^1(\Omega)\) and \(\Omega\) is bounded and a Lipschitz domain, then \(u_{|\partial\Omega} \in H^\frac{1}{2}(\partial\Omega)\). However, the statement above must be defined rigorously: not only \(u\) is only defined in the open set \(\Omega\), but \(u\) is only defined \textit{almost everywhere} and the Lebesgue measure of \(\partial\Omega\) is zero. Intuitively, we consider the continuous extension of functions from \(\Omega\) to the boundary \(\partial\Omega\) which is only possible if domain is regular \textit{enough}. This is done in context of trace theory, c.f \cite{geymonat2007trace} and \cite{necas2011direct}.
+Fractional Sobolev spaces are important for our study because they are deeply related to the boundary behavior of a given function. For example, if \(u \in H^1(\Omega)\) and \(\Omega\) is bounded and a Lipschitz domain, then \(u_{|\partial\Omega} \in H^\frac{1}{2}(\partial\Omega)\). However, the statement above must be defined rigorously: not only \(u\) is only defined in the open set \(\Omega\), but \(u\) is only defined \textit{almost everywhere} and the Lebesgue measure of \(\partial\Omega\) is zero. Intuitively, we consider the continuous extension of functions from \(\Omega\) to the boundary \(\partial\Omega\) which is only possible if the domain is regular \textit{enough}. This is done in the context of trace theory, c.f \cite{geymonat2007trace}, \cite{necas2011direct} or \cite{adams2003sobolev}.
 \begin{theorem}\label{frac_theo}
-    Let \(\Omega\) be a bounded set with Lipschitz boundary. Then, there exists a linear and continuous mapping called the trace operator
+    Let \(\Omega\) be a bounded set with a Lipschitz boundary. Then, there exists a linear and continuous mapping called the trace operator
     \[
     \gamma_0: H^1(\Omega) \rightarrow H^{\frac{1}{2}}(\partial\Omega)    
     \]
@@ -472,7 +456,7 @@ Fractional Sobolev spaces are important for our study because they are deeply re
     \end{align*}
     is linear and continuous\footnote{We take \(\gamma_0\) as an element wise operator, where \(\gamma_0(\nabla u) = \Big(\gamma_0(\frac{\partial u}{\partial x_1}),\dots,\gamma_0(\frac{\partial u}{\partial x_d})\)\Big).}.  
 \end{theorem}
-The result above is stated in a very weak form since we are working in Lipschitz domains. If $\Omega$ is a smooth domain, then $\gamma_1: H^2(\Omega) \rightarrow H^{\frac{1}{2}}(\partial\Omega)$ (c.f \cite{lions2012non}). However, it should be noted that the normal derivative operator $\gamma_1$ cannot be defined if we only assume that $u \in H^1(\Omega)$. If such a continuous operator $\mathcal{N}$ existed, then $\mathcal{N}\varphi = 0$ for every $\varphi \in \mathcal{D}(\Omega)$. By continuity, this would imply $\mathcal{N}u=0$ for all $u \in H^1(\Omega)$, leading to a contradiction.
+The result above is stated in a very weak form since we are working in Lipschitz domains. If $\Omega$ is a smooth domain, then $\gamma_1: H^2(\Omega) \rightarrow H^{\frac{1}{2}}(\partial\Omega)$, c.f \cite{lions2012non}. However, it should be noted that the normal derivative operator $\gamma_1$ cannot be defined if we only assume that $u \in H^1(\Omega)$. If such a continuous operator $\mathcal{N}$ existed, then $\mathcal{N}\varphi = 0$ for every $\varphi \in \mathcal{D}(\Omega)$. By continuity, this would imply $\mathcal{N}u=0$ for all $u \in H^1(\Omega)$, leading to a contradiction.
 
 An important (closed) subspace of \(H^1(\Omega)\) is the kernel of the trace operator \(\gamma_0\),
 \[
@@ -486,7 +470,7 @@ which can be equivalently defined as the closure of \(\overline{\mathcal{D}(\Ome
     \]
 \end{theorem}
 
-Finally, we shed some light over the dual space of Sobolev spaces (with fractional exponent). When working over the whole space \(\mathbb{R}^d\) one can prove the following result, c.f \cite{chen2010boundary} or \cite{hormander2015analysis}.
+Finally, we shed some light on the dual space of Sobolev spaces (with fractional exponent). When working over the whole space \(\mathbb{R}^d\) one can prove the following result, c.f \cite{chen2010boundary} or \cite{hormander2015analysis}.
 \begin{theorem}
     Let \(s \in \mathbb{R}\) and \(u \in H^s(\mathbb{R}^d)\). Then, any linear and continuous functional \(T \in (H^s(\mathbb{R}^d))^\star\) that acts in \(H^s(\mathbb{R}^d)\) can be uniquely represented by some \(v \in H^{-s}(\mathbb{R}^d)\) and the duality pairing is given by
     \[
@@ -504,48 +488,8 @@ Finally, we shed some light over the dual space of Sobolev spaces (with fraction
         \langle v, u \rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v
     \]
     whenever it makes sense, i.e, when \(v \in L^2(\Omega)\).
-    % If we consider the entire space \(\mathbb{R}^d\) and a square integrable function \(v \in H^{-s}(\Omega)\), then, according to the Plancherel Theorem, we can recover the conventional notion of duality pairing:
-    % \[
-    %     \langle v, u \rangle_{H^{-s}(\mathbb{R}^d), H^s(\mathbb{R}^d)} = \int_{\mathbb{R}^d} \hat{u}\hat{v} = \int_{\mathbb{R}^d} u v
-    % \]
-    % However, it is important to note that applying the Riesz Representation Theorem \ref{riesz} to define the duality pairing directly through the \(L^2(\mathbb{R}^d)\) inner product is not advisable. Such an approach would lead to a well-known identification paradox in Hilbert spaces\footnote{For instance, refer to \textit{Remark 3} in \cite{brezis2011functional}.}, as it would imply the erroneous chain of equalities:
-    % \[
-    %     H^{\frac{1}{2}}(\Omega) = L^2(\Omega) = H^{-\frac{1}{2}}(\Omega)
-    % \]
-    % Hence, it is crucial to define the duality pairing between \(H^{-s}(\Omega)\) and \(H^{s}(\Omega)\) in a manner that makes sense. If \(v \in L^2(\Omega)\), then
-    % \[
-    %     \langle v, u \rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v
-    % \]
+     %\rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v
 \end{remark}
-
-% Finally, the dual space of  \(H^\frac{1}{2}(\Omega)\) is represented by \(H^{-\frac{1}{2}}(\Omega)\) and is endowed with the (dual) norm
-% \[
-%     \norm*{f}_{H^{-\frac{1}{2}}(\Omega)} = \sup_{\norm*{v}_{H^{\frac{1}{2}}(\Omega)}\leq 1}\langle f, v \rangle_{H^{-\frac{1}{2}}(\Omega) \times H^{\frac{1}{2}}(\Omega)}.
-% \]
-% What do we mean by \(\langle f, v \rangle_{H^{-\frac{1}{2}}(\Omega) \times H^{\frac{1}{2}}(\Omega)}\)? Using R one could write the duality pairing with the \(H^{\frac{1}{2}}(\Omega)\) inner product
-% \[
-%     \langle f, v \rangle_{H^{-\frac{1}{2}}(\Omega) \times H^{\frac{1}{2}}(\Omega)} = (f_u, v)_{H^{\frac{1}{2}}(\Omega)}
-% \]
-% where \(f \in H^{-\frac{1}{2}}(\Omega)\) is uniquely identified with \(u \in H^{\frac{1}{2}}(\Omega)\). However, t
-% However, since we have the continuous embedding \(\mathcal{D}(\Omega) \subset H^{\frac{1}{2}}(\Omega)\) (in fact, \(\mathcal{D}(\Omega)\) is dense in \(H^{\frac{1}{2}}(\Omega)\)), it implies that \(H^{-\frac{1}{2}}(\Omega) \subset \mathcal{D}^\star(\Omega)\) and noticing that for any \(f \in L^2(\Omega)\) the map
-% \[
-%     f \mapsto \int_\Omega f \varphi, \; \varphi \in H^{\frac{1}{2}}(\Omega)
-% \]
-% is linear and continuous for the \(H^{\frac{1}{2}}(\Omega)\) norm, we also have the injection \(L^2(\Omega) = (L^2(\Omega))^\star \subset H^{-\frac{1}{2}}(\Omega)\). These observations motivate us to define the dual pairing as a generalization of the \(L^2\) inner product, like the one given in \ref{dual_dist}
-% \[
-%     \langle f, v \rangle = \langle f, v \rangle_{H^{-\frac{1}{2}}(\Omega) \times H^{\frac{1}{2}}(\Omega)} \coloneq \int_\Omega f v.
-% \]
-% \begin{remark}
-%     The considerations above are also valid for \(H^s(\Omega)\) with \(s > 0\). In fact, if \(s\) is an integer, then every \(f \in H^{-s}(\Omega)\) admits the non-unique representation using the dual pairing like defined above,
-%     \[
-%         f = \sum_{\abs{p} \leq s} D^p f_p, \; f_p \in L^2(\Omega)
-%     \]
-%     and
-%     \[
-%         \langle f, u \rangle_{H^{-s}(\Omega) \times H^{s}(\Omega)} = \sum_{\abs{p} \leq s} \langle f_p, D^p u \rangle,
-%     \]
-%     where \(\langle f_p,  D^p u \rangle = \int_\Omega f_p D^p u\).
-% \end{remark}
 
 Theorem \ref{frac_theo} allows to give some meaning to space \(H^{-\frac{1}{2}}(\Omega)\). Let \(u \in H^2(\Omega)\) and \(v \in H^\frac{1}{2}(\partial\Omega)\). Then, \(\gamma_0^{-1}v \in H^1(\Omega)\) and using Green's formula (see in the section below)
 \[
@@ -554,7 +498,7 @@ Theorem \ref{frac_theo} allows to give some meaning to space \(H^{-\frac{1}{2}}(
 we have \(\gamma_1 u \in H^{-\frac{1}{2}}(\Omega)\).
 
 \section{Spectral Decomposition of the Laplace Operator}\label{div_theo}
-In this section, we make a brief study regarding the Laplace Operator \(-\Delta = -\sum_{n=1}^{d} \frac{\partial^2}{\partial x_n^2}\) in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. Firstly, we recall the Divergence Theorem, e.g \cite{evans2015measure}.
+In this section, we make a brief study regarding the Laplace Operator \(-\Delta = -\sum_{n=1}^{d} \frac{\partial^2}{\partial x_n^2}\) in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. Firstly, we recall the Divergence Theorem, e.g. \cite{evans2015measure}.
 \begin{theorem}[Divergence Theorem]
     Let \(\Omega \subset \mathbb{R}^d\) defined as above. Then,
     \[
@@ -572,7 +516,7 @@ A main consequence of the Divergence Theorem are the well-known \textit{Green's 
     \end{enumerate}
 \end{corollary}
 
-The study of the spectrum of the following equation is of major importance throughout this work, and will be studied in the following chapter. For now, we will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
+The study of the spectrum of the following equation is of major importance throughout this work and will be studied in the following chapter. For now, we will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
 
 \begin{definition}\label{eig_def}
     Consider the Helmholtz equation with null Dirichlet boundary conditions
@@ -585,13 +529,12 @@ The study of the spectrum of the following equation is of major importance throu
     where $\Delta=\sum_{i=0}^{d}\frac{\partial^2 }{\partial x_i^2}$. Then, \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
 \end{definition}
 
-% The following the result is classical and can be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}.
 \begin{theorem}\label{spec_lap_pre}
     There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
     \[
         -\Delta u_n = \lambda_n u_n
     \]
-    where the sequence of eigenvalues can be ordered in an increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
+    where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
     \[
         R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
     \]
@@ -653,7 +596,7 @@ The study of the spectrum of the following equation is of major importance throu
         & \geq \lambda_n \sum_{m\geq n} \abs{(u, u_m)_{L^2(\Omega)}}^2\\
         &= \lambda_n \norm*{u}_{L^2(\Omega)}^2
     \end{align*}
-    where we used the bilinearity of the inner product, the fact that the sequence \(\lambda_n\) is non-decreasing and the Parseval's identity. It is easy to check that the equality is only attained if and only if \(u\) is in the eigenspace of \(\lambda_k\). This proves that
+    where we used the bilinearity of the inner product, the fact that the sequence \(\lambda_n\) is non-decreasing, and Parseval's identity. It is easy to check that the equality is only attained if and only if \(u\) is in the eigenspace of \(\lambda_k\). This proves that
     \[
         \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u). 
     \]
@@ -671,7 +614,7 @@ The study of the spectrum of the following equation is of major importance throu
     i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
     Then, for all \(n \in \mathbb{N}\),
     \[
-        \alpha^2 \lambda_n(\alpha \Omega) = \lambda(\Omega),
+        \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),
     \]
     where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
 \end{corollary}

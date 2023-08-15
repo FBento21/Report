@@ -11,17 +11,17 @@
 
 \section{Density and linear independence results}\label{density_proofs_section}
 
-The method of Fundamental Solutions is the base method to be implemented throughout this work. As a meshless method, it does not involve any kind of domain discretization (into some mesh) like in finite differences or finite elements methods. Instead, the problem is now of point placement. Since the mesh creation is one of the most computational expensive parts of the methods above, one of the main advantages of the MFS is exactly the lack of it. 
+The method of Fundamental Solutions is the base method to be implemented throughout this work. As a meshless method, it does not involve any kind of domain discretization (into some mesh) like in finite differences or finite elements methods. Instead, one faces a point placement problem. Since mesh generation is one of the most computationally expensive parts of the methods above, one of the main advantages of the \ac{MFS} is exactly the lack of it. 
 
-As the name implies, MFS is based on the fundamental solutions of a previously known \ac{PDE}. Consider the Elliptic linear differential operator \(\mathcal{L}\) with fundamental solution \(\Phi\) such that \(\mathcal{L}\Phi(x) = \delta, \; \forall x \in \mathbb{R}^d\). Intuitively, we can consider the approximation
+As the name implies, \ac{MFS} is based on the fundamental solutions of a previously known \ac{PDE}. Consider the Elliptic linear differential operator \(\mathcal{L}\) with fundamental solution \(\Phi\) such that \(\mathcal{L}\Phi(x) = \delta, \; \forall x \in \mathbb{R}^d\). Intuitively, we can consider the approximation
 \[
 \Tilde{u}(x) = \sum_{j=1}^{N}\alpha_j \Phi(x-y_j)
 \]
 to the partial differential equation with a linear boundary operator \(\mathcal{B}\)
 \[
 \begin{cases}
-    \mathcal{L}u(x) = 0, x \in \Omega\\
-    \mathcal{B}u(x) = 0, x \in \partial\Omega
+    \mathcal{L}u(x) = 0,  & x \in \Omega\\
+    \mathcal{B}u(x) = 0,  & x \in \partial\Omega
 \end{cases}. 
 \]
 By definition and using the linearity of the operator \(\mathcal{L}\), \(\tilde{u}\) satisfies the equation in \(\Omega\), and the coefficients \(\alpha_j\) can be determined by imposing the boundary conditions
@@ -31,7 +31,7 @@ By definition and using the linearity of the operator \(\mathcal{L}\), \(\tilde{
 where \(y_j \in \hat{\Gamma} \subset \mathbb{R}^d\setminus \overline{\Omega}\) with \(j=1,\dots,N\), are the so-called source points to be chosen. We chose them to be outside our domain since, by translation, the Fundamental Solution \(\Phi\) has a singularity at each \(y_j\) because, otherwise, it would render our approximation full of singularities inside \(\Omega\). 
 \begin{remark}
     While the motivation above might seem far-fetched, one can observe that the approximation \(\Tilde{u}\) resembles a convolution between some density function \(\alpha(x)\) and the fundamental solution \(\Phi\). As we will see below, it can be proven that the fundamental solutions of the operator \(\mathcal{L}\) are dense in the functional space defined in \(\partial\Omega\) (which is enough since, as we already saw, the interior condition is satisfied by construction). For example, considering Dirichlet boundary conditions, one can use the single layer potential (which is going to be presented and studied in the next pages) that allow, through a discretization argument, to give a numerical approximation to the \ac{BVP} and
-    \begin{equation}\label{mfs_approx_disc}
+    \begin{equation}\label{MFS_approx_disc}
         u(x) = \int_{\Gamma}\Phi(x-y)\varphi(y)d\sigma(y) \approx \sum_{j=1}^{N}w_j \varphi(y_j) \Phi(x-y_j) = \Tilde{u}(x), 
     \end{equation}
     where \(\varphi(y)\) is a layer density to be determined and \(y_j \in \hat{\Gamma}\) and \(w_j\) are the nodes and weights of some quadrature, respectively. Setting \(\mathcal{B} = I\) and \(\alpha_j = w_j \varphi(y_j)\), we recover the approximation given above.
@@ -56,7 +56,7 @@ Some preliminary results are going to be needed in order to present the desired 
 % We notice that every result below has its own counterpart if we consider \(\mathcal{L} = -(\Delta + k^2)\) and \(\Phi_k\) to be fundamental solution of the Helmholtz equation.
 We start by introducing the concept of analytic continuation. For further details see \cite{narasimhan2012complex}.
 \begin{definition}
-    Let \(f\) be a complex valued function defined on \(\Omega \subset \mathbb{C}\). We say that \(f\) is holomorphic on \(\Omega\) if for every \(a \in \Omega\), there exists a neighborhood \(U\) of \(a\) and \((c_n)_{n \in \mathbb{N}} \subset \mathbb{C}\) such that the power series
+    Let \(f\) be a complex-valued function defined on \(\Omega \subset \mathbb{C}\). We say that \(f\) is holomorphic on \(\Omega\) if for every \(a \in \Omega\), there exists a neighborhood \(U\) of \(a\) and \((c_n)_{n \in \mathbb{N}} \subset \mathbb{C}\) such that the power series
     \[
         \sum_{n=0}^{\infty} c_n(z-a)^n
     \]
@@ -108,28 +108,28 @@ Lastly, it will be useful to study the well-posedness of the exterior Dirichlet 
     Let \(\Omega\) be a bounded and open subset of \(\mathbb{R}^2\). Then, there exists a unique solution \(u \in C^2(\Omega^c) \cap C(\overline{\Omega^c})\) of the exterior Dirichlet Laplacian problem given by
     \[
         \begin{cases}
-            \Delta u = 0, \text{ in } \; \mathbb{R}^2\setminus \overline{\Omega}\\
-            u = 0, \text{ on } \; \partial \Omega\\
-            u(x) = \mathcal{O}(1), \text{ for } \; \abs{x} \rightarrow \infty.
+            \Delta u = 0, \text{ in } & \mathbb{R}^2\setminus \overline{\Omega}\\
+            u = 0, \text{ on } & \partial \Omega\\
+            u(x) = \mathcal{O}(1), \text{ for } & \abs{x} \rightarrow \infty.
         \end{cases}
     \]
 \end{theorem}
 \begin{remark}
     Notice that the condition at infinity must be enforced to have uniqueness. Otherwise, one could easily find a family of solutions up to a multiplicative constant (if \(u(x)\) is a solution, then \(\alpha u(x)\) would also be a solution for any \(\alpha \in \mathbb{R}\)).
 \end{remark}
-The main result which justifies the MFS for the Laplace equation is now stated. The proof given here is slightly different from the ones in \cite{bogomolny1985fundamental}, \cite{alves2009choice}. It is also influenced by the proofs in \cite{svilen_phd}.
-\begin{theorem}\label{mfs_lap_dense}
+The main result which justifies the \ac{MFS} for the Laplace equation is now stated. The proof given here is slightly different from the ones in \cite{bogomolny1985fundamental}, \cite{alves2009choice}. It is also influenced by the proofs in \cite{svilen_phd} and \cite{smyrlis2009applicability}.
+\begin{theorem}\label{MFS_lap_dense}
     Let \(\Omega\) be an open and bounded set with \(C^2\) boundary \(\Gamma = \partial \Omega\) such that \(\overline{\Omega} \subset \hat{\Omega} \subset \mathbb{R}^2\), where \(\hat{\Omega}\) is an open and bounded set and \(\hat{\Gamma} = \partial \hat{\Omega}\) is an admissible source set. Then, \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R}\) is dense in \(H^\frac{1}{2}(\Gamma)\) and in \(H^{-\frac{1}{2}}(\Gamma)\).
 \end{theorem}
 \begin{proof}
-    In view of Lemma \eqref{banach_ortho_lemma} we start by fixing some notation. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the maps
+    In view of Lemma \ref{banach_ortho_lemma} we start by fixing some notation. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the maps
     \begin{align*}
         &\Phi(\cdot-y): \varphi \mapsto \int_\Gamma \Phi(x-y)\varphi(x) d\sigma(x)\\
         &1: \varphi \mapsto \int_\Gamma \varphi (x) d\sigma(x)
     \end{align*}
     are linear and continuous in \(H^\frac{1}{2}(\Gamma)\), and \(1, \Phi(\cdot-y) \in H^{-\frac{1}{2}}(\Gamma)\) (notice that \(1, \Phi(\cdot-y) \in L^1_{\text{loc}}(\mathbb{R}^2)\) and \(1, \Phi(\cdot-y) \in L^2(\hat{\Gamma})\)).
     
-    Observe that \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R} = \Span\{1, \Phi\}\) and let \(N = \Span\{1, \Phi\} \subset H^{-\frac{1}{2}}(\Gamma)\). Using the Definition \eqref{banach_ortho_def},
+    Let \(N = \mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R} \subset H^{-\frac{1}{2}}(\Gamma)\). Using the Definition \eqref{banach_ortho_def},
     \[
         N^\perp = \{\varphi \in H^{\frac{1}{2}}(\Gamma): \langle \psi, \varphi \rangle = 0, \; \forall \psi \in N\}
     \]
@@ -153,18 +153,18 @@ The main result which justifies the MFS for the Laplace equation is now stated. 
             w(y) = \mathcal{O}(1), \abs{y} \rightarrow \infty.
         \end{cases}
     \]
-    Since the problem above is well-posed, its unique solution is \(w(y) = 0, \; \forall y \in \mathbb{R}^2\setminus\overline{\hat{\Omega}}\). By (a unique) analytic continuation (see Theorem \eqref{ana_cont}), we can extend \(w\) by zero in \(\mathbb{R}^2\setminus\overline{\Omega}\). Since \(w\) is a single layer potential over \(\Gamma\), \(w\) is continuous on \(\Gamma\) and therefore, by continuity, \(w = 0\) on \(\Gamma\). Once again, using the fact that the single layer potential is harmonic in \(\Omega\), \(w\) satisfies the (inner) Laplace problem
+    Since the problem above is well-posed, its unique solution is \(w(y) = 0, \; \forall y \in \mathbb{R}^2\setminus\overline{\hat{\Omega}}\). By (a unique) analytic continuation (see Theorem \ref{ana_cont}), we can extend \(w\) by zero in \(\mathbb{R}^2\setminus\overline{\Omega}\). Since \(w\) is a single layer potential over \(\Gamma\), \(w\) is continuous on \(\Gamma\) and therefore, by continuity, \(w = 0\) on \(\Gamma\). Once again, using the fact that the single layer potential is harmonic in \(\Omega\), \(w\) satisfies the (inner) Laplace problem
     \[
         \begin{cases}
             \Delta w = 0, \text{ in } \Omega\\
             w(y) = 0, \text{ on } \Gamma
         \end{cases}
     \]
-    which, by uniqueness, implies that \(w = 0\) in \(\hat{\Omega}\). Finally, we can conclude that \(\varphi = 0\) in \(\Gamma\) by Proposition \eqref{sl_jump} since the normal derivate jump is zero.
+    which, by uniqueness, implies that \(w = 0\) in \(\hat{\Omega}\). Finally, we can conclude that \(\varphi = 0\) in \(\Gamma\) by Proposition \ref{sl_jump} since the normal derivate jump is zero.
 
-    Therefore, we can write \(N^\perp = \{0\}\) and by Lemma \eqref{banach_ortho_lemma}
+    Therefore, we can write \(N^\perp = \{0\}\) and by Lemma \ref{banach_ortho_lemma}
     \[
-        \mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R} = \overline{\Span\{1, \Phi\}} = \{0\}^\perp
+        \mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R} = \{0\}^\perp
     \]
     given the fact that \(H^\frac{1}{2}(\Omega)\) is reflexive. Since \(0 \in H^\frac{1}{2}(\Gamma)\) (and \(0 \in H^{-\frac{1}{2}}(\Gamma)\)) then \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R}\) is dense in \(H^\frac{1}{2}(\Gamma)\) and in \(H^{-\frac{1}{2}}(\Gamma)\) (this is to be expected since \(H^{s}(\Omega)\) is dense in \(H^{-s}(\Omega)\) for \(s > 0\)).
 \end{proof}
@@ -189,27 +189,27 @@ The density proof for the transmission/decomposition problem follows directly fr
 \end{equation}
 and let \(u \in H^1_0(\Omega)\) be the associated unique weak solution to the Poisson equation with Dirichlet boundary conditions and a (discontinuous) source function \(f\). By Theorem \ref{equivalence_transmission}, the restriction of \(u\) to each subdomain uniquely solves the weak form of
 \begin{align}\label{transmission_restriction_equations_density}
-    \begin{split}
-    - \Delta u_i &= \frac{1}{k_i}, \; \text{in }\Omega_i\\
-    u_1 - u_2 &= 0, \; \text{on }\gamma\\
-    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} &= 0, \; \text{on }\gamma\\
-    u_i &= 0, \; \text{on }\Gamma_i
-    \end{split}
+    \begin{cases}
+    - \Delta u_i = \frac{1}{k_i}, & \text{in }\Omega_i\\
+    u_1 - u_2 = 0, & \text{on }\gamma\\
+    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} = 0, & \text{on }\gamma\\
+    u_i = 0, & \text{on }\Gamma_i
+    \end{cases}
     ,\qquad
     \text{where } 
     u = \begin{cases}
-        u_1, \text{ in } & \Omega_1\\
-        u_2, \text{ in } & \Omega_2,\\
+        u_1, \text{ in} & \Omega_1\\
+        u_2, \text{ in} & \Omega_2,\\
     \end{cases}
 \end{align}
 and \(u_i \in H^1(\Omega)\).
 
-Since \(H^\frac{1}{2}(\partial \Omega_i)\) is the trace space of \(H^1(\Omega_i)\), and the normal derivatives of \(u_i\) belong to the space \(H^{-\frac{1}{2}}(\partial\Omega_i)\) (as seen at the end of subchapter \ref{lebesgue_and_sobolev_preliminaries}), by imposing the compatibility conditions on the interface \(\gamma\), one can apply Theorem \ref{mfs_lap_dense} to each subdomain in equation \eqref{transmission_restriction_equations_density}, and find a sequence of density layers \(\{\varphi^{(n)}_i\} \subset H^{\frac{1}{2}}(\partial\Omega_i)\) such that
+Since \(H^\frac{1}{2}(\partial \Omega_i)\) is the trace space of \(H^1(\Omega_i)\), and the normal derivatives of \(u_i\) belong to the space \(H^{-\frac{1}{2}}(\partial\Omega_i)\) (as seen at the end of subchapter \ref{lebesgue_and_sobolev_preliminaries}), by imposing the compatibility conditions on the interface \(\gamma\), one can apply Theorem \ref{MFS_lap_dense} to each subdomain in equation \eqref{transmission_restriction_equations_density}, and find a sequence of density layers \(\{\varphi^{(n)}_i\} \subset H^{\frac{1}{2}}(\partial\Omega_i)\) such that
 \begin{align*}
     &\norm{{\hat{\mathcal{S}}\varphi^{(n)}_i}_{|\partial\Omega_i} - u_i}_{H^\frac{1}{2}(\partial\Omega_i)} \rightarrow 0, \; n \rightarrow \infty,\\
     &\norm{{M\varphi^{(n)}_i}_{|\partial\Omega_i} - \frac{\partial u_i}{\partial n_i}}_{H^{-\frac{1}{2}}(\partial\Omega_i)} \rightarrow 0, \; n \rightarrow \infty,
 \end{align*}
-where \(\hat{\mathcal{S}}\) is defined in Remark \ref{remark_density_sequence_density_layers} and \(M\) is the double layer potential in Definition \ref{definition_single_and_double_layer_potentials} (see Remark \ref{density_remark_general_bc_and_hilbert} for more details how different boundary conditions can be handled). Therefore, given the equivalence between both problems, it is possible to approximate the solution \(u\) of the Poisson equation with discontinuous source term using the MFS via the decomposition approach.
+where \(\hat{\mathcal{S}}\) is defined in Remark \ref{remark_density_sequence_density_layers} and \(M\) is the double layer potential in Definition \ref{definition_single_and_double_layer_potentials} (see Remark \ref{density_remark_general_bc_and_hilbert} for more details how different boundary conditions can be handled). Therefore, given the equivalence between both problems, it is possible to approximate the solution \(u\) of the Poisson equation with discontinuous source term using the \ac{MFS} via the decomposition approach.
 
 Finally, the discretization argument to be presented follows from the fact that, given a set of source points \(\mathcal{Y} = \{y_1,\dots, y_N\} \subset \mathbb{R}^2\setminus\overline{\Omega}\), the fundamental solutions \(\Phi(\cdot-y_1),\dots,\Phi(\cdot-y_N)\) are linearly independent on \(\partial \Omega\) and therefore in \(\Omega\).
 \begin{theorem}\label{lapl_li}
@@ -228,9 +228,9 @@ Consider now the operator \(\mathcal{L} = -(\Delta + k^2)\), and assume that \(k
     Let \(\Omega\) be a bounded and open subset of \(\mathbb{R}^2\). Then, there exists a unique solution \(u \in C^2(\Omega^c) \cap C(\overline{\Omega^c})\) of the exterior Dirichlet Helmholtz problem given by
     \[
         \begin{cases}
-            -\Delta u = k^2 u, \text{ in } \; \mathbb{R}^2\setminus \overline{\Omega}\\
-            u = 0, \text{ on } \; \partial \Omega\\
-            \abs{x} \left(\frac{x}{\abs{x}}\nabla u(x) - i k\right)u(x) = 0, \text{ for } \; \abs{x} \rightarrow \infty.
+            -\Delta u = k^2 u, & \text{ in }  \mathbb{R}^2\setminus \overline{\Omega}\\
+            u = 0, & \text{ on }  \partial \Omega\\
+            \abs{x} \left(\frac{x}{\abs{x}}\nabla u(x) - i k\right)u(x) = 0, & \text{ for }  \abs{x} \rightarrow \infty.
         \end{cases}
     \]
 \end{theorem}
@@ -249,12 +249,12 @@ Analogously to the Laplace problem, consider the space
 \[
     \mathcal{S}(\Gamma, \hat{\Gamma}) = \Span\{\Phi_k(x-y)_{|x \in \Gamma} : y \in \hat{\Gamma}\}.
 \]
-Again, like in Theorem \eqref{mfs_lap_dense}, we point the reader to \cite{alves2009choice}, \cite{svilen_phd} and \cite{alves2005new}, where slightly different proofs are stated.
+Again, like in Theorem \ref{MFS_lap_dense}, we point the reader to \cite{alves2009choice}, \cite{svilen_phd} and \cite{alves2005new}, where slightly different proofs are stated.
 \begin{theorem}
     Let \(\Omega\) be an open and bounded set with \(C^2\) boundary \(\Gamma = \partial \Omega\) such that \(\overline{\Omega} \subset \hat{\Omega} \subset \mathbb{R}^2\), where \(\hat{\Omega}\) is an open and bounded set and \(\hat{\Gamma} = \partial \hat{\Omega}\) is an admissible source set. Then, \(\mathcal{S}(\Gamma, \hat{\Gamma})\) is dense in \(H^\frac{1}{2}(\Gamma)\) and in \(H^{-\frac{1}{2}}(\Gamma)\).
-\end{theorem}\label{mfs_helm_dense}
+\end{theorem}\label{MFS_helm_dense}
 \begin{proof}
-    This proof follows the same steps as in the proof of Theorem \eqref{mfs_lap_dense}. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the map
+    This proof follows the same steps as in the proof of Theorem \ref{MFS_lap_dense}. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the map
     \[
         \Phi_k(\cdot-y): \varphi \mapsto \int_\Gamma \Phi_k(x-y)\varphi(x)d\sigma(x)
     \]
@@ -273,23 +273,23 @@ Again, like in Theorem \eqref{mfs_lap_dense}, we point the reader to \cite{alves
     Given that \(w\) satisfies the Sommerfeld Radiation Conditions and, by assumption, \(w(y) = 0\) in \(\hat{\Gamma}\), then \(w = 0\) in \(\Omega\) is the unique solution of the exterior Dirichlet problem of the Helmholtz equation
     \[
         \begin{cases}
-            -\Delta w = k^2 w, \text{ in } \; \mathbb{R}^2\setminus \overline{\Omega}\\
-            w = 0, \text{ on } \; \partial \Omega\\
-            \abs{y} (\frac{y}{\abs{x}}\nabla w(y) - i k)u(x) = 0, \text{ for } \; \abs{y} \rightarrow \infty,
+            -\Delta w = k^2 w, & \text{ in } \mathbb{R}^2\setminus \overline{\Omega}\\
+            w = 0, & \text{ on } \partial \Omega\\
+            \abs{y} (\frac{y}{\abs{x}}\nabla w(y) - i k)u(x) = 0, & \text{ for } \abs{y} \rightarrow \infty,
         \end{cases}
     \]
-    since \(k\) is not an eigenfrequency. By analytic continuation, we can extend \(w\) by zero to \(\mathbb{R}^2\setminus \overline{\Omega}\). The rest of the proof is the same as in the Theorem \eqref{mfs_lap_dense}, using the fact that \(k\) is not an eigenfrequency and the interior Dirichlet problem is well posed.
+    since \(k\) is not an eigenfrequency. By analytic continuation, we can extend \(w\) by zero to \(\mathbb{R}^2\setminus \overline{\Omega}\). The rest of the proof is the same as in the Theorem \ref{MFS_lap_dense}, using the fact that \(k\) is not an eigenfrequency and the interior Dirichlet problem is well-posed.
 \end{proof}
 \begin{remark}\label{density_remark_general_bc_and_hilbert}
-    Both in Theorem \eqref{mfs_lap_dense} and Theorem \eqref{mfs_helm_dense} the density proof can generalize to \(H^s(\Gamma)\), for \(s \geq \frac{1}{2}\). However, in applications, we are only interested in the case \(s=\frac{1}{2}\). Notice that if \(s=0\), it is not required to invoke the Hahn-Banach Theorem since \(H^0(\Gamma)=L^2(\Gamma)\) which is a Hilbert Space, and it would suffice to use Corollary \eqref{hilb_dense}. For general boundary conditions, the proofs above follow the same argument, where one should consider the appropriate approximating set \(\mathcal{S}(\Gamma, \hat{\Gamma})\) and the appropriate integral operator (for example, for Neumann boundary conditions, one should consider the set
+    Both in Theorem \ref{MFS_lap_dense} and Theorem \ref{MFS_helm_dense} the density proof can generalize to \(H^s(\Gamma)\), for \(s \geq \frac{1}{2}\). However, in applications, we are only interested in the case \(s=\frac{1}{2}\). Notice that if \(s=0\), it is not required to invoke the Hahn-Banach Theorem since \(H^0(\Gamma)=L^2(\Gamma)\) which is a Hilbert Space, and it would suffice to use Corollary \eqref{hilb_dense}. For general boundary conditions, the proofs above follow the same argument, where one should consider the appropriate approximating set \(\mathcal{S}(\Gamma, \hat{\Gamma})\) and the appropriate integral operator (for example, for Neumann boundary conditions, one should consider the set
     \[
         \mathcal{S}(\Gamma, \hat{\Gamma}) = \Span\{\partial_n \Phi(x-y)_{|x \in \Gamma} : y \in \hat{\Gamma}\}
     \]
     and the double layer potential \(M\varphi\), and recall that \(\partial_n u = g \in H^{-\frac{1}{2}}(\Gamma)\)).
 \end{remark}
-Once again, the discretization argument follows from the linear independence of the functions \(\Phi_k(\cdot-y_1),\dots,\Phi_k(\cdot-y_1)\), where \(y_1,\dots,y_N \in \mathbb{R}^2\setminus\overline{\Omega}\) are distinct source points. The proof is identical to the one presented in Theorem \eqref{lapl_li}, where we use the fact that \(k\) is not an eigenfrequency.
+Once again, the discretization argument follows from the linear independence of the functions \(\Phi_k(\cdot-y_1),\dots,\Phi_k(\cdot-y_1)\), where \(y_1,\dots,y_N \in \mathbb{R}^2\setminus\overline{\Omega}\) are distinct source points. The proof is identical to the one presented in Theorem \ref{lapl_li}, where we use the fact that \(k\) is not an eigenfrequency.
 
-Before stating some results regarding the convergence and the stability of the MFS for the Laplace and Helmholtz equations, we address the problem of the source points placement. Although different methods can be considered, e.g. \cite{alves2009choice}, throughout this work we place the artificial boundary \(\hat{\Gamma}\) over the boundary of \(\Omega\). To be more precise, consider \(\Gamma = \partial \Omega\) and the (equally spaced) colocation points \(x_1,\dots,x_M \in \Gamma\). Then, we approximate the (outward) normal vector \(\tilde{n}_i\) to the point \(x_i\), which is given by
+Before stating some results regarding the convergence and the stability of the \ac{MFS} for the Laplace and Helmholtz equations, we address the problem of the source points placement. Although different methods can be considered, e.g. \cite{alves2009choice}, throughout this work we place the artificial boundary \(\hat{\Gamma}\) over the boundary of \(\Omega\). To be more precise, consider \(\Gamma = \partial \Omega\) and the (equally spaced) colocation points \(x_1,\dots,x_M \in \Gamma\). Then, we approximate the (outward) normal vector \(\tilde{n}_i\) to the point \(x_i\), which is given by
 \[
     \tilde{\mathbf{n}}_i = \frac{(x_i - x_{i-1})^\perp }{2} + \frac{(xx_{i+1}-x_i)^\perp }{2},
 \]
@@ -297,15 +297,15 @@ with the orthogonal notation \(z^\perp = (-z_2,z_1)\). This way, one can approxi
 \[
     y_i = x_i + \eta \mathbf{n},
 \]
-where \(\eta>0\) is some small coefficient which controls the distance from each point in \(\Gamma\) and \(\hat{\Gamma}\). As we shall see below, this coefficient has an important impact on the convergence of the MFS, where bigger values of \(\eta\) produce better approximations. However, this is only feasible for simple geometries, because it also increases the condition number of matrix \(A\), denoted by \(\kappa(A)\).
+where \(\eta>0\) is some small coefficient that controls the distance from each point in \(\Gamma\) and \(\hat{\Gamma}\). As we shall see below, this coefficient has an important impact on the convergence of the \ac{MFS}, where bigger values of \(\eta\) produce better approximations. However, this is only feasible for simple geometries, because it also increases the condition number of matrix \(A\), denoted by \(\kappa(A)\).
 
-\section{Numerical approach for the Laplace Equation}\label{n_a_mfs_lap}
-Given the results above, it is possible to numerically solve the Laplace and Helmholtz equations for any boundary data \(g(x)\) if we are able to find the coefficients in the discretization of the single layer potential. For simplicity, we still assume Dirichlet boundary conditions. Let \(N\) be the number of source points and \(M\) the number of colocation points on the boundary, denoted by \(x_1,\dots,x_i,\dots,x_M\) with \(i=1,\dots,M\). Then, we solve the discretized equation
+\section{Numerical approach for the Laplace Equation}\label{n_a_MFS_lap}
+Given the results above, it is possible to numerically solve the Laplace and Helmholtz equations for any boundary data \(g(x)\) if we can find the coefficients in the discretization of the single layer potential. For simplicity, we still assume Dirichlet boundary conditions. Let \(N\) be the number of source points and \(M\) the number of colocation points on the boundary, denoted by \(x_1,\dots,x_i,\dots,x_M\) with \(i=1,\dots,M\). Then, we solve the discretized equation
 \[
     \tilde{u}(x_i) = \sum_{j=1}^{N} \alpha_j \Phi(x_i-y_j) + \alpha_{N+1} = g(x_i)    
 \]
 with respect to the coefficients \(\alpha_j\). Defining \(g_i \coloneq g(x_i), \, i=1,\dots,M\), notice that the equation above can be rewritten in the matricial form
-\begin{equation}\label{mfs_m_system}
+\begin{equation}\label{MFS_m_system}
     {\underbrace{\begin{bmatrix}
         \Phi(x_1, y_1) & \cdots & \Phi(x_1, y_N) & 1 \\
         \vdots & \ddots & \vdots & \vdots\\
@@ -332,8 +332,8 @@ This problem can be framed in two different ways:
 
 Notice that different boundary conditions can be considered: for example, if solving the Laplace equation with Neumann boundary conditions, one should replace the entries \(\Phi(x_i,y_j)\) with \(\partial_{n_x}\Phi(x_i,y_j) = \nabla_x\Phi(x_i,y_j)\cdot n\), where \(n\) is the unit normal vector to the boundary in the point \(x_i\).
 
-We now state some results regarding the convergence and the stability of the MFS for the Laplace equation with Dirichlet boundary conditions. Here, we state this results when the domain \(\Omega\) is a disk and the artificial boundary \(\hat{\Gamma} = \partial \hat{\Omega}\) that involves \(\Omega\) is also a circle. Let \(\rho\) be the radius of \(\Omega\), \(R\) the radius of \(\hat{\Omega}\) and assume that \(N=M\).
-\begin{theorem}\label{mfs_lap_conv}
+We now state some results regarding the convergence and the stability of the \ac{MFS} for the Laplace equation with Dirichlet boundary conditions. Here, we state this results when the domain \(\Omega\) is a disk and the artificial boundary \(\hat{\Gamma} = \partial \hat{\Omega}\) that involves \(\Omega\) is also a circle. Let \(\rho\) be the radius of \(\Omega\), \(R\) the radius of \(\hat{\Omega}\) and assume that \(N=M\).
+\begin{theorem}\label{MFS_lap_conv}
     Assume that \(R^N - \rho^N \neq 1\). Then,
     \begin{enumerate}
         \item the matrix \(A\) is non-singular;
@@ -343,21 +343,21 @@ We now state some results regarding the convergence and the stability of the MFS
         \]
     \end{enumerate}
 \end{theorem}
-The Theorem above provides some important insights regarding the MFS. First, we cannot fail to notice that this method displays \textit{exponential convergence} in the number of source points, which is quite remarkable. In fact, the term \(c\) depends on the distance between \(\Gamma\) and the artificial boundary \(\hat{\Gamma}\), which is controlled by the coefficient \(\eta\), and
+The Theorem above provides some important insights regarding the \ac{MFS}. First, we cannot fail to notice that this method displays \textit{exponential convergence} in the number of source points, which is quite remarkable. In fact, the term \(c\) depends on the distance between \(\Gamma\) and the artificial boundary \(\hat{\Gamma}\), which is controlled by the coefficient \(\eta\), and
 \[
     c = \begin{cases}
         \frac{\rho}{R}, \text{ if } r_0 > \frac{R^2}{\rho}\\
         \sqrt{\frac{\rho}{R}}, \text{ if } r_0 < \frac{R^2}{\rho}.
     \end{cases}
 \]
-Unfortunately, one of the main drawbacks of the MFS is the ill-conditioning of the matrix \(A\) and the fact that the matrix \(A\) is very dense, and we cannot use optimized sparse software solvers on the system \eqref{mfs_m_system}. In particular, while bigger values of the parameter \(\eta\) allows for better numerical approximations it also implies an exponential growth\footnote{It is very important to remark that the ill-conditioning of the matrix \(A\) is associated with the classical basis functions used in the MFS. However, it may be possible to derive basis functions that, after certain manipulations, do not exhibit the same limitations and have a condition number \(\kappa(A)\) of \(\mathcal{O}(1)\). We refer the reader to \cite{antunes2018reducing} and \cite{antunes2018numerical} for more information.} of the condition number \(\kappa(A)\), see \cite{christiansen1981condition}, \cite{kitagawa1988numerical} and \cite{kitagawa1991asymptotic}.
+Unfortunately, one of the main drawbacks of the \ac{MFS} is the ill-conditioning of the matrix \(A\) and the fact that the matrix \(A\) is very dense, and we cannot use optimized sparse software solvers on the system \eqref{MFS_m_system}. In particular, while bigger values of the parameter \(\eta\) allows for better numerical approximations it also implies an exponential growth\footnote{It is very important to remark that the ill-conditioning of the matrix \(A\) is associated with the classical basis functions used in the \ac{MFS}. However, it may be possible to derive basis functions that, after certain manipulations, do not exhibit the same limitations and have a condition number \(\kappa(A)\) of \(\mathcal{O}(1)\). We refer the reader to \cite{antunes2018reducing} and \cite{antunes2018numerical} for more information.} of the condition number \(\kappa(A)\), see \cite{christiansen1981condition}, \cite{kitagawa1988numerical} and \cite{kitagawa1991asymptotic}.
 \begin{theorem}
-    In the conditions of the Theorem \eqref{mfs_lap_conv}, the condition number can be estimated by
+    In the conditions of the Theorem \ref{MFS_lap_conv}, the condition number can be estimated by
     \[
         \kappa(A) \sim \frac{\log R}{2}N \left(\frac{R}{\rho}\right)^{\frac{N}{2}}.
     \]
 \end{theorem}
-Another interesting remark, is the condition \(R \neq 1\), which is in direct connection with the space \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R}\) that was proven to be dense in \(H^\frac{1}{2}(\Gamma)\) in Theorem \eqref{mfs_lap_dense}. Assume that \(R=1\) and \(\hat{\Omega}\) is a disk with radius \(R\) that contains the origin. Then, if one does not consider the constant basis function \(1\),
+Another interesting remark, is the condition \(R \neq 1\), which is in direct connection with the space \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R}\) that was proven to be dense in \(H^\frac{1}{2}(\Gamma)\) in Theorem \ref{MFS_lap_dense}. Assume that \(R=1\) and \(\hat{\Omega}\) is a disk with radius \(R\) that contains the origin. Then, if one does not consider the constant basis function \(1\),
 \[
     \tilde{u}(0) = \sum_{j=1}^{N}\alpha_j \Phi(0-y_j) = -\frac{1}{2\pi}\sum_{j=1}^{N}\alpha_j \log(R) = 0,
 \]
@@ -365,7 +365,7 @@ no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it i
 
 \subsection{An enrichment technique}\label{m_particular_solutions}
 
-Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical MFS method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions which display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique which allows for singularity treatment. In the same vein as in the Proposition \eqref{dirac_not_polar}, we reintroduce the notion of a wedge domain and consider some wedge like domain with interior angle \(\Theta\).
+Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions which display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique which allows for singularity treatment. In the same vein as in the Proposition \ref{dirac_not_polar}, we reintroduce the notion of a wedge domain and consider some wedge like domain with interior angle \(\Theta\).
     
 \begin{figure}[H]
 \centering
@@ -464,11 +464,11 @@ To incorporate the singular behavior near a singular corner, first assume, witho
 \[
     u(x) = u_R(x) + u_S(x), \; x \in \overline{\Omega},
 \]
-where \(u_R\) is the regular part is approximated by the MFS basis functions, and the singular part \(u_S\) is approximated by the expansions above, having the boundary conditions into account. Let \(\phi_s(r, \theta)\) be one of those expansions centered at the corner's tip, where \(s\) is the order of the expansion. Then, the numerical approximation can be written as
+where \(u_R\) is the regular part is approximated by the \ac{MFS} basis functions, and the singular part \(u_S\) is approximated by the expansions above, having the boundary conditions into account. Let \(\phi_s(r, \theta)\) be one of those expansions centered at the corner's tip, where \(s\) is the order of the expansion. Then, the numerical approximation can be written as
 \begin{equation}
     \tilde{u}(x) = \sum_{j=1}^{N}\alpha_j \Phi(x-y_j) + \alpha_{N+1} + \sum_{s=1}^{p} \beta_s \phi_s(r(x),\theta(x)), \; x \in \overline{\Omega}.
 \end{equation}
-Considering the collocation points \(x_1,\dots,x_M \in \partial \Omega\), the linear system of equations \eqref{mfs_m_system} can be generalized to
+Considering the collocation points \(x_1,\dots,x_M \in \partial \Omega\), the linear system of equations \eqref{MFS_m_system} can be generalized to
 \begin{equation}
     {\underbrace{\bigg[ \begin{array}{c | c}
         A_1 & B_1 \\
@@ -482,7 +482,7 @@ Considering the collocation points \(x_1,\dots,x_M \in \partial \Omega\), the li
         g \\
     \end{array} \bigg]_{M\times 1},
 \end{equation}
-where the block matrix \(A_1\) is the matrix \(A\) in \eqref{mfs_m_system} and the \(B_1\) block matrix is given by
+where the block matrix \(A_1\) is the matrix \(A\) in \eqref{MFS_m_system} and the \(B_1\) block matrix is given by
 \[
     B_1=\begin{bmatrix}
         \phi_1(r(x_1), \theta(x_1)) & \cdots & \phi_p(r(x_1), \theta(x_1)) \\
@@ -493,9 +493,9 @@ where the block matrix \(A_1\) is the matrix \(A\) in \eqref{mfs_m_system} and t
 
 
 \section{Numerical approach for the Helmholtz Equation}
-For the Helmholtz equation, the MFS convergence and stability results resemble the previous ones for the Laplace equation with Dirichlet boundary conditions. Once again, the results are stated for identical geometries as before, where \(\Omega\) is the unit disk and the radius of \(\hat{\Omega}\) is \(R>1\). Here is assumed that the boundary data \(g\) can be analytically extended to the annulus \(\{z \in \mathbb{C}: \frac{1}{\rho}< \abs{z} < \rho\}\), where \(\rho > 1\). The following result is due to \cite{barnett2008stability}.
+For the Helmholtz equation, the \ac{MFS} convergence and stability results resemble the previous ones for the Laplace equation with Dirichlet boundary conditions. Once again, the results are stated for identical geometries as before, where \(\Omega\) is the unit disk and the radius of \(\hat{\Omega}\) is \(R>1\). Here is assumed that the boundary data \(g\) can be analytically extended to the annulus \(\{z \in \mathbb{C}: \frac{1}{\rho}< \abs{z} < \rho\}\), where \(\rho > 1\). The following result is due to \cite{barnett2008stability}.
 \begin{theorem}
-    Let \(R > 1\) and \(N\) be an even number. Then the minimum boundary error achieved by the MFS in the unit disk satisfies
+    Let \(R > 1\) and \(N\) be an even number. Then the minimum boundary error achieved by the \ac{MFS} in the unit disk satisfies
     \[
         \norm{g - \tilde{u}_{|\Gamma}}_{L^2(\Gamma)} \leq 
         \begin{cases}
@@ -506,7 +506,7 @@ For the Helmholtz equation, the MFS convergence and stability results resemble t
     \]
     where \(C\) is a constant that not depends on \(N\).
 \end{theorem}
-To solve the Helmholtz equation with the MFS, one must start by computing the eigenvalues \(\lambda\) (or the eigenfrequencies \(k\), with \(\lambda = k^2\)) first. In order to achieve that, recall that the Helmholtz equation
+To solve the Helmholtz equation with the \ac{MFS}, one must start by computing the eigenvalues \(\lambda\) (or the eigenfrequencies \(k\), with \(\lambda = k^2\)) first. In order to achieve that, recall that the Helmholtz equation
 \begin{equation}\label{helm_dirichlet}
     \begin{cases}
         -\Delta u = k^2 u, \text{ in } \Omega\\
@@ -518,25 +518,25 @@ is well-posed when \(\lambda\) is not an eigenvalue, and in that case the nullsp
     S_k \varphi(y) = \int_{\hat{\Gamma}} \Phi_k(x-y)\varphi(x) d\sigma(x) 
 \]
 is trivial. More precisely, one can prove the following result, e.g. \cite{alves2005method}.
-\begin{theorem}\label{mfs_helm_null_kern}
+\begin{theorem}\label{MFS_helm_null_kern}
     If \(k\) is not an eigenfrequency of the interior Dirichlet problem, then \(\dim \left(N(S_k)\right)=0\).
 \end{theorem}
 \begin{proof}
     If \(k\) is not an eigenfrequency, then the interior problem is well posed which implies that \(\varphi(x) = 0, \; x \in \overline{\Omega}\). By analytical continuation, \(\varphi(x) = 0, \; x \in \hat{\Omega}\). Since the single layer potential is continuous, then \(\varphi(x) = 0, \; x \in \hat{\Gamma}\). By the well-posedness of the exterior problem (notice that the single layer potential satisfies the Sommerfeld radiation conditions), then \(\varphi(x) = 0, \; \forall x \in \mathbb{R}^2\).
 \end{proof}
 
-This theorem can be used to search for the eigenvalues/eigenfrequencies of the Laplace operator. By virtue of the discretization of the single layer potential \eqref{mfs_approx_disc}, one should find the values \(k\) such that the nullspace of the matrix \(A(k) = \begin{bmatrix}
+This theorem can be used to search for the eigenvalues/eigenfrequencies of the Laplace operator. By virtue of the discretization of the single layer potential \eqref{MFS_approx_disc}, one should find the values \(k\) such that the nullspace of the matrix \(A(k) = \begin{bmatrix}
     \Phi_k(x_i - y_j)
-\end{bmatrix}_{M \times N}\) is not trivial. Like it was discussed in the previous section \ref{n_a_mfs_lap}, that can be done in two different ways:
+\end{bmatrix}_{M \times N}\) is not trivial. Like it was discussed in the previous section \ref{n_a_MFS_lap}, that can be done in two different ways:
 \begin{enumerate}
     \item if \(A(k)\) is a square matrix (with \(M=N\)), one can compute the determinant of \(A(k)\). Since the components of \(A(k)\) are complex numbers, then its determinant is also a complex number, and we consider its absolute value. In any case, instead of working with \(\abs{\determinant A(k)}\), since this value is very small, one must work with its logarithm and consider the function \(d(k) = \log \abs{\determinant A(k)}\);
     \item if \(A(k)\) is an \(M\times N\) rectangular matrix, with \(M > N\), one considers the smallest singular value, which we denote by \(\sigma_N(k)\), where the singular values of \(A(k)\) are assumed to be in decreasing order \(\sigma_1(k) \geq \dots \geq \sigma_N(k)\). We emphasize that we only work with this case.
 \end{enumerate}
 Therefore, in order to find the eigenvalues/eigenfrequencies of the Laplace operator, one must find the singularities of the functions \(d(k)\) or \(\sigma_N(k)\) for the first and second cases above, respectively, i.e, study the local minima of the functions \(d(k)\) or \(\sigma_N(k)\) which, in very regular domains, should approach zero.
 
-To search for these singularities, a simple direct search algorithm was developed to bracket the set of local minima in a given interval. The iterative algorithm used is based on the Golden Ratio Search already used in \cite{alves2005method}. First, consider the graph of \(\sigma_N(k)\) in a given interval \(I=(a, b)\) (which likely has more than one local minima) and fix (a relatively large) step size \(h\). Let \(I_{M_0}^0 = \{a_0^0, \dots, a_{M_0}^0\}\) be the discretization of \(I_{M_0}^0\) in \({M_0}\) points spaced by \(h\) in the zeroth iteration, and denote the set of local minimums of \(I_{M_0}\) by \(X^0_K = \{x_0^0, \dots, x_K^0\} \subset I_{M_0}\), i.e, \(\forall i = 1,\dots,K\) there exists \(c^0, d^0 \in I_{M_0}^0\) such that \(c^0 = x_i^0 - h\), \(d^0 = x_i^0 + h\) and \(x_i < \min(c^0, d^0) \). Then, for each \(x_i^0\), \(I_{M_0}^0\) is enlarged with the middle points between \(c^0\) and \(x_i^0\), \(d^0\) and \(x_i^0\), and it is denoted by \(\tilde{I}_{M_1}^1\) (notice that \(M_0 < M_1\))\footnote{Given the nature of the algorithm, one can also consider the left adjacent point to \(c^0\), which we denote by \(e_0 \in I^0_{M_0}\), compute and add their middle point to \(\tilde{I}_{M_1}^1\)}. Finally, we sort \(\tilde{I}_{M_1}^1\) in an increasing order and repeat the process for a specified depth \(d\). When the maximum depth is attained, one was able to successfully find small intervals which bracket \textit{each local minimum} of \(\sigma_N\) in \(I\), and it is now possible to apply a direct search method to find it to any desired precision: in this work, Brent's method was used \cite{brent1971algorithm}, although Golden Ratio Search is also possible. The general form of the algorithm is given below.
+To search for these singularities, a simple direct search algorithm was developed to bracket the set of local minima in a given interval. The iterative algorithm used is based on the Golden Ratio Search already used in \cite{alves2005method}. First, consider the graph of \(\sigma_N(k)\) in a given interval \(I=(a, b)\) (which likely has more than one local minima) and fix (a relatively large) step size \(h\). Let \(I_{M_0}^0 = \{a_0^0, \dots, a_{M_0}^0\}\) be the discretization of \(I_{M_0}^0\) in \({M_0}\) points spaced by \(h\) in the zeroth iteration, and denote the set of local minimums of \(I_{M_0}\) by \(X^0_K = \{x_0^0, \dots, x_K^0\} \subset I_{M_0}\), i.e, \(\forall i = 1,\dots,K\) there exists \(c^0, d^0 \in I_{M_0}^0\) such that \(c^0 = x_i^0 - h\), \(d^0 = x_i^0 + h\) and \(x_i < \min(c^0, d^0) \). Then, for each \(x_i^0\), \(I_{M_0}^0\) is enlarged with the middle points between \(c^0\) and \(x_i^0\), \(d^0\) and \(x_i^0\), and it is denoted by \(\tilde{I}_{M_1}^1\) (notice that \(M_0 < M_1\))\footnote{Given the nature of the algorithm, one can also consider the left adjacent point to \(c^0\), which we denote by \(e_0 \in I^0_{M_0}\), compute and add their middle point to \(\tilde{I}_{M_1}^1\)}. Finally, we sort \(\tilde{I}_{M_1}^1\) in an increasing order and repeat the process for a specified depth \(d\). When the maximum depth is attained, one was able to successfully find small intervals which bracket \textit{each local minimum} of \(\sigma_N\) in \(I\), and it is now possible to apply a direct search method to find it to any desired precision: in this work, Brent's method was used \cite{brent1971algorithm}, although Golden Ratio Search is also possible. The general form of the algorithm is given in \ref{direct_bracketing_algorithm}.
 
-\begin{algorithm}[ht]
+\begin{algorithm}[!ht]
     \DontPrintSemicolon
     Set maximum depth \(d\)\;
     Set step size \(h\)\;
@@ -612,7 +612,7 @@ Before introducing a new technique to improve the condition of the system, we st
 
 \subsection{The Subspace Angle Technique}
 
-As stated before, one of the drawbacks of this method is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the MFS only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
+As stated before, one of the drawbacks of this method is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
 To solve the first problem, we add additional interior points in order to over determine the system; and for the second problem we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
 \[

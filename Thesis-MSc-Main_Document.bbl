@@ -21,6 +21,36 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{li2000singularities}
+Z.-C. Li and T.-T. Lu, ``Singularities and treatments of elliptic boundary
+  value problems,'' \emph{Mathematical and Computer Modelling}, vol.~31, no.
+  8-9, pp. 97--145, 2000.
+
+\bibitem{alves2013method}
+C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
+  some inverse eigenproblems,'' \emph{SIAM Journal on Scientific Computing},
+  vol.~35, no.~3, pp. A1689--A1708, 2013.
+
+\bibitem{reutskiy2006method}
+S.~Y. Reutskiy, ``The method of fundamental solutions for helmholtz eigenvalue
+  problems in simply and multiply connected domains,'' \emph{Engineering
+  Analysis with Boundary Elements}, vol.~30, no.~3, pp. 150--159, 2006.
+
+\bibitem{antunes2011inverse}
+P.~R. Antunes and P.~Freitas, ``On the inverse spectral problem for euclidean
+  triangles,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
+  and Engineering Sciences}, vol. 467, no. 2130, pp. 1546--1562, 2011.
+
+\bibitem{krejcirik_larson_lotoreichik_2019}
+\BIBentryALTinterwordspacing
+D.~Krejcirik, S.~Larson, and V.~Lotoreichik, ``Problem list of the aim
+  workshop,'' 2019. [Online]. Available: \url{http://aimpl.org/shapesurface/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{betcke2005reviving}
+T.~Betcke and L.~N. Trefethen, ``Reviving the method of particular solutions,''
+  \emph{SIAM review}, vol.~47, no.~3, pp. 469--491, 2005.
+
 \bibitem{rudin1991functional}
 \BIBentryALTinterwordspacing
 W.~Rudin, \emph{Functional Analysis}, ser. International series in pure and
@@ -76,6 +106,10 @@ G.~Geymonat, ``Trace theorems for sobolev spaces on lipschitz domains.
 J.~Necas, \emph{Direct methods in the theory of elliptic equations}.\hskip 1em
   plus 0.5em minus 0.4em\relax Springer Science \& Business Media, 2011.
 
+\bibitem{adams2003sobolev}
+R.~A. Adams and J.~J. Fournier, \emph{Sobolev spaces}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Elsevier, 2003.
+
 \bibitem{chen2010boundary}
 G.~Chen and J.~Zhou, \emph{Boundary element methods with applications to
   nonlinear problems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science
@@ -103,26 +137,59 @@ D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}.\hskip
 M.~Reed and B.~Simon, \emph{II: Fourier Analysis, Self-Adjointness}.\hskip 1em
   plus 0.5em minus 0.4em\relax Elsevier, 1975, vol.~2.
 
+\bibitem{henrot2006extremum}
+A.~Henrot, \emph{Extremum problems for eigenvalues of elliptic
+  operators}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science \&
+  Business Media, 2006.
+
+\bibitem{henrot2017shape}
+------, \emph{Shape optimization and spectral theory}.\hskip 1em plus 0.5em
+  minus 0.4em\relax De Gruyter Open, 2017.
+
+\bibitem{krahn1926minimaleigenschaften}
+E.~Krahn, ``{\"U}ber minimaleigenschaften der kugel in drei und mehr
+  dimensionen,'' \emph{(No Title)}, 1926.
+
 \bibitem{freitas2008sharp}
 P.~Freitas and D.~Krej{\v{c}}i{\v{r}}{\'\i}k, ``A sharp upper bound for the
   first dirichlet eigenvalue and the growth of the isoperimetric constant of
   convex domains,'' \emph{Proceedings of the American Mathematical Society},
   vol. 136, no.~8, pp. 2997--3006, 2008.
 
+\bibitem{wolf1994range}
+S.~A. Wolf and J.~B. Keller, ``Range of the first two eigenvalues of the
+  laplacian,'' \emph{Proceedings of the Royal Society of London. Series A:
+  Mathematical and Physical Sciences}, vol. 447, no. 1930, pp. 397--412, 1994.
+
+\bibitem{henrot2000minimization}
+A.~Henrot and D.~Bucur, ``Minimization of the third eigenvalue of the dirichlet
+  laplacian,'' \emph{Proceedings of the Royal Society of London. Series A:
+  Mathematical, Physical and Engineering Sciences}, vol. 456, no. 1996, pp.
+  985--996, 2000.
+
 \bibitem{bucur2012minimization}
 D.~Bucur, ``Minimization of the k-th eigenvalue of the dirichlet laplacian,''
   \emph{Archive for Rational Mechanics and Analysis}, vol. 206, no.~3, pp.
   1073--1083, 2012.
 
+\bibitem{mazzoleni2013existence}
+D.~Mazzoleni and A.~Pratelli, ``Existence of minimizers for spectral
+  problems,'' \emph{Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}, vol.
+  100, no.~3, pp. 433--453, 2013.
+
+\bibitem{polya1951isoperimetric}
+G.~P{\'o}lya and G.~Szeg{\"o}, \emph{Isoperimetric inequalities in mathematical
+  physics}.\hskip 1em plus 0.5em minus 0.4em\relax Princeton University Press,
+  1951, no.~27.
+
+\bibitem{bogosel2022polygonal}
+B.~Bogosel and D.~Bucur, ``On the polygonal faber-krahn inequality,''
+  \emph{arXiv preprint arXiv:2203.16409}, 2022.
+
 \bibitem{gomez2021any}
 J.~G{\'o}mez-Serrano and G.~Orriols, ``Any three eigenvalues do not determine a
   triangle,'' \emph{Journal of Differential Equations}, vol. 275, pp. 920--938,
   2021.
-
-\bibitem{antunes2011inverse}
-P.~R. Antunes and P.~Freitas, ``On the inverse spectral problem for euclidean
-  triangles,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
-  and Engineering Sciences}, vol. 467, no. 2130, pp. 1546--1562, 2011.
 
 \bibitem{kac1966can}
 M.~Kac, ``Can one hear the shape of a drum?'' \emph{The american mathematical
@@ -138,47 +205,136 @@ P.~A.~M. Dirac, ``The quantum theory of the electron,'' \emph{Proceedings of
   the Royal Society of London. Series A, Containing Papers of a Mathematical
   and Physical Character}, vol. 117, no. 778, pp. 610--624, 1928.
 
+\bibitem{lotoreichik2019sharp}
+V.~Lotoreichik and T.~Ourmi{\`e}res-Bonafos, ``A sharp upper bound on the
+  spectral gap for graphene quantum dots,'' \emph{Mathematical Physics,
+  Analysis and Geometry}, vol.~22, pp. 1--30, 2019.
+
 \bibitem{briet2022spectral}
 P.~Briet and D.~Krej{\v{c}}i{\v{r}}{\'\i}k, ``Spectral optimization of dirac
   rectangles,'' \emph{Journal of Mathematical Physics}, vol.~63, no.~1, p.
   013502, 2022.
 
+\bibitem{antunes2021variational}
+P.~R. Antunes, R.~D. Benguria, V.~Lotoreichik, and T.~Ourmi{\`e}res-Bonafos,
+  ``A variational formulation for dirac operators in bounded domains.
+  applications to spectral geometric inequalities,'' \emph{Communications in
+  Mathematical Physics}, vol. 386, no.~2, pp. 781--818, 2021.
+
 \bibitem{vu2023spectral}
 T.~Vu, ``Spectral inequality for dirac right triangles,'' \emph{arXiv preprint
   arXiv:2302.13040}, 2023.
-
-\bibitem{krejcirik_larson_lotoreichik_2019}
-\BIBentryALTinterwordspacing
-D.~Krejcirik, S.~Larson, and V.~Lotoreichik, ``Problem list of the aim
-  workshop,'' 2019. [Online]. Available: \url{http://aimpl.org/shapesurface/}
-\BIBentrySTDinterwordspacing
 
 \bibitem{benguria2017spectral}
 R.~D. Benguria, S.~Fournais, E.~Stockmeyer, and H.~Van Den~Bosch, ``Spectral
   gaps of dirac operators describing graphene quantum dots,''
   \emph{Mathematical Physics, Analysis and Geometry}, vol.~20, pp. 1--12, 2017.
 
-\bibitem{lotoreichik2019sharp}
-V.~Lotoreichik and T.~Ourmi{\`e}res-Bonafos, ``A sharp upper bound on the
-  spectral gap for graphene quantum dots,'' \emph{Mathematical Physics,
-  Analysis and Geometry}, vol.~22, pp. 1--30, 2019.
-
 \bibitem{quarteroni1999domain}
 A.~Quarteroni and A.~Valli, \emph{Domain decomposition methods for partial
   differential equations}.\hskip 1em plus 0.5em minus 0.4em\relax Oxford
   University Press, 1999, no. BOOK.
 
-\bibitem{adams2003sobolev}
-R.~A. Adams and J.~J. Fournier, \emph{Sobolev spaces}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Elsevier, 2003.
+\bibitem{alves2009choice}
+C.~J. Alves, ``On the choice of source points in the method of fundamental
+  solutions,'' \emph{Engineering Analysis with Boundary Elements}, vol.~33,
+  no.~12, pp. 1348--1361, 2009.
+
+\bibitem{narasimhan2012complex}
+R.~Narasimhan and Y.~Nievergelt, \emph{Complex analysis in one variable}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer Science \& Business Media, 2012.
+
+\bibitem{kress2013linear}
+R.~Kress, \emph{Linear Integral Equations}, ser. Applied Mathematical
+  Sciences.\hskip 1em plus 0.5em minus 0.4em\relax Springer New York, 2013.
+
+\bibitem{colton2013integral}
+D.~Colton and R.~Kress, \emph{Integral equation methods in scattering
+  theory}.\hskip 1em plus 0.5em minus 0.4em\relax SIAM, 2013.
 
 \bibitem{salsa2016partial}
 S.~Salsa, \emph{Partial differential equations in action: from modelling to
   theory}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, vol.~99.
 
-\bibitem{sauvigny2012partial}
-F.~Sauvigny, \emph{Partial Differential Equations 1: Foundations and Integral
-  Representations}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science \&
-  Business Media, 2012.
+\bibitem{svilen_phd}
+S.~Valtchev, ``Numerical analysis of methods with fundamental solutions for
+  acoustic and elastic wave propagation problems,'' Ph.D. dissertation,
+  Universidade Técnica de Lisboa, Instituto Superior Técnico, 2008.
+
+\bibitem{smyrlis2009applicability}
+Y.-S. Smyrlis, ``Applicability and applications of the method of fundamental
+  solutions,'' \emph{Mathematics of computation}, vol.~78, no. 267, pp.
+  1399--1434, 2009.
+
+\bibitem{alves2005new}
+C.~Alves and C.~Chen, ``A new method of fundamental solutions applied to
+  nonhomogeneous elliptic problems,'' \emph{Advances in Computational
+  Mathematics}, vol.~23, pp. 125--142, 2005.
+
+\bibitem{antunes2018reducing}
+P.~R. Antunes, ``Reducing the ill conditioning in the method of fundamental
+  solutions,'' \emph{Advances in Computational Mathematics}, vol.~44, pp.
+  351--365, 2018.
+
+\bibitem{antunes2018numerical}
+------, ``A numerical algorithm to reduce ill-conditioning in meshless methods
+  for the helmholtz equation.'' \emph{Numer. Algorithms}, vol.~79, no.~3, pp.
+  879--897, 2018.
+
+\bibitem{christiansen1981condition}
+S.~Christiansen and E.~Meister, ``Condition number of matrices derived from two
+  classes of integral equations,'' \emph{Mathematical Methods in the Applied
+  Sciences}, vol.~3, no.~1, pp. 364--392, 1981.
+
+\bibitem{kitagawa1988numerical}
+T.~Kitagawa, ``On the numerical stability of the method of fundamental solution
+  applied to the dirichlet problem,'' \emph{Japan Journal of Applied
+  Mathematics}, vol.~5, pp. 123--133, 1988.
+
+\bibitem{kitagawa1991asymptotic}
+------, ``Asymptotic stability of the fundamental solution method,''
+  \emph{Journal of Computational and Applied Mathematics}, vol.~38, no. 1-3,
+  pp. 263--269, 1991.
+
+\bibitem{barnett2008stability}
+A.~H. Barnett and T.~Betcke, ``Stability and convergence of the method of
+  fundamental solutions for helmholtz problems on analytic domains,''
+  \emph{Journal of Computational Physics}, vol. 227, no.~14, pp. 7003--7026,
+  2008.
+
+\bibitem{alves2005method}
+C.~J. Alves and P.~R. Antunes, ``The method of fundamental solutions applied to
+  the calculation of eigenfrequencies and eigenmodes of 2d simply connected
+  shapes,'' \emph{CMC-TECH SCIENCE PRESS-}, vol.~2, no.~4, p. 251, 2005.
+
+\bibitem{brent1971algorithm}
+R.~P. Brent, ``An algorithm with guaranteed convergence for finding a zero of a
+  function,'' \emph{The computer journal}, vol.~14, no.~4, pp. 422--425, 1971.
+
+\bibitem{moler1968bounds}
+C.~Moler and L.~Payne, ``Bounds for eigenvalues and eigenvectors of symmetric
+  operators,'' \emph{SIAM Journal on Numerical Analysis}, vol.~5, no.~1, pp.
+  64--70, 1968.
+
+\bibitem{antunes2010meshfree}
+P.~R. Antunes and S.~S. Valtchev, ``A meshfree numerical method for acoustic
+  wave propagation problems in planar domains with corners and cracks,''
+  \emph{Journal of Computational and Applied Mathematics}, vol. 234, no.~9, pp.
+  2646--2662, 2010.
+
+\bibitem{kato2013perturbation}
+T.~Kato, \emph{Perturbation theory for linear operators}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer Science \& Business Media, 2013, vol. 132.
+
+\bibitem{alves2021domain}
+C.~J. Alves, N.~F. Martins, and S.~S. Valtchev, ``Domain decomposition methods
+  with fundamental solutions for helmholtz problems with discontinuous source
+  terms,'' \emph{Computers \& Mathematics with Applications}, vol.~88, pp.
+  16--32, 2021.
+
+\bibitem{golberg1996improved}
+M.~A. Golberg, C.-S. Chen, and S.~Karur, ``Improved multiquadric approximation
+  for partial differential equations,'' \emph{Engineering Analysis with
+  boundary elements}, vol.~18, no.~1, pp. 9--17, 1996.
 
 \end{thebibliography}
