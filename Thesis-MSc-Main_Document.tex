@@ -139,8 +139,8 @@
 % Listings
 % If not used, comments the lines!
 % Requires packages listings
-\pdfbookmark[1]{Listings}{lol}
-\lstlistoflistings
+% \pdfbookmark[1]{Listings}{lol}
+% \lstlistoflistings
 %\cleardoublepage
 % -----------------------------------------------------------------------------
 % % List of acronyms
@@ -206,14 +206,13 @@
 % -----------------------------------------------------------------------------
 % BIBLIOGRAPHY
 % Add the Bibliography to the PDF table of contents (not the document table of contents)
-%\pdfbookmark[0]{Bibliography}{bib}
-\addcontentsline{toc}{chapter}{Bibliography}
+
 % The bibliography style sheet
 % Chose your preferences on the format of the entries and the Labels:
 % IEEEtran: Used in general (recommended for IST Thesis)
 %           Entries are labelled and sorted by appearance in the document
 %           Labels are Numeric inside square brackets
-\bibliographystyle{IEEEtran}
+%\bibliographystyle{IEEEtran}
 %
 % Apalike:  Entries formatted alphabetically, last name first, with identation
 %           Labels with Autor's Name and Year inside square brackets
@@ -221,11 +220,12 @@
 %
 % Alpha:    Entries formatted with Autor's Name and Year, hanging identation
 %           Labels with Autor's abbr. Names and Year inside square brackets
-%\bibliographystyle{alpha}
+\bibliographystyle{alpha}
 %
 % Acm:     Entries formatted with Autor's Name (small Caps), hanging identation
 %          Labels are Numeric inside square brackets
 %\bibliographystyle{acm}
+
 % The following command resets the 'emphasis' style for bibliography entries
 \normalem
 % Name of your BiBTeX file
@@ -237,11 +237,11 @@
 % Otherwise, comment the following command:
 %\cleardoublepage
 %
-% -----------------------------------------------------------------------------
+% 
+%\pdfbookmark[0]{Bibliography}{bib}
+\addcontentsline{toc}{chapter}{Bibliography}-----------------------------------------------------------------------------
 % Glossary
-%\input{./Chapters/Thesis-MSc-Glossary.tex}
-\printglossary[] \mtcaddchapter
-
+%\printglossaries
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 %\clearpage
 % Otherwise, comment the following command:

@@ -14,8 +14,8 @@
 \contentsline {section}{\numberline {3.3}A domain decomposition problem}{35}{section.3.3}%
 \contentsline {chapter}{\numberline {4}The Method of Fundamental Solutions}{39}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Density and linear independence results}{40}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Numerical approach for the Laplace Equation}{47}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}An enrichment technique}{49}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.2}Numerical approach for the Laplace Equation}{48}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}An enrichment technique}{50}{subsection.4.2.1}%
 \contentsline {section}{\numberline {4.3}Numerical approach for the Helmholtz Equation}{53}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}The Subspace Angle Technique}{56}{subsection.4.3.1}%
 \contentsline {chapter}{\numberline {5}Conducted Numerical Simulations}{59}{chapter.5}%
@@ -29,8 +29,6 @@
 \contentsline {subsection}{\numberline {5.2.2}Results for the rectangle}{75}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Results for an L-shape domain with enrichment}{77}{subsection.5.2.3}%
 \contentsline {chapter}{\numberline {6}Conclusion}{83}{chapter.6}%
-\contentsline {chapter}{Bibliography}{85}{chapter.6}%
-\contentsline {chapter}{Glossary}{91}{section*.47}%
-\contentsline {xchapter}{}{91}{chapter*.48}%
+\contentsline {chapter}{Bibliography}{91}{chapter*.45}%
 \contentsline {chapter}{\numberline {A}Code of Project}{92}{appendix.A}%
 \contentsline {chapter}{\numberline {B}A Large Table}{93}{appendix.B}%
