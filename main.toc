@@ -1,17 +1,17 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}On the applications of the Method of Fundamental Solutions}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Thesis Overview}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Some Preliminary Results}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Some concepts on Banach Spaces}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Some concepts on Hilbert Spaces}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Lebesgue and Sobolev Spaces}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Spectral Decomposition of the Laplace Operator}{18}{section.2.4}%
-\contentsline {chapter}{\numberline {3}From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The Laplace Operator}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Some shape optimization results}{25}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}The Dirac Operator}{28}{section.3.2}%
-\contentsline {section}{\numberline {3.3}A domain decomposition problem}{34}{section.3.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}On the applications of the Method of Fundamental Solutions}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Thesis Overview}{4}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Some Preliminary Results}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Some concepts on Banach Spaces}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Some concepts on Hilbert Spaces}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Lebesgue and Sobolev Spaces}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Spectral Decomposition of the Laplace Operator}{19}{section.2.4}%
+\contentsline {chapter}{\numberline {3}From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The Laplace Operator}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Some shape optimization results}{26}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}The Dirac Operator}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}A domain decomposition problem}{35}{section.3.3}%
 \contentsline {chapter}{\numberline {4}The Method of Fundamental Solutions}{39}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Density and linear independence results}{40}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Numerical approach for the Laplace Equation}{47}{section.4.2}%
@@ -29,8 +29,8 @@
 \contentsline {subsection}{\numberline {5.2.2}Results for the rectangle}{75}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Results for an L-shape domain with enrichment}{77}{subsection.5.2.3}%
 \contentsline {chapter}{\numberline {6}Conclusion}{83}{chapter.6}%
-\contentsline {chapter}{Bibliography}{87}{chapter.6}%
-\contentsline {chapter}{Glossary}{93}{section*.48}%
-\contentsline {xchapter}{}{93}{chapter*.49}%
-\contentsline {chapter}{\numberline {A}Code of Project}{95}{appendix.A}%
-\contentsline {chapter}{\numberline {B}A Large Table}{97}{appendix.B}%
+\contentsline {chapter}{Bibliography}{85}{chapter.6}%
+\contentsline {chapter}{Glossary}{91}{section*.47}%
+\contentsline {xchapter}{}{91}{chapter*.48}%
+\contentsline {chapter}{\numberline {A}Code of Project}{92}{appendix.A}%
+\contentsline {chapter}{\numberline {B}A Large Table}{93}{appendix.B}%

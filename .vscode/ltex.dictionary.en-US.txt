@@ -32,3 +32,7 @@ Malgrange-Ehrenpreis
 Krahn
 inradius
 symmetrizations
+cartesian
+well-posedness
+meshless
+Well-Posedness

@@ -310,9 +310,9 @@
         \vspace*{1cm}
     }
 }{
-	\clearpage
-	\thispagestyle{empty}
-	\cleardoublepage
+	% \clearpage
+	% \thispagestyle{empty}
+	% \cleardoublepage
 }
 
 \newcommand{\tblc}[1]{\makebox[\linewidth][c]{#1}}

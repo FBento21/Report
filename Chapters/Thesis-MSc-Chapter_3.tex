@@ -2,10 +2,8 @@
 % This is Chapter 3
 % !TEX root = ../main.tex
 % #############################################################################
-% Change the Name of the Chapter i the following line
 \fancychapter{The Method of Fundamental Solutions}
 % \cleardoublepage
-% The following line allows to ref this chapter
 \label{chap:numerical}
 % #############################################################################
 
@@ -30,7 +28,7 @@ By definition and using the linearity of the operator \(\mathcal{L}\), \(\tilde{
 \]
 where \(y_j \in \hat{\Gamma} \subset \mathbb{R}^d\setminus \overline{\Omega}\) with \(j=1,\dots,N\), are the so-called source points to be chosen. We chose them to be outside our domain since, by translation, the Fundamental Solution \(\Phi\) has a singularity at each \(y_j\) because, otherwise, it would render our approximation full of singularities inside \(\Omega\). 
 \begin{remark}
-    While the motivation above might seem far-fetched, one can observe that the approximation \(\Tilde{u}\) resembles a convolution between some density function \(\alpha(x)\) and the fundamental solution \(\Phi\). As we will see below, it can be proven that the fundamental solutions of the operator \(\mathcal{L}\) are dense in the functional space defined in \(\partial\Omega\) (which is enough since, as we already saw, the interior condition is satisfied by construction). For example, considering Dirichlet boundary conditions, one can use the single layer potential (which is going to be presented and studied in the next pages) that allow, through a discretization argument, to give a numerical approximation to the \ac{BVP} and
+    While the motivation above might seem far-fetched, one can observe that the approximation \(\Tilde{u}\) resembles a convolution between some density function \(\alpha(x)\) and the fundamental solution \(\Phi\). As we will see below, it can be proven that the fundamental solutions of the operator \(\mathcal{L}\) are dense in the functional space defined in \(\partial\Omega\) (which is enough since, as we already saw, the interior condition is satisfied by construction). For example, considering Dirichlet boundary conditions, one can use the single layer potential (which is going to be presented and studied in the next pages) that allows, through a discretization argument, to give a numerical approximation to the \ac{BVP} and
     \begin{equation}\label{MFS_approx_disc}
         u(x) = \int_{\Gamma}\Phi(x-y)\varphi(y)d\sigma(y) \approx \sum_{j=1}^{N}w_j \varphi(y_j) \Phi(x-y_j) = \Tilde{u}(x), 
     \end{equation}
@@ -41,7 +39,7 @@ First, we introduce the notion of \textit{artificial boundary} (or \textit{pseud
     A source set \(\hat{\Gamma}\) is said to be admissible if
     \begin{enumerate}
         \item \(\hat{\Gamma} \subset \mathbb{R}^d\setminus \overline{\Omega}\) is an open set with components in each external part of \(\Omega\);
-        \item \(\hat{\Gamma} = \partial \hat{\Omega}\) is the boundary of \(\hat{\Omega}\), where \(\hat{\Omega} \subset \mathbb{R}^d\setminus\overline{\Omega}\) is an open set with components in each external part of \(\Omega\). Note that the problem must be well posed in \(\hat{\Omega}\);
+        \item \(\hat{\Gamma} = \partial \hat{\Omega}\) is the boundary of \(\hat{\Omega}\), where \(\hat{\Omega} \subset \mathbb{R}^d\setminus\overline{\Omega}\) is an open set with components in each external part of \(\Omega\). Note that the problem must be well-posed in \(\hat{\Omega}\);
         \item \(\hat{\Gamma} \subset \partial \hat{\Omega}\), when \(\partial \hat{\Omega}\) is an analytical boundary set verifying (2.) and \(\hat{\Gamma}\) is open in the \(\partial \hat{\Omega}\) topology. 
     \end{enumerate}
     We denote the set of chosen source points by \(\mathcal{Y} = \{y_j \in \hat{\Gamma}: j=1,\dots,N\}\).
@@ -53,7 +51,6 @@ Assume that \(\mathcal{L} = -\Delta\) and \(\Phi\) is the fundamental solution o
     \mathcal{S}(\Gamma, \hat{\Gamma}) = \Span\{\Phi(x-y)_{|x \in \Gamma} : y \in \hat{\Gamma}\}.
 \]
 Some preliminary results are going to be needed in order to present the desired density proofs.
-% We notice that every result below has its own counterpart if we consider \(\mathcal{L} = -(\Delta + k^2)\) and \(\Phi_k\) to be fundamental solution of the Helmholtz equation.
 We start by introducing the concept of analytic continuation. For further details see \cite{narasimhan2012complex}.
 \begin{definition}
     Let \(f\) be a complex-valued function defined on \(\Omega \subset \mathbb{C}\). We say that \(f\) is holomorphic on \(\Omega\) if for every \(a \in \Omega\), there exists a neighborhood \(U\) of \(a\) and \((c_n)_{n \in \mathbb{N}} \subset \mathbb{C}\) such that the power series
@@ -122,7 +119,7 @@ The main result which justifies the \ac{MFS} for the Laplace equation is now sta
     Let \(\Omega\) be an open and bounded set with \(C^2\) boundary \(\Gamma = \partial \Omega\) such that \(\overline{\Omega} \subset \hat{\Omega} \subset \mathbb{R}^2\), where \(\hat{\Omega}\) is an open and bounded set and \(\hat{\Gamma} = \partial \hat{\Omega}\) is an admissible source set. Then, \(\mathcal{S}(\Gamma, \hat{\Gamma}) \oplus \mathbb{R}\) is dense in \(H^\frac{1}{2}(\Gamma)\) and in \(H^{-\frac{1}{2}}(\Gamma)\).
 \end{theorem}
 \begin{proof}
-    In view of Lemma \ref{banach_ortho_lemma} we start by fixing some notation. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the maps
+    Given Lemma \ref{banach_ortho_lemma} we start by fixing some notation. Let \(E = H^\frac{1}{2}(\Gamma)\). For every (fixed) \(y \in \hat{\Gamma}\), the maps
     \begin{align*}
         &\Phi(\cdot-y): \varphi \mapsto \int_\Gamma \Phi(x-y)\varphi(x) d\sigma(x)\\
         &1: \varphi \mapsto \int_\Gamma \varphi (x) d\sigma(x)
@@ -180,7 +177,7 @@ The main result which justifies the \ac{MFS} for the Laplace equation is now sta
     Since \(\hat{\mathcal{S}}\varphi_n\) is harmonic for each \(n \in \mathbb{N}\), every interior Dirichlet \ac{BVP} can be approximated using the modified single layer potential. Conversely, any \(\varphi \in H^\frac{1}{2}(\Gamma)\) and \(c \in \mathbb{R}\) define a \ac{BVP} whose solution is given by the associated modified single layer potential \(\hat{\mathcal{S}}\varphi(y)\), with boundary data given by its restriction to \(\Gamma\).
 \end{remark}
 
-The density proof for the transmission/decomposition problem follows directly from the Theorem above and from the equivalence formulation presented in Theorem \ref{equivalence_transmission}. Consider the source function
+The density proof for the transmission/decomposition problem follows directly from the Theorem above and the equivalence formulation presented in Theorem \ref{equivalence_transmission}. Consider the source function
 \begin{equation}
     f = \begin{cases}
         \frac{1}{k_1}, \text{ in } & \Omega_1\\
@@ -211,7 +208,7 @@ Since \(H^\frac{1}{2}(\partial \Omega_i)\) is the trace space of \(H^1(\Omega_i)
 \end{align*}
 where \(\hat{\mathcal{S}}\) is defined in Remark \ref{remark_density_sequence_density_layers} and \(M\) is the double layer potential in Definition \ref{definition_single_and_double_layer_potentials} (see Remark \ref{density_remark_general_bc_and_hilbert} for more details how different boundary conditions can be handled). Therefore, given the equivalence between both problems, it is possible to approximate the solution \(u\) of the Poisson equation with discontinuous source term using the \ac{MFS} via the decomposition approach.
 
-Finally, the discretization argument to be presented follows from the fact that, given a set of source points \(\mathcal{Y} = \{y_1,\dots, y_N\} \subset \mathbb{R}^2\setminus\overline{\Omega}\), the fundamental solutions \(\Phi(\cdot-y_1),\dots,\Phi(\cdot-y_N)\) are linearly independent on \(\partial \Omega\) and therefore in \(\Omega\).
+Finally, the discretization argument to be presented follows from the fact that given a set of source points \(\mathcal{Y} = \{y_1,\dots, y_N\} \subset \mathbb{R}^2\setminus\overline{\Omega}\), the fundamental solutions \(\Phi(\cdot-y_1),\dots,\Phi(\cdot-y_N)\) are linearly independent on \(\partial \Omega\) and therefore in \(\Omega\).
 \begin{theorem}\label{lapl_li}
     Let \(\mathcal{Y}\) be a set of source points, as defined above. Then, the restriction of the functions \(\Phi(\cdot-y_1),\dots,\Phi(\cdot-y_N)\) to \(\partial\Omega\) are linearly independent.
 \end{theorem}
@@ -258,7 +255,7 @@ Again, like in Theorem \ref{MFS_lap_dense}, we point the reader to \cite{alves20
     \[
         \Phi_k(\cdot-y): \varphi \mapsto \int_\Gamma \Phi_k(x-y)\varphi(x)d\sigma(x)
     \]
-    is linear and continuous in \(H^\frac{1}{2}(\Gamma)\) and \(\Phi_k(\cdot-y) \in H^{-\frac{1}{2}}(\Gamma)\). Let \(N = \Span\{\Phi_k(\cdot-y)\}\) and
+    is linear and continuous in \(H^\frac{1}{2}(\Gamma)\) and \(\Phi_k(\cdot-y) \in H^{-\frac{1}{2}}(\Gamma)\). Let \(N = \mathcal{S}(\Gamma, \hat{\Gamma})\}\) and
     \[
         N^\perp = \{\varphi \in H^\frac{1}{2}(\Gamma): \langle \psi, \varphi \rangle = 0, \psi \in N\}.
     \]
@@ -300,11 +297,11 @@ with the orthogonal notation \(z^\perp = (-z_2,z_1)\). This way, one can approxi
 where \(\eta>0\) is some small coefficient that controls the distance from each point in \(\Gamma\) and \(\hat{\Gamma}\). As we shall see below, this coefficient has an important impact on the convergence of the \ac{MFS}, where bigger values of \(\eta\) produce better approximations. However, this is only feasible for simple geometries, because it also increases the condition number of matrix \(A\), denoted by \(\kappa(A)\).
 
 \section{Numerical approach for the Laplace Equation}\label{n_a_MFS_lap}
-Given the results above, it is possible to numerically solve the Laplace and Helmholtz equations for any boundary data \(g(x)\) if we can find the coefficients in the discretization of the single layer potential. For simplicity, we still assume Dirichlet boundary conditions. Let \(N\) be the number of source points and \(M\) the number of colocation points on the boundary, denoted by \(x_1,\dots,x_i,\dots,x_M\) with \(i=1,\dots,M\). Then, we solve the discretized equation
+Given the results above, it is possible to numerically solve the Laplace and Helmholtz equations for any boundary data \(g(x)\) if we can find the coefficients in the discretization of the single layer potential. For simplicity, we still assume Dirichlet boundary conditions. Let \(N\) be the number of source points and \(M\) the number of colocation points on the boundary, denoted by \(x_1,\dots,x_i,\dots,x_M\) with \(i=1,\dots, M\). Then, we solve the discretized equation
 \[
     \tilde{u}(x_i) = \sum_{j=1}^{N} \alpha_j \Phi(x_i-y_j) + \alpha_{N+1} = g(x_i)    
 \]
-with respect to the coefficients \(\alpha_j\). Defining \(g_i \coloneq g(x_i), \, i=1,\dots,M\), notice that the equation above can be rewritten in the matricial form
+with respect to the coefficients \(\alpha_j\). Defining \(g_i \coloneq g(x_i), \, i=1,\dots, M\), notice that the equation above can be rewritten in the matricial form
 \begin{equation}\label{MFS_m_system}
     {\underbrace{\begin{bmatrix}
         \Phi(x_1, y_1) & \cdots & \Phi(x_1, y_N) & 1 \\
@@ -327,7 +324,7 @@ with respect to the coefficients \(\alpha_j\). Defining \(g_i \coloneq g(x_i), \
 This problem can be framed in two different ways:
 \begin{itemize}
     \item if \(N+1=M\), then we are faced with an interpolation problem, where we solve a linear system of \(N\) equations and \(N\) unknowns;
-    \item if \(M > N+1\), then we must solve a least-squares problem. Observe that the case \(M < N+1\) is an under determined system of equations and therefore the number of colocation points must be greater that the number of source points. In any case, every numerical linear algebra software is able to solve this type of problem efficiently. This is the method used in this work, since it avoids interpolation instabilities, forces the boundary condition to hold at some specific points and is particularly robust when dealing with non-regular boundary data.  After several numerical experiments, e.g. \cite{alves2009choice}, it was concluded that \(N=2M\) is a good choice for the number of source points.
+    \item if \(M > N+1\), then we must solve a least-squares problem. Observe that the case \(M < N+1\) is an under-determined system of equations and therefore the number of colocation points must be greater than the number of source points. In any case, every numerical linear algebra software can solve this type of problem efficiently. This is the method used in this work, since it avoids interpolation instabilities, forces the boundary condition to hold at some specific points, and is particularly robust when dealing with non-regular boundary data.  After several numerical experiments, e.g. \cite{alves2009choice}, it was concluded that \(N=2M\) is a good choice for the number of source points.
 \end{itemize}
 
 Notice that different boundary conditions can be considered: for example, if solving the Laplace equation with Neumann boundary conditions, one should replace the entries \(\Phi(x_i,y_j)\) with \(\partial_{n_x}\Phi(x_i,y_j) = \nabla_x\Phi(x_i,y_j)\cdot n\), where \(n\) is the unit normal vector to the boundary in the point \(x_i\).
@@ -350,7 +347,7 @@ The Theorem above provides some important insights regarding the \ac{MFS}. First
         \sqrt{\frac{\rho}{R}}, \text{ if } r_0 < \frac{R^2}{\rho}.
     \end{cases}
 \]
-Unfortunately, one of the main drawbacks of the \ac{MFS} is the ill-conditioning of the matrix \(A\) and the fact that the matrix \(A\) is very dense, and we cannot use optimized sparse software solvers on the system \eqref{MFS_m_system}. In particular, while bigger values of the parameter \(\eta\) allows for better numerical approximations it also implies an exponential growth\footnote{It is very important to remark that the ill-conditioning of the matrix \(A\) is associated with the classical basis functions used in the \ac{MFS}. However, it may be possible to derive basis functions that, after certain manipulations, do not exhibit the same limitations and have a condition number \(\kappa(A)\) of \(\mathcal{O}(1)\). We refer the reader to \cite{antunes2018reducing} and \cite{antunes2018numerical} for more information.} of the condition number \(\kappa(A)\), see \cite{christiansen1981condition}, \cite{kitagawa1988numerical} and \cite{kitagawa1991asymptotic}.
+Unfortunately, one of the main drawbacks of the \ac{MFS} is the ill-conditioning of the matrix \(A\) and the fact that the matrix \(A\) is very dense, and we cannot use optimized sparse software solvers on the system \eqref{MFS_m_system}. In particular, while bigger values of the parameter \(\eta\) allow for better numerical approximations it also implies an exponential growth\footnote{It is very important to remark that the ill-conditioning of the matrix \(A\) is associated with the classical basis functions used in the \ac{MFS}. However, it may be possible to derive basis functions that, after certain manipulations, do not exhibit the same limitations and have a condition number \(\kappa(A)\) of \(\mathcal{O}(1)\). We refer the reader to \cite{antunes2018reducing} and \cite{antunes2018numerical} for more information.} of the condition number \(\kappa(A)\), see \cite{christiansen1981condition}, \cite{kitagawa1988numerical} and \cite{kitagawa1991asymptotic}.
 \begin{theorem}
     In the conditions of the Theorem \ref{MFS_lap_conv}, the condition number can be estimated by
     \[
@@ -361,11 +358,11 @@ Another interesting remark, is the condition \(R \neq 1\), which is in direct co
 \[
     \tilde{u}(0) = \sum_{j=1}^{N}\alpha_j \Phi(0-y_j) = -\frac{1}{2\pi}\sum_{j=1}^{N}\alpha_j \log(R) = 0,
 \]
-no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it is impossible to approximate any harmonic function which does not vanish on the origin. However, this is not the case if we add the basis function \(1\), which was used to prove the density result. While this almost never interferes with the numerical approximations in the next chapters, it will be considered nevertheless by a reason of coherence. This is the reason why a column of ones was added in the matrix \(A\).
+no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it is impossible to approximate any harmonic function which does not vanish on the origin. However, this is not the case if we add the basis function \(1\), which was used to prove the density result. While this rarely interferes with the numerical approximations in the next chapters, it will be considered nevertheless by a reason of coherence. This is the reason why a column of ones was added in the matrix \(A\).
 
 \subsection{An enrichment technique}\label{m_particular_solutions}
 
-Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions which display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique which allows for singularity treatment. In the same vein as in the Proposition \ref{dirac_not_polar}, we reintroduce the notion of a wedge domain and consider some wedge like domain with interior angle \(\Theta\).
+Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions that display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique that allows for singularity treatment. In the same vein as in Proposition \ref{dirac_not_polar}, we reintroduce the notion of a wedge domain and consider some wedge-like domain with interior angle \(\Theta\).
     
 \begin{figure}[H]
 \centering
@@ -396,7 +393,7 @@ and
 \[
     u(r,\theta) = \left(c_1 \log (r) + c_2 \right) \times \left(c_3 \cos(\alpha \theta) + c_4 \sin(\alpha \theta)\right), \; \alpha =0
 \]
-where \(c_1, c_2, c_3, c_4 \in \mathbb{C}\). In order to find \(\alpha\), one must consider the amplitude of the angle \(\Theta\) and the boundary conditions at each segment \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\). Below we summarize the asymptotic harmonic solutions of \eqref{lap_polar}. For more details we point the reader to \cite{li2000singularities}.
+where \(c_1, c_2, c_3, c_4 \in \mathbb{C}\). In order to find \(\alpha\), one must consider the amplitude of the angle \(\Theta\) and the boundary conditions at each segment \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\). Below we summarize the asymptotic harmonic solutions of \eqref{lap_polar}. For more details, we point the reader to \cite{li2000singularities}.
 \begin{itemize}
     \item For Dirichlet-Dirichlet boundary conditions given by \(u(r, 0) = A, u(r, \Theta) = B\), then \(\alpha_k = \frac{k \pi}{\Theta}\) and
     \[
@@ -447,15 +444,15 @@ where \(c_1, c_2, c_3, c_4 \in \mathbb{C}\). In order to find \(\alpha\), one mu
         \caption{Rotation of the wedge domain. Image taken from \cite{li2000singularities}.}
         \label{rotated_wedge}
     \end{figure}
-    In applications, we are mostly concerned with Dirichlet-Dirichlet, Dirichlet-Neumann and Neumann-Dirichlet boundary conditions. Just like stated above, some of these boundary conditions have different expansions for the angles \(\Theta=\frac{\pi}{2}\) and \(\Theta=\frac{3\pi}{2}\). However, we are only concerned with the expansion
+    In applications, we are mostly concerned with Dirichlet-Neumann and Neumann-Dirichlet boundary conditions. Just like stated above, some of these boundary conditions have different expansions for the angles \(\Theta=\frac{\pi}{2}\) and \(\Theta=\frac{3\pi}{2}\). However, we are only concerned with the expansion
     \[
         v(r,\theta) = \sum_{k=0}^{\infty}\alpha_k r^{\alpha_k}\psi(\alpha_k \theta)
     \]
-    where \(\psi=\sin\) or \(\psi = \cos\). In these cases, if we neglect the other terms, for the special angle \(\Theta = \frac{\pi}{2}\) above we would find that \(\alpha_k \in \mathbb{N}\). Without going in dept in singularity analysis, then its partial derivative \(\partial_r v(r,\theta)\) would be of the form 
+    where \(\psi=\sin\) or \(\psi = \cos\). In these cases, if we neglect the other terms, for the special angle \(\Theta = \frac{\pi}{2}\) above we would find that \(\alpha_k \in \mathbb{N}\). Without going into much dep2t in singularity analysis, then its partial derivative \(\partial_r v(r,\theta)\) would be of the form 
     \[
         \partial_r v(r,\theta) = \sum_{k=0}^{\infty}\alpha_k^2 r^{\alpha_k-1}\psi(\alpha_k \theta)
     \]
-    where \(\alpha_k-1 \in \mathbb{N}\). In general, if \(\alpha_k \in \mathbb{N}\) for some angle \(\Theta\) then all of its derivatives are continuous and \(v(r,\theta)\) is analytical. More precisely, there is no singularity in these cases. Therefore, one does not need to enrich the set of basis functions since the fundamental solutions correctly reproduce the behavior near the corner's tip. Such corners are called \textit{regular}. On the other hand, corners which present singularities are called \textit{singular} and are the ones which we are interested to better approximate. 
+    where \(\alpha_k-1 \in \mathbb{N}\). In general, if \(\alpha_k \in \mathbb{N}\) for some angle \(\Theta\) then all of its derivatives are continuous and \(v(r,\theta)\) is analytical. More precisely, there is no singularity in these cases. Therefore, one does not need to enrich the set of basis functions since the fundamental solutions correctly reproduce the behavior near the corner's tip. Such corners are called \textit{regular}. On the other hand, corners that present singularities are called \textit{singular} and are the ones that we are interested to approximate. 
 
     Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness!).
 \end{remark}
@@ -464,7 +461,7 @@ To incorporate the singular behavior near a singular corner, first assume, witho
 \[
     u(x) = u_R(x) + u_S(x), \; x \in \overline{\Omega},
 \]
-where \(u_R\) is the regular part is approximated by the \ac{MFS} basis functions, and the singular part \(u_S\) is approximated by the expansions above, having the boundary conditions into account. Let \(\phi_s(r, \theta)\) be one of those expansions centered at the corner's tip, where \(s\) is the order of the expansion. Then, the numerical approximation can be written as
+where \(u_R\) is the regular part approximated by the \ac{MFS} basis functions and the singular part \(u_S\) is approximated by the expansions above, having the boundary conditions into account. Let \(\phi_s(r, \theta)\) be one of those expansions centered at the corner's tip, where \(s\) is the order of the expansion. Then, the numerical approximation can be written as
 \begin{equation}
     \tilde{u}(x) = \sum_{j=1}^{N}\alpha_j \Phi(x-y_j) + \alpha_{N+1} + \sum_{s=1}^{p} \beta_s \phi_s(r(x),\theta(x)), \; x \in \overline{\Omega}.
 \end{equation}
@@ -534,7 +531,7 @@ This theorem can be used to search for the eigenvalues/eigenfrequencies of the L
 \end{enumerate}
 Therefore, in order to find the eigenvalues/eigenfrequencies of the Laplace operator, one must find the singularities of the functions \(d(k)\) or \(\sigma_N(k)\) for the first and second cases above, respectively, i.e, study the local minima of the functions \(d(k)\) or \(\sigma_N(k)\) which, in very regular domains, should approach zero.
 
-To search for these singularities, a simple direct search algorithm was developed to bracket the set of local minima in a given interval. The iterative algorithm used is based on the Golden Ratio Search already used in \cite{alves2005method}. First, consider the graph of \(\sigma_N(k)\) in a given interval \(I=(a, b)\) (which likely has more than one local minima) and fix (a relatively large) step size \(h\). Let \(I_{M_0}^0 = \{a_0^0, \dots, a_{M_0}^0\}\) be the discretization of \(I_{M_0}^0\) in \({M_0}\) points spaced by \(h\) in the zeroth iteration, and denote the set of local minimums of \(I_{M_0}\) by \(X^0_K = \{x_0^0, \dots, x_K^0\} \subset I_{M_0}\), i.e, \(\forall i = 1,\dots,K\) there exists \(c^0, d^0 \in I_{M_0}^0\) such that \(c^0 = x_i^0 - h\), \(d^0 = x_i^0 + h\) and \(x_i < \min(c^0, d^0) \). Then, for each \(x_i^0\), \(I_{M_0}^0\) is enlarged with the middle points between \(c^0\) and \(x_i^0\), \(d^0\) and \(x_i^0\), and it is denoted by \(\tilde{I}_{M_1}^1\) (notice that \(M_0 < M_1\))\footnote{Given the nature of the algorithm, one can also consider the left adjacent point to \(c^0\), which we denote by \(e_0 \in I^0_{M_0}\), compute and add their middle point to \(\tilde{I}_{M_1}^1\)}. Finally, we sort \(\tilde{I}_{M_1}^1\) in an increasing order and repeat the process for a specified depth \(d\). When the maximum depth is attained, one was able to successfully find small intervals which bracket \textit{each local minimum} of \(\sigma_N\) in \(I\), and it is now possible to apply a direct search method to find it to any desired precision: in this work, Brent's method was used \cite{brent1971algorithm}, although Golden Ratio Search is also possible. The general form of the algorithm is given in \ref{direct_bracketing_algorithm}.
+To search for these singularities, a simple direct search algorithm was developed to bracket the set of local minima in a given interval. The iterative algorithm used is based on the Golden Ratio Search already used in \cite{alves2005method}. First, consider the graph of \(\sigma_N(k)\) in a given interval \(I=(a, b)\) (which likely has more than one local minima) and fix (a relatively large) step size \(h\). Let \(I_{M_0}^0 = \{a_0^0, \dots, a_{M_0}^0\}\) be the discretization of \(I_{M_0}^0\) in \({M_0}\) points spaced by \(h\) in the zeroth iteration, and denote the set of local minimums of \(I_{M_0}\) by \(X^0_K = \{x_0^0, \dots, x_K^0\} \subset I_{M_0}\), i.e, \(\forall i = 1,\dots, K\) there exists \(c^0, d^0 \in I_{M_0}^0\) such that \(c^0 = x_i^0 - h\), \(d^0 = x_i^0 + h\) and \(x_i < \min(c^0, d^0) \). Then, for each \(x_i^0\), \(I_{M_0}^0\) is enlarged with the middle points between \(c^0\) and \(x_i^0\), \(d^0\) and \(x_i^0\), and it is denoted by \(\tilde{I}_{M_1}^1\) (notice that \(M_0 < M_1\))\footnote{Given the nature of the algorithm, one can also consider the left adjacent point to \(c^0\), which we denote by \(e_0 \in I^0_{M_0}\), compute and add their middle point to \(\tilde{I}_{M_1}^1\)}. Finally, we sort \(\tilde{I}_{M_1}^1\) in increasing order and repeat the process for a specified depth \(d\). When the maximum depth is attained, one was able to successfully find small intervals which bracket \textit{each local minimum} of \(\sigma_N\) in \(I\), and it is now possible to apply a direct search method to find it to any desired precision: in this work, Brent's method was used \cite{brent1971algorithm}, although Golden Ratio Search is also possible. The general form of the algorithm is given in \ref{direct_bracketing_algorithm}.
 
 \begin{algorithm}[!ht]
     \DontPrintSemicolon
@@ -576,11 +573,11 @@ To search for these singularities, a simple direct search algorithm was develope
 \end{algorithm}
 
 \begin{remark}
-    Although the algorithm above was enough, we point some problems and possible changes to consider. First, there are no guarantees regarding the eigenvalues found: this depends on the chosen interval and on the step. For example, if the first eigenvalue is not in the chosen interval, it will never be found. One may also find a ``jump'' if two eigenvalues are arbitrarily close but the algorithm just found one of them: this is the case when an eigenvalue has multiplicity bigger than one, which depends on the domain. However, this last case is easy to spot if one considers the one parameter transformation between the domain \(\Omega\) and the unitary disk \(\mathbb{D}\) given by
+    Although the algorithm above is enough, we point out some problems and possible changes to consider. First, there are no guarantees regarding the eigenvalues found: this depends on the chosen interval and the step. For example, if the first eigenvalue is not in the chosen interval, it will never be found. One may also find a ``jump'' if two eigenvalues are arbitrarily close, but the algorithm just found one of them: this is the case when an eigenvalue has a multiplicity bigger than one, which depends on the domain. However, this last case is easy to spot if one considers the one parameter transformation between the domain \(\Omega\) and the unitary disk \(\mathbb{D}\) given by
     \[
         \Omega(t) = (1-t)\mathbb{D} + t \Omega, \, t \in (0, 1),
     \]
-    since the graph of the eigenvalues is continuous in respect to \(t\). Regarding the complexity of the algorithm, the objective is to evaluate the function \(\sigma_N(k)\) the \textit{least} amount of time: a brute-force approach with a very small step is not feasible since each evaluation takes some time for big complex valued matrices. However, we note that the algorithm can be improved by just considering the initial point \(a\) and ``walking forward'' with step size \(h\). In that case, one could bracket each local minimum individually and only leaving to the main loop when the maximum depth was reached for each local minimum initially found. The loop would \textbf{break} when the number of eigenvalues found attains a prescribed value.
+    since the graph of the eigenvalues is continuous concerning \(t\). Regarding the complexity of the algorithm, the objective is to evaluate the function \(\sigma_N(k)\) the \textit{least} amount of time: a brute-force approach with a very small step is not feasible since each evaluation takes some time for big complex-valued matrices. However, we note that the algorithm can be improved by just considering the initial point \(a\) and ``walking forward'' with step size \(h\). In that case, one could bracket each local minimum individually and only break to the main loop when the maximum depth was reached for each local minimum initially found. The loop would \textbf{break} when the number of eigenvalues found attains a prescribed value.
 \end{remark}
 
 Before introducing a new technique to improve the condition of the system, we state a posteriori estimate based on a result proved by Moler and Payne in \cite{moler1968bounds}.
@@ -614,14 +611,14 @@ Before introducing a new technique to improve the condition of the system, we st
 
 As stated before, one of the drawbacks of this method is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
-To solve the first problem, we add additional interior points in order to over determine the system; and for the second problem we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
+To solve the first problem, we add additional interior points in order to over-determine the system; and for the second problem, we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
 \[
     A(k) = \begin{bmatrix}
         A_B(k)\\
         A_I(k)
     \end{bmatrix},
 \]
-where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (i.e., \(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points we also have
+where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (i.e., \(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
 \begin{equation*}
     Q(k) = \begin{bmatrix}
         Q_B(k)\\
@@ -642,7 +639,7 @@ for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichl
 \[
     \min_{v \in \mathbb{R}^2, \norm*{v}=1} \norm*{Q_B(k) v}. 
 \]
-The above problem is easy to solve and has a closed form solution which can be found using Lagrange multipliers. The solution \(\check{v}\) is the right singular vector associated with the smallest singular value \(\sigma_N\) and
+The above problem is easy to solve and has a closed-form solution which can be found using Lagrange multipliers. The solution \(\check{v}\) is the right singular vector associated with the smallest singular value \(\sigma_N\) and
 \[
     \sigma_N(k) = \norm*{Q_B(k) \check{v}}.
 \]
@@ -655,7 +652,7 @@ Let \(\check{u} = Q(k) \check{v}\). Taking the norm on both sides of equation \e
 \end{equation}
 Notice how equation \eqref{sat_eq} can be used to eliminate spurious solutions: since \(0 < \sigma_N < 1\), if \(\sigma_N \approx 1\), then \(Q_I(k) \check{v} \approx 0 \implies u_I \approx 0\) which is an incorrect solution (is zero on the interior and does not satisfy the boundary constraints); on the other hand, if \(\sigma_N \approx 0\), then we found an eigenfunction which is small on the boundary points and whose interior is not null.
 
-The name Subspace Angle Technique comes from the fact that \(\sigma_N\) is related with the angle between the subspaces \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\), the space of vectors that are zero at boundary points\footnote{\(\mathcal{G}_0\) can be seen as the discretization of the functions which satisfy the boundary conditions but not the Helmholtz equation.}. The angle \(\phi(k)=\angle (\mathcal{C}(A(k)), \mathcal{G}_0)\) between both subspaces is defined by
+The name Subspace Angle Technique comes from the fact that \(\sigma_N\) is related to the angle between the subspaces \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\), the space of vectors that are zero at boundary points\footnote{\(\mathcal{G}_0\) can be seen as the discretization of the functions which satisfy the boundary conditions but not the Helmholtz equation.}. The angle \(\phi(k)=\angle (\mathcal{C}(A(k)), \mathcal{G}_0)\) between both subspaces is defined by
 \[
     \cos \phi(k) = \sup_{\substack{u \in \mathcal{C}(A(k)), \, \norm{u}=1 \\ v \in \mathcal{G}_0, \, \norm*{v} = 1}} (u, v),
 \]
@@ -670,5 +667,5 @@ Therefore, the discrete problem has a non-trivial solution (i.e. \(\lambda\) is 
 \end{remark}
 
 \begin{remark}
-    Neither the enrichment technique nor the Subspace Angle Technique are specific methods only applicable to the Laplace equation and the Helmholtz equation, respectively. They can be used for both equations and at the same time. For example, in \cite{antunes2010meshfree}, both methods were used to study the spectrum of the Laplace operator in domains with corners and cracks.
+    Neither the enrichment technique nor the Subspace Angle Technique are specific methods only applicable to the Laplace equation and the Helmholtz equation, respectively. They can be used for both equations at the same time. For example, in \cite{antunes2010meshfree}, both methods were used to study the spectrum of the Laplace operator in domains with corners and cracks.
 \end{remark}

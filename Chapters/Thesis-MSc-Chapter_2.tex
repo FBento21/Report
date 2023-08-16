@@ -343,7 +343,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
 \end{proof}
 
 \begin{proposition}\label{dirac_not_polar}
-    Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions.
+    Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions, both in cartesian coordinates and polar coordinates.
 \end{proposition}
 \begin{proof}
     We start by showing that \(\abs*{\lambda}>m\) for any eigenvalue \(\lambda\) if \(\kappa = 0\) a.e. Assuming that there exists an eigenvalue \(\lambda\) associated with an eigenfunction \(u\) such that \(\abs{\lambda} \leq m\), by Lemma \ref{lemma_sep_norm} we get that 
@@ -366,7 +366,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     The rest of the proof will have into consideration two domain types: triangular (on a wedge) and rectangular.
     \begin{enumerate}
 
-    \item Consider \(\Omega\) to be a wedge domain with angle \(\theta\) (see Figure \ref{wedge}):
+    \item Consider \(\Omega\) to be a wedge domain with angle \(\theta\) of maximum amplitude \(\Theta\) (see Figure \ref{wedge}):
     
     \begin{figure}[H]
     \centering
@@ -381,7 +381,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
         \draw (O) -- (B);
         % Labeling the angle
         \draw (0.6,0) arc (0:60:0.6);
-        \node at (0.8,0.3) {$\theta$};
+        \node at (0.8,0.3) {$\Theta$};
     \end{tikzpicture}
     \caption{A wedge domain with an interior angle \(\theta\).}\label{wedge}
     \end{figure}
@@ -418,38 +418,73 @@ The following proposition regarding the lack of separable solutions of the Dirac
     % \] where we conclude that \(\lambda=-m\) (since if \(\theta=\pi\) we would have a degenerate wedge), a contradiction.
     Assume that there exists a solution \(u(r, \theta) = R(r) T (\theta)\) of \eqref{helm_polar_wedge}. Then, from the \ac{PDE} in the interior \(\Omega\) we have
     \[
-        u(r, \theta) = J_{\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)\left(A \cos(\frac{\theta}{k})+B \sin(\frac{\theta}{k})\right)
+        u(r, \theta) = J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(A \cos(k \theta)+B \sin(k \theta)\right)
     \]
-    for some \(A, B, k \in \mathbb{C}\). Applying the condition on \(\overline{OA}\), substituting \(\theta=0\), we find that
+    for some \(A, B, k \in \mathbb{C}\), were \(A\) and \(B\) are not simultaneously zero. Applying the condition on \(\overline{OA}\), substituting \(\theta=0\), one finds that
+    % \[
+    %     \frac{1}{2}J_{k}\left(r \sqrt{\lambda^2-m^2}\right)A - \frac{1}{2}J_{k}\left(r \sqrt{\lambda^2-m^2}\right)A + \frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0.
+    % \]
     \[
-        \frac{1}{2}J_{-1+\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)A - \frac{1}{2}J_{1+\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)A + \frac{J_{\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0.
+        \frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(r(m+\lambda)A-k B\right)}{r} + \frac{1}{2}i \sqrt{\lambda^2-m^2}A\left(J_{-1+k}\left(r \sqrt{\lambda^2-m^2}\right)-J_{1+k}\left(r \sqrt{\lambda^2-m^2}\right)\right)= 0
     \]
     From the recurrence relations for the derivatives of Bessel functions
     \[
-        2 \frac{d J_\alpha (x)}{d x} = J_{\alpha-1} (x) - J_{\alpha+1} (x)
+        2 \frac{d J_\alpha (r)}{d r} = J_{\alpha-1} (r) - J_{\alpha+1} (r)
     \]
     the equation above can be rewritten as
+    % \[
+    %     i A \frac{d}{d x}\left[J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right)\right] + \frac{J_{\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0,
+    % \]
     \[
-        i A \frac{d}{d x}\left[J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right)\right] + \frac{J_{\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0,
+        \frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(r(m+\lambda)A-k B\right)}{r} + i A \frac{d}{d r}\left[J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\right]= 0
     \]
-    where \(J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right)\) is the solution of the differential equation
+    where \(J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\) is the solution of the differential equation
     \[
-        i A \frac{d}{d x}\Tilde{R}(r) + \frac{\Tilde{R}(r) \left(k r (m + \lambda)A - B\right)}{k r} = 0.
+        \frac{\Tilde{R}(r) \left(r (m + \lambda)A - k B\right)}{r} + i A \frac{d}{d r}\Tilde{R}(r)= 0,
     \]
-    However, since it is a first-order linear differential equation, its solutions are of the form
+    whose solutions are of the form
     \[
-        \Tilde{R}(r) = C e^{i r (m+\lambda)}r^{-\frac{i B}{k A}}
+        \Tilde{R}(r) = C e^{i r (m+\lambda)}r^{-i k\frac{ B}{A}}
     \]
-    for every \(C \in \mathbb{C}\). By the superposition principle, every solution can be written by
+    for every \(C \in \mathbb{C}\). Since they form a basis of solutions, there must be some \(C \neq 0\) such that
     \[
-        \sum_{n=1}^{\infty} C_n e^{i r (m+\lambda)}r^{-\frac{i B}{k A}}.
+        J_{k}\left(r \sqrt{\lambda^2-m^2}\right) = C e^{i r (m+\lambda)}r^{-i k\frac{ B}{A}}.
     \]
-    As pointed out before, \(J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right)\) is also a solution of the differential equation and therefore
+    Analogously, considering the condition on \(\overline{OB}\), one must have
+    \begin{align*}
+        &i r \Big(A \cos (k\Theta  )+B \sin (k\Theta  )\Big) \frac{d}{d r}J_k\left(r \sqrt{\lambda ^2-m^2}\right)\\
+        &-J_k\left(r \sqrt{\lambda ^2-m^2}\right) \Big(\cos (k\Theta )  (B k+A m r+A \lambda  r)+\sin (k\Theta  ) (B r (\lambda +m)-A k)\Big)=0.
+    \end{align*}
+    Once again, \(J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\) is the solution of the differential equation
+    \begin{align*}
+        &i r \Big(A \cos (k\Theta  )+B \sin (k\Theta  )\Big) \frac{d}{d r}\Tilde{\Tilde{R}}(r)\\
+        &-\Tilde{\Tilde{R}}(r) \Big(\cos (k\Theta )  (B k+A m r+A \lambda  r)+\sin (k\Theta  ) (B r (\lambda +m)-A k)\Big)=0,
+    \end{align*}
+    whose solutions are given by
     \[
-        J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right) = \sum_{n=1}^{\infty} C_n e^{i r (m+\lambda)}r^{-\frac{i B}{k A}},
+        \Tilde{\Tilde{R}}(r) = D e^{-i r (\lambda +m)} r^{-\frac{i k (B \cos (k\Theta  )-A \sin (k\Theta  ))}{A \cos (k\Theta  )+B \sin (k\Theta  )}}, \; \forall D \in \mathbb{C}.
     \]
-    which is only possible if \(J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right) = 0 \implies \lambda=-m\), which is a contradiction. 
-
+    Then, for some \(D \neq 0\),
+    \[
+        J_{k}\left(r \sqrt{\lambda^2-m^2}\right) = D e^{-i r (\lambda +m)} r^{-\frac{i k (B \cos (k\Theta  )-A \sin (k\Theta  ))}{A \cos (k\Theta  )+B \sin (k\Theta  )}}
+    \]
+    which implies that
+    \[
+        C e^{i r (m+\lambda)}r^{-i k\frac{ B}{A}} =  D e^{-i r (\lambda +m)} r^{-\frac{i k (B \cos (k\Theta  )-A \sin (k\Theta  ))}{A \cos (k\Theta  )+B \sin (k\Theta  )}}.
+    \]
+    Since \(C\) and \(D\) are non-zero \(\mathbb{C}\) constants, this implies that
+    \begin{align*}
+        \begin{cases}
+            -2 i r (m+\lambda) = 0\\
+            -i k \left(-\frac{(B \cos (k\Theta  )-A \sin (k\Theta  ))}{A \cos (k\Theta  )+B \sin (k\Theta)}-\frac{A}{B}\right) = 0
+        \end{cases}
+        \implies
+        \begin{cases}
+            \lambda = -m\\
+            k = 0,
+        \end{cases}
+    \end{align*}
+    a contradiction.
     \item For rectangular domains, we point the proof in \cite{briet2022spectral}.
     \end{enumerate}     
 \end{proof}
