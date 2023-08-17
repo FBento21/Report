@@ -31,7 +31,7 @@ An important result in this context is the Malgrange-Ehrenpreis theorem, which i
 \end{proof}
 Below the fundamental solution of the Laplace operator and some major results concerning Laplace and Helmholtz equations are presented. 
 
-\section{The Laplace Operator}
+\section{The Laplace operator}
 \label{section:laplace_op}
 
 In what follows, consider the Laplace operator associated with the well-known Laplace equation
@@ -188,7 +188,7 @@ Other important results in this area are related to the ratio between the first 
 
 
 % #############################################################################
-\section{The Dirac Operator}
+\section{The Dirac operator}
  
 Motivated by recent advancements in nuclear, and molecular physics and the discovery of very interesting electrical, mechanical, and thermal properties, Dirac materials have resurged a lot of attention in the Dirac equation. Presented by Paul Dirac in its 1928 article \cite{dirac1928quantum}, Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, while explaining the weird phenomena that today is known as \textit{spin}, while predicting the existence \textit{antimatter}.
 Capable of describing the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), one can determine the energy states by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\) for \(\Omega \subset \mathbb{R}^2\),
@@ -363,10 +363,10 @@ The following proposition regarding the lack of separable solutions of the Dirac
              i (\partial_1 + i\partial_2)u_1 + (\lambda + m)i(n_1 + i n_2)u_1 = 0, & \text{ on } \Gamma.
         \end{cases}      
     \end{equation}
-    The rest of the proof will have into consideration two domain types: triangular (on a wedge) and rectangular.
-    \begin{enumerate}
+    The rest of the proof will have into consideration two domain types: first, for polar coordinates, we study the behavior of such separable solution near a corner, such that the origin is in the corner's tip; then, rectangular domains.
 
-    \item Consider \(\Omega\) to be a wedge domain with angle \(\theta\) of maximum amplitude \(\Theta\) (see Figure \ref{wedge}):
+    \begin{enumerate}
+    \item Assume that \(\Omega\) has at least one corner which presents a \textit{wedge-like} shape with angle \(\theta\) with maximum amplitude \(\Theta\) (see Figure \ref{wedge_dirac}):
     
     \begin{figure}[H]
     \centering
@@ -383,7 +383,8 @@ The following proposition regarding the lack of separable solutions of the Dirac
         \draw (0.6,0) arc (0:60:0.6);
         \node at (0.8,0.3) {$\Theta$};
     \end{tikzpicture}
-    \caption{A wedge domain with an interior angle \(\theta\).}\label{wedge}
+    \caption{A wedge-like shape with an interior angle \(\theta\).}
+    \label{wedge_dirac}
     \end{figure}
     In this case, since the outward unit normal on \(\overline{OA}\) is \(n =\begin{pmatrix}
         0\\
@@ -490,12 +491,12 @@ The following proposition regarding the lack of separable solutions of the Dirac
 \end{proof}
 
 \begin{remark}
-    A careful reader will note that two important details are being overlooked: triangular domains or quadrilaterals do not have the required smoothness to obtain the formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We point to \cite{vu2023spectral}, where such details can be found for triangles, but are any two-dimensional polygon.
+    A careful reader will note that two important details are being overlooked: domains with corners do not have the required smoothness to obtain the formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We point to \cite{vu2023spectral}, where such details can be found for triangles, but are any two-dimensional polygon.
 \end{remark}
 
-We now present some open conjectures that we try numerically address in this work:
+We now present some open conjectures that we try numerically address in this work.
 
-\begin{conjecture}[A Faber-Krahn type inequality]
+\begin{conjecture}[A Faber-Krahn type inequality]\label{conjecture_faber_krahn}
     Let \(m \geq 0\) and \(\Omega \subset \mathbb{R}^2\) an open and Lipschitz domain. Then,
     \[
     \lambda_1(\Omega) \geq \lambda_1(\Omega^\ast)
@@ -503,9 +504,20 @@ We now present some open conjectures that we try numerically address in this wor
     where \(\Omega^\ast\) is the disk of the same area or perimeter as \(\Omega\).
 \end{conjecture}
 
-The conjecture above is regarded as a hot open problem in spectral geometry \cite{krejcirik_larson_lotoreichik_2019}. In \cite{benguria2017spectral} a geometric lower bound for the first (non-negative) eigenvalue was found, while in \cite{lotoreichik2019sharp} a sharp upper bound (a reverse Faber-Krahn type inequality, like in Theorem \ref*{reverse_faber-krahn}) was proved to hold for convex domains with \(C^3\) boundary. However, due to the difficulty of the problem, simpler versions with domain restrictions to triangles and rectangles are being studied. For example, in \cite{briet2022spectral} a study for rectangles was conducted, where the conjectures below were proved under some extra hypothesis:
+The conjecture above is regarded as a hot open problem in spectral geometry \cite{krejcirik_larson_lotoreichik_2019}. In \cite{benguria2017spectral} a geometric lower bound for the first (non-negative) eigenvalue was found, while in \cite{lotoreichik2019sharp} a sharp upper bound (a reverse Faber-Krahn type inequality, like in Theorem \ref*{reverse_faber-krahn}) was proved to hold for convex domains with \(C^3\) boundary. One of the objectives of this work is to give some numerical evidence for the conjecture above, although it is (obviously) impossible to test every possible domain and every possible mass \(m\). However, some types of domains can be systematically approached and one can try to rule them out, such that if the conjecture fails it probably has to fail for some non-conventional shape. Another conjecture we are interested in is the Ashbaugh-Benguria Theorem for the Dirac operator with infinite mass boundary conditions.
+
+\begin{conjecture}[An Ashbaugh-Benguria type result]\label{conjecture_benguria}
+    Let \(m \geq 0\) and \(\Omega \subset \mathbb{R}^2\) an open and Lipschitz domain. Then, the solution to the maximization problem 
+    \[
+    \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^d, \Omega \text{ open} \Big\}
+    \]
+    is the ball.
+\end{conjecture}
+
+
+Due to the difficulty of the problems, simpler versions with domain restrictions to triangles and rectangles are being studied. For example, in \cite{briet2022spectral} a study for rectangles was conducted, where the conjectures below were proved under some extra hypothesis:
 \begin{conjecture}[Shape optimization in rectangles]\label{david_conjectures}
-    Given \(m \geq 0\), let \(\lambda_1(a, b) = \lambda_1(\Omega_{a, b})\) denote the first eigenvalue of the Dirac Operator with infinite-mass boundary conditions in a rectangle with sides \(a\) and \(b\). Then,
+    Given \(m \geq 0\), let \(\lambda_1(a, b) = \lambda_1(\Omega_{a, b})\) denote the first eigenvalue of the Dirac operator with infinite-mass boundary conditions in a rectangle with sides \(a\) and \(b\). Then,
     \begin{enumerate}
         \item \textit{Area constraint: } \(\lambda_1(a, \frac{1}{a}) \geq \lambda_1(1, 1), \; \forall a>0 \);
         \item \textit{Perimeter constraint: } \(\lambda_1(a, 2-a) \geq \lambda_1(1, 1), \; \forall a\in (0, 2)\).
@@ -636,8 +648,7 @@ We are now ready to prove the equivalence between both problems:
         u_2, \text{ in } \Omega_2
     \end{cases}.
     \]
-    In this case, again notice that for \(i=1, 2\) we have \(u_i \in H^2_{\text{loc}}\) which implies that \(u_1\) and \(u_2\) is H\"{o}lder continuous and therefore \(u\) is also H\"{o}lder continuous since \(u_1 = u_2\) on the interface, by assumption. Therefore, we also have that \(u \in V^0\). 
-    
+    Since \(u_1=u_2\) on the interface, it follows that \(u \in V^0\).  
     Defining \(P \mu\) like above, we take \(\mu \in \Lambda\) for some \(v \in V\) such that \(\mu = v_{|\gamma}\). As such, we have that the difference \((v_{|\Omega_i} - P_i \mu) \in V^0_i\) for each \(i=1, 2\) and
     \begin{align*}
         a(k u, v) &= \Big[a_1(k_1 u_1, v_{|\Omega_1} - P_1 \mu) + a_1(k_1 u_1, P_1\mu)\Big] + \Big[a_2(k_2 u_2, v_{|\Omega_2} - P_2 \mu) + a_2(k_2 u_2, P_2\mu)\Big]\\

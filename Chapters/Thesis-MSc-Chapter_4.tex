@@ -6,7 +6,7 @@
 % \cleardoublepage
 \label{chap:implement}
 
-\section{Dirac equation simulations}
+\section{Dirac equation simulations}\label{dirac_equation_simulations}
 
 Recall the system of equations given in \eqref{dirac}
 \begin{equation}
@@ -35,7 +35,7 @@ where \(\Gamma = \partial\Omega\) as usual, and the function \(u_2\) depends on 
 \[
     u_2 = \frac{-i (\partial_1 + i\partial_2)u_1}{\lambda + m}.    
 \]
-\subsection{Method validation}
+\subsection{Numerical validation of the method}
 
 In order to validate the MFS for the Dirac equation with infinite mass boundary conditions, we start by testing it for the unit disk. If \(m=0\), then its value is known like stated in Proposition \ref{dirac_properties}, where \(\lambda_1(\mathbb{D})= 1.434695650819\) is the solution of the equation
 \[
@@ -114,14 +114,14 @@ The plot of the bracketing algorithm \ref{direct_bracketing_algorithm} is shown 
 
 \subsection{Quadrilateral results}
 
-In this subchapter, several numerical results regarding quadrilateral polygons are shown and discussed. First, numerical evidence for the Conjecture \ref{david_conjectures} is presented both for \(m=1\) and \(m=5\). Then, some simulations show that an analogous to the Ashbaugh-Benguria inequality \ref{ashbaugh-benguria theorem} for the Laplace operator also holds for the Dirac Operator with infinite-mass boundary conditions. Finally, we will also show that some disagreement between the spectrum of both operators is already evident for the third eigenvalue, whose optimal shape is not the disk, contrary to what is conjectured for the Laplacian (which is still an open problem).
+In this subchapter, several numerical results regarding quadrilateral polygons are shown and discussed. First, numerical evidence for the Conjecture \ref{david_conjectures} is presented both for \(m=1\) and \(m=5\). Then, some simulations show that the conjectured Ashbaugh-Benguria Theorem \ref{conjecture_benguria} also holds for the Dirac operator with infinite-mass boundary conditions. Finally, we will also show that some disagreement between the spectrum of both operators is already evident for the third eigenvalue, whose optimal shape is not the disk, contrary to what is conjectured for the Laplacian (which is still an open problem).
 
 Consider a rectangle with a width \(a > 0\) and unitary area, where the sides are \(a\) and \(\frac{1}{a}\). Figures \ref{eigenvalues_rectangle_width_m_1} and \ref{eigenvalues_rectangle_width_m_5} illustrate the behavior of the first 5 eigenvalues for \(m=1\) and \(m=5\), respectively. Several interesting observations can be made:
 
 \begin{itemize}
-  \item The behavior of the spectrum remains qualitatively consistent for different values of \(m\). Notably, the most prominent difference lies in the decreasing gap between the numerical eigenvalues and \(m\) as \(m\) increases. While this trend is discernible, it becomes more apparent as \(m\) takes on even larger values;
+  \item The behavior of the spectrum remains qualitatively consistent for different values of \(m\). Notably, the most prominent difference lies in the decreasing gap between the numerical eigenvalues and \(m\) as \(m\) increases. While this trend is discernible, it becomes more apparent as \(m\) takes on even larger values. However, it is important to notice that the third eigenvalue is not globally minimized in the square for \(m=1\), but for some rectangle with width \(a \approx 2.2\). It appears that there exists some critical mass \(m_{\text{crit}}\) between 1 and 5 where that bifurcation occurs. 
   
-  \item Starting from the third eigenvalue and beyond, certain spikes become evident in the plot. These spikes correspond to rectangular domains where the eigenvalue has multiplicity two. For instance, between the values 1 and 1.5, the third and fourth eigenvalues appear to converge. This behavior becomes more frequent as the order of the eigenvalues increases. However, only multiplicity 2 is observed which is not consistent with the behavior seen in the Laplace operator, where multiplicity 3 is already achieved in the third eigenvalue and only the first eigenvalue is simple;
+  \item Starting from the third eigenvalue and beyond, certain spikes become evident in the plot. These spikes correspond to rectangular domains where the eigenvalue has a multiplicity of two. For instance, between the values 1 and 1.5, the third and fourth eigenvalues appear to converge. This behavior becomes more frequent as the order of the eigenvalues increases. However, only multiplicity 2 is observed which is not consistent with the behavior seen in the Laplace operator, where multiplicity 3 is already achieved in the third eigenvalue and only the first eigenvalue is simple;
   
   \item By varying the parameter \(a\), linear growth in the eigenvalues is observed, with no change in their multiplicity. As \(a\) increases, the eigenvalues approach one another, as expected. This phenomenon occurs because the rectangle transforms into an unbounded line, resulting in a non-discrete spectrum.
 \end{itemize}
@@ -166,9 +166,9 @@ In Figures \ref{eigenvalues_rectangle_perimeter_width_m_1} and \ref{eigenvalues_
     \end{minipage}
 \end{figure}
 
-Given the results for rectangles with fixed area or perimeter, it is possible to state that the Conjecture \ref{david_conjectures} should hold, although it is still not possible to ascertain that the results presented here hold for every \(m\). In any case, it is known that the eigenvalues are continuous with domain perturbations (here these perturbations can be seen as stretching the rectangles), exactly what has been found in these numerical simulations.
+Given the results for rectangles with fixed area or perimeter, it is possible to state that the Conjecture \ref{david_conjectures} should hold, although it is still not possible to ascertain that the results presented here hold for every \(m\) (as we saw before, the value of \(m\) has some discernible influence on the spectrum, which can already be seen for the third eigenvalue, although no difference was found for the first and second eigenvalues). In any case, it is known that the eigenvalues are continuous with domain perturbations (here these perturbations can be seen as stretching the rectangles), exactly what has been found in these numerical simulations.
 
-To finish this subsection, we present the results for general quadrilaterals. Since no (practical) parameterization can describe every quadrilateral, we have resorted to a random sampling of quadrilaterals and studied the results against rectangles and rhombuses. Figure \ref{dirac_first_three_eigenvalues_quad_m_1} presents the results of the numerical simulations for \(m=1\). Notice how the rectangles and rhombuses clearly define a region of ``acceptable'' quadrilaterals and this appears to be particularly true for the first eigenvalue. For the second and third eigenvalues some quadrilaterals behave differently, and it is already possible to find some domains whose third eigenvalue is smaller than the eigenvalue of the unit disk. In Figures \ref{dirac_benguria_quad} and \ref{dirac_generalized_benguria_quad} the ratio between the first eigenvalues is studied, where a version of the Ashbaugh-Benguria Theorem \ref{ashbaugh-benguria theorem} appears to hold.
+To finish this subchapter, we present the results for general quadrilaterals. Since no (practical) parameterization can describe every quadrilateral, we have resorted to a random sampling of quadrilaterals and studied the results against rectangles and rhombuses. Figure \ref{dirac_first_three_eigenvalues_quad_m_1} presents the results of the numerical simulations for \(m=1\). Notice how the rectangles and rhombuses clearly define a region of ``acceptable'' quadrilaterals and this appears to be particularly true for the first eigenvalue. For the second and third eigenvalues some quadrilaterals behave differently, and it is already possible to find some domains whose third eigenvalue is smaller than the eigenvalue of the unit disk. In Figures \ref{dirac_benguria_quad} and \ref{dirac_generalized_benguria_quad} the ratio between the first eigenvalues is studied, where the version of the Ashbaugh-Benguria Theorem \ref{conjecture_benguria} appears to hold.
 
 \begin{figure}[!htb]
     \centering
@@ -211,14 +211,14 @@ and its piecewise boundary \(\partial R = \Gamma_0 \cup \Gamma_1 \cup \Gamma_2\)
     \Gamma_1 &= \{(x,y) \in \mathbb{R}^2: 0 \leq x < 1, y=\sqrt{4-(x+1)^2}\}\\
     \Gamma_2 &= \{(x,y) \in \mathbb{R}^2: x=0, 0 < y < \sqrt{3}\}.
 \end{align*}
-A triangle \(T\) is said to be \textit{admissible} if its basis vertices are \((0, 0\)) and \((1, 0)\), and the other vertex coordinates\footnote{Of course, one does not need to enforce such constraints to the triangle: as said before, every triangle is unique up to congruence. Here, we just emphasize that is enough to consider triangles defined using the region \(R\). Observe that this is just a model to numerically exhaust all possible triangles up to congruence, one still needs to normalize them to have a unitary area.} are \((x,y)\) such that \((x,y) \in \overline{R}\). A triangle \(T\) is said to be \textit{subequilateral} if \((x, y) \in \Gamma_1\) and \textit{superequilateral} if \((x, y) \in \Gamma_2\); if \((x, y) = (0, \sqrt{3})\) then it is equilateral (obviously). The plot of the region \(R\) and its boundary \(\partial R\) is in Figure \ref{dirac_triangle_model}.
+A triangle \(T\) is said to be \textit{admissible} if its basis vertices are \((0, 0)\) and \((1, 0)\), and the other vertex coordinates\footnote{Of course, one does not need to enforce such constraints to the triangle: as said before, every triangle is unique up to congruence. Here, we just emphasize that is enough to consider triangles defined using the region \(R\). Observe that this is just a model to numerically exhaust all possible triangles up to congruence, one still needs to normalize them to have a unitary area.} are \((x,y)\) such that \((x,y) \in \overline{R}\). A triangle \(T\) is said to be \textit{subequilateral} if \((x, y) \in \Gamma_1\) and \textit{superequilateral} if \((x, y) \in \Gamma_2\); if \((x, y) = (0, \sqrt{3})\) then it is equilateral (obviously). The plot of the region \(R\) and its boundary \(\partial R\) is in Figure \ref{dirac_triangle_model}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.5\linewidth]{Images/Dirac/model_triangle.png}
     \captionof{figure}{Configuration space of the admissible triangles. In a dashed red line is a superequilateral triangle; in a dashed blue line a subequilateral triangle is also represented.}
     \label{dirac_triangle_model}
 \end{figure}
-In Figure \ref{dirac_smooth_first_eigenvalues} we present numerical evidence for Conjecture \ref{triangle_conjectures} with \(m=1\). Notice how the eigenvalues of the superequilateral and subequilateral triangles define a region that includes every other triangle whose \((x, y)\) vertex belongs to \(R\). In Figure \ref{dirac_triangle_benguria} a version of the Ashbaugh-Benguria (see Theorem \ref{ashbaugh-benguria theorem}) inequality is presented and in Figure \ref{dirac_triangle_3d_lambda1} a 3D plot of the first eigenvalue for every admissible triangle considered against the coordinates \((x,y)\) of the vertex in \(\overline{R}\).
+In Figure \ref{dirac_smooth_first_eigenvalues} we present numerical evidence for Conjecture \ref{triangle_conjectures} with \(m=1\). Notice how the eigenvalues of the superequilateral and subequilateral triangles define a region that includes every other triangle whose \((x, y)\) vertex belongs to \(R\). In Figure \ref{dirac_triangle_benguria} a version of the Ashbaugh-Benguria (see Conjecture \ref{conjecture_benguria}) inequality is presented and in Figure \ref{dirac_triangle_3d_lambda1} a 3D plot of the first eigenvalue for every admissible triangle considered against the coordinates \((x,y)\) of the vertex in \(\overline{R}\).
 
 \begin{figure}[!htb]
     \centering
@@ -249,12 +249,12 @@ In Figure \ref{dirac_smooth_first_eigenvalues} we present numerical evidence for
     \vspace{0.5cm}
 \end{figure}
 
-While in the previous results for quadrilaterals (and for smooth domains in the next subsection) random domains were considered, it is remarkable that for the triangle problem, one can consider \textit{every} type of triangle just by varying \((x,y)\) in \(\overline{R}\). Since the eigenvalues are continuous when considering domain perturbations, it means that it is very unlikely that the conjectures studied for triangles do not hold, otherwise some jump would probably be found, for example in Figure \ref{dirac_triangle_3d_lambda1}. 
+While in the previous results for quadrilaterals (and for smooth domains in the next subchapter) random domains were considered, it is remarkable that for the triangle problem, one can consider \textit{every} type of triangle just by varying \((x,y)\) in \(\overline{R}\). Since the eigenvalues are continuous when considering domain perturbations, it means that it is very unlikely that the conjectures studied for triangles do not hold, otherwise some jump would probably be found, for example in Figure \ref{dirac_triangle_3d_lambda1}. 
 
 
 \subsection{Smooth domain results}
 
-In this last subsection, the behavior of the spectrum for smooth (connected) domains with unit area is studied. Here, we fix \(m=1\). The objective of this study is twofold: first, these type of domains is studied since the numerical approximations are more reliable, and it allows for the study of arbitrary domains; second, one can use them to also study the domain which minimizes the third eigenvalue.
+In this last subchapter, the behavior of the spectrum for smooth (connected) domains with unit area is studied. Here, we fix \(m=1\). The objective of this study is twofold: first, these type of domains is studied since the numerical approximations are more reliable, and it allows for the study of arbitrary domains; second, one can use them to also study the domain which minimizes the third eigenvalue.
 
 In order to generate random smooth domains, periodic B-spline interpolation for each component of an \(\mathbb{R}^2\) vector was used. One starts by generating five random points (using a uniform distribution), fitting a periodic B-spline in each component, drawing the two-dimensional B-spline, and checking for auto-intersections. If it does not auto-intersect, then it is a valid domain. Figure \ref{dirac_smooth_random_domain} presents one of these domains.
 
@@ -347,7 +347,7 @@ where \(\theta_i\) is the polar part of the sample point \(i\) with \(i=1,\dots,
 \]
 can be solved by least squares when considering the over-determined system with \(N > 2M+1\). Notice that the problem \eqref{dirac_unconstrained_min_lambda_3} is now discretized into a finite-dimensional problem since every domain is now a vector of coefficients in \(\mathbb{R}^{2M+1}\). Of course, one must still consider the domain generated by the found coefficients with unitary area.
 
-Figure \ref{dirac_nelder_mead_domain} presents an (almost) optimal domain \(\Omega^\star\) shape which minimizes the third eigenvalue of the Dirac operator with infinite-mass boundary conditions. This plot was obtained through the Nelder-Mead algorithm. The third eigenvalue of this domain is approximately \(\lambda_3 \approx 5.63787728\) and its perimeter \(L\) is \(L \approx 5.2650031\). In Figure \ref{dirac_val_third} we validate our findings by plotting the (continuous) family of one-parameter transformations (also known as a Minkowski sum) from the unit disk to \(\Omega^\star\), given by
+Figure \ref{dirac_nelder_mead_domain} presents an (almost) optimal domain \(\Omega^\star\) shape which minimizes the third eigenvalue of the Dirac operator with infinite-mass boundary conditions. This plot was obtained through the Nelder-Mead algorithm. The third eigenvalue of this domain is approximately \(\lambda_3 \approx 5.63787728\) and its perimeter \(L\) is \(L \approx 5.2650031\). In Figure \ref{dirac_val_third} we validate our findings by plotting the (continuous) family of one-parameter transformations (known as a Minkowski sum) from the unit disk to \(\Omega^\star\), given by
 \[
    \Omega_t = (1-t)\mathbb{D} + t \Omega^\star, \; 0 \leq t \leq 1.
 \]
@@ -429,12 +429,12 @@ Finally, the normalized eigenfunction associated with the optimal third eigenval
 For the Transmission problem, we now consider the set of equations studied previously in the subchapter \ref{domain_decomp_problem}, given by
 
 \begin{align}\label{transmission_num}
-    \begin{split}
-    - \nabla k_i \nabla u_i &= f_i, \; \text{in }\Omega_i\\
-    u_1 - u_2 &= 0, \; \text{on }\gamma\\
-    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} &= 0, \; \text{on }\gamma\\
-    u_i &= 0, \; \text{on }\Gamma_i.
-    \end{split}
+    \begin{cases}
+    - \nabla k_i \nabla u_i = f_i, & \text{in }\Omega_i\\
+    u_1 - u_2 = 0, & \text{on }\gamma\\
+    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} = 0, & \text{on }\gamma\\
+    u_i = 0, & \text{on }\Gamma_i.
+    \end{cases}
 \end{align}
 
 Like before, the domain \(\Omega \subset \mathbb{R}^2\) is divided into two non-overlapping regions \(\Omega_1\) and \(\Omega_2\) such that \(\overline{\Omega} = \overline{\Omega_1} \cup \overline{\Omega_2}\). Their common boundary is denoted by \(\gamma = \partial\Omega_1 \cap \partial\Omega_2\) and the boundary of each domain (minus the common boundary) is also denoted by \(\Gamma_i = \partial\Omega_1\setminus{\gamma}\). In what follows, the source functions \(f_i\) of each domain are constant\footnote{In this work we only considered \(f_i=1\). In any case, we are still working with a general discontinuous source function (if \(k_1 \neq k_2\)). Working with different \textit{continuous} source functions should make no difference in the result. We will also present how to deal with general and continuous source functions.}, and we took \(f_i = 1\). Recall that \(k_1 \geq k_2 > 0\) are constants and \(n_i\) is the (normalized) outward normal to each domain subdomain \(\Omega_i, i=1, 2\), where we shall write \(n=n_1=-n_2\) when we are restricted to the interface.
@@ -466,11 +466,11 @@ The procedure presented here is based on \cite{alves2005new} and \cite{alves2021
     \end{align}
     \item Finally, the solution of \eqref{transmission_num} is \(u_i = u_i^H + u_i^{NH}\).
 \end{enumerate}
-For general source functions, the steps above can also be used: however, it may not be possible to find an analytical solution in the first step. In this case, \textbf{1.} must be solved numerically. A popular choice is to use radial basis functions (\ac{RBF}s) (see \cite{golberg1996improved} for example), like the thin plate spline
+For general source functions, the steps above can also be used: however, it may not be possible to find a closed solution in the first step. In this case, \textbf{1.} must be solved numerically. A popular choice is to use \acp{RBF} (see \cite{golberg1996improved} for example), like the thin plate spline
 \[
     \varphi(r) = r^2 \log r,     
 \]
-and find the coefficients \(\alpha_j\) in \(f_i(x_k) = \tilde{f}_i(x_k) = \sum_{j=1}^{n} \alpha_j \varphi_j(x_k)\) using least square methods, where \(x_k\) are collocation points. Finally, one can analytically solve the equation \(-\Delta \Psi_j = \varphi_j\) to recover the non-homogeneous solutions \(u_1^{NH}\) and \(u_2^{NH}\). In \cite{alves2005new} and \cite{alves2021domain} a different approach was suggested using the fundamental solutions of the Helmholtz equation instead of the classical \ac{RBF}s; that method is known today as \textit{Kansa \ac{MFS} method}.
+and find the coefficients \(\alpha_j\) in \(f_i(x_k) = \tilde{f}_i(x_k) = \sum_{j=1}^{n} \alpha_j \varphi_j(x_k)\) using least square methods, where \(x_k\) are collocation points. Finally, one can analytically solve the equation \(-\Delta \Psi_j = \varphi_j\) to recover the non-homogeneous solutions \(u_1^{NH}\) and \(u_2^{NH}\). In \cite{alves2005new} and \cite{alves2021domain} a different approach was suggested using the fundamental solutions of the Helmholtz equation instead of the classical \acp{RBF}; that method is known today as \textit{Kansa-MFS method}.
 
 In what follows, the numerical results illustrate the accuracy of the method in simply connected 2D domains. Let \(N_i\) denote the number of source points for each domain \(i\), such that \(N=N_1+N_2\). We denote the approximate solution by
 \[
@@ -505,7 +505,7 @@ Let \(M_i\) be the number of boundary collocation points \(x^{(i)}_{m}\) for eac
     \end{bmatrix}
 \end{equation}
 
-Most of the examples below do not have an analytical solution: only in the subsection \ref{transmission_val_subsection}, when we test the results against a known solution, we can find the absolute error. In the other cases, we are only interested in the relative error, i.e, the boundary error (against which we can compare since \(u_i=0\) in \(\Gamma_i\)) and the interface error by checking the transmission conditions on \(\gamma\):
+Most of the examples below do not have an analytical solution: only in the subchapter \ref{transmission_val_subsection}, when we test the results against a known solution, we can find the absolute error. In the other cases, we are only interested in the relative error, i.e, the boundary error (against which we can compare since \(u_i=0\) in \(\Gamma_i\)) and the interface error by checking the transmission conditions on \(\gamma\):
 \begin{itemize}
     \item \(\norm*{\tilde{u}_i - 0}_{L^2(\Gamma_i)}\), \(i=1, 2\): boundary collocation error;
     \item \(\norm*{\tilde{u}_1 - \tilde{u}_2}_{L^2(\gamma)}\), \(i=1, 2\): continuity error (\(C^0\)) of \(\tilde{u}\) across \(\gamma\);
@@ -590,7 +590,7 @@ The inclusion of the "corner" source points, as depicted in Figure \ref{transmis
 
 \subsection{Results for the rectangle}
 
-In this subsection a rectangular domain \([-1, -0.5] \times [1, 0.5]\) with a vertical interface along the line \(x=0\) is considered. We are now interested to study the problem for \(k_1 \neq k_2\) where \(k_2=1\) is fixed. The results below were conducted with 600 boundary points and 404 source points for each domain. The number of interface points is 150 and \(\eta=0.08\).
+In this subchapter a rectangular domain \([-1, -0.5] \times [1, 0.5]\) with a vertical interface along the line \(x=0\) is considered. We are now interested to study the problem for \(k_1 \neq k_2\) where \(k_2=1\) is fixed. The results below were conducted with 600 boundary points and 404 source points for each domain. The number of interface points is 150 and \(\eta=0.08\).
 
 \begin{figure}[!htb]
     \centering
@@ -643,7 +643,7 @@ Notice that the condition number for the rectangle is smaller than the one prese
 
 \subsection{Results for an L-shape domain with enrichment}
 
-In the previous subsection, a domain with corners was analyzed. However, it still preserved some regularity, and the \ac{MFS} with classical basis functions was able to capture its corner's behavior, as explained in Remark \ref{particular_solutions}. In what follows, we are going to study the case of an L-shape, a non-convex domain with singular corners. Two different interfaces will be considered: first, the usual interface along the line \(x=0\); then, along its symmetry axis with the line \(y=\frac{1}{2}x\).
+In the previous subchapter, a domain with corners was analyzed. However, it still preserved some regularity, and the \ac{MFS} with classical basis functions was able to capture its corner's behavior, as explained in Remark \ref{particular_solutions}. In what follows, we are going to study the case of an L-shape, a non-convex domain with singular corners. Two different interfaces will be considered: first, the usual interface along the line \(x=0\); then, along its symmetry axis with the line \(y=\frac{1}{2}x\).
 
 Consider the L-shape given in Figure \ref{transmission_L_shape_config}. The left and right subdomains are denoted by \(\Omega_1\) and \(\Omega_2\), respectively. The number of interface points is 300, and the number of source points for each domain is 428. The number of boundary collocation points for \(\Omega_1\) and \(\Omega_2\) is 710 and 639, respectively.
 
@@ -666,9 +666,9 @@ Consider the L-shape given in Figure \ref{transmission_L_shape_config}. The left
     \end{minipage}
 \end{figure}
 
-In Table \ref{tab:transmission_results_L_shape_rectangles}, the results without resorting to enrichment are presented. It is evident that the method yields poorer results due to the lower regularity of the domain. Particularly, the interface error (mainly the \(C^0\) error) is significantly higher compared to previous cases, even when considering more collocation points on the interface. In fact, it appears that the domain itself poses more challenges than the discontinuous source function when considering different values for \(k_1\) and \(k_2\). In Figure \ref{transmission_L_shape_k1_5}, it is even possible to see that there already exists some small jump near the edges of the interface.
+In Table \ref{tab:transmission_results_L_shape_rectangles}, the results without resorting to enrichment are presented. It is evident that the method yields poorer results due to the lower regularity of the domain. Particularly, the interface error (mainly the \(C^0\) error) is significantly higher compared to previous cases, even when considering more collocation points on the interface. It appears that the domain itself poses more challenges than the discontinuous source function when considering different values for \(k_1\) and \(k_2\). In Figure \ref{transmission_L_shape_k1_5}, it is even possible to see that there already exists some small jump near the edges of the interface.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
     \centering
     \begin{tabular}{cccccc}
       \toprule
@@ -722,7 +722,7 @@ and expanding the matrix in \eqref{MFS_transmission_classical_matrices_system}, 
 
 Table \ref{tab:transmission_results_L_shape_rectangles_particular} presents the results after applying the enrichment technique for the previous \(k_1\) values. In the expansion \eqref{num_particular_L_shape_rect_equation}, different values for \(P_1\) were considered. For example, for the first section of the Table, we set \(P_1=1\). After some simulations, it became clear that increasing \(P_1\) would not give better results. Furthermore, since the form of Equation \eqref{num_particular_L_shape_rect_equation} is also valid for the exterior problem, negative values of \(p_1\) were considered. Interestingly, when adding solutions for the exterior problem, better results were achieved. Not only did the error decrease for the boundary \(\Gamma_i\) of each domain, but better results were also achieved on the interface.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
     \centering
     \begin{longtable}{ccccccc}
         \toprule
@@ -766,7 +766,7 @@ Table \ref{tab:transmission_results_L_shape_rectangles_particular} presents the 
     \label{tab:transmission_results_L_shape_rectangles_particular}
 \end{table}
 
-To finish this subsection, and as stated in the beginning, we present a more complicated L-shape domain where the interface is drawn along its axis of symmetry. In this case, notice that there are two singular corners, both with \(\frac{3}{4}\pi\) radians\footnote{The other two corners have an angle of \(\frac{\pi}{4}\) radians which cause no problem for the classical \ac{MFS} basis functions.}. In Figure \ref{transmission_L_shape_col_axis_config} the configuration is presented, where the left domain is \(\Omega_1\) and the right domain \(\Omega_2\). The number of interface points and source points for each domain is still 300 and 428, respectively. We also chose 628 boundary collocation points for both domains. Table \ref{tab:transmission_results_L_shape_axis} summarizes the results without considering particular solutions.
+To finish this subchapter, and as stated in the beginning, we present a more complicated L-shape domain where the interface is drawn along its axis of symmetry. In this case, notice that there are two singular corners, both with \(\frac{3}{4}\pi\) radians\footnote{The other two corners have an angle of \(\frac{\pi}{4}\) radians which cause no problem for the classical \ac{MFS} basis functions.}. In Figure \ref{transmission_L_shape_col_axis_config} the configuration is presented, where the left domain is \(\Omega_1\) and the right domain \(\Omega_2\). The number of interface points and source points for each domain is still 300 and 428, respectively. We also chose 628 boundary collocation points for both domains. Table \ref{tab:transmission_results_L_shape_axis} summarizes the results without considering particular solutions.
 
 \begin{figure}[!htb]
     \centering
@@ -776,7 +776,7 @@ To finish this subsection, and as stated in the beginning, we present a more com
     \label{transmission_L_shape_col_axis_config}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
     \centering
     \begin{tabular}{cccccc}
       \toprule
@@ -804,7 +804,8 @@ where the \(\alpha_{p_2}\) coefficients are the same as before, \(\Theta = \frac
 
 Considering the expansion \eqref{num_particular_L_shape_rect_equation} for the \(w_{p_2}\) particular solutions, one can add more blocks to the matrix \eqref{transmission_mat_L_rect_exp}. Table \ref{tab:transmission_results_L_shape_axis_particular} shows the results when particular solutions are added to both domains. Once again, negative values of \(p_2\) were considered. Without intending to show too much data (because we would have to account for every combination of \(p_1\) and \(p_2\) values), we fix \(p_2=0, 1\). The reason for this choice is that we noticed better results are achieved when increasing the number of particular solutions in the domain where the diffusion coefficient is increasing. In this case, we are only varying the coefficient \(k_1\), and therefore, we can fix the \(p_2\) values.
 
-\begin{table}[!htbp]
+
+\begin{table}[htbp]
     \centering
     \begin{longtable}{ccccccc}
         \toprule
@@ -847,6 +848,49 @@ Considering the expansion \eqref{num_particular_L_shape_rect_equation} for the \
     \caption{Numerical relative error on the boundary and in the interface \(\gamma\) after considering particular (angular) solutions}
     \label{tab:transmission_results_L_shape_axis_particular}
 \end{table}
+
+% \begin{longtable}{ccccccc}
+%         \caption{Numerical relative error on the boundary and in the interface \(\gamma\) after considering particular (angular) solutions}
+%         \label{tab:transmission_results_L_shape_axis_particular}
+%         \toprule
+%         \multicolumn{1}{c}{\textbf{\(p_1\) values}} & \multicolumn{1}{c}{\textbf{\(k_1\) value}} & \multicolumn{2}{c}{\textbf{Boundary Error}} & \multicolumn{2}{c}{\textbf{Interface Errors}} & \multicolumn{1}{c}{\textbf{Condition number}} \\
+%         \cmidrule(lr){2-2} \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-7}
+%         & & \textbf{Domain 1} & \textbf{Domain 2} & \textbf{\(C^0\)} & \textbf{\(C^1\)} & \\
+%         \midrule
+%         \endfirsthead % Header for the first page
+%         \multicolumn{7}{l}{{\footnotesize\emph{Continued from previous page}}} \\
+%         \toprule
+%         \multicolumn{1}{c}{\textbf{\(p\) value}} & \multicolumn{1}{c}{\textbf{\(k_1\) value}} & \multicolumn{2}{c}{\textbf{Boundary Error}} & \multicolumn{2}{c}{\textbf{Interface Errors}} & \multicolumn{1}{c}{\textbf{Condition number}} \\
+%         \cmidrule(lr){2-2} \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-7}
+%         & & \textbf{Domain 1} & \textbf{Domain 2} & \textbf{\(C^0\)} & \textbf{\(C^1\)} & \\
+%         \midrule
+%         \endhead % Header for subsequent pages
+%         \midrule[\heavyrulewidth] % Horizontal line
+%         \multicolumn{7}{r}{{\footnotesize\emph{Continued on next page}}} \\
+%         \endfoot % Footer for subsequent pages
+%         \bottomrule
+%         \endlastfoot % Footer for the last page
+        
+%         % Data for p = [0, 1]
+%         0, 1 & 1 & $3.107\times10^{-7}$ & $2.100\times10^{-7}$ & $1.158\times10^{-5}$ & $1.019\times10^{-7}$ & $1.054\times10^{10}$ \\
+%         & 2 & $1.061\times10^{-7}$ & $6.892\times10^{-7}$ & $6.366\times10^{-5}$ & $7.065\times10^{-8}$ & $1.648\times10^{10}$ \\
+%         & 5 & $1.207\times10^{-7}$ & $1.141\times10^{-6}$ & $9.544\times10^{-5}$ & $9.487\times10^{-8}$ & $3.732\times10^{10}$ \\
+%         \midrule[\heavyrulewidth] % Horizontal line
+        
+%         % Data for p = [-1, 0, 1]
+%         -1, 0, 1 & 1 & $3.319\times10^{-7}$ & $2.026\times10^{-7}$ & $1.813\times10^{-5}$ & $1.048\times10^{-7}$ & $1.054\times10^{10}$ \\
+%         & 2 & $1.676\times10^{-7}$ & $3.166\times10^{-7}$ & $8.375\times10^{-6}$ & $7.951\times10^{-8}$ & $1.647\times10^{10}$ \\
+%         & 5 & $9.871\times10^{-8}$ & $4.807\times10^{-7}$ & $1.549\times10^{-6}$ & $5.285\times10^{-8}$ & $3.732\times10^{10}$ \\
+%         \midrule[\heavyrulewidth] % Horizontal line
+
+%         % Data for p = [-2, -1, 0, 1]
+%         -2, -1, 0, 1 & 1 & $3.070\times10^{-7}$ & $2.415\times10^{-7}$ & $1.610\times10^{-5}$ & $9.893\times10^{-8}$ & $5.659\times10^{12}$ \\
+%         & 2 & $1.762\times10^{-7}$ & $2.670\times10^{-7}$ & $8.385\times10^{-6}$ & $8.480\times10^{-8}$ & $5.656\times10^{12}$ \\
+%         & 5 & $9.761\times10^{-8}$ & $3.201\times10^{-7}$ & $1.993\times10^{-6}$ & $6.049\times10^{-8}$ & $5.655\times10^{12}$ \\
+%         \midrule[\heavyrulewidth] % Horizontal line
+% \end{longtable}
+
+
 
 Again, we found the same surprising results as before, where considering negative values for \(p_1\) achieves better approximations, particularly when \(k_1 \neq k_2 = 1\). An interesting observation was made when considering negative values for \(p_2\): in that case, if \(p_1\) is also negative, the solution in both domains would explode. Intuitively, one can treat the problem numerically as an exterior problem in only one domain. On the other hand, one may consider \(p_1 = p_2 = 0, \dots, P\), where \(P=P_1=P_2\), for \(P > 1\) (\(P\) may be as large as 8, for example, with 16 particular solutions being added in total) and the results can be as good as the ones presented in Table \ref{tab:transmission_results_L_shape_axis_particular} for \(p_1=-2, -1, 0, 1\), but only if \(k_1=k_2=1\); otherwise, the approximation on the interface gets worse than what we found. 
 

@@ -258,7 +258,7 @@
 \newcommand{\tlangMember}{\IfLanguageName{english}{Member of the Committee: }{Vogal: }}
 %
 % DEFINE COMMAND FOR: Acknowledgwments depending on language
-\newcommand{\tlangAcknowledgments}{\IfLanguageName{english}{Acknowledgments}{Agradecimentos}}
+\newcommand{\tlangAcknowledgments}{\IfLanguageName{english}{Agradecimentos}{Agradecimentos}}
 %
 % DEFINE COMMAND FOR: Acronyms listing Title depending on language
 \newcommand{\tlangAcronyms}{\IfLanguageName{english}{Acronyms}{Acr\'onimos}}

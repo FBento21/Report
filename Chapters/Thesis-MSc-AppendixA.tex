@@ -2,164 +2,287 @@
 % This is Appendix A
 % !TEX root = ../main.tex
 % #############################################################################
-\chapter{Code of Project}
-\label{chapter:appendixA}
+\chapter{Spectral Decomposition of the Laplace operator}\label{div_theo}
 
-% Nulla dui purus, eleifend vel, consequat non, dictum porta, nulla. Duis ante mi, laoreet ut, commodo eleifend, cursus nec, lorem. Aenean eu est. Etiam imperdiet turpis. Praesent nec augue. Curabitur ligula quam, rutrum id, tempor sed, consequat ac, dui. Vestibulum accumsan eros nec magna. Vestibulum vitae dui. Vestibulum nec ligula et lorem consequat ullamcorper. 
+% In this appendix, some concepts in Hilbert spaces are presented and applied to the Laplace operator. While they could also be presented in the first Chapter, the results presented here are classical and are not used in the theoretical justification of the \ac{MFS}.
 
-% \begin{lstlisting}[frame=lines,style=XML,caption={Example of a XML file.},label=xmlEx]
-% <?xml version="1.0" encoding="UTF-8"?>
-% <StreamInfo version="2.0">
-%     <Clip duration="PT01M0.00S">
-%         <BaseURL>videos/</BaseURL>
-%         <Description>svc_1</Description>
-%         <Representation mimeType="video/SVC" codecs="svc" frameRate="30.00" bandwidth="401.90"
-%             width="176" height="144" id="L0">
-%             <BaseURL>svc_1/</BaseURL>
-%             <SegmentInfo from="0" to="11" duration="PT5.00S">
-%                 <BaseURL>svc_1-L0-</BaseURL>
-%             </SegmentInfo>
-%         </Representation>
-%         <Representation mimeType="video/SVC" codecs="svc" frameRate="30.00" bandwidth="1322.60"
-%             width="352" height="288" id="L1">
-%             <BaseURL>svc_1/</BaseURL>
-%             <SegmentInfo from="0" to="11" duration="PT5.00S">
-%                 <BaseURL>svc_1-L1-</BaseURL>
-%             </SegmentInfo>
-%         </Representation>
-%     </Clip>
-% </StreamInfo>
-% \end{lstlisting}
+% \section{Some concepts on Hilbert Spaces}
+% % For more details c.f \cite{rudin1991functional}, \cite{brezis2011functional}, \cite{arendt2010partielle}.
+% In this section, we introduce some complementary results in Hilbert spaces. Once again, for more details, see \cite{rudin1991functional}, \cite{brezis2011functional}, or \cite{arendt2010partielle}. Consider the field \(\mathbb{F}\) (\(\mathbb{R}\) or \(\mathbb{C}\)). We say that a vector space \(H\) is an \textit{inner product space} (or a Pre-Hilbert space) if there exists a map \((\cdot,\cdot)\) (called an \textit{inner product}) over \(\mathbb{F}\) such that
+% \begin{enumerate}
+%     \item \((x, y) = \overline{(y, x)}\) (The bar denotes complex conjugation if \(\mathbb{F} = \mathbb{C}\));
+%     \item \((x+y,z) = (x,z)+(y+z)\);
+%     \item \((\alpha x, y)=\alpha(x, y)\), \(\alpha \in \mathbb{F}\);
+%     \item \((x, x) \geq 0, \; \forall x \in H\);
+%     \item \((x, x) = 0 \iff x=0\).
+% \end{enumerate}
+% Given \(x, y \in H\), we say that \(x\) and \(y\) are orthogonal (denoted by \(x \perp y\)) if \((x, y) = 0\). Accordingly, given \(E, F \subset H\), if \(x\perp y\) for every \(x \in E, y \in F\) then we say that \(E\) and \(F\) are orthogonal, \(E \perp F\). We also denote by \(E^\perp\) the set of all \(y \in H\) that are orthogonal to every \(x \in E\), i.e, \(E^\perp = \{y \in H: (x, y)=0, \; \forall x \in E\}\) which we call the orthogonal complement of \(E\). We recall that every inner product space is also a normed space, where the inner product induces the norm
+% \[
+% \norm*{x} = \sqrt{(x, x)}   
+% \]
+% satisfying the Cauchy-Schwarz inequality
+% \[
+% \abs{(x, y)} \leq \norm*{x}\norm*{y}, \; x, y \in H.
+% \]
+% Finally, if the normed space is complete for the induced norm, then we say that it is a Hilbert space. In what follows, \(H\) will always denote a Hilbert space.
+% \begin{example}
+%     A very classical Hilbert space, which is going to be used throughout all of this work, is the space of square-integrable real-valued functions in an open and bounded subset \(\Omega\) of \(\mathbb{R}^d\), which is denoted by \(L^2(\Omega)\) with the inner product given by
+%     \[
+%     (f, g)_{L^2(\Omega)} = \int_\Omega f(x)g(x) dx.
+%     \]
+%     If considering complex-valued functions, the inner product is given by
+%     \[
+%         (f, g)_{L^2(\Omega)} = \int_\Omega f(x)\overline{g}(x) dx,
+%     \]
+%     where a bar over an expression represents the complex conjugate of the scalar (function).
+% \end{example}
+% While working within the framework of Hilbert spaces, proving the density of a subspace \(M \subset H\) is more intuitive and can be derived straightforwardly. It may be of interest to the reader to compare the following results with Definition \eqref{banach_ortho_def} and Lemma \ref{banach_ortho_lemma}.
+% \begin{theorem}\label{hilb_decomp}
+%     Consider a closed subspace \(M \subset H\). Then,
+%     \[
+%     H = M \oplus M^\perp.
+%     \]
+%     In other words, every \(u \in H\) admits a unique decomposition \(u = v + w\), where \(v \in M\) and \(w \in M^\perp\).
+% \end{theorem}
+% \begin{corollary}\label{hilb_dense}
+%     Consider a subspace \(M \subset H\). Then \(M\) is dense in \(H\) if and only if \(M^\perp = \{0\}\).
+% \end{corollary}
+% \begin{proof}
+%     Let \(T = \overline{M}\). We want to prove that \(T = H\). Using Theorem \ref{hilb_decomp}, it suffices to check that \(T^\perp = \{0\}\). Since the inner product is continuous, then \(T^\perp = M^\perp = \{0\}\).
+    
+%     On the other hand, since by definition \(T\) is closed, by Theorem \ref*{hilb_decomp} we have that \(H = T \oplus T^\perp = T \oplus \{0\} = T\) as we wished.
+% \end{proof}
+% A surprising property in Hilbert spaces is the fact that every linear and continuous function \(T: H \rightarrow \mathbb{F}\) can be \textit{represented} by some unique element in \(H\). In what follows we assume that \(\mathbb{F} = \mathbb{R}\).
+% \begin{theorem}[Riesz Representation Theorem]\label{riesz}
+%     Let \(T: H \rightarrow \mathbb{R}\) be a linear and continuous functional. Then, there exists a unique \(u \in H\) such that
+%     \[
+%         T v = (u, v), \; \forall v \in H.
+%     \]
+%     Moreover, let \(H^\star\) be the dual space of \(H\), that is, the space of all linear and continuous functions from \(H\) to \(\mathbb{R}\). Then the map \(H^\star \mapsto H\) is an isometric isomorphism (which we denote by \(\approxeq\)) where
+%     \[
+%         \norm*{u}_H = \norm*{T}_{H^\star}.
+%     \]
+% \end{theorem} 
+% \begin{remark}
+%     Notice how the inner product in Hilbert spaces has replaced the duality pairing defined for Banach spaces. In fact, in a certain sense, Riesz Representation Theorem \ref{riesz} allows us to make a stronger statement regarding the dual spaces of Hilbert spaces and work in a more natural framework without ever resorting to the Hahn-Banach Theorem \ref{hb_ana_form}. For example, it is interesting to observe that the definition of orthogonality and orthogonal subspaces in Hilbert spaces (via the inner product) and Banach spaces (via the duality pairing) are essentially the same, with the distinction being an isomorphism between the Hilbert space and its dual. However, in certain cases, working with the definition of orthogonality in Banach spaces can be more useful as it allows for better generalization, such as when proving the density of a closed subspace.
+% \end{remark}
+% A more general and useful result in our work is the Lax-Milgram Theorem.
+% \begin{definition}
+%     We say that a bilinear form \(a: H \times H \rightarrow \mathbb{R}\) is continuous and coercive if
+%     \begin{itemize}
+%         \item \(\abs{a(u,v)} \leq C \norm*{u}\norm*{v}, \; \forall u, v \in H\)
+%         \item \(a(u,u) \geq \alpha \norm*{u}^2, \; \forall u \in H\)
+%     \end{itemize}
+%     respectively.
+% \end{definition}
+% \begin{theorem}[Lax-Milgram Theorem]\label{lax-milgram}
+%     Let \(a(u,v)\) be a bilinear, continuous, and coercive bilinear form on \(H\). If \(T\) is a linear and continuous functional in \(H\), then there exists a unique \(u \in H\) such that
+%     \[
+%         a(u, v) = T(v), \; \forall v \in H.
+%     \]
+% \end{theorem}
+% In this section, the well-known \textit{Spectral Theorem} is presented. With this in mind, we will now present key results and concepts (without proof) that will provide the necessary foundation for stating the theorems.
+% \begin{definition}
+%     A sequence \((e_n)_{n \in \mathbb{N}} \in H\) is a Hilbert basis of \(H\) if
+%     \begin{enumerate}
+%         \item \((e_n, e_m) = \begin{cases}
+%             1, & n=m\\
+%             0, & n \neq m
+%         \end{cases}\);
+%         \item \(\overline{\Span\{(e_n)_{n \in \mathbb{N}}\}} = H\).
+%     \end{enumerate}
+% \end{definition}
+% In a sense, a Hilbert basis resembles a basis in a finite-dimensional vector space.
+% \begin{proposition}\label{hilb_basis}
+%     Let $(e_n)_{n \in \mathbb{N}}$ be a Hilbert basis of $H$. Then, for every $u \in H$, we can write
+%     \[
+%         u = \sum_{k \in \mathbb{N}} (u, e_k)e_k \quad \text{and} \quad \|u\|^2 = \sum_{k \in \mathbb{N}} |(u, e_k)|.
+%     \]
+%     The last equality is known as \textit{Parseval's identity}.
+% \end{proposition}
+% The proposition above is particularly interesting because it allows us to express every element of \(H\) in terms of a countable basis. The following result guarantees the existence of a Hilbert basis if certain conditions are met.
+% \begin{definition}
+%     We say that \(H\) is a separable Hilbert space if there exists a countable subset \(M \subset H\) such that \(\overline{M} = H\).
+% \end{definition}
+% \begin{theorem}
+%     Every separable Hilbert space admits an orthonormal Hilbert basis.
+% \end{theorem}
 
-% Etiam imperdiet turpis. Praesent nec augue. Curabitur ligula quam, rutrum id, tempor sed, consequat ac, dui. Maecenas tincidunt velit quis orci. Sed in dui. Nullam ut mauris eu mi mollis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed cursus cursus velit. Sed a massa. Duis dignissim euismod quam.
+% We now present some properties that our operators must satisfy in order to state the Spectral Theorem.
+% \begin{definition}
+%     Consider a linear operator \(T: H_1 \rightarrow H_2\), where \(H_1\) and \(H_2\) are Hilbert spaces.
+%     \begin{enumerate}
+%         \item Assume that \(H = H_1=H_2\) and \(T \in \mathcal{L}(H)\). We say that \(T^\star\) is the \textbf{adjoint} of \(T\) if
+%         \[
+%         (y, T x) = (T^\star y, x), \; \forall x, y \in H;
+%         \]
+%         If \(T=T^\star\), i.e, if \(T\) and \(T^\star\) domains (and their image) coincide we say that \(T\) is \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also comes from the Hahn-Banach Theorem \ref{hb_ana_form}!}
+%         \item As above, let \(T \in \mathcal{L}(H)\). We say that \(\lambda\) is an \textbf{eigenvalue} of \(T\) if \(N(T - \lambda I) \neq \{0\}\). In that case, we say that \(\lambda \in \sigma(T)\) where \(\sigma(T)\) is called the \textbf{spectrum} of \(T\)\footnote{Remarkably, in the infinite-dimensional case, the set of eigenvalues \(EV(T)\) may not coincide with the spectrum \(\sigma(T)\). \(T - \lambda I\) may fail to be invertible even if \(T - \lambda I\) is injective.}. We also say that \(u\) is an \textbf{eigenvector} associated with the eigenvalue \(\lambda\) if \(u \in N(T-\lambda I)\setminus \{0\}\).
+%     \end{enumerate}
+% \end{definition}
+% We can derive some important properties regarding the spectrum of a compact operator and the spectrum of self-adjoint operators.
+% \begin{proposition}
+%     Let \(H\) be a Hilbert space and consider a compact operator \(T \in \mathcal{L}(H)\). Then,
+%     \begin{itemize}
+%         \item \(0 \in \sigma(T)\);
+%         \item one of the following holds:
+%         \begin{itemize}
+%             \item \(\sigma(T) = \{0\}\);
+%             \item \(\sigma(T)\setminus\{0\}\) is a finite set;
+%             \item \(\sigma(T)\setminus\{0\}\) is a sequence converging to \(0\).
+%         \end{itemize} 
+%     \end{itemize}
+% \end{proposition}
+% \begin{proposition}
+%     Let \(H\) be a Hilbert space and consider a self-adjoint operator \(T\in \mathcal{L}(H)\). In these conditions, \(\sigma(T)\) is real and eigenvectors corresponding to distinct eigenvalues are orthogonal.
+% \end{proposition}
+% It is now possible to state one of the main results of this section.
+% \begin{theorem}[Spectral Theorem for compact and self-adjoint operators]\label{spectral_theorem}
+%     Let \(H\) be a separable Hilbert space of infinite dimension and let \(T \in \mathcal{L}(H)\) be a compact self-adjoint operator. Then, \(H\) admits a Hilbert basis \((e_n)_{n \in \mathbb{N}}\) such that
+%     \[
+%         T e_n = \lambda_n e_n
+%     \]
+%     for \(\lambda_n \in \mathbb{R}\), \(\lambda_n \rightarrow 0\) as \(n \rightarrow \infty\), where \(\lambda_n\) can be assumed to be a decreasing sequence.
+% \end{theorem}
 
-% \begin{spacing}{0.5}
-% \lstinputlisting[style=coloredASM,language=Assembler,numbers=left,caption={Assembler Main Code.},label=code]
-% {./tables_and_code/example.asm.txt}
-% \end{spacing}
+%\section{Spectral Decomposition of the Laplace operator}\label{div_theo}
+
+In this appendix, we make a brief study regarding the Laplace operator in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. The main results presented here are mostly consequences of the Spectral Theorem \ref{spectral_theorem}. Firstly, recall the Divergence Theorem, e.g. \cite{evans2015measure}.
+\begin{theorem}[Divergence Theorem]\label{appendix_div_theor}
+    Let \(\Omega \subset \mathbb{R}^d\) defined as above. Then,
+    \[
+      \int_\Omega \Div \phi dx = \int_{\partial\Omega} \phi \cdot \mathbf{n} d\sigma,
+    \]
+    where \(\mathbf{n}\) denotes the exterior unitary normal.
+\end{theorem}
+A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}.
+\begin{corollary}[Green's Formulas]
+    In this same conditions of the Theorem \ref{appendix_div_theor}, let \(u, v \in H^2(U)\). Then,
+    \begin{enumerate}
+        \item \(\int_\Omega \Delta u dx = \int_{\partial \Omega} \frac{\partial u}{\partial n} d\sigma\);
+        \item \(\int_\Omega \Delta u v dx = -\int_\Omega \nabla u \cdot \nabla v dx + \int_{\partial \Omega} \frac{\partial u}{\partial n}v d\sigma\);
+        \item \(\int_\Omega \Delta u v - u \Delta v dx= \int_{\partial \Omega} \frac{\partial u}{\partial n}v - \frac{\partial v}{\partial n}u d\sigma\).
+    \end{enumerate}
+\end{corollary}
+
+The study of the spectrum of the Laplace operator is of major importance in this work. We will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
+
+\begin{definition}\label{eig_def}
+    Consider the Helmholtz equation with null Dirichlet boundary conditions
+    \begin{equation}\label{eig_helm_eq}
+        \begin{cases}
+            -\Delta u(x) = \lambda u(x), & x \in \Omega, \\
+            u(x) = 0, & x \in \partial \Omega.
+        \end{cases}
+    \end{equation}
+    One says that \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
+\end{definition}
+
+\begin{theorem}\label{spec_lap_pre}
+    There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
+    \[
+        -\Delta u_n = \lambda_n u_n
+    \]
+    where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
+    \[
+        R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
+    \]
+    Then,
+    \[
+    \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u) = \max_{\substack{u \in E_n \\ u \neq 0}} R(u).
+    \]
+\end{theorem}
+\begin{proof}
+    For each \(f \in L^2(\Omega)\), we consider the problem
+    \[
+        \begin{cases}
+            -\Delta u(x) = f, & \text{ in } \Omega\\
+            u = 0, & \text{ on } \partial \Omega
+        \end{cases} 
+    \]
+    with the associated variational form
+    \[
+        \int_\Omega \nabla u \cdot \nabla v = \int_\Omega f v, \; \forall v \in H^1_0(\Omega).
+    \]
+    Using Lax-Milgram Theorem \ref{lax-milgram}, it is straightforward to prove that the variational form above admits a unique weak solution \(u \in H^1_0(\Omega)\) and the operator
+    \begin{align*}
+        T: L^2(\Omega) &\rightarrow L^2(\Omega)\\
+        f &\mapsto u
+    \end{align*}
+    is well-defined. To prove that \(T\) is a compact operator, we use Poincaré and Cauchy-Schwarz inequalities and notice that
+    \[
+        \alpha\norm*{u}_{H^1(\Omega)}^2 \leq \int_\Omega \abs{\nabla u}^2 = \int_\Omega f u \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{L^2(\Omega)} \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{H^1(\Omega)} \implies \norm*{u}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}
+    \]
+    where \(\alpha, C > 0\). The above result can be written as
+    \[
+        \norm*{Tf}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}, \; \forall f \in L^2(\Omega)
+    \]
+    and by Theorem \ref{rellich} \(T\) is a compact operator. To check that \(T\) is self-adjoint it suffices to consider the weak variational form of the null Dirichlet boundary problems
+    \[
+        -\Delta u = f \qquad -\Delta v = g
+    \]
+    for \(f,g \in L^2(\Omega)\) and apply Green's formulas. It is also easy to see that \((Tf, f)_{L^2(\Omega)} \geq 0, \forall f \in L^2(\Omega)\) since 
+    \[
+        \int_\Omega (Tf) f = \int_\Omega u f = \norm{\nabla u}_{L^2(\Omega)}^2 \geq 0.
+    \]
+    Applying the Spectral Theorem \ref{spectral_theorem} to \(T\), there exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) such that
+    \[
+        T u_n = \mu_n u_n
+    \]
+    for \(\mu_n \in \mathbb{R}\), \(\mu_n \rightarrow 0\) as \(n \rightarrow \infty\). In particular, taking \(f = \lambda_n u_n\), where \(\lambda_n = \frac{1}{\mu_n}\), one can write
+    \[
+        -\Delta u_n = \lambda_n u_n,
+    \]
+    or in the integral form
+    \[
+        \int_\Omega \abs*{\nabla u}^2 = \lambda_n \int_\Omega u^2,
+    \]
+    with \(\lambda_1 \leq \lambda_2 \leq \dots \rightarrow \infty\). To check the variational form of the eigenvalues \(\lambda_n\), let \(u \in E_{n-1}^\perp\). Then,
+    \begin{align*}
+        \norm*{\nabla u}_{L^2(\Omega)}^2 = (\nabla u, \nabla u)_{L^2(\Omega)}^2 &= \Big(\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} \nabla u_m, \nabla u \Big)_{L^2(\Omega)}\\
+        &=\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} (\nabla u_m, \nabla u)_{L^2(\Omega)}\\
+        &=\sum_{m\geq n} \lambda_m (u, u_m)_{L^2(\Omega)} (u_m, u)_{L^2(\Omega)}\\
+        & \geq \lambda_n \sum_{m\geq n} \abs{(u, u_m)_{L^2(\Omega)}}^2\\
+        &= \lambda_n \norm*{u}_{L^2(\Omega)}^2
+    \end{align*}
+    where we used the bilinearity of the inner product, the fact that the sequence \(\lambda_n\) is non-decreasing, and Parseval's identity. It is easy to check that the equality is only attained if and only if \(u\) is in the eigenspace of \(\lambda_k\). This proves that
+    \[
+        \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u). 
+    \]
+    The other case is analogous.
+\end{proof}
+\begin{remark}
+    Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
+\end{remark}
+
+\begin{corollary}[Homogeneity]\label{lap_homo}
+    Let \(\alpha > 0\). Consider the set
+    \[
+        \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
+    \]
+    i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
+    Then, for all \(n \in \mathbb{N}\),
+    \[
+        \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),
+    \]
+    where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
+\end{corollary}
+
+\begin{proof}
+    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \phi(\Omega)\). Then,
+    \begin{equation*}
+        \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} u(x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx},
+    \end{equation*}
+    via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
+    \[
+        \nabla v(x) = \alpha \nabla u (\alpha x)
+    \]
+    and
+    \begin{equation*}
+        \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} v(x)^2 dx} = \lambda_n(\Omega).
+    \end{equation*}
+    
+\end{proof}
 
 
-% Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus eget nisl ut elit porta ullamcorper. Maecenas tincidunt velit quis orci. Sed in dui. Nullam ut mauris eu mi mollis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
 
-% This inline MATLAB code \mcode{for i=1:3, disp('cool'); end;} uses the \verb|\mcode{}| command.\footnote{MATLAB Works also in footnotes: \mcodefn{for i=1:3, disp('cool'); end;}}
-
-% Nullam ut mauris eu mi mollis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed cursus cursus velit. Sed a massa. Duis dignissim euismod quam. Nullam euismod metus ut orci.
-
-% % \begin{lstlisting}[language=matlabfloz,caption={\mcode{Matlab Function}}]
-% % for i = 1:3
-% % 	if i >= 5 && a ~= b       % literate programming replacement
-% % 		disp('cool');         % comment with some §\mcommentfont\LaTeX in it: $\mcommentfont\pi x^2$§
-% % 	end
-% % 	[:,ind] = max(vec);
-% % 	x_last = x(1,end) - 1;
-% % 	v(end);
-% % 	ylabel('Voltage (µV)');
-% % end
-% % \end{lstlisting}
-
-% Nullam ut mauris eu mi mollis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed cursus cursus velit. Sed a massa. Duis dignissim euismod quam. Nullam euismod metus ut orci.
-
-% \lstinputlisting[
-% 	label=lst:matlab_code,
-% 	caption={\mcode{function.m}},
-% 	breaklines=true
-% 	]{./tables_and_code/function.m}
-
-% Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus eget nisl ut elit porta ullamcorper. Maecenas tincidunt velit quis orci. Sed in dui. Nullam ut mauris eu mi mollis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed cursus cursus velit. Sed a massa. Duis dignissim euismod quam. Nullam euismod metus ut orci. Vestibulum erat libero, scelerisque et, porttitor et, varius a, leo.
-
-% \begin{lstlisting}[style=htmlcssjs,caption={HTML with CSS Code}]
-% <!DOCTYPE html>
-% <html>
-%   <head>
-%     <title>Listings Style Test</title>
-%     <meta charset="UTF-8">
-%     <style>
-%       /* CSS Test */
-%       * {
-%         padding: 0;
-%         border: 0;
-%         margin: 0;
-%       }
-%     </style>
-%     <link rel="stylesheet" href="css/style.css" />
-%   </head>
-%   <header> hey </header>
-%   <article> this is a article </article>
-%   <body>
-%     <!-- Paragraphs are fine -->
-%     <div id="box">			
-% 			<p>
-% 			  Hello World
-% 			</p>
-%       <p>Hello World</p>
-%       <p id="test">Hello World</p>
-% 			<p></p>
-%     </div>
-%     <div>Test</div>
-%     <!-- HTML script is not consistent -->
-%     <script src="js/benchmark.js"></script>
-%     <script>
-%       function createSquare(x, y) {
-%         // This is a comment.
-%         var square = document.createElement('div');
-%         square.style.width = square.style.height = '50px';
-%         square.style.backgroundColor = 'blue';
-        
-%         /*
-%          * This is another comment.
-%          */
-%         square.style.position = 'absolute';
-%         square.style.left = x + 'px'; 
-%         square.style.top = y + 'px';
-        
-%         var body = document.getElementsByTagName('body')[0];
-%         body.appendChild(square);
-%       };
-      
-%       // Please take a look at +=
-%       window.addEventListener('mousedown', function(event) {
-%         // German umlaut test: Berührungspunkt ermitteln
-%         var x = event.touches[0].pageX;
-%         var y = event.touches[0].pageY;
-%         var lookAtThis += 1;
-%       });
-%     </script>
-%   </body>
-% </html>
-% \end{lstlisting}
-
-% Nulla dui purus, eleifend vel, consequat non, dictum porta, nulla. Duis ante mi, laoreet ut, commodo eleifend, cursus nec, lorem. Aenean eu est. Etiam imperdiet turpis. Praesent nec augue. Curabitur ligula quam, rutrum id, tempor sed, consequat ac, dui. Vestibulum accumsan eros nec magna. Vestibulum vitae dui. Vestibulum nec ligula et lorem consequat ullamcorper.
-
-% \begin{lstlisting}[style=htmlcssjs,caption={HTML CSS Javascript Code}]
-
-% @media only screen and (min-width: 768px) and (max-width: 991px) {
-	
-% 	#main {
-% 		width: 712px;
-% 		padding: 100px 28px 120px;
-% 	}
-	
-% 	/* .mono {
-% 		font-size: 90%;
-% 	} */
-	
-% 	.cssbtn a {
-% 		margin-top: 10px;
-% 		margin-bottom: 10px;
-% 		width: 60px;  
-% 		height: 60px;   
-% 		font-size: 28px;
-% 		line-height: 62px;
-% 	}
-% \end{lstlisting}
-
-% Nulla dui purus, eleifend vel, consequat non, dictum porta, nulla. Duis ante mi, laoreet ut, commodo eleifend, cursus nec, lorem. Aenean eu est. Etiam imperdiet turpis. Praesent nec augue. Curabitur ligula quam, rutrum id, tempor sed, consequat ac, dui. Vestibulum accumsan eros nec magna. Vestibulum vitae dui. Vestibulum nec ligula et lorem consequat ullamcorper.
-
-% \begin{lstlisting} [style=py,caption={PYTHON Code}]
-% class TelgramRequestHandler(object):
-%     def handle(self):
-%         addr = self.client_address[0]         # Client IP-adress
-%         telgram = self.request.recv(1024)     # Recieve telgram
-%         print "From: %s, Received: %s" % (addr, telgram)
-%         return
-% \end{lstlisting}

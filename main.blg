@@ -3,15 +3,13 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: alpha.bst
 Database file #1: Thesis-MSc-Bibliography.bib
-Warning--I'm ignoring huguinho's extra "note" field
---line 213 of file Thesis-MSc-Bibliography.bib
 Warning--can't use both volume and number fields in brezis2011functional
 Warning--can't use both volume and number fields in geymonat2007trace
 Warning--there's a number but no series in polya1951isoperimetric
 Warning--there's a number but no series in quarteroni1999domain
 You've used 65 entries,
             2543 wiz_defined-function locations,
-            932 strings with 14360 characters,
+            931 strings with 14364 characters,
 and the built_in function-call counts, 23333 in all, are:
 = -- 2333
 > -- 981
@@ -50,4 +48,4 @@ warning$ -- 4
 while$ -- 240
 width$ -- 71
 write$ -- 830
-(There were 5 warnings)
+(There were 4 warnings)

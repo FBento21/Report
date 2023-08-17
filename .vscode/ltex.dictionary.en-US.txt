@@ -36,3 +36,10 @@ cartesian
 well-posedness
 meshless
 Well-Posedness
+optimality
+Meshless
+infeasibility
+Antunes
+Freitas
+Kansa-MFS
+Neummann-Dirichlet

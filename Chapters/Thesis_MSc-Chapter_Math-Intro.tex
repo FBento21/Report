@@ -318,7 +318,7 @@ It is now possible to state one of the main results of this section.
 
 \section{Lebesgue and Sobolev Spaces}\label{lebesgue_and_sobolev_preliminaries}
 % For more details c.f \cite{brezis2011functional}, \cite{borthwick2020spectral}, \cite{lions2012non} and \cite{evans2022partial}.
-In this section, we apply the results and concepts from the previous ones. Besides the usual references already presented, we recommend \cite{lions2012non}, \cite{huguinho}, and \cite{evans2022partial}. Let $\Omega \subset \mathbb{R}^d$ be an open set. Consider a \textit{multi-index} $\alpha = (\alpha_1, \dots, \alpha_d) \in \mathbb{N}_0^d$, where $|\alpha| = \alpha_1 + \dots + \alpha_d$. Given a function defined in $\Omega$, we denote its partial derivatives of order $\alpha$ by
+In this section, we apply the results and concepts from the previous ones. Besides the usual references already presented, we recommend \cite{lions2012non} and \cite{evans2022partial}. The lecture notes \cite{huguinho} were also used. Let $\Omega \subset \mathbb{R}^d$ be an open set. Consider a \textit{multi-index} $\alpha = (\alpha_1, \dots, \alpha_d) \in \mathbb{N}_0^d$, where $|\alpha| = \alpha_1 + \dots + \alpha_d$. Given a function defined in $\Omega$, we denote its partial derivatives of order $\alpha$ by
 \[
 D^\alpha = \frac{\partial^{|\alpha|}}{\partial x_1^{\alpha_1}\dots\partial x_d^{\alpha_d}}.   
 \]
@@ -498,141 +498,141 @@ Theorem \ref{frac_theo} allows to give some meaning to space \(H^{-\frac{1}{2}}(
 \]
 we have \(\gamma_1 u \in H^{-\frac{1}{2}}(\Omega)\).
 
-\section{Spectral Decomposition of the Laplace Operator}\label{div_theo}
-In this section, we make a brief study regarding the Laplace Operator \(-\Delta = -\sum_{n=1}^{d} \frac{\partial^2}{\partial x_n^2}\) in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. Firstly, we recall the Divergence Theorem, e.g. \cite{evans2015measure}.
-\begin{theorem}[Divergence Theorem]
-    Let \(\Omega \subset \mathbb{R}^d\) defined as above. Then,
-    \[
-      \int_\Omega \Div \phi dx = \int_{\partial\Omega} \phi \cdot \mathbf{n} d\sigma,
-    \]
-    where \(\mathbf{n}\) denotes the exterior unitary normal.
-\end{theorem}
-A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}, with major importance in this work.
-\begin{corollary}[Green's Formulas]
-    In this same conditions of the Theorem \ref{div_theo}, let \(u, v \in H^2(U)\). Then,
-    \begin{enumerate}
-        \item \(\int_\Omega \Delta u dx = \int_{\partial \Omega} \frac{\partial u}{\partial n} d\sigma\);
-        \item \(\int_\Omega \Delta u v dx = -\int_\Omega \nabla u \cdot \nabla v dx + \int_{\partial \Omega} \frac{\partial u}{\partial n}v d\sigma\);
-        \item \(\int_\Omega \Delta u v - u \Delta v dx= \int_{\partial \Omega} \frac{\partial u}{\partial n}v - \frac{\partial v}{\partial n}u d\sigma\).
-    \end{enumerate}
-\end{corollary}
+%\section{Spectral Decomposition of the Laplace operator}\label{div_theo}
+% In this section, we make a brief study regarding the Laplace operator \(-\Delta = -\sum_{n=1}^{d} \frac{\partial^2}{\partial x_n^2}\) in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. Firstly, we recall the Divergence Theorem, e.g. \cite{evans2015measure}.
+% \begin{theorem}[Divergence Theorem]
+%     Let \(\Omega \subset \mathbb{R}^d\) defined as above. Then,
+%     \[
+%       \int_\Omega \Div \phi dx = \int_{\partial\Omega} \phi \cdot \mathbf{n} d\sigma,
+%     \]
+%     where \(\mathbf{n}\) denotes the exterior unitary normal.
+% \end{theorem}
+% A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}, with major importance in this work.
+% \begin{corollary}[Green's Formulas]
+%     In this same conditions of the Theorem \ref{div_theo}, let \(u, v \in H^2(U)\). Then,
+%     \begin{enumerate}
+%         \item \(\int_\Omega \Delta u dx = \int_{\partial \Omega} \frac{\partial u}{\partial n} d\sigma\);
+%         \item \(\int_\Omega \Delta u v dx = -\int_\Omega \nabla u \cdot \nabla v dx + \int_{\partial \Omega} \frac{\partial u}{\partial n}v d\sigma\);
+%         \item \(\int_\Omega \Delta u v - u \Delta v dx= \int_{\partial \Omega} \frac{\partial u}{\partial n}v - \frac{\partial v}{\partial n}u d\sigma\).
+%     \end{enumerate}
+% \end{corollary}
 
-The study of the spectrum of the following equation is of major importance throughout this work and will be studied in the following chapter. For now, we will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
+% The study of the spectrum of the following equation is of major importance throughout this work and will be studied in the following chapter. For now, we will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
 
-\begin{definition}\label{eig_def}
-    Consider the Helmholtz equation with null Dirichlet boundary conditions
-    \begin{equation}\label{eig_helm_eq}
-        \begin{cases}
-            -\Delta u(x) = \lambda u(x), & x \in \Omega, \\
-            u(x) = 0, & x \in \partial \Omega,
-        \end{cases}
-    \end{equation}
-    where $\Delta=\sum_{i=0}^{d}\frac{\partial^2 }{\partial x_i^2}$. Then, \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
-\end{definition}
+% \begin{definition}\label{eig_def}
+%     Consider the Helmholtz equation with null Dirichlet boundary conditions
+%     \begin{equation}\label{eig_helm_eq}
+%         \begin{cases}
+%             -\Delta u(x) = \lambda u(x), & x \in \Omega, \\
+%             u(x) = 0, & x \in \partial \Omega,
+%         \end{cases}
+%     \end{equation}
+%     where $\Delta=\sum_{i=0}^{d}\frac{\partial^2 }{\partial x_i^2}$. Then, \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
+% \end{definition}
 
-\begin{theorem}\label{spec_lap_pre}
-    There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
-    \[
-        -\Delta u_n = \lambda_n u_n
-    \]
-    where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
-    \[
-        R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
-    \]
-    Then,
-    \[
-    \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u) = \max_{\substack{u \in E_n \\ u \neq 0}} R(u).
-    \]
-\end{theorem}
-\begin{proof}
-    For each \(f \in L^2(\Omega)\), we consider the problem
-    \[
-        \begin{cases}
-            -\Delta u(x) = f, & \text{ in } \Omega\\
-            u = 0, & \text{ on } \partial \Omega
-        \end{cases} 
-    \]
-    with the associated variational form
-    \[
-        \int_\Omega \nabla u \cdot \nabla v = \int_\Omega f v, \; \forall v \in H^1_0(\Omega).
-    \]
-    Using Lax-Milgram Theorem \ref{lax-milgram}, it is straightforward to prove that the variational form above admits a unique weak solution \(u \in H^1_0(\Omega)\) and the operator
-    \begin{align*}
-        T: L^2(\Omega) &\rightarrow L^2(\Omega)\\
-        f &\mapsto u
-    \end{align*}
-    is well-defined. To prove that \(T\) is a compact operator, we use Poincaré and Cauchy-Schwarz inequalities and notice that
-    \[
-        \alpha\norm*{u}_{H^1(\Omega)}^2 \leq \int_\Omega \abs{\nabla u}^2 = \int_\Omega f u \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{L^2(\Omega)} \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{H^1(\Omega)} \implies \norm*{u}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}
-    \]
-    where \(\alpha, C > 0\). The above result can be written as
-    \[
-        \norm*{Tf}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}, \; \forall f \in L^2(\Omega)
-    \]
-    and by Theorem \ref{rellich} \(T\) is a compact operator. To check that \(T\) is self-adjoint it suffices to consider the weak variational form of the null Dirichlet boundary problems
-    \[
-        -\Delta u = f \qquad -\Delta v = g
-    \]
-    for \(f,g \in L^2(\Omega)\) and apply Green's formulas. It is also easy to see that \((Tf, f)_{L^2(\Omega)} \geq 0, \forall f \in L^2(\Omega)\) since 
-    \[
-        \int_\Omega (Tf) f = \int_\Omega u f = \norm{\nabla u}_{L^2(\Omega)}^2 \geq 0.
-    \]
-    Applying the Spectral Theorem \ref{spectral_theorem} to \(T\), there exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) such that
-    \[
-        T u_n = \mu_n u_n
-    \]
-    for \(\mu_n \in \mathbb{R}\), \(\mu_n \rightarrow 0\) as \(n \rightarrow \infty\). In particular, taking \(f = \lambda_n u_n\), where \(\lambda_n = \frac{1}{\mu_n}\), one can write
-    \[
-        -\Delta u_n = \lambda_n u_n,
-    \]
-    or in the integral form
-    \[
-        \int_\Omega \abs*{\nabla u}^2 = \lambda_n \int_\Omega u^2,
-    \]
-    with \(\lambda_1 \leq \lambda_2 \leq \dots \rightarrow \infty\). To check the variational form of the eigenvalues \(\lambda_n\), let \(u \in E_{n-1}^\perp\). Then,
-    \begin{align*}
-        \norm*{\nabla u}_{L^2(\Omega)}^2 = (\nabla u, \nabla u)_{L^2(\Omega)}^2 &= \Big(\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} \nabla u_m, \nabla u \Big)_{L^2(\Omega)}\\
-        &=\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} (\nabla u_m, \nabla u)_{L^2(\Omega)}\\
-        &=\sum_{m\geq n} \lambda_m (u, u_m)_{L^2(\Omega)} (u_m, u)_{L^2(\Omega)}\\
-        & \geq \lambda_n \sum_{m\geq n} \abs{(u, u_m)_{L^2(\Omega)}}^2\\
-        &= \lambda_n \norm*{u}_{L^2(\Omega)}^2
-    \end{align*}
-    where we used the bilinearity of the inner product, the fact that the sequence \(\lambda_n\) is non-decreasing, and Parseval's identity. It is easy to check that the equality is only attained if and only if \(u\) is in the eigenspace of \(\lambda_k\). This proves that
-    \[
-        \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u). 
-    \]
-    The other case is analogous.
-\end{proof}
-\begin{remark}
-    Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
-\end{remark}
+% \begin{theorem}\label{spec_lap_pre}
+%     There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
+%     \[
+%         -\Delta u_n = \lambda_n u_n
+%     \]
+%     where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
+%     \[
+%         R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
+%     \]
+%     Then,
+%     \[
+%     \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u) = \max_{\substack{u \in E_n \\ u \neq 0}} R(u).
+%     \]
+% \end{theorem}
+% \begin{proof}
+%     For each \(f \in L^2(\Omega)\), we consider the problem
+%     \[
+%         \begin{cases}
+%             -\Delta u(x) = f, & \text{ in } \Omega\\
+%             u = 0, & \text{ on } \partial \Omega
+%         \end{cases} 
+%     \]
+%     with the associated variational form
+%     \[
+%         \int_\Omega \nabla u \cdot \nabla v = \int_\Omega f v, \; \forall v \in H^1_0(\Omega).
+%     \]
+%     Using Lax-Milgram Theorem \ref{lax-milgram}, it is straightforward to prove that the variational form above admits a unique weak solution \(u \in H^1_0(\Omega)\) and the operator
+%     \begin{align*}
+%         T: L^2(\Omega) &\rightarrow L^2(\Omega)\\
+%         f &\mapsto u
+%     \end{align*}
+%     is well-defined. To prove that \(T\) is a compact operator, we use Poincaré and Cauchy-Schwarz inequalities and notice that
+%     \[
+%         \alpha\norm*{u}_{H^1(\Omega)}^2 \leq \int_\Omega \abs{\nabla u}^2 = \int_\Omega f u \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{L^2(\Omega)} \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{H^1(\Omega)} \implies \norm*{u}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}
+%     \]
+%     where \(\alpha, C > 0\). The above result can be written as
+%     \[
+%         \norm*{Tf}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}, \; \forall f \in L^2(\Omega)
+%     \]
+%     and by Theorem \ref{rellich} \(T\) is a compact operator. To check that \(T\) is self-adjoint it suffices to consider the weak variational form of the null Dirichlet boundary problems
+%     \[
+%         -\Delta u = f \qquad -\Delta v = g
+%     \]
+%     for \(f,g \in L^2(\Omega)\) and apply Green's formulas. It is also easy to see that \((Tf, f)_{L^2(\Omega)} \geq 0, \forall f \in L^2(\Omega)\) since 
+%     \[
+%         \int_\Omega (Tf) f = \int_\Omega u f = \norm{\nabla u}_{L^2(\Omega)}^2 \geq 0.
+%     \]
+%     Applying the Spectral Theorem \ref{spectral_theorem} to \(T\), there exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) such that
+%     \[
+%         T u_n = \mu_n u_n
+%     \]
+%     for \(\mu_n \in \mathbb{R}\), \(\mu_n \rightarrow 0\) as \(n \rightarrow \infty\). In particular, taking \(f = \lambda_n u_n\), where \(\lambda_n = \frac{1}{\mu_n}\), one can write
+%     \[
+%         -\Delta u_n = \lambda_n u_n,
+%     \]
+%     or in the integral form
+%     \[
+%         \int_\Omega \abs*{\nabla u}^2 = \lambda_n \int_\Omega u^2,
+%     \]
+%     with \(\lambda_1 \leq \lambda_2 \leq \dots \rightarrow \infty\). To check the variational form of the eigenvalues \(\lambda_n\), let \(u \in E_{n-1}^\perp\). Then,
+%     \begin{align*}
+%         \norm*{\nabla u}_{L^2(\Omega)}^2 = (\nabla u, \nabla u)_{L^2(\Omega)}^2 &= \Big(\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} \nabla u_m, \nabla u \Big)_{L^2(\Omega)}\\
+%         &=\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} (\nabla u_m, \nabla u)_{L^2(\Omega)}\\
+%         &=\sum_{m\geq n} \lambda_m (u, u_m)_{L^2(\Omega)} (u_m, u)_{L^2(\Omega)}\\
+%         & \geq \lambda_n \sum_{m\geq n} \abs{(u, u_m)_{L^2(\Omega)}}^2\\
+%         &= \lambda_n \norm*{u}_{L^2(\Omega)}^2
+%     \end{align*}
+%     where we used the bilinearity of the inner product, the fact that the sequence \(\lambda_n\) is non-decreasing, and Parseval's identity. It is easy to check that the equality is only attained if and only if \(u\) is in the eigenspace of \(\lambda_k\). This proves that
+%     \[
+%         \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u). 
+%     \]
+%     The other case is analogous.
+% \end{proof}
+% \begin{remark}
+%     Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
+% \end{remark}
 
-\begin{corollary}[Homogeneity]\label{lap_homo}
-    Let \(\alpha > 0\). Consider the set
-    \[
-        \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
-    \]
-    i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
-    Then, for all \(n \in \mathbb{N}\),
-    \[
-        \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),
-    \]
-    where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
-\end{corollary}
+% \begin{corollary}[Homogeneity]\label{lap_homo}
+%     Let \(\alpha > 0\). Consider the set
+%     \[
+%         \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
+%     \]
+%     i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
+%     Then, for all \(n \in \mathbb{N}\),
+%     \[
+%         \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),
+%     \]
+%     where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
+% \end{corollary}
 
-\begin{proof}
-    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \phi(\Omega)\). Then,
-    \begin{equation*}
-        \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} u(x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx},
-    \end{equation*}
-    via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
-    \[
-        \nabla v(x) = \alpha \nabla u (\alpha x)
-    \]
-    and
-    \begin{equation*}
-        \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} v(x)^2 dx} = \lambda_n(\Omega).
-    \end{equation*}
+% \begin{proof}
+%     The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \phi(\Omega)\). Then,
+%     \begin{equation*}
+%         \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} u(x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx},
+%     \end{equation*}
+%     via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
+%     \[
+%         \nabla v(x) = \alpha \nabla u (\alpha x)
+%     \]
+%     and
+%     \begin{equation*}
+%         \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} v(x)^2 dx} = \lambda_n(\Omega).
+%     \end{equation*}
     
-\end{proof}
+% \end{proof}
 
