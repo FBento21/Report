@@ -32,7 +32,7 @@
 % -----------------------------------------------------------------------------
 %
 %\documentclass[defaultstyle,10pt,Helvetica,oneside]{istulthesis}
-\documentclass[defaultstyle,10pt,Helvetica]{istulthesis}
+\documentclass[defaultstyle,10pt,Helvetica,twoside]{istulthesis}
 %
 % -----------------------------------------------------------------------------
 % The Preamble document contains all the necessary Packages for typesetting
@@ -73,11 +73,11 @@
 \begin{keywords}
 	\input{./Chapters/Thesis-MSc-Abstract-EN-KeyWords.tex}
 \end{keywords}
-%\clearpage
-%\thispagestyle{empty}
+\clearpage
+\thispagestyle{empty}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
-% \cleardoublepage
+\cleardoublepage
 %
 % -----------------------------------------------------------------------------
 % O RESUMO
@@ -87,11 +87,11 @@
 \begin{palavraschave}
 	\input{./Chapters/Thesis-MSc-Abstract-PT-PalavrasChave.tex}
 \end{palavraschave}
-%\clearpage
-% \thispagestyle{empty}
+\clearpage
+\thispagestyle{empty}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
-% \cleardoublepage
+\cleardoublepage
 %
 % -----------------------------------------------------------------------------
 % This is required for the Fancy Chapters with minitoc
@@ -105,14 +105,14 @@
 \tableofcontents
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-%\cleardoublepage
+\cleardoublepage
 % reposition baseline
 \renewcommand{\baselinestretch}{1.5}
 % -----------------------------------------------------------------------------
 % List of Figures
 \pdfbookmark[1]{List of Figures}{lof}
 \listoffigures
-%\cleardoublepage
+\cleardoublepage
 % -----------------------------------------------------------------------------
 \begingroup 
     % \let\clearpage\relax
@@ -124,7 +124,7 @@
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
 %\let\cleardoublepage\relax
-%\cleardoublepage
+\cleardoublepage
 % -----------------------------------------------------------------------------
 % List of Algorithms
 % If not used, comments the lines!
@@ -134,14 +134,14 @@
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 \endgroup
 % Otherwise, comment the following command:
-%\cleardoublepage
+\cleardoublepage
 % -----------------------------------------------------------------------------
 % Listings
 % If not used, comments the lines!
 % Requires packages listings
 % \pdfbookmark[1]{Listings}{lol}
 % \lstlistoflistings
-%\cleardoublepage
+\cleardoublepage
 % -----------------------------------------------------------------------------
 % % List of acronyms
 \pdfbookmark[1]{Acronyms}{loac}
@@ -150,7 +150,7 @@
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 \clearpage
 % Otherwise, comment the following command:
-%\cleardoublepage
+\cleardoublepage
 % -----------------------------------------------------------------------------
 % PAGE NUMBERING FOR DOCUMENT MATTER in ARABIC
 % Pages number is starting with arabic style. Until here were on roman mode
@@ -164,7 +164,7 @@
 \input{./Chapters/Thesis-MSc-Chapter_1.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-%\cleardoublepage
+% \cleardoublepage
 %
 %Chapter Math Intro
 %\acresetall
@@ -259,6 +259,10 @@
 %% Second Appendix
 %\pdfbookmark[1]{Appendix B}{appendix}
 \input{./Chapters/Thesis-MSc-AppendixB.tex}
+%% If Printing on DOUBLE SIDED pages, the second page should be white.
+%% Otherwise, comment the following command:
+%\cleardoublepage
+\input{./Chapters/Thesis-MSc-AppendixC.tex}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
 %\cleardoublepage

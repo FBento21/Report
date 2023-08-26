@@ -3,7 +3,7 @@
 {"rule":"ADVERB_OR_HYPHENATED_ADJECTIVE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a complex valued function defin\\E$"}
 {"rule":"IT_IS_2","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a normed space and denote its dual by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QWe define the orthogonal of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q in respect to the duality pairing as \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
-{"rule":"AGREEMENT_SENT_START","sentence":"^\\QSome concepts on Hilbert Spaces.\\E$"}
+{"rule":"AGREEMENT_SENT_START","sentence":"^\\QSome concepts on Hilbert spaces.\\E$"}
 {"rule":"IF_IS","sentence":"^\\QWe say that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is the adjoint of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q if \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q; If \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, i.e, if \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q domains (and their image) coincide we say that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is self-adjoint.\\E$"}
 {"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\QWe take \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q as an element wise operator, where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q).\\E$"}
 {"rule":"MISSING_GENITIVE","sentence":"^\\QDirac equation simulations.\\E$"}

@@ -5,9 +5,10 @@
 \chapter{Some useful insights to the Method of Fundamental Solutions}
 \label{chapter:appendixB}
 
-This appendix presents some useful results and techniques which can be used to increase its accuracy. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to diminish the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
+This appendix presents some useful results and techniques which can be used to increase the accuracy of the Method of Fundamental Solutions. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to diminish the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
 
-\section{Behavior of the Laplace equation's solutions near a corner.}
+\section{Behavior of the Laplace equation's solutions near a corner.}\label{appendixB_corners}
+
 
 In this section, the behavior of the Laplace equation's solutions near a corner is summarized for different boundary conditions. For more details, we point the reader to \cite{li2000singularities}.
 
@@ -54,7 +55,7 @@ In this section, the behavior of the Laplace equation's solutions near a corner 
 \end{itemize}
 
 \begin{remark}\label{particular_solutions}
-    Observe that if the wedge domain is rotated by some angle \(\theta_1\) (see Figure \eqref{rotated_wedge}) one can consider the translation \(\theta^\star = \theta - \theta_1\), where \(\theta^\star\) is the angle on the "correct" wedge domain, see Figure \eqref{wedge}. 
+    Observe that if the wedge domain is rotated by some angle \(\theta_1\) (see Figure \eqref{rotated_wedge}) one can consider the translation \(\theta^\star = \theta - \theta_1\), where \(\theta^\star\) is the angle on the ``correct'' wedge domain, see Figure \eqref{wedge}. 
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{Images/rotated_wedge.png}
@@ -65,18 +66,18 @@ In this section, the behavior of the Laplace equation's solutions near a corner 
     \[
         v(r,\theta) = \sum_{k=0}^{\infty}\alpha_k r^{\alpha_k}\psi(\alpha_k \theta)
     \]
-    where \(\psi=\sin\) or \(\psi = \cos\). In these cases, if we neglect the other terms, for the special angle \(\Theta = \frac{\pi}{2}\) above we would find that \(\alpha_k \in \mathbb{N}\). Without going into much dep2t in singularity analysis, then its partial derivative \(\partial_r v(r,\theta)\) would be of the form 
+    where \(\psi=\sin\) or \(\psi = \cos\). In these cases, if we neglect the other terms, for the special angle \(\Theta = \frac{\pi}{2}\) above we would find that \(\alpha_k \in \mathbb{N}\). Without going into much dept in singularity analysis, then its partial derivative \(\partial_r v(r,\theta)\) would be of the form 
     \[
         \partial_r v(r,\theta) = \sum_{k=0}^{\infty}\alpha_k^2 r^{\alpha_k-1}\psi(\alpha_k \theta)
     \]
     where \(\alpha_k-1 \in \mathbb{N}\). In general, if \(\alpha_k \in \mathbb{N}\) for some angle \(\Theta\) then all of its derivatives are continuous and \(v(r,\theta)\) is analytical. More precisely, there is no singularity in these cases. Therefore, one does not need to enrich the set of basis functions since the fundamental solutions correctly reproduce the behavior near the corner's tip. Such corners are called \textit{regular}. On the other hand, corners that present singularities are called \textit{singular} and are the ones that we are interested to approximate. 
 
-    Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness!).
+    Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness of the exterior problem!).
 \end{remark}
 
 \section{The Subspace Angle Technique}
 
-One of the drawbacks of the \ac{MFS} is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against the exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
+One of the drawbacks of the \ac{MFS} is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against its exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
 To solve the first problem, we add additional interior points in order to over-determine the system; and for the second problem, we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
 \[
@@ -85,7 +86,7 @@ To solve the first problem, we add additional interior points in order to over-d
         A_I(k)
     \end{bmatrix},
 \]
-where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (i.e., \(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
+where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (\(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
 \begin{equation*}
     Q(k) = \begin{bmatrix}
         Q_B(k)\\
@@ -106,11 +107,11 @@ for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichl
 \[
     \min_{v \in \mathbb{R}^2, \norm*{v}=1} \norm*{Q_B(k) v}. 
 \]
-The above problem is easy to solve and has a closed-form solution which can be found using Lagrange multipliers. The solution \(\check{v}\) is the right singular vector associated with the smallest singular value \(\sigma_N\) and
+The above problem is easy to solve and has a closed-form solution which can be found using Lagrange multipliers. The solution \(\check{v}\) is the right singular vector of \(Q_B(k)\) associated with the smallest singular value \(\sigma_N\) and
 \[
     \sigma_N(k) = \norm*{Q_B(k) \check{v}}.
 \]
-Let \(\check{u} = Q(k) \check{v}\). Taking the norm on both sides of equation \eqref{sat_qr}, one can write
+Let \(\check{u} = Q(k) \check{v}\). By taking the norm on both sides of equation \eqref{sat_qr}, one can write
 \begin{equation}\label{sat_eq}
     1 = \norm{\check{u}}^2 = \norm{\begin{bmatrix}
         Q_B(k)\\
@@ -134,5 +135,5 @@ Therefore, the discrete problem has a non-trivial solution (i.e. \(\lambda\) is 
 \end{remark}
 
 \begin{remark}
-    Neither the enrichment technique nor the Subspace Angle Technique are specific methods only applicable to the Laplace equation and the Helmholtz equation, respectively. They can be used for both equations at the same time. For example, in \cite{antunes2010meshfree}, both methods were used to study the spectrum of the Laplace operator in domains with corners and cracks.
+    Neither the enrichment technique with particular solutions nor the Subspace Angle Technique are specific methods only applicable to the Laplace equation and the Helmholtz equation, respectively. They can be used for both equations at the same time. For example, in \cite{antunes2010meshfree}, both methods were used to study the spectrum of the Laplace operator in domains with corners and cracks.
 \end{remark}

@@ -6,7 +6,7 @@
 
 % In this appendix, some concepts in Hilbert spaces are presented and applied to the Laplace operator. While they could also be presented in the first Chapter, the results presented here are classical and are not used in the theoretical justification of the \ac{MFS}.
 
-% \section{Some concepts on Hilbert Spaces}
+% \section{Some concepts on Hilbert spaces}
 % % For more details c.f \cite{rudin1991functional}, \cite{brezis2011functional}, \cite{arendt2010partielle}.
 % In this section, we introduce some complementary results in Hilbert spaces. Once again, for more details, see \cite{rudin1991functional}, \cite{brezis2011functional}, or \cite{arendt2010partielle}. Consider the field \(\mathbb{F}\) (\(\mathbb{R}\) or \(\mathbb{C}\)). We say that a vector space \(H\) is an \textit{inner product space} (or a Pre-Hilbert space) if there exists a map \((\cdot,\cdot)\) (called an \textit{inner product}) over \(\mathbb{F}\) such that
 % \begin{enumerate}
@@ -183,7 +183,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \[
         -\Delta u_n = \lambda_n u_n
     \]
-    where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). In particular, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
+    where the sequence of eigenvalues can be ordered in increasing order and \(\lambda_n \rightarrow \infty, \; n \rightarrow \infty\). Furthermore, define \(E_n = \Span\{u_1, \dots, u_n\}\) and the Rayleigh Quotient
     \[
         R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
     \]
@@ -193,7 +193,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \]
 \end{theorem}
 \begin{proof}
-    For each \(f \in L^2(\Omega)\), we consider the problem
+    For each \(f \in L^2(\Omega)\), consider the problem
     \[
         \begin{cases}
             -\Delta u(x) = f, & \text{ in } \Omega\\
@@ -209,7 +209,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
         T: L^2(\Omega) &\rightarrow L^2(\Omega)\\
         f &\mapsto u
     \end{align*}
-    is well-defined. To prove that \(T\) is a compact operator, we use Poincaré and Cauchy-Schwarz inequalities and notice that
+    is well-defined. To prove that \(T\) is a compact operator, using Poincaré and Cauchy-Schwarz inequalities one notices that
     \[
         \alpha\norm*{u}_{H^1(\Omega)}^2 \leq \int_\Omega \abs{\nabla u}^2 = \int_\Omega f u \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{L^2(\Omega)} \leq \norm*{f}_{L^2(\Omega)}\norm*{u}_{H^1(\Omega)} \implies \norm*{u}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}
     \]
@@ -217,7 +217,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \[
         \norm*{Tf}_{H^1(\Omega)} \leq C \norm*{f}_{L^2(\Omega)}, \; \forall f \in L^2(\Omega)
     \]
-    and by Theorem \ref{rellich} \(T\) is a compact operator. To check that \(T\) is self-adjoint it suffices to consider the weak variational form of the null Dirichlet boundary problems
+    and by Theorem \ref{rellich}, \(T\) is a compact operator. To check that \(T\) is self-adjoint it suffices to consider the weak variational form of the null Dirichlet boundary problems
     \[
         -\Delta u = f \qquad -\Delta v = g
     \]
@@ -269,9 +269,9 @@ The study of the spectrum of the Laplace operator is of major importance in this
 \end{corollary}
 
 \begin{proof}
-    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \phi(\Omega)\). Then,
+    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \varphi(\Omega)\). Then,
     \begin{equation*}
-        \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} u(x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx},
+        \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} \abs{u(x)}^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} \abs{u(\alpha x)}^2 dx},
     \end{equation*}
     via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
     \[
@@ -279,7 +279,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \]
     and
     \begin{equation*}
-        \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} u(\alpha x)^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} v(x)^2 dx} = \lambda_n(\Omega).
+        \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} \abs{u(\alpha x)}^2 dx} = \min_{\substack{v \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} \abs{v(x)}^2 dx} = \lambda_n(\Omega).
     \end{equation*}
     
 \end{proof}

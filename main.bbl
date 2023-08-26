@@ -2,27 +2,22 @@
 
 \bibitem[AA05]{alves2005method}
 Carlos~JS Alves and Pedro~RS Antunes.
-\newblock The method of fundamental solutions applied to the calculation of
-  eigenfrequencies and eigenmodes of 2d simply connected shapes.
+\newblock The method of fundamental solutions applied to the calculation of eigenfrequencies and eigenmodes of 2d simply connected shapes.
 \newblock {\em CMC-TECH SCIENCE PRESS-}, 2(4):251, 2005.
 
 \bibitem[AA13]{alves2013method}
 Carlos~JS Alves and Pedro~RS Antunes.
-\newblock The method of fundamental solutions applied to some inverse
-  eigenproblems.
+\newblock The method of fundamental solutions applied to some inverse eigenproblems.
 \newblock {\em SIAM Journal on Scientific Computing}, 35(3):A1689--A1708, 2013.
 
 \bibitem[ABLOB21]{antunes2021variational}
-Pedro~RS Antunes, Rafael~D Benguria, Vladimir Lotoreichik, and Thomas
-  Ourmi{\`e}res-Bonafos.
-\newblock A variational formulation for dirac operators in bounded domains.
-  applications to spectral geometric inequalities.
+Pedro~RS Antunes, Rafael~D Benguria, Vladimir Lotoreichik, and Thomas Ourmi{\`e}res-Bonafos.
+\newblock A variational formulation for dirac operators in bounded domains. applications to spectral geometric inequalities.
 \newblock {\em Communications in Mathematical Physics}, 386(2):781--818, 2021.
 
 \bibitem[AC05]{alves2005new}
 CJS Alves and CS~Chen.
-\newblock A new method of fundamental solutions applied to nonhomogeneous
-  elliptic problems.
+\newblock A new method of fundamental solutions applied to nonhomogeneous elliptic problems.
 \newblock {\em Advances in Computational Mathematics}, 23:125--142, 2005.
 
 \bibitem[AF03]{adams2003sobolev}
@@ -33,32 +28,31 @@ Robert~A Adams and John~JF Fournier.
 \bibitem[AF11]{antunes2011inverse}
 Pedro~RS Antunes and Pedro Freitas.
 \newblock On the inverse spectral problem for euclidean triangles.
-\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
-  Engineering Sciences}, 467(2130):1546--1562, 2011.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 467(2130):1546--1562, 2011.
 
 \bibitem[Alv09]{alves2009choice}
 Carlos~JS Alves.
-\newblock On the choice of source points in the method of fundamental
-  solutions.
-\newblock {\em Engineering Analysis with Boundary Elements}, 33(12):1348--1361,
-  2009.
+\newblock On the choice of source points in the method of fundamental solutions.
+\newblock {\em Engineering Analysis with Boundary Elements}, 33(12):1348--1361, 2009.
 
 \bibitem[AMV21]{alves2021domain}
 Carlos~JS Alves, Nuno~FM Martins, and Svilen~S Valtchev.
-\newblock Domain decomposition methods with fundamental solutions for helmholtz
-  problems with discontinuous source terms.
+\newblock Domain decomposition methods with fundamental solutions for helmholtz problems with discontinuous source terms.
 \newblock {\em Computers \& Mathematics with Applications}, 88:16--32, 2021.
 
 \bibitem[Ant18a]{antunes2018numerical}
 Pedro~RS Antunes.
-\newblock A numerical algorithm to reduce ill-conditioning in meshless methods
-  for the helmholtz equation.
+\newblock A numerical algorithm to reduce ill-conditioning in meshless methods for the helmholtz equation.
 \newblock {\em Numer. Algorithms}, 79(3):879--897, 2018.
 
 \bibitem[Ant18b]{antunes2018reducing}
 Pedro~RS Antunes.
 \newblock Reducing the ill conditioning in the method of fundamental solutions.
 \newblock {\em Advances in Computational Mathematics}, 44:351--365, 2018.
+
+\bibitem[ASR88]{abramowitz1988handbook}
+Milton Abramowitz, Irene~A Stegun, and Robert~H Romer.
+\newblock Handbook of mathematical functions with formulas, graphs, and mathematical tables, 1988.
 
 \bibitem[AU10]{arendt2010partielle}
 Wolfgang Arendt and Karsten Urban.
@@ -67,15 +61,12 @@ Wolfgang Arendt and Karsten Urban.
 
 \bibitem[AV10]{antunes2010meshfree}
 Pedro~RS Antunes and Svilen~S Valtchev.
-\newblock A meshfree numerical method for acoustic wave propagation problems in
-  planar domains with corners and cracks.
-\newblock {\em Journal of Computational and Applied Mathematics},
-  234(9):2646--2662, 2010.
+\newblock A meshfree numerical method for acoustic wave propagation problems in planar domains with corners and cracks.
+\newblock {\em Journal of Computational and Applied Mathematics}, 234(9):2646--2662, 2010.
 
 \bibitem[BB08]{barnett2008stability}
 Alex~H Barnett and Timo Betcke.
-\newblock Stability and convergence of the method of fundamental solutions for
-  helmholtz problems on analytic domains.
+\newblock Stability and convergence of the method of fundamental solutions for helmholtz problems on analytic domains.
 \newblock {\em Journal of Computational Physics}, 227(14):7003--7026, 2008.
 
 \bibitem[BB22]{bogosel2022polygonal}
@@ -84,8 +75,7 @@ Beniamin Bogosel and Dorin Bucur.
 \newblock {\em arXiv preprint arXiv:2203.16409}, 2022.
 
 \bibitem[BFSVDB17]{benguria2017spectral}
-Rafael~D Benguria, S{\o}ren Fournais, Edgardo Stockmeyer, and Hanne Van
-  Den~Bosch.
+Rafael~D Benguria, S{\o}ren Fournais, Edgardo Stockmeyer, and Hanne Van Den~Bosch.
 \newblock Spectral gaps of dirac operators describing graphene quantum dots.
 \newblock {\em Mathematical Physics, Analysis and Geometry}, 20:1--12, 2017.
 
@@ -106,14 +96,12 @@ David Borthwick.
 
 \bibitem[Bre71]{brent1971algorithm}
 Richard~P. Brent.
-\newblock An algorithm with guaranteed convergence for finding a zero of a
-  function.
+\newblock An algorithm with guaranteed convergence for finding a zero of a function.
 \newblock {\em The computer journal}, 14(4):422--425, 1971.
 
 \bibitem[Br{\'e}11]{brezis2011functional}
 Haim Br{\'e}zis.
-\newblock {\em Functional analysis, Sobolev spaces and partial differential
-  equations}, volume~2.
+\newblock {\em Functional analysis, Sobolev spaces and partial differential equations}, volume~2.
 \newblock Springer, 2011.
 
 \bibitem[BT05]{betcke2005reviving}
@@ -124,13 +112,11 @@ Timo Betcke and Lloyd~N Trefethen.
 \bibitem[Buc12]{bucur2012minimization}
 Dorin Bucur.
 \newblock Minimization of the k-th eigenvalue of the dirichlet laplacian.
-\newblock {\em Archive for Rational Mechanics and Analysis}, 206(3):1073--1083,
-  2012.
+\newblock {\em Archive for Rational Mechanics and Analysis}, 206(3):1073--1083, 2012.
 
 \bibitem[CH08]{courant2008methods}
 Richard Courant and David Hilbert.
-\newblock {\em Methods of mathematical physics: partial differential
-  equations}.
+\newblock {\em Methods of mathematical physics: partial differential equations}.
 \newblock John Wiley \& Sons, 2008.
 
 \bibitem[CK13]{colton2013integral}
@@ -140,28 +126,23 @@ David Colton and Rainer Kress.
 
 \bibitem[CM81]{christiansen1981condition}
 S{\o}ren Christiansen and E~Meister.
-\newblock Condition number of matrices derived from two classes of integral
-  equations.
-\newblock {\em Mathematical Methods in the Applied Sciences}, 3(1):364--392,
-  1981.
+\newblock Condition number of matrices derived from two classes of integral equations.
+\newblock {\em Mathematical Methods in the Applied Sciences}, 3(1):364--392, 1981.
 
 \bibitem[CWHM17]{chandler2017sobolev}
 Simon~N Chandler-Wilde, David~P Hewett, and Andrea Moiola.
-\newblock Sobolev spaces on non-lipschitz subsets of r n with application to
-  boundary integral equations on fractal screens.
+\newblock Sobolev spaces on non-lipschitz subsets of r n with application to boundary integral equations on fractal screens.
 \newblock {\em Integral Equations and Operator Theory}, 87(2):179--224, 2017.
 
 \bibitem[CZ10]{chen2010boundary}
 Goong Chen and Jianxin Zhou.
-\newblock {\em Boundary element methods with applications to nonlinear
-  problems}, volume~7.
+\newblock {\em Boundary element methods with applications to nonlinear problems}, volume~7.
 \newblock Springer Science \& Business Media, 2010.
 
 \bibitem[Dir28]{dirac1928quantum}
 Paul Adrien~Maurice Dirac.
 \newblock The quantum theory of the electron.
-\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
-  Papers of a Mathematical and Physical Character}, 117(778):610--624, 1928.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character}, 117(778):610--624, 1928.
 
 \bibitem[EG15]{evans2015measure}
 Lawrence~Craig Evans and Ronald~F Gariepy.
@@ -175,23 +156,18 @@ Lawrence~C Evans.
 
 \bibitem[FK08]{freitas2008sharp}
 Pedro Freitas and David Krej{\v{c}}i{\v{r}}{\'\i}k.
-\newblock A sharp upper bound for the first dirichlet eigenvalue and the growth
-  of the isoperimetric constant of convex domains.
-\newblock {\em Proceedings of the American Mathematical Society},
-  136(8):2997--3006, 2008.
+\newblock A sharp upper bound for the first dirichlet eigenvalue and the growth of the isoperimetric constant of convex domains.
+\newblock {\em Proceedings of the American Mathematical Society}, 136(8):2997--3006, 2008.
 
 \bibitem[GCK96]{golberg1996improved}
 Michael~A Golberg, Ching-Shyang Chen, and SR~Karur.
-\newblock Improved multiquadric approximation for partial differential
-  equations.
+\newblock Improved multiquadric approximation for partial differential equations.
 \newblock {\em Engineering Analysis with boundary elements}, 18(1):9--17, 1996.
 
 \bibitem[Gey07]{geymonat2007trace}
 Giuseppe Geymonat.
-\newblock Trace theorems for sobolev spaces on lipschitz domains. necessary
-  conditions.
-\newblock In {\em Annales math{\'e}matiques Blaise Pascal}, volume~14, pages
-  187--197, 2007.
+\newblock Trace theorems for sobolev spaces on lipschitz domains. necessary conditions.
+\newblock In {\em Annales math{\'e}matiques Blaise Pascal}, volume~14, pages 187--197, 2007.
 
 \bibitem[GSO21]{gomez2021any}
 Javier G{\'o}mez-Serrano and Gerard Orriols.
@@ -206,8 +182,7 @@ Carolyn Gordon, David Webb, and Scott Wolpert.
 \bibitem[HB00]{henrot2000minimization}
 Antoine Henrot and Dorin Bucur.
 \newblock Minimization of the third eigenvalue of the dirichlet laplacian.
-\newblock {\em Proceedings of the Royal Society of London. Series A:
-  Mathematical, Physical and Engineering Sciences}, 456(1996):985--996, 2000.
+\newblock {\em Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences}, 456(1996):985--996, 2000.
 
 \bibitem[Hen06]{henrot2006extremum}
 Antoine Henrot.
@@ -226,8 +201,7 @@ David~P Hewett and Andrea Moiola.
 
 \bibitem[H{\"o}r15]{hormander2015analysis}
 Lars H{\"o}rmander.
-\newblock {\em The analysis of linear partial differential operators I:
-  Distribution theory and Fourier analysis}.
+\newblock {\em The analysis of linear partial differential operators I: Distribution theory and Fourier analysis}.
 \newblock Springer, 2015.
 
 \bibitem[Kac66]{kac1966can}
@@ -242,15 +216,13 @@ Tosio Kato.
 
 \bibitem[Kit88]{kitagawa1988numerical}
 Takashi Kitagawa.
-\newblock On the numerical stability of the method of fundamental solution
-  applied to the dirichlet problem.
+\newblock On the numerical stability of the method of fundamental solution applied to the dirichlet problem.
 \newblock {\em Japan Journal of Applied Mathematics}, 5:123--133, 1988.
 
 \bibitem[Kit91]{kitagawa1991asymptotic}
 Takashi Kitagawa.
 \newblock Asymptotic stability of the fundamental solution method.
-\newblock {\em Journal of Computational and Applied Mathematics},
-  38(1-3):263--269, 1991.
+\newblock {\em Journal of Computational and Applied Mathematics}, 38(1-3):263--269, 1991.
 
 \bibitem[KLL19]{krejcirik_larson_lotoreichik_2019}
 David Krejcirik, Simon Larson, and Vladimir Lotoreichik.
@@ -273,14 +245,18 @@ Zi-Cai Li and Tzon-Tzer Lu.
 
 \bibitem[LM12]{lions2012non}
 Jacques~Louis Lions and Enrico Magenes.
-\newblock {\em Non-homogeneous boundary value problems and applications: Vol.
-  1}, volume 181.
+\newblock {\em Non-homogeneous boundary value problems and applications: Vol. 1}, volume 181.
 \newblock Springer Science \& Business Media, 2012.
 
 \bibitem[LOB19]{lotoreichik2019sharp}
 Vladimir Lotoreichik and Thomas Ourmi{\`e}res-Bonafos.
 \newblock A sharp upper bound on the spectral gap for graphene quantum dots.
 \newblock {\em Mathematical Physics, Analysis and Geometry}, 22:1--30, 2019.
+
+\bibitem[Mot47]{motz1947treatment}
+H~Motz.
+\newblock The treatment of singularities of partial differential equations by relaxation methods.
+\newblock {\em Quarterly of Applied Mathematics}, 4(4):371--377, 1947.
 
 \bibitem[MP68]{moler1968bounds}
 CB~Moler and LE~Payne.
@@ -290,8 +266,7 @@ CB~Moler and LE~Payne.
 \bibitem[MP13]{mazzoleni2013existence}
 Dario Mazzoleni and Aldo Pratelli.
 \newblock Existence of minimizers for spectral problems.
-\newblock {\em Journal de Math{\'e}matiques Pures et Appliqu{\'e}es},
-  100(3):433--453, 2013.
+\newblock {\em Journal de Math{\'e}matiques Pures et Appliqu{\'e}es}, 100(3):433--453, 2013.
 
 \bibitem[Nec11]{necas2011direct}
 Jindrich Necas.
@@ -310,16 +285,13 @@ George P{\'o}lya and G{\'a}bor Szeg{\"o}.
 
 \bibitem[QV99]{quarteroni1999domain}
 Alfio Quarteroni and Alberto Valli.
-\newblock {\em Domain decomposition methods for partial differential
-  equations}.
+\newblock {\em Domain decomposition methods for partial differential equations}.
 \newblock Number BOOK. Oxford University Press, 1999.
 
 \bibitem[Reu06]{reutskiy2006method}
 S~Yu Reutskiy.
-\newblock The method of fundamental solutions for helmholtz eigenvalue problems
-  in simply and multiply connected domains.
-\newblock {\em Engineering Analysis with Boundary Elements}, 30(3):150--159,
-  2006.
+\newblock The method of fundamental solutions for helmholtz eigenvalue problems in simply and multiply connected domains.
+\newblock {\em Engineering Analysis with Boundary Elements}, 30(3):150--159, 2006.
 
 \bibitem[RS75]{reed1975ii}
 Michael Reed and Barry Simon.
@@ -329,34 +301,27 @@ Michael Reed and Barry Simon.
 \bibitem[Rud91]{rudin1991functional}
 W.~Rudin.
 \newblock {\em Functional Analysis}.
-\newblock International series in pure and applied mathematics. McGraw-Hill,
-  1991.
+\newblock International series in pure and applied mathematics. McGraw-Hill, 1991.
 
 \bibitem[Sal16]{salsa2016partial}
 Sandro Salsa.
-\newblock {\em Partial differential equations in action: from modelling to
-  theory}, volume~99.
+\newblock {\em Partial differential equations in action: from modelling to theory}, volume~99.
 \newblock Springer, 2016.
 
 \bibitem[Smy09]{smyrlis2009applicability}
 Yiorgos-Sokratis Smyrlis.
-\newblock Applicability and applications of the method of fundamental
-  solutions.
+\newblock Applicability and applications of the method of fundamental solutions.
 \newblock {\em Mathematics of computation}, 78(267):1399--1434, 2009.
 
 \bibitem[Tav]{huguinho}
 Hugo Tavares.
 \newblock Partial differential equations, lecture notes.
-\newblock
-  \url{https://ulisboa-my.sharepoint.com/:b:/g/personal/ist27898_tecnico_ulisboa_pt/EfizUpSVmCRCo0Nst2a-sacBDwFrkPuh9w8A55EU9BoFmA?e=kY5B2R}.\\
-  Accessed: 28-4-2023.
+\newblock \url{https://ulisboa-my.sharepoint.com/:b:/g/personal/ist27898_tecnico_ulisboa_pt/EfizUpSVmCRCo0Nst2a-sacBDwFrkPuh9w8A55EU9BoFmA?e=kY5B2R}.\\ Accessed: 28-4-2023.
 
 \bibitem[Val08]{svilen_phd}
 Svilen Valtchev.
-\newblock {\em Numerical Analysis of Methods with Fundamental Solutions for
-  Acoustic and Elastic Wave Propagation Problems}.
-\newblock PhD thesis, Universidade Técnica de Lisboa, Instituto Superior
-  Técnico, 2008.
+\newblock {\em Numerical Analysis of Methods with Fundamental Solutions for Acoustic and Elastic Wave Propagation Problems}.
+\newblock PhD thesis, Universidade Técnica de Lisboa, Instituto Superior Técnico, 2008.
 
 \bibitem[Vu23]{vu2023spectral}
 Tuyen Vu.
@@ -366,7 +331,6 @@ Tuyen Vu.
 \bibitem[WK94]{wolf1994range}
 Sven~Andreas Wolf and Joseph~Bishop Keller.
 \newblock Range of the first two eigenvalues of the laplacian.
-\newblock {\em Proceedings of the Royal Society of London. Series A:
-  Mathematical and Physical Sciences}, 447(1930):397--412, 1994.
+\newblock {\em Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences}, 447(1930):397--412, 1994.
 
 \end{thebibliography}
