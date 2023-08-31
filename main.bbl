@@ -169,6 +169,11 @@ Giuseppe Geymonat.
 \newblock Trace theorems for sobolev spaces on lipschitz domains. necessary conditions.
 \newblock In {\em Annales math{\'e}matiques Blaise Pascal}, volume~14, pages 187--197, 2007.
 
+\bibitem[Gri11]{grisvard2011elliptic}
+Pierre Grisvard.
+\newblock {\em Elliptic problems in nonsmooth domains}.
+\newblock SIAM, 2011.
+
 \bibitem[GSO21]{gomez2021any}
 Javier G{\'o}mez-Serrano and Gerard Orriols.
 \newblock Any three eigenvalues do not determine a triangle.

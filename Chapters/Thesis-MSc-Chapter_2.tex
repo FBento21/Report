@@ -12,7 +12,7 @@ Until otherwise indicated, let \(\Omega \subset \mathbb{R}^d\) be an open and bo
 Let \(p(x)\) be a polynomial in the variables \(x=(x_1,\dots,x_d)\), and \(p(\partial)\) be the partial differential operator obtained by substituting \(\frac{\partial}{\partial x_i}\) for \(x_i\) in \(p(x)\). We start by introducing the definition of a fundamental solution of a partial differential operator:
 
 \begin{definition}
-    Consider the polynomial \(p(\partial)\). A distribution \(\Phi \in \mathcal{D}^\star(\mathbb{R}^n)\) is said to be the fundamental solution of the partial differential operator \(p(\partial)\) if
+    Consider the polynomial \(p(\partial)\). A distribution \(\Phi \in \mathcal{D}^\star(\mathbb{R}^n)\) is said to be a fundamental solution of the partial differential operator \(p(\partial)\) if
     \[
         p(\partial) \Phi = \delta,
     \]
@@ -24,7 +24,7 @@ In particular, given \(\Phi\) satisfying the above conditions, we have that \(p(
 An important result in this context is the Malgrange-Ehrenpreis Theorem, which is also based on the Hahn-Banach Theorem \ref{hb_ana_form}.
 
 \begin{theorem}[Malgrange-Ehrenpreis]\label{malgrange-ehrenpreis}
-    Every constant partial differential operator $p(\partial)$, has a fundamental solution $\Phi \in \mathcal{D}^\star(\mathbb{R}^d)$.
+    Every partial differential operator $p(\partial)$ with constant coefficients has a fundamental solution $\Phi \in \mathcal{D}^\star(\mathbb{R}^d)$.
 \end{theorem}
 \begin{proof}
     See \cite{reed1975ii}.
@@ -34,7 +34,7 @@ Below the fundamental solution of the Laplace operator and some major results co
 \section{The Laplace operator}
 \label{section:laplace_op}
 
-In what follows, consider the Laplace operator associated with the well-known Laplace equation
+In what follows, consider the Laplace operator \(-\Delta = -\sum_{i=1}^{d} \frac{\partial^2}{\partial x_i^2}\) associated with the well-known Laplace equation
 \begin{equation} \label{laplace_equation}
     -\Delta u = 0.
 \end{equation}
@@ -54,10 +54,10 @@ By Theorem \ref{malgrange-ehrenpreis} we know that both equations \eqref{laplace
     \[
     \Phi(x) = \begin{cases}
         -\frac{1}{2 \pi} \log \abs*{x}, & d=2\\
-        \frac{1}{(n-2)\abs{\partial B_1}}\frac{1}{\abs*{x}^{d-2}}, & d = 2
+        \frac{1}{(d-2)\abs{\partial B_1}}\frac{1}{\abs*{x}^{d-2}}, & d > 2
     \end{cases}    
     \]
-    is the fundamental solution of equation \eqref{laplace_equation}, where \(\abs{\partial B_1}\) denotes the boundary measure of the unitary ball.
+    is the fundamental solution of equation \eqref{laplace_equation}, where \(\abs{\partial B_1}\) denotes the surface area of the unitary ball.
 \end{proposition}
 \begin{proposition}\label{helm_fund_sol}
     The function \(\Phi_\lambda: \mathbb{R}^d \setminus \{0\} \rightarrow \mathbb{R}\) given by
@@ -74,18 +74,18 @@ By Theorem \ref{malgrange-ehrenpreis} we know that both equations \eqref{laplace
     where \(J_0\) and \(Y_0\) are the Bessel functions of the first and second kind with order zero, respectively\footnote{See Appendix \ref{appendix_c_bessel} for more information on Bessel functions.}.
 \end{proposition}
 
-If one considers the eigenfrequency form of the Helmholtz equation, then the fundamental solution in Proposition \ref{helm_fund_sol} would change accordingly.
+If one considers the eigenfrequency form of the Laplace equation, then the fundamental solution in Proposition \ref{helm_fund_sol} would change accordingly.
 
 \subsection{Some shape optimization results}
 
-In this subchapter, some important results regarding shape optimization are presented. More precisely, we are interested in problems of the form
+In this section, some important results regarding shape optimization are presented. More precisely, we are interested in problems of the form
 \begin{equation}\label{shape_prob}
     \min\{F(\lambda_1(\Omega),\dots, \lambda_k(\Omega)): \abs{\Omega} = c, \Omega \subset \mathbb{R}^d\},
 \end{equation}
 where \(F\) is a function of the first \(k\) eigenvalues of the Helmholtz equation \eqref{helmholtz_equation} and \(c > 0\). We point the reader to \cite{henrot2006extremum} and \cite{henrot2017shape} for more details.
 
 \begin{theorem}[Faber-Krahn inequality]\label{faber-krahn}
-    Let \(B\) be a ball of volume \(c\). Then, among all domains \(\Omega\) of volume \(c\) we have that,
+    Let \(B \subset \mathbb{R}^d\) be a ball of volume \(c\). Then, among all domains \(\Omega \subset \mathbb{R}^d\) of volume \(c\) we have that,
     \[
     \lambda_1(B) = \min\{\lambda_1(\Omega): \abs{\Omega} = c\}.
     \]
@@ -98,33 +98,36 @@ where \(F\) is a function of the first \(k\) eigenvalues of the Helmholtz equati
 
 Theorem \ref{faber-krahn} is a classic form of an isoperimetric inequality, conjectured for the first time by Lord Rayleigh. More recently, a reverse of the Faber-Krahn inequality was proven in \cite{freitas2008sharp}.
 \begin{theorem}\label{reverse_faber-krahn}
-    Let \(\Omega\) be a bounded convex domain of \(\mathbb{R}^d\) and denote the inradius of \(\Omega\) (radius of the largest ball contained within the domain) by \(\rho_\Omega\). Then,
+    Let \(\Omega \subset \mathbb{R}^d\) be a bounded convex domain and denote the inradius of \(\Omega\) (radius of the largest ball contained in \(\Omega\)) by \(\rho_\Omega\). Then,
     \[
-    \lambda_1(\Omega) \leq \frac{\abs{\partial \Omega}}{d \rho_\Omega \abs{\Omega}} \lambda_1(\mathbb{D})
+    \lambda_1(\Omega) \leq \frac{\abs{\partial \Omega}}{d \rho_\Omega \abs{\Omega}} \lambda_1(\mathbb{D}),
     \]
+    where \(\mathbb{D}\) is the unit disk of \(\mathbb{R}^d\).
 \end{theorem}   
 
 While Faber-Krahn inequality deals with the first eigenvalue of the Laplace operator, other results have been uncovered for the second and third eigenvalues:
 
 \begin{theorem}[Krahn-Szeg\H{o}]\label{krahn_szego}
-    The domain that minimizes the quantity
+    The domain which solves the problem
     \[
     \min\{\lambda_2(\Omega): \abs{\Omega} = c\}
     \]
     consists of two equal and disjoint balls of volume \(\frac{c}{2}\).
 \end{theorem}
 
-A result regarding the topology of a given domain \(\Omega\) and its connection with the minimization of each eigenvalue \(\lambda_k\) was given by Wolf and Keller in \cite{wolf1994range}. Roughly speaking, the result states that if \(\Omega_k^\star\) is not connected and minimizes \(\lambda_k\), then each connected component must be a minimizer for a lower eigenvalue.
+A result regarding the topology of a given domain \(\Omega\) and its connection with the minimization of each eigenvalue \(\lambda_k\) was given by Wolf and Keller in \cite{wolf1994range}.
 \begin{theorem}[Wolf-Keller]\label{wolf_keller}
     Let \(\Omega_k^\star\) be the union of two disjoint domains, each of them with positive volume. Then,
     \[
         \lambda_k^\star = (\lambda_i^\star)^\frac{d}{2} + (\lambda_{k-i}^\star)^\frac{d}{2} = \min_{1 \leq j \leq \frac{k-1}{2}}((\lambda_j^\star)^\frac{d}{2} + (\lambda_{k-j}^\star)^\frac{d}{2}),
     \]
-    where \(i\) is a value of \(j \leq \frac{k-1}{2}\) that minimizes \(\lambda_i^\star + \lambda_{k-i}^\star\). Furthermore,
+    where \(i\) is a value of \(j \leq \frac{k-1}{2}\) that minimizes \(\left(\lambda_i^\star\right)^\frac{d}{2} + \left(\lambda_{k-i}^\star\right)^\frac{d}{2}\). Furthermore, the disjoint union
     \[
-        \Omega_k^\star = \left[\left(\frac{\lambda_i^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_i^\star \bigcup \left(\frac{\lambda_{k-i}^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_{k-i}^\star \right]
+        \Omega_k^\star = \left[\left(\frac{\lambda_i^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_i^\star\right] \bigcup \left[\left(\frac{\lambda_{k-i}^\star}{\lambda_k^\star}\right)^\frac{1}{2} \Omega_{k-i}^\star \right]
     \]
+    holds.
 \end{theorem}
+Roughly speaking, Theorem \ref{wolf_keller} states that if \(\Omega_k^\star\) is not connected and minimizes \(\lambda_k\), then each connected component must be a minimizer for a lower eigenvalue.
 
 Generalizations of Theorems \eqref{faber-krahn} and \eqref{krahn_szego} become harder to prove for high-order eigenvalues. Bucur and Henrot proved in \cite{henrot2000minimization} that there exists a domain \(\Omega\) that minimizes \(\lambda_3\), and it is conjectured to be the disk\footnote{Notice that \(\Omega_3\) must be connected in dimension \(2\). Otherwise, by Theorem \ref{wolf_keller}, \(\Omega_3\) would be the union of the domains that minimize \(\lambda_1\) and \(\lambda_2\) (see Theorems \eqref{faber-krahn} and \eqref{krahn_szego}), where one can explicitly compute \(\lambda_3 = \lambda_1 + \lambda_2 \approx 51.504\). However, this would be a contradiction since the eigenvalue of the unit disk is \(\lambda_3(\mathbb{D}) \approx 46.125\) when considering unitary measure \(c=1\). For three dimensions the result is the same, but for \(d \geq 4\) one cannot conclude anything.}.
 % \begin{theorem}[Bucur-Henrot]
@@ -135,27 +138,27 @@ Generalizations of Theorems \eqref{faber-krahn} and \eqref{krahn_szego} become h
 % \end{theorem}
 In \cite{bucur2012minimization}, Bucur was able to assert the existence of, at least, one solution to problem \eqref{shape_prob}.
 \begin{theorem}[Bucur]
-    For every \(k \in \mathbb{N}\) problem
+    For every \(k \in \mathbb{N}\) the problem
     \[
     \min\{\lambda_k(\Omega): \abs{\Omega} = c\}
     \]
     has at least one solution. Moreover, every solution is bounded and has a finite perimeter.
 \end{theorem}
 
-In \cite{mazzoleni2013existence}, Mazzoleni and Pratelli were able to generalize the above results for (\textit{quasi}-)open sets and for a general functional \(F\) considered in \eqref{shape_prob} (see the reference for more details and definition of a quasi-open set).
+In the context of quasi-open sets, in \cite{mazzoleni2013existence} Mazzoleni and Pratelli were able to generalize the above results for (\textit{quasi}-)open sets and for a general functional \(F\) considered in \eqref{shape_prob} (see the reference for more details and definition of a quasi-open set).
 \begin{theorem}[Mazzoleni-Pratelli]
-    Let \(k \in \mathbb{N}\) and suppose that \(F:\mathbb{R}^k \rightarrow \mathbb{R}\) in \eqref{shape_prob} is lower semicontinuous, increasing in each variable. Then, among the quasi-open sets, there exists a bounded minimizer \(\Omega\) for the problem \eqref{shape_prob}. More precisely, a minimizer \(\Omega\) is contained in a cube of side \(R\), where \(R\) depends on \(k\) and on the dimension of the space \(d\), but not on \(F\).
+    Let \(k \in \mathbb{N}\) and suppose that \(F:\mathbb{R}^k \rightarrow \mathbb{R}\) in \eqref{shape_prob} is lower semicontinuous, increasing in each variable. Then, among quasi-open sets, there exists a bounded minimizer \(\Omega\) for problem \eqref{shape_prob}. More precisely, a minimizer \(\Omega\) is contained in a cube of side \(R\), where \(R\) depends on \(k\) and on the dimension of the space \(d\), but not on \(F\).
 \end{theorem}
 
-In this work, we are also interested in studying the eigenvalues of polygonal domains, such as triangles and quadrilaterals. An important result concerning these domains is the fact that they are invariant under \textit{Steiner symmetrizations} (in the sense that the Steiner symmetrization of a triangle or a quadrilateral is still a triangle or a quadrilateral, respectively), which preserves their area while decreasing the perimeter and its first eigenvalue. This type of transformation enables us to state the following result:
+A significant observation related to triangular and quadrilateral domains involves their invariance under \textit{Steiner symmetrizations}. This symmetry property ensures that when a triangle or a quadrilateral undergoes a Steiner symmetrization, it remains a triangle or a quadrilateral, respectively. This transformation conserves the area of the domain while reducing both its perimeter and the value of its first eigenvalue. As a consequence of this transformation, we can establish the following result.
 
 \begin{theorem}[Pólya-Szég\H{o}]
-    The quantity \(\lambda_1\) is minimized for equilateral triangles among all triangles, where the inequality
+    The equilateral triangle minimizes \(\lambda_1\) among all triangles with fixed area. In particular, the inequality
+    % The first eigenvalue \(\lambda_1\) is minimized for equilateral triangles among all triangles, where the inequality
     \[
-    \frac{4 \pi^2}{\sqrt{3}} \leq  \lambda_1(T)
+    \frac{4 \pi^2}{\sqrt{3}\abs{T}} \leq  \lambda_1(T) 
     \]
-    holds for every triangle \(T\) of area \(1\).
-    Analogously, \(\lambda_1\) is minimized for the square among all quadrilaterals.
+    holds for every triangle \(T\) of area \(\abs{T}\). Analogously, \(\lambda_1\) is minimized for the square among all quadrilaterals.
 \end{theorem}
 
 However, an analogous result for the \(n\)-side polygon is still an open problem conjectured by Pólya and Szég\H{o} in \cite{polya1951isoperimetric}.
@@ -163,39 +166,40 @@ However, an analogous result for the \(n\)-side polygon is still an open problem
     Let \(n \geq 5\) and consider the class of \(n\)-side polygons. Then, the regular \(n\)-side polygon has the least first eigenvalue among all \(n\)-side polygons with fixed area.
 \end{conjecture}
 
-Very recently, Bogosel and Bucur proved in \cite{bogosel2022polygonal} that Conjecture \eqref{polya_szego_conjecture} can be reduced to a finite number of certified numerical computations with machine precision and performed them for \(k=5, 6, 7, 8\).
+Very recently, Bogosel and Bucur proved in \cite{bogosel2022polygonal} that Conjecture \eqref{polya_szego_conjecture} can be reduced to a finite number of certified numerical computations with machine precision and performed them for \(n=5, 6, 7, 8\).
 
-Related to triangles, we can also cite the recent work of Serrano and Orriols in \cite{gomez2021any}, which was based on the previous work of Antunes and Freitas \cite{antunes2011inverse} who conjectured that the first three eigenvalues are enough to define the shape of a triangle (such result resembles the famous Marc Kac question if one can ``hear the shape of a drum'' in \cite{kac1966can}, that is, if given the frequencies produced by a drum one could identify the drum's shape, which has proven to be false, see \cite{gordon1992isospectral} for more details). In any case, Serano and Orriols were able to show that not any three eigenvalues suffice to fully characterize the shape of a triangle.
+Related to triangles, we can also cite the recent work of Gómez-Serrano and Orriols in \cite{gomez2021any}, which was based on the previous work of Antunes and Freitas \cite{antunes2011inverse} who conjectured that the first three eigenvalues are enough to define the shape of a triangle (such result resembles the famous Marc Kac question if one can ``hear the shape of a drum'' in \cite{kac1966can}, that is, if given the frequencies produced by a drum one could identify the drum's shape, which has proven to be false, see \cite{gordon1992isospectral} for more details). In any case, Gómez-Serrano and Orriols were able to show that knowing any three eigenvalues is not enough to fully characterize the shape of a triangle.
 \begin{theorem}[Serrano-Orriols]
     There exist two triangles \(T_A\) and \(T_B\) not isometric to each other such that \(\lambda_i(T_A) = \lambda_i(T_B)\), for \(i=1, 2, 4\).    
 \end{theorem}
 
-Other important results in this area are related to the ratio between the first and the second eigenvalues.
+Another important result in this area is related to the ratio between the first and the second eigenvalues.
 \begin{theorem}[Ashbaugh-Benguria]\label{ashbaugh-benguria theorem}
     The solution to the maximization problem
     \[
     \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^d, \Omega \text{ open} \Big\}
     \]
-    is the ball. In particular, it can be shown that
+    is the ball in \(\mathbb{R}^d\). In particular, it can be shown that
     \[
-    \frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}  \leq \frac{j_{\frac{d}{2},1}^2}{j_{\frac{d}{2}-1,1}^2}.
+    \frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}  \leq \frac{j_{\frac{d}{2},1}^2}{j_{\frac{d}{2}-1,1}^2},
     \]
+    where \(j_{p,1}\) is the first positive zero of the Bessel function \(J_p\).
 \end{theorem}
 
 \begin{remark}
-    Note that in the Theorem above we do not make any constraint regarding the volume of our domain (except finite measure). This is a consequence of the homogeneity proven in Corollary \eqref{lap_homo} and the fact that we are now considering a ratio between two eigenvalues in the same domain.
+    Note that in Theorem \ref{ashbaugh-benguria theorem} we do not fix the volume of our domain and only assume that it has a finite measure. This is a consequence of the homogeneity proven in Corollary \eqref{lap_homo} and of the fact that we are now considering a ratio between two eigenvalues in the same domain.
 \end{remark}
 
 
 % #############################################################################
 \section{The Dirac operator}
  
-Motivated by recent advancements in nuclear, and molecular physics and the discovery of very interesting electrical, mechanical, and thermal properties, Dirac materials have resurged a lot of attention in the Dirac equation. Presented by Paul Dirac in its 1928 article \cite{dirac1928quantum}, Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, while explaining the phenomena that today is known as \textit{spin}, while predicting the existence \textit{antimatter}.
-Capable of describing the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), one can determine its energy states by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\) for \(\Omega \subset \mathbb{R}^2\),
+Due to recent advancements in nuclear, and molecular physics and the discovery of very interesting electrical, mechanical, and thermal properties of Dirac materials, a lot of attention has been put on the Dirac equation. Presented by Paul Dirac in his 1928 article \cite{dirac1928quantum}, the Dirac equation was able to successfully merge the famous Schr\"{o}dinger equation with special relativity, explain the phenomenon that today is known as \textit{spin} and predict the existence of \textit{antimatter}.
+It describes the relativistic dynamics of spin-$\frac{1}{2}$ particles (like the electron), whose energy states can be determined by studying the spectrum of the Hamiltonian (Dirac) operator \(\hat{H}\) in \(L^2(\Omega, \mathbb{C}^2)\) for any \(x \in \Omega \subset \mathbb{R}^2\),
 \begin{equation}\label{dirac_eq}
     \hat{H} \mathbf{u} = E \mathbf{u} \quad \text{with} \quad \hat{H}= -i (\mathbf{\sigma} \cdot \mathbf{\nabla}) + \left(m + V(x)\right) \mathbb{I}_2,
 \end{equation}
-where \(\mathbf{\nabla}\) is the gradient operator, \(m\) is the particle mass, \(E\) its energy, \(V(x)\) is some external potential and \(\mathbf{u} \in L^2(\Omega, \mathbb{C}^2)\) is a two-component spinor. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger's equation, it has a matrix structure that is given by the Pauli's matrices
+where \(\mathbf{\nabla} = (\partial_1, \partial_2) \) is the gradient operator, \(m\) is the mass and \(E\) the energy of the particle, \(V(x)\) is some external potential, \(\mathbb{I}_2\) is the \(2\times 2\) identity matrix and \(\mathbf{u} \in L^2(\Omega, \mathbb{C}^2)\) is a two-component spinor. One of the major problems regarding the study of Dirac's equation is the fact that, unlike Schr\"{o}dinger's equation, it has a matrix structure that is given by the Pauli's matrices
 \[
 \sigma_x = \begin{bmatrix}
     0 & 1\\
@@ -207,7 +211,7 @@ where \(\mathbf{\nabla}\) is the gradient operator, \(m\) is the particle mass, 
 \]
 which can be incorporated in \(\sigma = (\sigma_1, \sigma_2)\).    
 
-Setting the potential \(V(x)=0\) and considering \(\Omega \subset \mathbb{R}^2\) be a bounded and open domain with \(C^3\) boundary, we can rewrite equation \eqref{dirac_eq} in the form    
+Setting the potential \(V(x)=0\) and considering \(\Omega \subset \mathbb{R}^2\) to be a bounded and open domain with \(C^3\) boundary, we can rewrite equation \eqref{dirac_eq} in the form    
 \begin{equation}\label{dirac}
     \begin{bmatrix}
         m & -i(\partial_1 - i \partial_2)\\
@@ -229,25 +233,26 @@ where we let \(\mathbf{u}(x)=\begin{bmatrix}
     \end{bmatrix}\).
 In particular, we are interested in studying it under the so-called \textit{infinite-mass boundary conditions}. We point the reader to \cite{lotoreichik2019sharp}, \cite{briet2022spectral}, and \cite{antunes2021variational} for more details about this type of boundary conditions and the results below. For a point \(x \in \Gamma = \partial \Omega\), we denote by \(\mathbf{n}(x) = \begin{pmatrix}
     n_1(x), n_2(x)
-\end{pmatrix}^T\) the outward unit vector to \(\Omega\), and define the operator domain
+\end{pmatrix}^T\) the outward unitary vector to \(\Gamma\), and define the domain of \(\hat{H}\) as
+
 \[
-D(\hat{H}) = \{u \in H^1(\Omega, \mathbb{C}^2): u_2 = i(n_1+i n_2)u_1 \text{ on } \Gamma\}.
+D(\hat{H}) = \{\mathbf{u} \in H^1(\Omega, \mathbb{C}^2): u_2 = i(n_1+i n_2)u_1 \text{ on } \Gamma\}.
 \]
 
-Let \(\mathbf{\tau}(x) = \begin{pmatrix}
+Let \(\boldsymbol{\tau}(x) = \begin{pmatrix}
     n_2(x), -n_1(x)
-\end{pmatrix}^T\) be the unit tangent vector to some point \(x \in \Gamma\) such that \((\mathbf{\tau}(x), \mathbf{n}(x))\) is a positively-oriented orthonormal basis of \(\mathbb{R}^2\). Considering the arc-length parametrization of \(\Gamma\) given by the map
+\end{pmatrix}^T\) be the unit tangent vector at point \(x \in \Gamma\) such that \((\boldsymbol{\tau}(x), \mathbf{n}(x))\) is a positively-oriented orthonormal basis in \(\mathbb{R}^2\). Considering the arc-length parametrization of \(\Gamma\) given by the map
 \[
 s: [0, L) \rightarrow \mathbb{R}^2, \quad s(t) = \int_0^t \norm{r'(\sigma)} d\sigma
 \]
-where \(L\) represents the arc-length of \(\Gamma\) and \(r\) is a parametrization of \(\Gamma\), we denote by \(\kappa:\Gamma \rightarrow \mathbb{R}\) the signed curvature of \(\Gamma\) where the \textit{Frenet-Serret} formula (we dropped the dependency of \(s\) in the parameter \(t\))
-\[
-    \frac{\partial\mathbf{\tau}}{\partial s}=\kappa(s)\mathbf{n}(s)
-\]
-holds. Similar to the Theorem \ref{spec_lap_pre}, some general results regarding the spectrum of the Dirac operator can also be stated.
+where \(L\) represents the arc-length of \(\Gamma\) and \(r\) is a parametrization of \(\Gamma\), we denote by \(\kappa:\Gamma \rightarrow \mathbb{R}\) the signed curvature of \(\Gamma\) where the \textit{Frenet-Serret} formula (with the dependency on \(t\) in \(s\) dropped)
+\begin{equation}\label{dirac_frenet_serret}
+    \frac{\partial\boldsymbol{\tau}}{\partial s}=\kappa(s)\mathbf{n}(s)
+\end{equation}
+holds. We will now state some general results regarding the spectrum of the Dirac operator, c.f. Theorem \ref{spec_lap_pre} for the proof of a similar result for the Laplace operator.
 
 \begin{proposition}\label{dirac_properties}
-    Consider the eigenvalue problem stated in \eqref{dirac}. Then, the following results hold, \footnote{Notice that we changed the eigenvalue notation \(E\) to \(\lambda\). Not only for coherence reasons, but also because we are mainly interested in the mathematical description of the problem, and not in the physical intuition behind it.}
+    Consider the eigenvalue problem \eqref{dirac}. Then, the following results hold, \footnote{Notice that we have refined the eigenvalue \(E\) as \(\lambda\). Not only for consistency reasons, but also because we are mainly interested in the mathematical description of the problem, and not in the physical intuition behind it.}
     \begin{itemize}
         \item The eigenvalues are real and the spectrum of the Dirac operator is discrete. Also, the spectrum is symmetric, and the eigenvalues can be arranged as follows
         \[
@@ -255,30 +260,31 @@ holds. Similar to the Theorem \ref{spec_lap_pre}, some general results regarding
         \]
         \item The principal (first) eigenvalue can be described using the variational form
         \[
-        \lambda_1^2 = \min_{0 \neq u \in D(\hat{H})}\frac{\norm*{\nabla u}_{L^2(\Omega)}^2 + m^2 \norm{u}_{L^2(\Omega)}^2 + m \norm{\gamma_0 u}_{L^2(\Gamma)}^2}{\norm{u}_{L^2(\Omega)}^2},
+        \lambda_1^2 = \min_{0 \neq \mathbf{u} \in D(\hat{H})}\frac{\norm*{\nabla \mathbf{u}}_{L^2(\Omega)}^2 + m^2 \norm{\mathbf{u}}_{L^2(\Omega)}^2 + m \norm{\gamma_0 \mathbf{u}}_{L^2(\Gamma)}^2}{\norm{u}_{L^2(\Omega)}^2},
         \]
-        where \(\gamma_0: H^1(\Omega, \mathbb{C}^2) \rightarrow H^{\frac{1}{2}}(\Gamma, \mathbb{C}^2)\) denotes the trace of \(u\);
-        \item Let \(m=0\) and \(\Omega\) be the unit disk \(\mathbb{D}\). Then, we have that the first eigenvalue is the solution to the equation
+        where \(\gamma_0: H^1(\Omega, \mathbb{C}^2) \rightarrow H^{\frac{1}{2}}(\Gamma, \mathbb{C}^2)\) denotes the trace of \(\mathbf{u}\);
+        \item Let \(m=0\) and \(\Omega\) be the unit disk \(\mathbb{D}\). Then, we have that the first eigenvalue is the smallest positive solution to the equation
         \[
         J_0(\lambda_1) = J_1(\lambda_1),
         \]
         and the associated eigenfunction is (in polar coordinates)
         \[
-        u(r, \theta) = \begin{pmatrix}
+            \mathbf{u}(r, \theta) = \begin{pmatrix}
             J_0(\lambda_1 r)\\
-            i e^{i \theta}J_1(\lambda_1 r)
-        \end{pmatrix}.    
+            i e^{i \theta}J_1(\lambda_1 r),
+        \end{pmatrix}
         \]
-        For future comparison, its numerical approximation is \(\lambda_1 \approx 1.434695650819\), where \(J_p\) is the Bessel function of the first kind of order \(p\).
+        where \(J_p\) is the Bessel function of first kind of order \(p\).
+        For future comparison, the numerical approximation of the first eigenvalue is \(\lambda_1 \approx 1.434695650819\)
     \end{itemize}
 \end{proposition}
 
-The following proposition regarding the lack of separable solutions of the Dirac operator will have interesting consequences in the numerical approach to solve the Dirac equation. However, we start by stating and proving the following auxiliary lemma:
+Proposition \ref{dirac_not_polar} below, regarding the lack of separable solutions of the Dirac operator, will have interesting consequences in the numerical approach to solve the Dirac equation. We start by stating and proving the following auxiliary lemma:
 
 \begin{lemma}\label{lemma_sep_norm}
-    Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then,
+    Let \(\mathbf{u} \in H^2(\Omega)\) be a solution of \eqref{dirac} such that \(u \in D(\hat{H})\). Then,
     \begin{equation}\label{sep_norm}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\Gamma)}^2 -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
+        \norm*{\hat{H}\mathbf{u}}_{L^2(\Omega)}^2 = \norm*{\nabla u }_{L^2(\Omega)}^2 + m^2 \norm*{u}_{L^2(\Omega)}^2 + m \norm*{\gamma u}_{L^2(\Gamma)}^2 -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
     \end{equation}
 \end{lemma}
 \begin{proof}
@@ -286,7 +292,7 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \[
     (f, g)_{L^2(\Omega)} = \int_\Omega f \bar{g} dx,
     \]
-    \eqref{sep_norm} can be rewritten as 
+    one obtains, see the left side of \eqref{dirac}
     \begin{align}
         \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u_1}_{L^2(\Omega)}^2 + m^2 \norm*{u_2}_{L^2(\Omega)}^2 \label{sep_norm_1}\\ 
         & + i m \int_\Omega u_1(\partial_1 + i \partial_2)\bar{u}_2dx - i m \int_\Omega \bar{u}_1(\partial_1 - i \partial_2)u_2 dx \label{sep_norm_2}\\ 
@@ -297,9 +303,9 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \begin{itemize}
         \item For \eqref{sep_norm_1} one directly has
                 \[
-                    m^2 \norm*{u_1}_{L^2(\Omega)}^2 + m^2 \norm*{u_2}_{L^2(\Omega)}^2 = m^2 \norm*{u}_{L^2(\Omega)}^2.
+                    m^2 \norm*{u_1}_{L^2(\Omega)}^2 + m^2 \norm*{u_2}_{L^2(\Omega)}^2 = m^2 \norm*{\mathbf{u}}_{L^2(\Omega)}^2.
                 \]
-        \item For \eqref{sep_norm_2} one integrates by parts the first term:
+        \item For \eqref{sep_norm_2} one integrates by parts the first term
                 \[
                 \int_\Omega u_1(\partial_1 + i \partial_2)\bar{u}_2dx = \int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_\Omega \bar{u}_2(\partial_1 + i \partial_2)u_1dx
                 \]
@@ -309,10 +315,10 @@ The following proposition regarding the lack of separable solutions of the Dirac
                 \int_\Omega u_2(\partial_1 - i \partial_2)\bar{u}_1dx = \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma - \int_\Omega \bar{u}_1(\partial_1 - i \partial_2)u_2dx 
                 \]
                 where the last term cancels with the last term of \eqref{sep_norm_2}.
-        \item For \eqref{sep_norm_4}, firstly the following property was deduced:
-                \[
+        \item For \eqref{sep_norm_4}, firstly the following property was deduced
+                \begin{equation}\label{dirac_tangent_derivative}
                 \Im \Big(\int_\Omega \partial_1 v \partial_2 \bar{v}dx\Big) = \frac{1}{2 i} \int_{\Gamma} \bar{v} \partial_\tau v d \sigma, \; \forall v \in H^2(\Omega),
-                \]
+                \end{equation}
                 where \(\partial_\tau v= \tau \cdot \nabla v\), which can be obtained using integration by parts.
                 Then, for each term
                 \begin{align*}
@@ -324,27 +330,30 @@ The following proposition regarding the lack of separable solutions of the Dirac
                 \norm*{(\partial_1 + i \partial_2)u_1}_{L^2(\Omega)}^2 &= \norm*{\nabla u_1}_{L^2(\Omega)}^2 - i \Big(\int_\Omega \partial_1 u_1 \partial_2 \bar{u}_1dx - \int_\Omega \partial_2 u_1 \partial_1 \bar{u}_1dx\Big)\\
                 & = \norm*{\nabla u_1}_{L^2(\Omega)}^2 - i\int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma
                 \end{align*}
-                where the property above was used.
+                where the property \ref{dirac_tangent_derivative} was used.
     \end{itemize}
     As such, one can write everything as
     \begin{align*}
-        \norm*{\hat{H}u}_{L^2(\Omega)}^2 &= m^2 \norm*{u}_{L^2(\Omega)}^2 + i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big)\\
-        & + \norm*{\nabla u}_{L^2(\Omega)} + i\Big( \int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  \int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma \Big).
+        \norm*{\hat{H}\mathbf{u}}_{L^2(\Omega)}^2 &= m^2 \norm*{\mathbf{u}}_{L^2(\Omega)}^2 + i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big)\\
+        & + \norm*{\nabla \mathbf{u}}_{L^2(\Omega)} + i\Big( \int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  \int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma \Big).
     \end{align*}
     Finally, using the boundary conditions \(u_2 = i(n_1 + i n_2)u_1\), one concludes that
     \begin{align*}
-    i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big) = \norm*{\gamma u}_{L^2(\Gamma)}^2
+    i m \Big(\int_{\Gamma} u_1\bar{u}_2(1+i)d\sigma - \int_{\Gamma} u_2\bar{u}_1(1-i)d\sigma \Big) = \norm*{\gamma \mathbf{u}}_{L^2(\Gamma)}^2
     \end{align*}
     while
     \begin{align*}
-    i\int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  i\int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma = -\frac{1}{2}\int_{\Gamma}\kappa \abs{u}^2 d\sigma
+    i\int_{\Gamma} \bar{u}_2 \partial_\tau u_2 d \sigma -  i\int_{\Gamma} \bar{u}_1 \partial_\tau u_1 d \sigma = -\frac{1}{2}\int_{\Gamma}\kappa \abs{\mathbf{u}}^2 d\sigma
     \end{align*}
-    where the Frenet-Serret formula above was used and the fact that on \(\Gamma\) one has \(\abs{u_1}^2=\abs{u_2}^2\).
+    where was used the Frenet-Serret formula \eqref{dirac_frenet_serret} and the fact that on \(\Gamma\) one has \(\abs{u_1}^2=\abs{u_2}^2\).
 \end{proof}
 
+A Partial Differential Equation is said to be separable if its solution can be written as the product of functions on each coordinate, i.e. if its solution \(u(q), \, q \in \mathbb{R}^d\) can be written as \(u(q) = \prod_{i=1}^{d} S_i(q_i)\), where the functions \(S_i\) only depend on the (scalar) variable \(q_i\).
+
 \begin{proposition}\label{dirac_not_polar}
-    Let \(u \in H^2(\Omega)\) a solution of \eqref{dirac} and \(u \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions, both in cartesian coordinates and polar coordinates.
+    Let \(\mathbf{u} \in H^2(\Omega)\) be a solution of \eqref{dirac} such that \(\mathbf{u} \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions, neither in cartesian coordinates in a rectangular domain nor polar coordinates near a corner.
 \end{proposition}
+
 \begin{proof}
     One starts by showing that \(\abs*{\lambda}>m\) for any eigenvalue \(\lambda\) if \(\kappa = 0\) a.e. Assuming that there exists an eigenvalue \(\lambda\) associated with an eigenfunction \(u\) such that \(\abs{\lambda} \leq m\), by Lemma \ref{lemma_sep_norm} one finds that 
     \[
@@ -363,11 +372,12 @@ The following proposition regarding the lack of separable solutions of the Dirac
              i (\partial_1 + i\partial_2)u_1 + (\lambda + m)i(n_1 + i n_2)u_1 = 0, & \text{ on } \Gamma.
         \end{cases}      
     \end{equation}
-    The rest of the proof will have into consideration two domain types: first, for polar coordinates, one studies the behavior of such separable solution near a corner, such that the origin is in the corner's tip; then, rectangular domains with cartesian coordinates.
+    In the rest of the proof, we will take into consideration polar coordinates, where one studies the behavior of separable solutions near a corner, locating the origin of coordinates at the corner. 
 
     \begin{enumerate}
-    \item Assume that \(\Omega\) has at least one corner which presents a \textit{wedge-like} shape with angle \(\theta\) with maximum amplitude \(\Theta\) (see Figure \ref{wedge_dirac}).
+    \item Assume that \(\Omega\) has at least one corner where the domain has a \textit{wedge-like} shape with maximum amplitude \(\Theta\) (see Figure \ref{wedge_dirac}).
     
+    \usetikzlibrary{decorations.pathmorphing}
     \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -379,11 +389,14 @@ The following proposition regarding the lack of separable solutions of the Dirac
         % Drawing the triangle
         \draw (O) -- (A);
         \draw (O) -- (B);
+        %\draw (A) -- (B);
         % Labeling the angle
         \draw (0.6,0) arc (0:60:0.6);
         \node at (0.8,0.3) {$\Theta$};
-    \end{tikzpicture}
-    \caption{A wedge-like shape with an interior angle \(\theta\).}
+
+        \draw [decorate, decoration={snake, amplitude=0.3mm, segment length=4.5mm}] (A) to[out=45, in=0] (B);
+        \end{tikzpicture}
+    \caption{A wedge-like ``shape'' with an interior angle \(\Theta\).}
     \label{wedge_dirac}
     \end{figure}
     In this case, since the outward unit normal on \(\overline{OA}\) is \(n =\begin{pmatrix}
@@ -421,18 +434,21 @@ The following proposition regarding the lack of separable solutions of the Dirac
     \[
         u(r, \theta) = J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(A \cos(k \theta)+B \sin(k \theta)\right)
     \]
-    for some \(A, B, k \in \mathbb{C}\), were \(A\) and \(B\) are not simultaneously zero. Applying the condition on \(\overline{OA}\), substituting \(\theta=0\), one finds that
+    for some \(A, B, k \in \mathbb{C}\), were \(A\) and \(B\) are not simultaneously zero. Applying the condition on \(\overline{OA}\), with \(\theta=0\), one finds that
     % \[
     %     \frac{1}{2}J_{k}\left(r \sqrt{\lambda^2-m^2}\right)A - \frac{1}{2}J_{k}\left(r \sqrt{\lambda^2-m^2}\right)A + \frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0.
     % \]
+    \begin{align}\label{dirac_separable_bessel_axis}
+        \begin{split}
+            &\frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(r(m+\lambda)A-k B\right)}{r}\\
+            &+ \frac{1}{2}i \sqrt{\lambda^2-m^2}A\left(J_{-1+k}\left(r \sqrt{\lambda^2-m^2}\right)-J_{1+k}\left(r \sqrt{\lambda^2-m^2}\right)\right)= 0
+        \end{split}
+    \end{align}
+    Using the recurrence relation for the derivatives of Bessel functions\footnote{Once again, we refer to Appendix \ref{appendix_c_bessel}.}
     \[
-        \frac{J_{k}\left(r \sqrt{\lambda^2-m^2}\right)\left(r(m+\lambda)A-k B\right)}{r} + \frac{1}{2}i \sqrt{\lambda^2-m^2}A\left(J_{-1+k}\left(r \sqrt{\lambda^2-m^2}\right)-J_{1+k}\left(r \sqrt{\lambda^2-m^2}\right)\right)= 0
+        2 \frac{d J_\alpha (r)}{d r} = J_{\alpha-1} (r) - J_{\alpha+1} (r),
     \]
-    From the recurrence relations for the derivatives of Bessel functions\footnote{Once again, we point the reader to Appendix \ref{appendix_c_bessel}.}
-    \[
-        2 \frac{d J_\alpha (r)}{d r} = J_{\alpha-1} (r) - J_{\alpha+1} (r)
-    \]
-    the equation above can be rewritten as
+    equation \eqref{dirac_separable_bessel_axis} can be rewritten as
     % \[
     %     i A \frac{d}{d x}\left[J_{\frac{1}{k}} \left(-i r \sqrt{m^2-\lambda^2}\right)\right] + \frac{J_{\frac{1}{k}}\left(-i r \sqrt{m^2-\lambda^2}\right)\left(k r (m + \lambda)A - B\right)}{k r} = 0,
     % \]
@@ -485,125 +501,169 @@ The following proposition regarding the lack of separable solutions of the Dirac
             k = 0,
         \end{cases}
     \end{align*}
-    a contradiction.
-    \item For rectangular domains, we point the proof in \cite{briet2022spectral}.
+    thus \(u=0\), a contradiction.
+    \item For cartesian coordinates (in rectangular domains), we refer to the proof in \cite{briet2022spectral}.
     \end{enumerate}     
 \end{proof}
 
 \begin{remark}
-    A careful reader will note that two important details are being overlooked: domains with corners do not have the required smoothness to obtain the formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We point to \cite{vu2023spectral}, where such details can be found for triangles, but are any two-dimensional polygon.
+    We note that two important details are being overlooked: domains with corners do not have the smoothness required for formula \eqref{sep_norm} (and signed curvature is not defined everywhere, only on each edge where \(\kappa=0\)), neither \(u\) has enough regularity to be integrated by parts while expanding \eqref{sep_norm_4}. We refer to \cite{vu2023spectral}, where such details can be found for any two-dimensional polygon.
 \end{remark}
 
-Some open conjectures that we try to numerically address in this work are now presented.
+Let \(m \geq 0\). We now present some open problems regarding the spectrum of equation \eqref{dirac} that we try to address numerically in this work.
 
 \begin{conjecture}[A Faber-Krahn type inequality]\label{conjecture_faber_krahn}
-    Let \(m \geq 0\) and \(\Omega \subset \mathbb{R}^2\) an open and Lipschitz domain. Then,
+    Let \(\Omega \subset \mathbb{R}^2\) be an open Lipschitz domain. Then,
     \[
     \lambda_1(\Omega) \geq \lambda_1(\Omega^\ast)
     \]
     where \(\Omega^\ast\) is the disk of the same area or perimeter as \(\Omega\).
 \end{conjecture}
 
-The conjecture above is regarded as a hot problem in spectral geometry \cite{krejcirik_larson_lotoreichik_2019}. In \cite{benguria2017spectral} a geometric lower bound for the first (non-negative) eigenvalue was found, while in \cite{lotoreichik2019sharp} a sharp upper bound (a reverse Faber-Krahn type inequality, like in Theorem \ref*{reverse_faber-krahn}) was proved to hold for convex domains with \(C^3\) boundary. One of the objectives of this work is to give some numerical evidence for the conjecture above, although it is (obviously) impossible to test every possible domain and every possible mass \(m\). However, some types of domains can be systematically approached and one can try to rule them out, such that if the conjecture fails it probably has to fail for some non-conventional shape. Another conjecture we are interested in is the Ashbaugh-Benguria Theorem for the Dirac operator with infinite mass boundary conditions.
+The conjecture above is regarded as a hot problem in spectral geometry \cite{krejcirik_larson_lotoreichik_2019}. In \cite{benguria2017spectral} a geometric lower bound for the first (non-negative) eigenvalue was found, while in \cite{lotoreichik2019sharp} a sharp upper bound (a reverse Faber-Krahn type inequality, like in Theorem \ref*{reverse_faber-krahn}) was proved to hold for convex domains with \(C^3\) boundary. One of the objectives of this work is to give some numerical evidence for the conjecture above, although it is (obviously) impossible to test every possible domain and every possible mass \(m\). However, some types of domains can be systematically approached and one can try to rule them out, so that if the conjecture fails it probably has to fail for some non-conventional shape. Another conjecture we are interested in is the Ashbaugh-Benguria Theorem for the Dirac operator with infinite mass boundary conditions.
 
 \begin{conjecture}[An Ashbaugh-Benguria type result]\label{conjecture_benguria}
-    Let \(m \geq 0\) and \(\Omega \subset \mathbb{R}^2\) an open and Lipschitz domain. Then, the solution to the maximization problem 
+    Let \(\Omega \subset \mathbb{R}^2\) be an open Lipschitz domain. Then, the solution to the maximization problem 
     \[
-    \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^d, \Omega \text{ open} \Big\}
+    \max \Big\{\frac{\lambda_2(\Omega)}{\lambda_1(\Omega)}: \Omega \subset \mathbb{R}^2\Big\}
     \]
-    is the ball.
+    is the ball in \(\mathbb{R}^2\).
 \end{conjecture}
 
 
-Due to the difficulty of the problems, simpler versions with domain restrictions to triangles and rectangles are being studied. For example, in \cite{briet2022spectral} a study for rectangles was conducted, where the conjectures below were proved under some extra hypothesis:
+Due to the difficulty of proving these conjectures, simpler versions restricted to triangles and rectangles are being studied. For example, in \cite{briet2022spectral} a study for rectangles was conducted, where the conjectures below were proved under some extra hypothesis:
+
 \begin{conjecture}[Shape optimization in rectangles]\label{david_conjectures}
-    Given \(m \geq 0\), let \(\lambda_1(a, b) = \lambda_1(\Omega_{a, b})\) denote the first eigenvalue of the Dirac operator with infinite-mass boundary conditions in a rectangle with sides \(a\) and \(b\). Then,
+    Let \(\lambda_1(a, b) = \lambda_1(\Omega_{a, b})\) denote the first eigenvalue of the Dirac operator with infinite-mass boundary conditions in a rectangle with sides \(a\) and \(b\). Then,
     \begin{enumerate}
-        \item \textit{Area constraint: } \(\lambda_1(a, \frac{1}{a}) \geq \lambda_1(1, 1), \; \forall a>0 \);
-        \item \textit{Perimeter constraint: } \(\lambda_1(a, 2-a) \geq \lambda_1(1, 1), \; \forall a\in (0, 2)\).
+        \item \label{david_conjectures_1} \textit{Area constraint: } \(\lambda_1(a, \frac{1}{a}) \geq \lambda_1(1, 1), \; \forall a>0 \);
+        \item  \label{david_conjectures_2} \textit{Perimeter constraint: } \(\lambda_1(a, 2-a) \geq \lambda_1(1, 1), \; \forall a\in (0, 2)\).
     \end{enumerate}
-\end{conjecture}
-In the same vain, in \cite{vu2023spectral} very similar results were proven for triangles:
-\begin{conjecture}[Shape optimization in triangles]\label{triangle_conjectures}
-    Consider the triangle \(\Omega_{a, b}\) defined by the points \(O=(0, 0), A=(a, 0), B=(0, b)\) for \(a, b>0\). Then, given any \(m \geq 0\),
+    point \ref{david_conjectures_1} holds under the assumptions
     \begin{enumerate}
-        \item \textit{Area constraint: } \(\lambda_1(a, b) \geq \lambda(k, k),\; \forall a, b, k >0\) such that \(ab=k^2\);
-        \item \textit{Perimeter constraint: } \(\lambda_1(a, b) \geq \lambda(k, k),\; \forall a \in (0, (2+\sqrt(2)k))\) and \(\forall b, k > 0\) such that \(a+b+\sqrt{a^2+b^2}=(2+\sqrt{2})k\).
+        \item \textit{Large eccentricity constraint: } \(\abs{a^2-4} > \sqrt{15}\);
+        \item \textit{Heavy masses constraint: } \(m \left(\frac{1}{a^2}+a^2-2\right) \geq 56\),
+    \end{enumerate}
+    and point \ref{david_conjectures_2} holds if
+    \begin{enumerate}
+        \item \textit{Large eccentricity constraint: } \(\abs{a^2-1} > \frac{9-\sqrt{33}}{8}\);
+        \item \textit{Heavy masses constraints: } \(m \left(\frac{1}{a^2}+\frac{1}{(2-a)^2}-2\right) \geq 56\).
     \end{enumerate}
 \end{conjecture}
 
-In this work, we generalize the conjectures above for the \(n\)-side polygons with unit area, analogous to the Pólya-Szég\H{o} Conjecture \ref{polya_szego_conjecture}.
+In the same vein, in \cite{vu2023spectral} very similar results were conjectured for isosceles right triangles:
+
+\begin{conjecture}[Shape optimization in triangles]\label{triangle_conjectures}
+    Consider the triangle \(\Omega_{a, b}\) defined by the points \(O=(0, 0), A=(a, 0), B=(0, b)\) for \(a, b>0\). Then, 
+    \begin{enumerate}
+        \item \textit{Area constraint: } \(\lambda_1(a, b) \geq \lambda_1(k, k),\; \forall a, b>0\) for any positive \(k\) such that \(ab=k^2\);
+        \item \textit{Perimeter constraint: } \(\lambda_1(a, b) \geq \lambda_1(k, k),\; \forall a \in (0, (2+\sqrt(2)k))\) and \(\forall b > 0\) such that \(a+b+\sqrt{a^2+b^2}=(2+\sqrt{2})k\), for any positive \(k\).
+    \end{enumerate}
+\end{conjecture}
+
+In this work, both Conjectures \ref{david_conjectures} and \ref{triangle_conjectures} are individually studied and Conjecture \ref{conjecture_benguria} is considered for triangles and quadrilaterals. Conjecture \ref{conjecture_faber_krahn} is also studied for regular \(n\)-sided polygons with unit area, as in the Pólya-Szég\H{o} Conjecture \ref{polya_szego_conjecture}.
 
 \begin{conjecture}\label{polya_szego_conjecture_dirac}
-    Let \(m \geq 0\), \(\Omega \subset \mathbb{R}^2\) an open and Lipschitz domain, \(n \geq 5\) and consider the class of \(n\)-side polygons. Then, the regular \(n\)-side polygon has the least first eigenvalue among all \(n\)-side polygons with fixed area.
+    Let \(\Omega \subset \mathbb{R}^2\) be an open Lipschitz domain, \(n \geq 5\) and consider the class of \(n\)-sided polygons. Then, the regular \(n\)-sided polygon has the least first eigenvalue among all \(n\)-sided polygons with fixed area.
 \end{conjecture}
 
 \section{A domain decomposition problem}\label{domain_decomp_problem}
 
-Consider the polygonal domain \(\Omega \subset \mathbb{R}^2\) which we divide into two non-overlapping regions \(\Omega_1\) and \(\Omega_2\) such that \(\overline{\Omega} = \overline{\Omega_1} \cup \overline{\Omega_2}\). We denote their common boundary by \(\gamma = \partial\Omega_1 \cap \partial\Omega_2\) and denote by \(\Gamma_i = \partial\Omega_1\setminus{\gamma}\) the boundary of each domain \(\Omega_1\) minus the common boundary. The problem we address in this section is to find functions \(u_1, u_2\) such that
-\begin{align}\label{decomp_prob}
-    \begin{cases}
-    - \nabla k_i \nabla u_i = f_i, & \text{in }\Omega_i\\
-    u_1 - u_2 = 0, & \text{on }\gamma\\
-    k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} = 0, & \text{on }\gamma\\
-    u_i = 0, & \text{on }\Gamma_i
-    \end{cases}
-\end{align}
-where \(k_1 \geq k_2 > 0\) are constants, \(f_i \in L^2(\Omega_i)\) is a source function on each domain, and \(n_i\) is the (normalized) outward normal to each domain subdomain \(\Omega_i, i=1, 2\). Finally, we shall write \(n=n_1=-n_2\) when we are restricted to the interface.
+Consider a polygonal domain \(\Omega \subset \mathbb{R}^2\) which we divide into two non-overlapping regions \(\Omega_1\) and \(\Omega_2\) such that \(\overline{\Omega} = \overline{\Omega_1} \cup \overline{\Omega_2}\). We denote their common boundary by \(\gamma = \partial\Omega_1 \cap \partial\Omega_2\) and denote by \(\Gamma_i = \partial\Omega_i\setminus{\gamma}\) the boundary of each domain \(\Omega_i\) minus the common boundary, see Figure \ref{transmission_problem_figure}. The problem we address in this section is to find functions \(u_1, u_2\) which satisfy the equations \eqref{decomp_prob}, where \(k_1 \geq k_2 > 0\) are constants, \(f_i \in L^2(\Omega_i)\) is a source function on each domain, and \(n_i\) is the (normalized) outward normal to each subdomain \(\Omega_i, i=1, 2\). Finally, we write \(\boldsymbol{n}=\boldsymbol{n}_1=-\boldsymbol{n}_2\) when \(\boldsymbol{n}\) is restricted to the interface \(\gamma\).
 
-In what follows we mainly used the reference \cite{quarteroni1999domain}. Equations \eqref{decomp_prob} can be used to study a system of two bodies with different material parameters (contact resistance or thermal conductivity) connected by an interface \(\gamma\). If we set
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.44\textwidth}
+        \vspace{4pt} % Align at the top
+        \begin{tikzpicture}[scale=1.1]
+            % Draw left square and label
+            \draw (0,0) rectangle (3,3);
+            \node at (1.5,1.5) {\(\Omega_1\)};
+            \node[below] at (1.5,0) {\(\Gamma_1\)};
+        
+            % Draw dashed interface line and label
+            \draw[dashed] (3,0) -- (3,3);
+            \node at (3.2,1.5) {\(\gamma\)};
+            
+            % Draw right square and label
+            \draw (3,0) rectangle (6,3);
+            \node at (4.5,1.5) {\(\Omega_2\)};
+            \node[below] at (4.5,0) {\(\Gamma_2\)};
+        \end{tikzpicture}
+    \end{minipage}%
+    \begin{minipage}[t]{0.44\textwidth}
+        \vspace{-4pt} % Align at the top
+        \begin{align}\label{decomp_prob}
+            \begin{cases}
+                - \nabla \left(k_i \nabla u_i\right) = f_i, & \text{in }\Omega_i\\
+                u_1 - u_2 = 0, & \text{on }\gamma\\
+                k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} = 0, & \text{on }\gamma\\
+                u_i = 0, & \text{on }\Gamma_i
+            \end{cases}
+        \end{align}
+    \end{minipage}
+    \caption{Transmission problem (rectangle example) and its associated equations.}
+    \label{transmission_problem_figure}
+\end{figure}
+
+In what follows, we mainly follow the reference \cite{quarteroni1999domain}. Equations \eqref{decomp_prob} can be used in studying a system of two bodies with different material parameters (contact resistance or thermal conductivity) connected through an interface \(\gamma\). If we set
 \[
+k = \begin{cases}
+    k_1,& \text{in } \Omega_1\\
+    k_2,& \text{in } \Omega_2
+\end{cases}, \text{ and }
 f = \begin{cases}
-    \frac{f_1}{k_1},& \Omega_1\\
-    \frac{f_2}{k_2},& \Omega_2
+    \frac{f_1}{k_1},& \text{in } \Omega_1\\
+    \frac{f_2}{k_2},& \text{in } \Omega_2
 \end{cases},   
 \]
-then the problem above can be seen as a natural reformulation of the Poisson equation
+then problem \eqref{decomp_prob} can be seen as a natural reformulation of the Poisson equation
 \begin{align}\label{decomp_poisson}
     \begin{cases}
         -\Delta u = f, & \text{in }\Omega \\
         u = 0, & \text{on } \partial\Omega
     \end{cases}
 \end{align}
-where \(f\) is (possibly) discontinuous on the interface \(\gamma\). In order to keep the equivalence between both problems, we enforce some transmission conditions in Equations \eqref{decomp_prob} using the continuity of the solutions and the continuity of their normal derivative on \(\gamma\). To establish the equivalence between both problems we write the variational weak form associated with them. For \eqref{decomp_poisson} it is straightforward: one multiplies the equation in \(\Omega\) by a test function \(v \in C^\infty_0(\Omega)\) and by Green's Identities one finds that
+where \(f\) is (possibly) discontinuous through the interface \(\gamma\). Equivalence between problems \eqref{decomp_prob} and \eqref{decomp_poisson}, follows from the transmission conditions in \eqref{decomp_prob} which enforce the continuity of the solutions and its normal derivative on \(\gamma\). To show the equivalence between we write the variational (weak) forms associated with problems \eqref{decomp_prob} and \eqref{decomp_poisson}. For \eqref{decomp_poisson} it is straightforward: one multiplies the equation in \(\Omega\) by a test function \(v \in C^\infty_0(\Omega)\) and by Green's Identities one finds that
 \[
-a(u,v)=\int_\Omega \nabla u \cdot \nabla v = \int_\Omega f v
+a(u,v)=\int_\Omega \nabla u \cdot \nabla v dx = \int_\Omega f v dx
 \]
-where \(a\) is the associated bilinear form. As such, enlarging the functional space to the Hilbert Space \(V^0=H^1_0(\Omega)\), the problem can be rewritten as
-\begin{equation}\label{weak_poisson}
-    \text{find } u \in V^0: a(u,v) = (f, v), \; \forall v \in V^0   
-\end{equation}
-which has a unique solution in \(V^0\) by virtue of Lax-Milgram lemma \ref{lax-milgram}. In fact, by regularity results\footnote{We write that \(A \Subset B\) when \(\overline{A}\) is compact and \(\overline{A} \subset B\).}  (see Section 6.3.1 of \cite{evans2022partial}), \(u \in V^0 \cap H^2_{\text{loc}}(\Omega'), \; \forall \Omega' \Subset \Omega\). 
+where we have defined the associated bilinear form \(a\). As such, enlarging the functional space to the Hilbert Space \(V^0=H^1_0(\Omega)\), the problem can be rewritten as
 
-For \eqref{decomp_prob} the process is not so direct. Given the subdomain \(\Omega_1\), one multiplies the first equation with a test function in \(v_1 \in C^\infty_0(\Omega_1)\) and integrate by parts,
+\begin{equation}\label{weak_poisson}
+    \text{find } u \in V^0: a(u,v) = (f, v), \; \forall v \in V^0,   
+\end{equation}
+where \(f,v\) denotes the \(L^2(\Omega)\) inner product between \(f\) and \(v\), which has a unique solution in \(V^0\) by virtue of Lax-Milgram lemma \ref{lax-milgram}. In general, regularity results only guarantee, \(u \in V^0 \cap H^2_{\text{loc}}(\Omega'), \; \forall \Omega' \Subset \Omega\) (see Section 6.3.1 of \cite{evans2022partial})\footnote{We write that \(A \Subset B\) when \(\overline{A}\) is compact and \(\overline{A} \subset B\).}, but if the polygonal domain is convex then the solution is in \(u \in H^2(\Omega)\) up to the boundary (see Theorem 3.2.1.2 in \cite{grisvard2011elliptic}). 
+
+For \eqref{decomp_prob} the process is not so direct. Given the subdomain \(\Omega_1\), one multiplies the first equation with a test function in \(v_1 \in C^\infty_0(\Omega_1)\) and integrates by parts to obtain
 \[
-a(u_1,v_1) = \int_{\Omega_1} \nabla u_1 \cdot \nabla v_1 = \Big(\frac{f_1}{k_1}, v_1\Big)    
+a(u_1,v_1) = \Big(\frac{f_1}{k_1}, v_1\Big),    
 \]
 and analogously, for the subdomain \(\Omega_2\), considering \(v_2 \in C^\infty_0(\Omega_2)\) one finds that
 \[
-a(u_2,v_2) = \int_{\Omega_2} \nabla u_2 \cdot \nabla v_2 = \Big(\frac{f_2}{k_2}, v_2\Big).        
+a(u_2,v_2) = \Big(\frac{f_2}{k_2}, v_2\Big).        
 \]
-To add the interface condition on the normal derivative notice that if \(v \in C^\infty_0(\Omega)\), one can define \(v_1 = v_{|\Omega_1}\) and \(v_2 = v_{|\Omega_2}\), where \(v_i \in C^\infty(\Omega_i)\) and \(v_i(x)=0, \; \forall x \in \Gamma_i\) for \(i=1, 2\). This allows us to write that
+To (weakly) impose the continuity of the normal derivative at \(\gamma\) notice that if \(v \in C^\infty_0(\Omega)\), then one can define \(v_1 = v_{|\Omega_1}\) and \(v_2 = v_{|\Omega_2}\), where \(v_i \in C^\infty(\Omega_i)\) and \(v_i(x)=0, \; \forall x \in \Gamma_i\) for \(i=1, 2\). This allows us to write
 \begin{align*}
     -\int_{\Omega_1} k_1 \Delta u_1 v_1 -\int_{\Omega_2} k_2 \Delta u_2 v_2 &= \int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2\\
     &- k_1 \int_\gamma \frac{\partial u_1}{\partial n_1}v_1 - k_2 \int_\gamma \frac{\partial u_2}{\partial n_2}v_2
 \end{align*}
-Observe that if \(v_{1_{|\gamma}} = v_{2_{|\gamma}} = \eta\), then by using the condition on the normal derivative one would find that 
+Observe that if \(v_{1_{|\gamma}} = v_{2_{|\gamma}} = \eta\), then using the condition on the normal derivative one would find that 
 \[
 \int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2 = (f_1, v_1) + (f_2, v_2).
 \]
-As such, consider the continuous extension operator \(P_i\) from the interface to each domain \(\Omega_i\) such that \((P_i \eta)_{|\gamma} = \eta\). In that case, given a function \(\mu\) defined in \(\gamma\)\footnote{A description of such function will be given below, when we formalize the weak form of the problem. For now, assume that such extension has the regularity that we need.}, the identity above holds by rewriting it in the form
+As such, consider a continuous extension operator \(P_i\) from the interface to domain \(\Omega_i\) such that \((P_i \eta)_{|\gamma} = \eta\). In that case, given a function\footnote{A description of such function will be given below when we formalize the weak form of the problem. For now, assume that such an extension has the regularity that we need.} \(\mu\) defined in \(\gamma\), the identity above holds by rewriting it in the form
 \[
 \int_{\Omega_1} k_1\nabla u_1 \cdot \nabla P_1 \mu + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla P_2 \mu = (f_1, P_1 \mu) + (f_2, P_2 \mu).  
 \]
-Finally, for the continuity on the interface, enforce that \(u_1 = u_2\) on \(\gamma\). The process above allows us to state the weak form of problem \eqref{decomp_prob} in the result below.
+Finally, for the continuity on the interface, we assume that \(u_1 = u_2\) on \(\gamma\). The process above allows us to state the weak form of problem \eqref{decomp_prob} as follows.
 \begin{proposition}
-    Consider the set of equations \eqref{decomp_prob} and the bilinear form \(a_i = (w_i, v_i) = (\nabla w_i, \nabla v_i)\). Let
+    Consider the set of equations \eqref{decomp_prob} and the bilinear forms \(a_i = (w_i, v_i), i=1,2 = (\nabla w_i, \nabla v_i)\). For \(i=1, 2\), let
     \begin{align*}
-        &V_i = \{v_i \in H^1(\Omega_i): v_{i_{|\partial \Omega \cap \partial {\Omega_i}}=0\}};\\
+        &V_i = \{v_i \in H^1(\Omega_i): v_{i_{|\partial \Omega \cap \partial {\Omega_i}}}=0\};\\
         &V_i^0 = H^1_0(\Omega_i)\\
         &\Lambda = \{\eta \in H^\frac{1}{2}(\gamma): \eta = v_{|\gamma} \text{ for some } v \in V^0\} \\
-        &a_i (u_i, v_1) = \int_{\Omega_i} \nabla u_i \cdot \nabla v_1
+        &a_i (u_i, v_i) = \int_{\Omega_i} \nabla u_i \cdot \nabla v_i
     \end{align*}
     where \(V^0 = H^1_0(\Omega)\) as above.
     Then the weak formulation of \eqref{decomp_prob} reads as
@@ -620,26 +680,26 @@ Finally, for the continuity on the interface, enforce that \(u_1 = u_2\) on \(\g
 \end{proposition}
 
 \begin{remark}
-    The existence of the (continuous) extension operators \(P_1\) and \(P_2\) is not obvious but Theorem \ref{frac_theo} states the existence of a right inverse of the trace operator. See the presented references for more details. 
+    The existence of the (continuous) extension operators \(P_1\) and \(P_2\) is not obvious but Theorem \ref{frac_theo} guarantees the existence of a right inverse of the trace operator. See the presented references for more details. 
 \end{remark}
 
-We are now ready to prove the equivalence between both problems:
+We are now ready to prove the equivalence between the weak formulations of problems \eqref{decomp_prob} and \eqref{decomp_poisson}.
 \begin{theorem}\label{equivalence_transmission}
     Problem \eqref{weak_poisson} is equivalent to \eqref{weak_decomp}.
 \end{theorem}
 \begin{proof}
     \((\implies):\)
 
-    Let \(u \in V^0\) be a solution of problem \eqref{weak_poisson}. Define \(u_1 = u_{|\Omega_1}\) and \(u_2 = u_{|\Omega_2}\). It's clear that \(u_1\) and \(u_2\) satisfy equations 1 and 2 of \eqref{weak_decomp}. 
+    Let \(u \in V^0\) be a solution of problem \eqref{weak_poisson}. Define \(u_1 = u_{|\Omega_1}\) and \(u_2 = u_{|\Omega_2}\). It is clear that \(u_1\) and \(u_2\) satisfy the first two equations in \eqref{weak_decomp}. 
     
-    For equation 3, we use the fact that \(u \in H^1(\Omega)\) and therefore \(u \in H^2_{\text{loc}}(\Omega)\). Given \(\Omega'\) such that \(\Omega' \Subset \Omega\) and \(\gamma \subset \Omega'\), we have that \(u \in H^2(\Omega')\) and \(u \in C^{0,\lambda}(\overline{\Omega'})\) (\(u\) belongs to the H\"{o}lder Space of exponent \(\lambda\); see Theorem 4.12 of \cite{adams2003sobolev} for more details.) As such, \(u\) is continuous on the interface and \(u_1=u_2\) on \(\gamma\).
+    For equation 3, we use the fact that \(u \in H^1(\Omega)\) and therefore \(u \in H^2(\Omega)\) and \(u \in C^{0,\lambda}(\overline{\Omega})\) (\(u\) belongs to the H\"{o}lder Space of exponent \(\lambda\); see Theorem 4.12 of \cite{adams2003sobolev}). As such, \(u\) is continuous on the interface and \(u_1=u_2\) on \(\gamma\).
 
-    Finally, given \(\mu \in \Lambda\), one defines the function
+    Finally, given \(\mu \in \Lambda\), one defines a function
     \[
         P \mu =
     \begin{cases}
-        P_1 \mu\\
-        P_2 \mu
+        P_1 \mu, & \text{ in } \Omega_1\\
+        P_2 \mu, & \text{ in } \Omega_2
     \end{cases}
     \]
     which satisfies \(P \mu \in V^0\) and the equality 4 in \eqref{weak_decomp}.
@@ -647,23 +707,35 @@ We are now ready to prove the equivalence between both problems:
     \vspace*{0.5cm}
     \((\impliedby):\)
 
-    Let \(u_1 \in V_1^0, u_2 \in V_2^0\) be the two solutions of problem \eqref{weak_poisson} and set
+    Let \(u_1 \in V_1^0, u_2 \in V_2^0\) solve \eqref{weak_decomp} in each subdomain and set
     \[
     u=\begin{cases}
         u_1, \text{ in } \Omega_1\\
         u_2, \text{ in } \Omega_2.
     \end{cases}
     \]
-    Since \(u_1=u_2\) on the interface, it follows that \(u \in V^0\).  
-    Defining \(P \mu\) like above, take \(\mu \in \Lambda\) for some \(v \in V\) such that \(\mu = v_{|\gamma}\). As such, one has that the difference \((v_{|\Omega_i} - P_i \mu) \in V^0_i\) for each \(i=1, 2\) and
+    To check that \(u \in V^0\), let \(v \in \mathcal{D}(\Omega)\). Using integration by parts and the fact that \(u_1 = u_2\) on the interface \(\gamma\) we have
+    \[
+        \int_\Omega u \frac{\partial v}{\partial x_j} dx =  \int_{\Omega_1} u_1 \frac{\partial v}{\partial x_j} dx + \int_{\Omega_2} u_2 \frac{\partial v}{\partial x_j} dx = -\int_{\Omega_1} \frac{\partial u_1}{\partial x_j} v dx - \int_{\Omega_2} \frac{\partial u_2}{\partial x_j} v dx,
+    \]
+    where the weak derivatives of \(u\) exist and are given by
+    \[
+        \frac{\partial u}{\partial x_j} =
+        \begin{cases}
+            \frac{\partial u_1}{\partial x_j}, & \text{ in } \Omega_1\\
+            \frac{\partial u_2}{\partial x_j}, & \text{ in } \Omega_2,
+        \end{cases}
+    \]
+    for each \(j=1,2\).
+    Defining \(P \mu\) as above, take \(\mu \in \Lambda\) such that for some \(v \in V^0\) one has \(\mu = v_{|\gamma}\). Thus, the difference \((v_{|\Omega_i} - P_i \mu) \in V^0_i\) for each \(i=1, 2\) and
     \begin{align*}
         a(k u, v) &= \Big[a_1(k_1 u_1, v_{|\Omega_1} - P_1 \mu) + a_1(k_1 u_1, P_1\mu)\Big] + \Big[a_2(k_2 u_2, v_{|\Omega_2} - P_2 \mu) + a_2(k_2 u_2, P_2\mu)\Big]\\
         &=\Big[(f_1, v_{|\Omega_1} - P_1 \mu) + (f_1, P_1 \mu) \Big] + \Big[(f_2, v_{|\Omega_2} - P_2 \mu) + (f_2, P_2 \mu) \Big]\\
         &=(\Tilde{f}, v), \implies a(u, v) = (f, v)
     \end{align*}
-    where we take \(\Tilde{f} = \begin{cases}
+    where we have defined \(\Tilde{f} = \begin{cases}
         f_1, \text{ in } \Omega_1\\
         f_2, \text{ in } \Omega_2
     \end{cases}\)
-    as an auxiliary function and used the assumptions 1, 2, and 4 of equations \eqref{weak_decomp}.
+   and used the first two and the fourth equations in \eqref{weak_decomp}.
 \end{proof}

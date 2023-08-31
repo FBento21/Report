@@ -5,60 +5,61 @@
 \contentsline {xchapter}{Some Preliminary Results}{5}{chapter.2}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{From Spectral Theory and Shape Optimization to the Poisson Transmission Problem}{19}{chapter.3}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A wedge-like shape with an interior angle \(\theta \).\relax }}{28}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A wedge-like ``shape'' with an interior angle \(\Theta \).\relax }}{28}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Transmission problem (rectangle example) and its associated equations.\relax }}{32}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{The Method of Fundamental Solutions}{35}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A wedge domain with an interior angle \(\Theta \).\relax }}{46}{figure.caption.15}%
+\contentsline {xchapter}{The Method of Fundamental Solutions}{36}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A wedge-like ``shape'' with an interior angle \(\Theta \).\relax }}{47}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conducted Numerical Simulations}{51}{chapter.5}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Configuration of the boundary, source, and inner points. The number of boundary collocation points used is 1200.\relax }}{53}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Direct search algorithm for the first three eigenvalues of the disk with \(m=0\). Empirically, better approximations are obtained when smaller values of \(\sigma _N\) are found in each singularity.\relax }}{53}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Plots of the real and imaginary parts of \(u_1\) and \(u_2\) of the first eigenfunction \(\mathbf {u}=\begin {bmatrix} u_1 u_2 \end {bmatrix}\). Observe that the imaginary part of \(u_1\) is zero and the artifacts presented are due to precision lost.\relax }}{54}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=1\).\relax }}{55}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=5\).\relax }}{55}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=1\).\relax }}{56}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=5\).\relax }}{56}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Plot of the first three eigenvalues against the perimeter. The ``outliers'' marked in black represent the domains in which the third eigenvalue is less than the third eigenvalue of the disk.\relax }}{57}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{57}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _3}{\lambda _1}\).\relax }}{57}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Configuration space of the admissible triangles. In a dashed red line is a superequilateral triangle; in a dashed blue line a subequilateral triangle is also represented. Image taken from \cite {antunes2011inverse}.\relax }}{58}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Plot of the first three eigenvalues against the perimeter.\relax }}{59}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{59}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{59}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Plot of the first three eigenvalues against the area with perimeter \(L = 15\).\relax }}{60}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Numerical simulations for the first eigenvalue of general pentagons.\relax }}{61}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Numerical simulations for the first eigenvalue of general hexagons.\relax }}{61}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Numerical simulations for the first eigenvalue of general heptagons.\relax }}{61}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Numerical simulations for the first eigenvalue of general octagons.\relax }}{61}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Some smooth domain generated by B-splines.\relax }}{62}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Plot of the first three eigenvalues against the perimeter for smooth domains. The ``outliers'' marked in black represent the domains in which the third eigenvalue is less than the third eigenvalue of the disk.\relax }}{63}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{63}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _3}{\lambda _1}\).\relax }}{63}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Optimal domain \(\Omega ^\star \) (on orange) against the original domain in the first iteration of the Nelder-Mead algorithm.\relax }}{64}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Plot of the first three eigenvalues of the Minkowski sum \(\Omega _t\) for each increasing value of \(t\).\relax }}{64}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Plots of the real and imaginary parts of \(u_1\) and \(u_2\) of the third eigenfunction \(\mathbf {u}=\begin {bmatrix} u_1 u_2 \end {bmatrix}\) associated with the optimal domain \(\Omega ^\star \).\relax }}{65}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Configuration of the boundary, source, and interface points. Each domain has 600 boundary points, 377 source points and the common interface has 100 points.\relax }}{68}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Numerical approximation of the \ac {BVP} \eqref {transmission_disk} under the conditions presented in Figure \ref {transmission_disk_col}\relax }}{68}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Numerical simulation with \(k_1=1\).\relax }}{70}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Numerical simulation with \(k_1=2\).\relax }}{70}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Numerical simulation with \(k_1=5\).\relax }}{70}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces L-shape domain with a vertical interface. Configuration of the boundary, source, and interface points.\relax }}{71}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Numerical approximation of the \ac {BVP} for an L-shape domain with interface along \(x=0\) and \(k_1=5\).\relax }}{71}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.34}{\ignorespaces L-shape domain with the interface on the symmetry axis. Configuration of the boundary, source, and interface points.\relax }}{74}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.35}{\ignorespaces Interface \(C^0\) error\relax }}{76}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.36}{\ignorespaces Interface \(C^0\) error\relax }}{76}{figure.caption.46}%
+\contentsline {xchapter}{Conducted Numerical Simulations}{52}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Configuration of the boundary, source, and inner points. The number of boundary collocation points used is 1200.\relax }}{54}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Direct search algorithm for the first three eigenvalues of the disk with \(m=0\). Empirically, better approximations are obtained when smaller values of \(\sigma _N\) are found in each singularity.\relax }}{54}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Plots of the real and imaginary parts of \(u_1\) and \(u_2\) of the first eigenfunction \(\mathbf {u}=\begin {bmatrix} u_1 u_2 \end {bmatrix}\). Observe that the imaginary part of \(u_1\) is zero and the artifacts presented are due to precision lost.\relax }}{55}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=1\).\relax }}{56}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=5\).\relax }}{56}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=1\).\relax }}{57}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Behavior of the first five eigenvalues for rectangles with unit area, width \(a\) and \(m=5\).\relax }}{57}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Plot of the first three eigenvalues against the perimeter. The ``outliers'' marked in black represent the domains in which the third eigenvalue is less than the third eigenvalue of the disk.\relax }}{58}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{58}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _3}{\lambda _1}\).\relax }}{58}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Configuration space of the admissible triangles. In a dashed red line is a superequilateral triangle; in a dashed blue line a subequilateral triangle is also represented. Image taken from \cite {antunes2011inverse}.\relax }}{59}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Plot of the first three eigenvalues against the perimeter.\relax }}{60}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{60}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{60}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Plot of the first three eigenvalues against the area with perimeter \(L = 15\).\relax }}{61}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Numerical simulations for the first eigenvalue of general pentagons.\relax }}{62}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Numerical simulations for the first eigenvalue of general hexagons.\relax }}{62}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Numerical simulations for the first eigenvalue of general heptagons.\relax }}{62}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Numerical simulations for the first eigenvalue of general octagons.\relax }}{62}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Some smooth domain generated by B-splines.\relax }}{63}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Plot of the first three eigenvalues against the perimeter for smooth domains. The ``outliers'' marked in black represent the domains in which the third eigenvalue is less than the third eigenvalue of the disk.\relax }}{64}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Ratio between the first two eigenvalues \(\frac {\lambda _2}{\lambda _1}\).\relax }}{64}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Ratio between the third and first eigenvalues \(\frac {\lambda _3}{\lambda _1}\).\relax }}{64}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Optimal domain \(\Omega ^\star \) (on orange) against the original domain in the first iteration of the Nelder-Mead algorithm.\relax }}{65}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Plot of the first three eigenvalues of the Minkowski sum \(\Omega _t\) for each increasing value of \(t\).\relax }}{65}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Plots of the real and imaginary parts of \(u_1\) and \(u_2\) of the third eigenfunction \(\mathbf {u}=\begin {bmatrix} u_1 u_2 \end {bmatrix}\) associated with the optimal domain \(\Omega ^\star \).\relax }}{66}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Configuration of the boundary, source, and interface points. Each domain has 600 boundary points, 377 source points and the common interface has 100 points.\relax }}{69}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Numerical approximation of the \ac {BVP} \eqref {transmission_disk} under the conditions presented in Figure \ref {transmission_disk_col}\relax }}{69}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Numerical simulation with \(k_1=1\).\relax }}{71}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Numerical simulation with \(k_1=2\).\relax }}{71}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Numerical simulation with \(k_1=5\).\relax }}{71}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces L-shape domain with a vertical interface. Configuration of the boundary, source, and interface points.\relax }}{72}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Numerical approximation of the \ac {BVP} for an L-shape domain with interface along \(x=0\) and \(k_1=5\).\relax }}{72}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces L-shape domain with the interface on the symmetry axis. Configuration of the boundary, source, and interface points.\relax }}{75}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Interface \(C^0\) error\relax }}{77}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Interface \(C^0\) error\relax }}{77}{figure.caption.47}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{77}{chapter.6}%
+\contentsline {xchapter}{Conclusion}{78}{chapter.6}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Spectral Decomposition of the Laplace operator}{86}{appendix.A}%
+\contentsline {xchapter}{Spectral Decomposition of the Laplace operator}{87}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{90}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Rotation of the wedge domain. Image taken from \cite {li2000singularities}.\relax }}{92}{figure.caption.48}%
+\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{91}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rotation of the wedge domain. Image taken from \cite {li2000singularities}.\relax }}{93}{figure.caption.49}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{On Bessel Functions}{95}{appendix.C}%
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Plot of the Bessel function \(J_\nu (z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{96}{figure.caption.49}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Plot of the Bessel function \(Y_\nu (z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{96}{figure.caption.49}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(1)}(z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{97}{figure.caption.50}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(2)}(z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{97}{figure.caption.50}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Plot of the real part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{100}{figure.caption.51}%
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Plot of the imaginary part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{100}{figure.caption.51}%
+\contentsline {xchapter}{On Bessel Functions}{96}{appendix.C}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Plot of the Bessel function \(J_\nu (z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{97}{figure.caption.50}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Plot of the Bessel function \(Y_\nu (z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{97}{figure.caption.50}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(1)}(z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{98}{figure.caption.51}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(2)}(z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{98}{figure.caption.51}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Plot of the real part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{101}{figure.caption.52}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Plot of the imaginary part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{101}{figure.caption.52}%

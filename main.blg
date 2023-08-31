@@ -7,45 +7,45 @@ Warning--can't use both volume and number fields in brezis2011functional
 Warning--can't use both volume and number fields in geymonat2007trace
 Warning--there's a number but no series in polya1951isoperimetric
 Warning--there's a number but no series in quarteroni1999domain
-You've used 67 entries,
+You've used 68 entries,
             2543 wiz_defined-function locations,
-            941 strings with 14719 characters,
-and the built_in function-call counts, 24045 in all, are:
-= -- 2403
-> -- 1014
-< -- 41
-+ -- 331
-- -- 316
-* -- 1692
-:= -- 3993
-add.period$ -- 203
-call.type$ -- 67
-change.case$ -- 360
-chr.to.int$ -- 66
-cite$ -- 71
-duplicate$ -- 984
-empty$ -- 1839
-format.name$ -- 412
-if$ -- 4837
+            944 strings with 14793 characters,
+and the built_in function-call counts, 24313 in all, are:
+= -- 2426
+> -- 1022
+< -- 42
++ -- 333
+- -- 318
+* -- 1705
+:= -- 4038
+add.period$ -- 206
+call.type$ -- 68
+change.case$ -- 364
+chr.to.int$ -- 67
+cite$ -- 72
+duplicate$ -- 1000
+empty$ -- 1864
+format.name$ -- 416
+if$ -- 4892
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 85
-newline$ -- 336
-num.names$ -- 201
-pop$ -- 361
+missing$ -- 87
+newline$ -- 341
+num.names$ -- 204
+pop$ -- 370
 preamble$ -- 1
-purify$ -- 450
+purify$ -- 456
 quote$ -- 0
-skip$ -- 796
+skip$ -- 806
 stack$ -- 0
-substring$ -- 1399
-swap$ -- 90
-text.length$ -- 41
-text.prefix$ -- 29
+substring$ -- 1406
+swap$ -- 91
+text.length$ -- 42
+text.prefix$ -- 30
 top$ -- 0
-type$ -- 448
+type$ -- 452
 warning$ -- 4
-while$ -- 247
-width$ -- 73
-write$ -- 853
+while$ -- 249
+width$ -- 74
+write$ -- 865
 (There were 4 warnings)

@@ -8,42 +8,44 @@
 
 \section{Density and linear independence results}\label{density_proofs_section}
 
-The method of Fundamental Solutions is the base method to be implemented throughout this work. As a meshless method, it does not involve any kind of domain discretization (into some mesh) like in finite differences or finite elements methods. Instead, one faces a point placement problem. Since mesh generation is one of the most computationally expensive parts of the methods above, one of the main advantages of the \ac{MFS} is exactly the lack of it. 
+The Method of Fundamental Solutions is the base method to be implemented throughout this work. As a meshless method, it does not involve any kind of domain discretization (into some mesh) like in finite differences or finite elements methods. Instead, one faces a point placement problem. Considering that mesh generation constitutes a computationally intensive aspect of the aforementioned methods, the \ac{MFS} stands out due to its distinct advantage of circumventing this necessity. 
+%This characteristic alleviates a major drawback inherent in other techniques, where the process of mesh generation significantly contributes to computational complexity.
 
-As the name implies, the \ac{MFS} is based on the fundamental solutions of a previously known \ac{PDE}. Consider the elliptic linear differential operator \(\mathcal{L}\) with fundamental solution \(\Phi\) such that \(\mathcal{L}\Phi(x) = \delta, \; \forall x \in \mathbb{R}^d\). Intuitively, we can consider the approximation
+As the name implies, the \ac{MFS} is based on the fundamental solution of a previously known \ac{PDE}. Consider the elliptic linear differential operator \(\mathcal{L}\) with fundamental solution \(\Phi\) such that \(\mathcal{L}\Phi(x) = \delta, \; \forall x \in \mathbb{R}^d\). Intuitively, we can consider the approximation
 \[
 \Tilde{u}(x) = \sum_{j=1}^{N}\alpha_j \Phi(x-y_j)
 \]
-to the partial differential equation with a linear boundary operator \(\mathcal{B}\)
+to the \ac{BVP} with a linear boundary operator \(\mathcal{B}\)
 \[
 \begin{cases}
     \mathcal{L}u(x) = 0,  & x \in \Omega\\
-    \mathcal{B}u(x) = 0,  & x \in \partial\Omega
-\end{cases}. 
+    \mathcal{B}u(x) = 0,  & x \in \partial\Omega,
+\end{cases}
 \]
+where \(y_j \in \mathbb{R}^d\setminus \overline{\Omega}\) with \(j=1,\dots,N\), are the so-called source points to be chosen. We chose them to be outside our domain since, by translation, the Fundamental Solution \(\Phi\) has a singularity at each \(y_j\) because, otherwise, it would render our approximation full of singularities inside \(\Omega\). 
+
 By definition and using the linearity of the operator \(\mathcal{L}\), \(\tilde{u}\) satisfies the equation in \(\Omega\), and the coefficients \(\alpha_j\) can be determined by imposing the boundary conditions
 \[
-    \mathcal{B}\tilde{u}(x)=\sum_{j=1}^{N}\alpha_j \mathcal{B}\Phi(x-y_j)=0,
+    \mathcal{B}\tilde{u}(x)=\sum_{j=1}^{N}\alpha_j \mathcal{B}\Phi(x-y_j)=0.
 \]
-where \(y_j \in \hat{\Gamma} \subset \mathbb{R}^d\setminus \overline{\Omega}\) with \(j=1,\dots,N\), are the so-called source points to be chosen. We chose them to be outside our domain since, by translation, the Fundamental Solution \(\Phi\) has a singularity at each \(y_j\) because, otherwise, it would render our approximation full of singularities inside \(\Omega\). 
 \begin{remark}
-    While the motivation above might seem far-fetched, one can observe that the approximation \(\Tilde{u}\) resembles a convolution between some density function \(\alpha(x)\) and the fundamental solution \(\Phi\). As we will see below, it can be proven that the fundamental solutions of the operator \(\mathcal{L}\) are dense in the functional space defined in \(\partial\Omega\) (which is enough since, as we already saw, the interior condition is satisfied by construction). For example, considering Dirichlet boundary conditions, one can use the single layer potential (which is going to be presented and studied in the next pages) that allows, through a discretization argument, to give a numerical approximation to the \ac{BVP} and
+    While the motivation above might seem far-fetched, one can observe that the approximation \(\Tilde{u}\) resembles a convolution between some density function \(\alpha(x)\) and the fundamental solution \(\Phi\). As we will see below, it can be proven that the fundamental solutions of the operator \(\mathcal{L}\) are dense in the functional space defined in \(\partial\Omega\) (which is enough since, as we already saw, the \ac{PDE} is satisfied by construction). For example, considering Dirichlet boundary conditions, one can use the single layer potential (which is going to be presented and studied in the next pages) that allows, through a discretization argument, to give a numerical approximation to the \ac{BVP} and
     \begin{equation}\label{MFS_approx_disc}
         u(x) = \int_{\Gamma}\Phi(x-y)\varphi(y)d\sigma(y) \approx \sum_{j=1}^{N}w_j \varphi(y_j) \Phi(x-y_j) = \Tilde{u}(x), 
     \end{equation}
     where \(\varphi(y)\) is a layer density to be determined and \(y_j \in \hat{\Gamma}\) and \(w_j\) are the nodes and weights of some quadrature, respectively. Setting \(\mathcal{B} = I\) and \(\alpha_j = w_j \varphi(y_j)\), we recover the approximation given above.
 \end{remark}
 First, we introduce the notion of \textit{artificial boundary} (or \textit{pseudo-boundary}), which is analyzed in \cite{alves2009choice}.
-\begin{definition}
+\begin{definition}\label{source_set_definition}
     A source set \(\hat{\Gamma}\) is said to be admissible if
     \begin{enumerate}
         \item \(\hat{\Gamma} \subset \mathbb{R}^d\setminus \overline{\Omega}\) is an open set with components in each external part of \(\Omega\);
-        \item \(\hat{\Gamma} = \partial \hat{\Omega}\) is the boundary of \(\hat{\Omega}\), where \(\hat{\Omega} \subset \mathbb{R}^d\setminus\overline{\Omega}\) is an open set with components in each external part of \(\Omega\). Note that the problem must be well-posed in \(\hat{\Omega}\);
+        \item \label{source_set_definition_2} \(\hat{\Gamma} = \partial \hat{\Omega}\) is the boundary of \(\hat{\Omega}\), where \(\hat{\Omega} \subset \mathbb{R}^d\setminus\overline{\Omega}\) is an open set with components in each external part of \(\Omega\). Note that the problem must be well-posed in \(\hat{\Omega}\);
         \item \(\hat{\Gamma} \subset \partial \hat{\Omega}\), when \(\partial \hat{\Omega}\) is an analytical boundary set verifying (2.) and \(\hat{\Gamma}\) is open in the \(\partial \hat{\Omega}\) topology. 
     \end{enumerate}
     We denote the set of chosen source points by \(\mathcal{Y} = \{y_j \in \hat{\Gamma}: j=1,\dots,N\}\).
 \end{definition}
-Throughout this work, the adopted source set will always be the second option since it provides better numerical results. However, notice that the density results below still hold when considering different types of admissible source sets.
+Throughout this work, the adopted source set will always be the point \ref{source_set_definition_2} in Definition \ref{source_set_definition}, since it provides better numerical results. However, notice that the density results below still hold when considering different types of admissible source sets.
 
 Assume that \(\mathcal{L} = -\Delta\) and \(\Phi\) is the fundamental solution of the Laplace equation. Until further notice, we are working with Dirichlet boundary conditions. Of course, the results stated below are also valid with different boundary conditions. In the appropriate functional space and given an admissible source set \(\hat{\Gamma}\), consider the approximation space
 \[
@@ -99,7 +101,7 @@ As seen in the above remark, the study of layer potentials plays an important ro
         \varphi(x) = M^+\varphi(x)-M^-\varphi(x), \; \forall x \in \partial\Omega.
     \]
 \end{proposition}
-Lastly, it will be useful to study the well-posedness of the exterior Dirichlet problem for the Laplace Equation, c.f \cite{salsa2016partial}.
+Lastly, it will be useful to study the well-posedness of the exterior Dirichlet problem for the Laplace Equation, cf. \cite{salsa2016partial}.
 \begin{theorem}[Well-Posedness of the Exterior Dirichlet problem]
     Let \(\Omega\) be a bounded and open subset of \(\mathbb{R}^2\). Then, there exists a unique solution \(u \in C^2(\Omega^c) \cap C(\overline{\Omega^c})\) of the exterior Dirichlet Laplacian problem given by
     \[
@@ -220,7 +222,7 @@ Finally, the discretization argument to be presented follows from the fact that 
     which implies that \(\alpha_1=\dots=\alpha_N = 0\) by the linear independence of the Dirac deltas.
 \end{proof}
 
-Consider now the operator \(\mathcal{L} = -(\Delta + k^2)\), and assume that \(k\) is \textbf{not} an eigenfrequency of the Helmholtz equation. The results presented for the fundamental solution of the Laplace Equation still hold for the fundamental solution of the Helmholtz equation. However, a different type of infinity conditions must be considered, c.f \cite{colton2013integral}. 
+Consider now the operator \(\mathcal{L} = -(\Delta + k^2)\), and assume that \(k\) is \textbf{not} an eigenfrequency of the Helmholtz equation. The results presented for the fundamental solution of the Laplace Equation still hold for the fundamental solution of the Helmholtz equation. However, a different type of infinity conditions must be considered, cf. \cite{colton2013integral}. 
 \begin{theorem}[Well-Posedness of the Exterior Dirichlet problem of the Helmholtz Equation]
     Let \(\Omega\) be a bounded and open subset of \(\mathbb{R}^2\). Then, there exists a unique solution \(u \in C^2(\Omega^c) \cap C(\overline{\Omega^c})\) of the exterior Dirichlet Helmholtz problem given by
     \[
@@ -363,7 +365,7 @@ no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it i
 \subsection{An enrichment technique}\label{m_particular_solutions}
 
 Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions that display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique with particular solutions that allows for singularity treatment. In the same vein as in Proposition \ref{dirac_not_polar}, consider a wedge-like domain with interior angle \(\Theta\).
-    
+
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -378,8 +380,9 @@ Before diving into the numerical approach for the Helmholtz equation, we introdu
     % Labeling the angle
     \draw (0.6,0) arc (0:60:0.6);
     \node at (0.8,0.3) {$\Theta$};
+    \draw [decorate, decoration={snake, amplitude=0.3mm, segment length=4.5mm}] (A) to[out=45, in=0] (B);
 \end{tikzpicture}
-\caption{A wedge domain with an interior angle \(\Theta\).}\label{wedge}
+\caption{A wedge-like ``shape'' with an interior angle \(\Theta\).}\label{wedge}
 \end{figure}
 Consider the Laplace equation in polar coordinates, given by
 \begin{equation}\label{lap_polar}
@@ -577,7 +580,7 @@ To search for these singularities, a simple direct search algorithm was develope
     \[
         \Omega(t) = (1-t)\mathbb{D} + t \Omega, \, t \in (0, 1),
     \]
-    since the graph of the eigenvalues is continuous concerning \(t\). Regarding the complexity of the algorithm, the objective is to evaluate the function \(\sigma_N(k)\) the \textit{least} amount of time: a brute-force approach with a very small step is not feasible since each evaluation takes some time for big complex-valued matrices. However, we note that the algorithm can be improved by just considering the initial point \(a\) and ``walking forward'' with step size \(h\). In that case, one could bracket each local minimum individually and only break to the main loop when the maximum depth was reached for each local minimum initially found. The loop would \textbf{break} when the number of eigenvalues found attains a prescribed value.
+    since the graph of the eigenvalues is continuous concerning \(t\). Regarding the complexity of the algorithm, the objective is to find the minima of the function \(\sigma_N(k)\) in the \textit{least} amount of evaluations: a brute-force approach with a very small step is not feasible since each evaluation takes some time for big complex-valued matrices. However, we note that the algorithm can be improved by just considering the initial point \(a\) and ``walking forward'' with step size \(h\). In that case, one could bracket each local minimum individually and only break to the main loop when the maximum depth was reached for each local minimum initially found. The loop would \textbf{break} when the number of eigenvalues found attains a prescribed value.
 \end{remark}
 
 Finally, a posteriori estimate based on a result proved by Moler and Payne in \cite{moler1968bounds} is stated.
