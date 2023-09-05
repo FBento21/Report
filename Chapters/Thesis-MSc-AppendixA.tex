@@ -16,7 +16,7 @@
 %     \item \((x, x) \geq 0, \; \forall x \in H\);
 %     \item \((x, x) = 0 \iff x=0\).
 % \end{enumerate}
-% Given \(x, y \in H\), we say that \(x\) and \(y\) are orthogonal (denoted by \(x \perp y\)) if \((x, y) = 0\). Accordingly, given \(E, F \subset H\), if \(x\perp y\) for every \(x \in E, y \in F\) then we say that \(E\) and \(F\) are orthogonal, \(E \perp F\). We also denote by \(E^\perp\) the set of all \(y \in H\) that are orthogonal to every \(x \in E\), i.e, \(E^\perp = \{y \in H: (x, y)=0, \; \forall x \in E\}\) which we call the orthogonal complement of \(E\). We recall that every inner product space is also a normed space, where the inner product induces the norm
+% Given \(x, y \in H\), we say that \(x\) and \(y\) are orthogonal (denoted by \(x \perp y\)) if \((x, y) = 0\). Accordingly, given \(E, F \subset H\), if \(x\perp y\) for every \(x \in E, y \in F\) then we say that \(E\) and \(F\) are orthogonal, \(E \perp F\). We also denote by \(E^\perp\) the set of all \(y \in H\) that are orthogonal to every \(x \in E\), i.e., \(E^\perp = \{y \in H: (x, y)=0, \; \forall x \in E\}\) which we call the orthogonal complement of \(E\). We recall that every inner product space is also a normed space, where the inner product induces the norm
 % \[
 % \norm*{x} = \sqrt{(x, x)}   
 % \]
@@ -116,7 +116,7 @@
 %         \[
 %         (y, T x) = (T^\star y, x), \; \forall x, y \in H;
 %         \]
-%         If \(T=T^\star\), i.e, if \(T\) and \(T^\star\) domains (and their image) coincide we say that \(T\) is \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also comes from the Hahn-Banach Theorem \ref{hb_ana_form}!}
+%         If \(T=T^\star\), i.e., if \(T\) and \(T^\star\) domains (and their image) coincide we say that \(T\) is \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also comes from the Hahn-Banach Theorem \ref{hb_ana_form}!}
 %         \item As above, let \(T \in \mathcal{L}(H)\). We say that \(\lambda\) is an \textbf{eigenvalue} of \(T\) if \(N(T - \lambda I) \neq \{0\}\). In that case, we say that \(\lambda \in \sigma(T)\) where \(\sigma(T)\) is called the \textbf{spectrum} of \(T\)\footnote{Remarkably, in the infinite-dimensional case, the set of eigenvalues \(EV(T)\) may not coincide with the spectrum \(\sigma(T)\). \(T - \lambda I\) may fail to be invertible even if \(T - \lambda I\) is injective.}. We also say that \(u\) is an \textbf{eigenvector} associated with the eigenvalue \(\lambda\) if \(u \in N(T-\lambda I)\setminus \{0\}\).
 %     \end{enumerate}
 % \end{definition}
@@ -157,7 +157,7 @@ In this appendix, we make a brief study regarding the Laplace operator in a boun
 \end{theorem}
 A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}.
 \begin{corollary}[Green's Formulas]
-    In this same conditions of the Theorem \ref{appendix_div_theor}, let \(u, v \in H^2(U)\). Then,
+    In this same conditions of the Theorem \ref{appendix_div_theor}, let \(u, v \in H^2(\Omega)\). Then,
     \begin{enumerate}
         \item \(\int_\Omega \Delta u dx = \int_{\partial \Omega} \frac{\partial u}{\partial n} d\sigma\);
         \item \(\int_\Omega \Delta u v dx = -\int_\Omega \nabla u \cdot \nabla v dx + \int_{\partial \Omega} \frac{\partial u}{\partial n}v d\sigma\);
@@ -165,7 +165,7 @@ A main consequence of the Divergence Theorem are the well-known \textit{Green's 
     \end{enumerate}
 \end{corollary}
 
-The study of the spectrum of the Laplace operator is of major importance in this work. We will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional} \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
+The study of the spectrum of the Laplace operator is of major importance in this work. We will only state and prove a classical result which can also be found in numerous textbooks, see \cite{brezis2011functional}, \cite{arendt2010partielle}, \cite{courant2008methods} or \cite{borthwick2020spectral}. While we assume null Dirichlet boundary conditions, we notice that the Neumann case is analogous.
 
 \begin{definition}\label{eig_def}
     Consider the Helmholtz equation with null Dirichlet boundary conditions
@@ -179,7 +179,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
 \end{definition}
 
 \begin{theorem}\label{spec_lap_pre}
-    There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
+    There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e., for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
     \[
         -\Delta u_n = \lambda_n u_n
     \]
@@ -260,12 +260,12 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \[
         \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
     \]
-    i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
+    i.e., \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
     Then, for all \(n \in \mathbb{N}\),
     \[
         \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),
     \]
-    where \(\lambda_n(\alpha \Omega)\) is the \(n\)-esim eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
+    where \(\lambda_n(\alpha \Omega)\) is the \(n\)-th eigenvalue of \eqref{eig_helm_eq} on the domain \(\alpha \Omega\) (and analogously for \(\lambda_n(\Omega)\)).
 \end{corollary}
 
 \begin{proof}

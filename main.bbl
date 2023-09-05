@@ -179,10 +179,20 @@ Javier G{\'o}mez-Serrano and Gerard Orriols.
 \newblock Any three eigenvalues do not determine a triangle.
 \newblock {\em Journal of Differential Equations}, 275:920--938, 2021.
 
+\bibitem[GSV19]{gustafsson2019error}
+Tom Gustafsson, Rolf Stenberg, and Juha Videman.
+\newblock Error analysis of nitsche’s mortar method.
+\newblock {\em Numerische Mathematik}, 142:973--994, 2019.
+
 \bibitem[GWW92]{gordon1992isospectral}
 Carolyn Gordon, David Webb, and Scott Wolpert.
 \newblock Isospectral plane domains and surfaces via riemannian orbifolds.
 \newblock {\em Inventiones mathematicae}, 110(1):1--22, 1992.
+
+\bibitem[Hal64]{halton1964algorithm}
+John~H Halton.
+\newblock Algorithm 247: Radical-inverse quasi-random point sequence.
+\newblock {\em Communications of the ACM}, 7(12):701--702, 1964.
 
 \bibitem[HB00]{henrot2000minimization}
 Antoine Henrot and Dorin Bucur.
@@ -208,6 +218,10 @@ David~P Hewett and Andrea Moiola.
 Lars H{\"o}rmander.
 \newblock {\em The analysis of linear partial differential operators I: Distribution theory and Fourier analysis}.
 \newblock Springer, 2015.
+
+\bibitem[Jon10]{jones2010wg14}
+Larry Jones.
+\newblock Wg14 n1539 committee draft iso/iec 9899: 201x, 2010.
 
 \bibitem[Kac66]{kac1966can}
 Mark Kac.

@@ -5,7 +5,7 @@
 \chapter{Some useful insights to the Method of Fundamental Solutions}
 \label{chapter:appendixB}
 
-This appendix presents some useful results and techniques which can be used to increase the accuracy of the Method of Fundamental Solutions. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to diminish the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
+This appendix presents some useful results and techniques which can be used to increase the accuracy of the Method of Fundamental Solutions. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to tackle the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
 
 \section{Behavior of the Laplace equation's solutions near a corner.}\label{appendixB_corners}
 
@@ -75,7 +75,7 @@ In this section, the behavior of the Laplace equation's solutions near a corner 
     Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness of the exterior problem!).
 \end{remark}
 
-\section{The Subspace Angle Technique}
+\section{The Subspace Angle Technique} \label{sat_appendix}
 
 One of the drawbacks of the \ac{MFS} is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against its exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
@@ -86,7 +86,7 @@ To solve the first problem, we add additional interior points in order to over-d
         A_I(k)
     \end{bmatrix},
 \]
-where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex matrix (\(Q^\dagger(k) = Q^{-1}(k)\)) and \(R\) is an upper triangular matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
+where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex (possible non-rectangular) matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
 \begin{equation*}
     Q(k) = \begin{bmatrix}
         Q_B(k)\\
@@ -103,7 +103,7 @@ and each unit vector \(u \in \mathcal{C}(A(k))\) has the form
         Q_I(k)
     \end{bmatrix}v
 \end{equation}
-for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichlet boundary conditions, we are interested in non-trivial solutions \(v \in \mathbb{R}^2\) to the above problem when \(u \approx 0\) at the boundary, i.e, to solve the constrained minimization problem
+for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichlet boundary conditions, we are interested in non-trivial solutions \(v \in \mathbb{R}^2\) to the above problem when \(u \approx 0\) at the boundary, i.e., to solve the constrained minimization problem
 \[
     \min_{v \in \mathbb{R}^2, \norm*{v}=1} \norm*{Q_B(k) v}. 
 \]
@@ -128,7 +128,7 @@ and one can prove (cf. \cite{betcke2005reviving}) that
 \[
     \sigma_N = \sin \phi(k).
 \]
-Therefore, the discrete problem has a non-trivial solution (i.e. \(\lambda\) is an eigenvalue of the Laplace operator) if and only if \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\) have a non-trivial intersection (i.e. \(\phi(k) = l \pi, \, l \in \mathbb{Z}\)).
+Therefore, the discrete problem has a non-trivial solution (i.e., \(\lambda\) is an eigenvalue of the Laplace operator) if and only if \(\mathcal{C}(A(k))\) and \(\mathcal{G}_0\) have a non-trivial intersection (i.e., \(\phi(k) = l \pi, \, l \in \mathbb{Z}\)).
 
 \begin{remark}
     While the construction above assumed homogeneous Dirichlet boundary conditions, it can be easily generalized to any type of homogeneous boundary conditions \(\mathcal{B}\) by considering the appropriate \(A\) matrix.

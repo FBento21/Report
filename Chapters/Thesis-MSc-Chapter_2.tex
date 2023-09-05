@@ -348,7 +348,7 @@ Proposition \ref{dirac_not_polar} below, regarding the lack of separable solutio
     where was used the Frenet-Serret formula \eqref{dirac_frenet_serret} and the fact that on \(\Gamma\) one has \(\abs{u_1}^2=\abs{u_2}^2\).
 \end{proof}
 
-A Partial Differential Equation is said to be separable if its solution can be written as the product of functions on each coordinate, i.e. if its solution \(u(q), \, q \in \mathbb{R}^d\) can be written as \(u(q) = \prod_{i=1}^{d} S_i(q_i)\), where the functions \(S_i\) only depend on the (scalar) variable \(q_i\).
+A Partial Differential Equation is said to be separable if its solution can be written as the product of functions on each coordinate, i.e., if its solution \(u(q), \, q=\left(q_1,\dots,q_d\right) \in \mathbb{R}^d\) can be written as \(u(q) = \prod_{i=1}^{d} S_i(q_i)\), where the functions \(S_i\) only depend on the (scalar) variable \(q_i\), \(i=1,\dots d\).
 
 \begin{proposition}\label{dirac_not_polar}
     Let \(\mathbf{u} \in H^2(\Omega)\) be a solution of \eqref{dirac} such that \(\mathbf{u} \in D(\hat{H})\). Then \(u\) cannot be written using separable solutions, neither in cartesian coordinates in a rectangular domain nor polar coordinates near a corner.
@@ -539,25 +539,35 @@ Due to the difficulty of proving these conjectures, simpler versions restricted 
         \item \label{david_conjectures_1} \textit{Area constraint: } \(\lambda_1(a, \frac{1}{a}) \geq \lambda_1(1, 1), \; \forall a>0 \);
         \item  \label{david_conjectures_2} \textit{Perimeter constraint: } \(\lambda_1(a, 2-a) \geq \lambda_1(1, 1), \; \forall a\in (0, 2)\).
     \end{enumerate}
-    point \ref{david_conjectures_1} holds under the assumptions
+    Point \ref{david_conjectures_1} holds under any of the following assumptions
     \begin{enumerate}
         \item \textit{Large eccentricity constraint: } \(\abs{a^2-4} > \sqrt{15}\);
         \item \textit{Heavy masses constraint: } \(m \left(\frac{1}{a^2}+a^2-2\right) \geq 56\),
     \end{enumerate}
-    and point \ref{david_conjectures_2} holds if
+    and point \ref{david_conjectures_2} also holds under any of the following assumptions
     \begin{enumerate}
         \item \textit{Large eccentricity constraint: } \(\abs{a^2-1} > \frac{9-\sqrt{33}}{8}\);
         \item \textit{Heavy masses constraints: } \(m \left(\frac{1}{a^2}+\frac{1}{(2-a)^2}-2\right) \geq 56\).
     \end{enumerate}
 \end{conjecture}
 
-In the same vein, in \cite{vu2023spectral} very similar results were conjectured for isosceles right triangles:
+In the same vein, in \cite{vu2023spectral} very similar results were conjectured for isosceles right triangles, in this case for any fixed area or perimeter:
 
 \begin{conjecture}[Shape optimization in triangles]\label{triangle_conjectures}
     Consider the triangle \(\Omega_{a, b}\) defined by the points \(O=(0, 0), A=(a, 0), B=(0, b)\) for \(a, b>0\). Then, 
     \begin{enumerate}
         \item \textit{Area constraint: } \(\lambda_1(a, b) \geq \lambda_1(k, k),\; \forall a, b>0\) for any positive \(k\) such that \(ab=k^2\);
         \item \textit{Perimeter constraint: } \(\lambda_1(a, b) \geq \lambda_1(k, k),\; \forall a \in (0, (2+\sqrt(2)k))\) and \(\forall b > 0\) such that \(a+b+\sqrt{a^2+b^2}=(2+\sqrt{2})k\), for any positive \(k\).
+    \end{enumerate}
+    Point \ref{triangle_conjectures} holds under any of the assumptions assumptions
+    \begin{enumerate}
+        \item \(a \geq 9k\);
+        \item \(a \leq \frac{k}{9}\),
+    \end{enumerate}
+    and point \ref{triangle_conjectures} also holds under any of the following assumptions
+    \begin{enumerate}
+        \item \(a \geq 3.5k\);
+        \item \(a \leq \frac{k}{9}\).
     \end{enumerate}
 \end{conjecture}
 
@@ -597,7 +607,7 @@ Consider a polygonal domain \(\Omega \subset \mathbb{R}^2\) which we divide into
             \begin{cases}
                 - \nabla \left(k_i \nabla u_i\right) = f_i, & \text{in }\Omega_i\\
                 u_1 - u_2 = 0, & \text{on }\gamma\\
-                k_1 \frac{\partial u_1}{\partial n_1} + k_2 \frac{\partial u_2}{\partial n_2} = 0, & \text{on }\gamma\\
+                k_1 \frac{\partial u_1}{\partial \mathbf{n_1}} + k_2 \frac{\partial u_2}{\partial  \mathbf{n_2}} = 0, & \text{on }\gamma\\
                 u_i = 0, & \text{on }\Gamma_i
             \end{cases}
         \end{align}

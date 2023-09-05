@@ -8,20 +8,20 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{The Method of Fundamental Solutions}{36}{chapter.4}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conducted Numerical Simulations}{52}{chapter.5}%
-\contentsline {table}{\numberline {5.1}{\ignorespaces Eigenvalues for different values of \(N\) and the measured absolute error.\relax }}{54}{table.caption.19}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{70}{table.caption.37}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{70}{table.caption.38}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{70}{table.caption.40}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{73}{table.caption.42}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{74}{table.caption.43}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \)\relax }}{75}{table.caption.45}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Numerical relative error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{76}{table.caption.46}%
+\contentsline {xchapter}{Numerical Simulations}{53}{chapter.5}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Eigenvalues for different values of \(N\) and the measured absolute error.\relax }}{55}{table.caption.19}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical errors for the boundary and the whole Domains \(\Omega _1\) and \(\Omega _2\)\relax }}{71}{table.caption.37}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical error on the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{71}{table.caption.38}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Numerical error on the boundary and in the interface \(\gamma \)\relax }}{71}{table.caption.40}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Numerical error on the boundary and in the interface \(\gamma \)\relax }}{74}{table.caption.42}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Numerical error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{75}{table.caption.43}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Numerical error on the boundary and in the interface \(\gamma \)\relax }}{76}{table.caption.45}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Numerical error on the boundary and in the interface \(\gamma \) after considering particular (angular) solutions\relax }}{77}{table.caption.46}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{78}{chapter.6}%
+\contentsline {xchapter}{Conclusion}{79}{chapter.6}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Spectral Decomposition of the Laplace operator}{87}{appendix.A}%
+\contentsline {xchapter}{Spectral Decomposition of the Laplace operator}{88}{appendix.A}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{91}{appendix.B}%
+\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{92}{appendix.B}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{On Bessel Functions}{96}{appendix.C}%
+\contentsline {xchapter}{On Bessel Functions}{97}{appendix.C}%

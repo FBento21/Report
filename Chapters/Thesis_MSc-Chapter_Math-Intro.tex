@@ -28,7 +28,7 @@ In particular, a pivotal notion is of \textit{Banach spaces}, i.e., \(E\) is a B
         \]
         In this case, we write \(T \in \mathcal{L}(E, F)\). If \(E=F\), we write \(T \in \mathcal{L}(E)\);
 
-        \item The space of linear and continuous maps from \(E\) to \(\mathbb{R}\) is the \textbf{dual space} of \(E\) denoted by \(E^\star\). If \(S \in E^\star\), its norm (the dual norm) is defined in the same manner as the operator norm above, i.e.
+        \item The space of linear and continuous maps from \(E\) to \(\mathbb{R}\) is the \textbf{dual space} of \(E\) denoted by \(E^\star\). If \(S \in E^\star\), its norm (the dual norm) is defined in the same manner as the operator norm above, i.e.,
         \[
             \norm{S} = \sup_{\substack{x \in E\\ x \neq 0}}\frac{\abs{\langle S, x \rangle}}{\norm*{x}}
         \]
@@ -68,7 +68,7 @@ The definition above is an important detail in the justification of the Method o
     \[
         g(x) \leq p(x), \; \forall x \in G.
     \]
-    Then, there exists a linear functional \(f: E \rightarrow \mathbb{R}\) that extends \(g\) to \(E\), coincides with \(g\) on \(G\), i.e, \(f(x) = g(x), \; \forall x \in G\) and also satisfies
+    Then, there exists a linear functional \(f: E \rightarrow \mathbb{R}\) that extends \(g\) to \(E\), coincides with \(g\) on \(G\), i.e., \(f(x) = g(x), \; \forall x \in G\) and also satisfies
     \[
         f(x) \leq p(x), \; \forall x \in E.
     \]
@@ -95,7 +95,7 @@ Notice that if \(H\) is a closed hyperplane then the linear functional \(f\) tha
     \end{align*}
 \end{definition}
 \begin{theorem}[Second, geometric, form of the Hahn-Banach Theorem]\label{hb_geo_form}
-    Let \(A\) and \(B\) be two disjoint, non-empty, and convex subsets of \(E\) such that \(A\) is closed and \(B\) is compact. Then, there exists a closed hyperplane that strictly separates \(A\) and \(B\), i.e, there exists \(f \in E^\star\) and \(c \in \mathbb{R}\) such that for every \(a \in A\) and \(b \in B\)
+    Let \(A\) and \(B\) be two disjoint, non-empty, and convex subsets of \(E\) such that \(A\) is closed and \(B\) is compact. Then, there exists a closed hyperplane that strictly separates \(A\) and \(B\), i.e., there exists \(f \in E^\star\) and \(c \in \mathbb{R}\) such that for every \(a \in A\) and \(b \in B\)
     \[
         \langle f, a \rangle < c < \langle f, b \rangle.
     \]
@@ -148,7 +148,7 @@ The following Lemma is a consequence of Theorem \ref{hb_geo_form}, and it is a u
     \[
         \langle \xi, f_0 \rangle_{E^{**}, E^\star} = \langle J x_0, f_0 \rangle_{E^{**}, E^\star} = \langle f_0, x_0 \rangle_{E^\star, E}
     \]
-    for some \(x_0 \in E\). If we can prove that \(\langle f_0, x_0 \rangle_{E^\star, E} = 0\), then the contradiction follows. Since \(f_0 \in (N^\perp)^\perp\), then \(\langle f_0, x_0 \rangle_{E^\star, E} = 0\) if \(x_0 \in N^\perp\), i.e, \(\langle f, x_0 \rangle_{E^\star, E} = 0, \forall f \in N\). Let \(f \in N\). Then, by reflexivity,
+    for some \(x_0 \in E\). If we can prove that \(\langle f_0, x_0 \rangle_{E^\star, E} = 0\), then the contradiction follows. Since \(f_0 \in (N^\perp)^\perp\), then \(\langle f_0, x_0 \rangle_{E^\star, E} = 0\) if \(x_0 \in N^\perp\), i.e., \(\langle f, x_0 \rangle_{E^\star, E} = 0, \forall f \in N\). Let \(f \in N\). Then, by reflexivity,
     \[
         \langle f, x_0 \rangle_{E^\star, E} = \langle J x_0, f \rangle_{E^{**}, E^\star} = \langle \xi, f \rangle_{E^{**}, E^\star} = 0, \; \forall f \in N
     \]
@@ -169,7 +169,7 @@ In this section, we introduce some complementary results in Hilbert spaces. Once
     \item \((x, x) \geq 0\);
     \item \((x, x) = 0 \iff x=0\).
 \end{enumerate}
-Given \(x, y \in H\), we say that \(x\) and \(y\) are orthogonal (denoted by \(x \perp y\)) if \((x, y) = 0\). Accordingly, given \(E, F \subset H\), if \(x\perp y\) for every \(x \in E, y \in F\) then we say that \(E\) and \(F\) are orthogonal, and write \(E \perp F\). We also denote by \(E^\perp\) the set of all \(y \in H\) orthogonal to every \(x \in E\), i.e, \(E^\perp = \{y \in H: (x, y)=0, \; \forall x \in E\}\) which we call the orthogonal complement of \(E\). We recall that every inner product space is also a normed space, where the inner product induces the norm
+Given \(x, y \in H\), we say that \(x\) and \(y\) are orthogonal (denoted by \(x \perp y\)) if \((x, y) = 0\). Accordingly, given \(E, F \subset H\), if \(x\perp y\) for every \(x \in E, y \in F\) then we say that \(E\) and \(F\) are orthogonal, and write \(E \perp F\). We also denote by \(E^\perp\) the set of all \(y \in H\) orthogonal to every \(x \in E\), i.e., \(E^\perp = \{y \in H: (x, y)=0, \; \forall x \in E\}\) which we call the orthogonal complement of \(E\). We recall that every inner product space is also a normed space, where the inner product induces the norm
 \[
 \norm*{x} = \sqrt{(x, x)}   
 \]
@@ -278,7 +278,7 @@ The proposition \ref{hilb_basis} is particularly interesting because it allows u
         \[
         (y, T x) = (T^\star y, x), \; \forall x, y \in H;
         \]
-        If \(T=T^\star\), i.e. if the domains (and images) of \(T\) and \(T^\star\) coincide then \(T\) is said to be \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also follows from the Hahn-Banach Theorem \ref{hb_ana_form}!}
+        If \(T=T^\star\), i.e., if the domains (and images) of \(T\) and \(T^\star\) coincide then \(T\) is said to be \textbf{self-adjoint}.\footnote{The existence and uniqueness of \(T^\star\) may not be obvious, but if follows from Riesz Representation Theorem \ref{riesz}. In any case, notice the similarities between this definition and the one given in Definition \eqref{banach_op_def}. In fact, in Banach spaces, the existence of the adjoint also follows from the Hahn-Banach Theorem \ref{hb_ana_form}!}
         \item Let \(T \in \mathcal{L}(H)\). One says that \(\lambda \in \mathbb{F}\) is an \textbf{eigenvalue} of \(T\) if \(\ker(T - \lambda I) \neq \{0\}\). In that case, one says that \(\lambda \in \sigma(T)\) where \(\sigma(T)\) is called the \textbf{spectrum}\footnote{Remarkably, in the infinite-dimensional case, the set of eigenvalues may not coincide with the spectrum \(\sigma(T)\). \(T - \lambda I\) may fail to be invertible even if \(T - \lambda I\) is injective.} of \(T\). Also, \(u\) is said to be an \textbf{eigenvector} associated with the eigenvalue \(\lambda\) if \(u \in \ker(T-\lambda I)\setminus \{0\}\).
     \end{enumerate}
 \end{definition}
@@ -356,7 +356,7 @@ As usual, we denote the space of test functions with compact support in $\Omega$
 \end{definition}
 
 \begin{definition}
-    We say that \(f \in L^1_{\text{loc}}(\Omega)\) if \(f\) is integrable in every compact \(K \subset \Omega\), i.e.
+    We say that \(f \in L^1_{\text{loc}}(\Omega)\) if \(f\) is integrable in every compact \(K \subset \Omega\), i.e.,
     \[
         f \chi_K \in L^1(\Omega), \; \forall K \subset \Omega \text{ compact},
     \]
@@ -422,7 +422,7 @@ Throughout this work, we are mainly concerned with Sobolev spaces when \(p=2\). 
 One of the main tools used in obtaining the spectral decomposition of the Laplace operator (see Appendix \ref{div_theo}) is the following Embedding Theorem.
 
 \begin{theorem}[Rellich Theorem]\label{rellich}
-    Assume that \(\Omega\) is a bounded Lipschitz domain. Then, the embedding \(H^1(\Omega) \rightarrow L^2(\Omega)\) is compact, i.e, given a bounded sequence \((u_n)_{n \in \mathbb{N}} \subset H^1(\Omega)\) there exists a convergent subsequence \((u_{n_k})_{k \in \mathbb{N}} \subset L^2(\Omega)\).
+    Assume that \(\Omega\) is a bounded Lipschitz domain. Then, the embedding \(H^1(\Omega) \rightarrow L^2(\Omega)\) is compact, i.e., given a bounded sequence \((u_n)_{n \in \mathbb{N}} \subset H^1(\Omega)\) there exists a convergent subsequence \((u_{n_k})_{k \in \mathbb{N}} \subset L^2(\Omega)\).
 \end{theorem}
 
 While we have only defined Sobolev spaces for \(k \in \mathbb{N}\), it is possible to define fractional Sobolev spaces with a real exponent \(s \in \mathbb{R}_0^+\). In particular, such a generalization can be made using Fourier Transforms if \(p=2\).
@@ -484,7 +484,7 @@ An important (closed) subspace of \(H^1(\Omega)\) is the kernel of the trace ope
 \[
     \ker \gamma_0 = \{u \in H^1(\Omega): \gamma_0 u = 0\} \eqqcolon H^1_0(\Omega)
 \] 
-which can be equivalently defined as the closure of \(\overline{\mathcal{D}(\Omega)}\) in the \(H^1(\Omega)\) norm, i.e,  \(H^1_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{H^1(\Omega)}\). \(H^1_0(\Omega)\) is of major importance in the Dirichlet Laplacian problem, since the functions in \(H^1_0(\Omega)\) ``vanish'' on \(\partial\Omega\). Next, we state an important result to be used when studying the spectrum of the Dirichlet Laplacian.
+which can be equivalently defined as the closure of \(\overline{\mathcal{D}(\Omega)}\) in the \(H^1(\Omega)\) norm, i.e.,  \(H^1_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{H^1(\Omega)}\). \(H^1_0(\Omega)\) is of major importance in the Dirichlet Laplacian problem, since the functions in \(H^1_0(\Omega)\) ``vanish'' on \(\partial\Omega\). Next, we state an important result to be used when studying the spectrum of the Dirichlet Laplacian.
 \begin{theorem}[Poincaré inequality]
     Let \(\Omega \subset \mathbb{R}^d\) be a bounded set. Define \(W^{1, p}_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{W^{1, p}(\Omega)}\). Then, there exists \(C > 0\) such that
     \[
@@ -509,7 +509,7 @@ Finally, we shed some light on the dual space of Sobolev spaces (with fractional
     \[
         \langle v, u \rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v dx
     \]
-    whenever it makes sense, i.e, when \(v \in L^2(\Omega)\).
+    whenever it makes sense, i.e., when \(v \in L^2(\Omega)\).
      %\rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v
 \end{remark}
 
@@ -552,7 +552,7 @@ we have \(\gamma_1 u \in H^{-\frac{1}{2}}(\Omega)\).
 % \end{definition}
 
 % \begin{theorem}\label{spec_lap_pre}
-%     There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e, for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
+%     There exists a Hilbert basis \((u_n)_{n \in \mathbb{N}}\) of \(L^2(\Omega)\) consisting of eigenfunctions \(u_n\) of \(-\Delta\), i.e., for each \(n \in \mathbb{N}\) there exists a pair eigenvalue/eigenfunction \((\lambda_n, u_n)\) such that
 %     \[
 %         -\Delta u_n = \lambda_n u_n
 %     \]
@@ -633,7 +633,7 @@ we have \(\gamma_1 u \in H^{-\frac{1}{2}}(\Omega)\).
 %     \[
 %         \alpha \Omega = \{\alpha x \in \mathbb{R}^d: x \in \Omega\},
 %     \]
-%     i.e, \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
+%     i.e., \(\alpha \Omega\) is a dilation of \(\Omega\) by a factor of scale \(\alpha\).  
 %     Then, for all \(n \in \mathbb{N}\),
 %     \[
 %         \alpha^2 \lambda_n(\alpha \Omega) = \lambda_n(\Omega),

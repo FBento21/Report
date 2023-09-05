@@ -2421,6 +2421,10 @@ INPUT ./Thesis-MSc-copyright.tex
 INPUT ./Thesis-MSc-copyright.tex
 INPUT ./Thesis-MSc-copyright.tex
 INPUT ./Thesis-MSc-copyright.tex
+INPUT ./Thesis-MSc-quote.tex
+INPUT Thesis-MSc-quote.tex
+INPUT ./Thesis-MSc-quote.tex
+INPUT Thesis-MSc-quote.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
 INPUT /usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
 INPUT /usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
@@ -2666,6 +2670,7 @@ INPUT ./main.mtc4
 INPUT main.mtc4
 INPUT main.mtc4
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
 INPUT ./Chapters/Thesis-MSc-Chapter_4.tex
 INPUT ./Chapters/Thesis-MSc-Chapter_4.tex
 INPUT ./Chapters/Thesis-MSc-Chapter_4.tex
@@ -3026,11 +3031,13 @@ INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
