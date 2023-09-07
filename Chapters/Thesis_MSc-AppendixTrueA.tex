@@ -1,0 +1,90 @@
+% #############################################################################
+% This is Appendix TrueA
+% !TEX root = ../main.tex
+% #############################################################################
+\chapter{Some details on regular domains and Sobolev spaces}\label{appendix_truea}
+
+This appendix serves as a resource to complement Chapter \ref{chap:Preliminaries} by providing additional insights into domain regularity and Sobolev spaces on manifolds. While these subjects were not covered in Chapter \ref{chap:Preliminaries}, they play an important role in the formalization and understanding of the broader context of this work, for example when defining layer potentials in Chapter \ref{chap:numerical}. We refer to \cite{salsa2016partial}, \cite{necas2011direct}, and \cite{wloka1987partial} for more details on this Appendix.
+
+Until otherwise indicated, let \(\Omega \subset \mathbf{R}^d\) be an open and bounded set, with \(d \geq 2\) and boundary \(\partial\Omega\). First, we formalize the notion of \(C^k\) and Lipschitz domains.
+
+% \begin{definition}
+%     Consider an orthogonal coordinate transformation
+%     \begin{align*}
+%         O: &\mathbb{R}^d \rightarrow \mathbb{R}^d\\
+%         & x\mapsto A(x)=y=(y_1,\dots,y_d)
+%     \end{align*}
+%     and the cube
+%     \[
+%         Q^{d-1}(\alpha_x) = \{y\in \mathbb{R}^{d-1}: \abs{y_i} < \alpha_x, i=1,\dots d-1\} \subset \mathbb{R}^{d-1}
+%     \]
+%     defined through the new coordinate system given by the transformation \(O\).
+
+%     The boundary \(\partial\Omega\) is of class \(C^k\) (or the domain \(\Omega\) is of class \(C^k\)) if for each \(x \in \partial\Omega\) there exists a neighbourhood \(U\) (of \(x\)), two positive numbers \(\alpha, \beta > 0\), a \(k\)-differentiable function \(\varphi:\mathbb{R}^{d-1} \rightarrow \mathbb{R}\) in \(Q^{d-1}(\alpha_x)\)  and an orthogonal coordinate transformation \(O\) such that:
+%     \begin{itemize}
+%         \item the frontier portion \(U \cap \partial\Omega\) is described by the function \(y_d = \varphi(y_1,\dots y_{d-1})\), i.e.,
+%         \[
+%             U \cap \partial\Omega = \{y \in \mathbb{R}^d: \forall (y_1,\dots y_{d-1}) \in Q^{d-1}(\alpha_x), y_d = \varphi(y_1,\dots y_{d-1})\};
+%         \]
+%         \item for every point on the set
+%         \[
+%             W = \{y=(y',y_d) \in \mathbb{R}^d: y'=(y_1,\dots,y_{d-1}) \in Q^{d-1}(\alpha_x)\}.
+%         \]
+%         we have
+%         \begin{align*}
+%             &\{y \in \mathbb{R}^d: \varphi(y') < y_d < \varphi(y') + \beta\} = U \cap \Omega\\
+%             &\{y \in \mathbb{R}^d: \varphi(y') - \beta < y_d < \varphi(y')\} = U \cap \overline{\Omega}^c.
+%         \end{align*}
+%     \end{itemize}
+
+%     On the other hand, the boundary \(\partial\Omega\) is Lipschitz (or the domain \(\Omega\) is Lipschitz) if \(\varphi\) is a Lipschitz function on the cube \(Q^{d-1}(\alpha_x)\), i.e.,
+%     \[
+%         p, q \in Q^{d-1}(\alpha_x) \implies  \abs{\varphi(p) - \varphi(q)} \leq L \abs{p-q}
+%     \]
+%     for some \(L > 0\).
+% \end{definition}
+
+% In order to define the surface measure of \(\Omega\)
+
+\begin{definition}\label{ck_lipschitz_domains_def}
+    The boundary \(\partial\Omega\) is of class \(C^k\) (or the domain \(\Omega\) is of class \(C^k\)) if for each \(x \in \partial\Omega\) there exists a system of coordinates \((\mathbf{y}', y_d)= (y_1,\dots,y_{d-1},y_d)\) with origin at \(x\), a ball \(B(x)\) and a function \(\varphi\) defined in a neighbourhood \(U \subset \mathbb{R}^{d-1}\) of \(\mathbf{y}'=\mathbf{0}'\), such that
+    \[
+        \varphi \in C^k(U), \varphi(\mathbf{y}') = \mathbf{0}'
+    \]
+    and
+    \begin{itemize}
+        \item \(\partial\Omega \cap B(x) = \{(\mathbf{y}', y_d): y_n = \varphi(\mathbf{y}'), \, \forall \mathbf{y}' \in U\}\);
+        \item \(\Omega \cap B(x) = \{(\mathbf{y}', y_d): y_n > \varphi(\mathbf{y}'), \, \forall \mathbf{y}' \in U\}\).
+    \end{itemize}
+
+        On the other hand, the boundary \(\partial\Omega\) is Lipschitz (or the domain \(\Omega\) is Lipschitz) if \(\varphi\) is a Lipschitz function on \(U\), i.e.,
+    \[
+        p, q \in U \implies  \abs{\varphi(p) - \varphi(q)} \leq L \abs{p-q}
+    \]
+    for some \(L > 0\).
+\end{definition}
+
+In order to formalize the notion of Sobolev spaces in manifolds (which is used in Theorem \ref{frac_theo} and when presenting layer potentials), we state Lemma \ref{partition_unity_lemma}.
+
+\begin{lemma}[Partition of Unity]\label{partition_unity_lemma}
+    Let \(K \subset \mathbb{R}^d\) be a compact set and \(U_1,\dots U_N\) be an open covering of \(K\), i.e., \(K \subset \cup_{i=1}^N U_i\) (such covering exists since \(K\) is compact). Then, there exists functions \(\theta_1,\dots, \theta_N\) (said to be a partition of unity subordinated to the decomposition of \(\partial\Omega\)) such that
+    \begin{itemize}
+        \item for every \(i=1,\dots,N, \, \theta_i \in \mathcal{D}(U_i)\) and \(0 \leq \theta_i \leq 1\);
+        \item for every \(x \in K, \, \sum_{i=1}^{N}\theta_i(x) = 1\).  
+    \end{itemize}
+\end{lemma}
+
+Assume that \(\Omega\) is (at least) a Lipschitz domain. Let \(g: \partial\Omega \rightarrow \mathbb{R}\) and the balls \(B_1,\dots B_N\) be an open covering of \(\partial\Omega\) centered at points of \(\Gamma\). Then, by Lemma \ref{partition_unity_lemma}, there exists a partition of unity \(\theta_1,\dots, \theta_N\) subordinated to \(\partial\Omega\) such that the function \(g\) can be written as
+\[
+    g = \sum_{i=1}^{N} g_i
+\]
+where \(g_i = \theta_i g\) for each \(i=1,...,N\). Since \(\partial\Omega \cap B_i\) is the graph of an (at least) Lipschitz function \(\varphi_i(\mathbf{y}')\), by the local parametrization we have
+\[
+    g_i(x) = \theta_i(x) g(x) = \theta_i(\varphi(\mathbf{y}')) g(\varphi(\mathbf{y}')) = \tilde{g}_i(\mathbf{y}'), \; \mathbf{y}' \in U_i
+\]
+for any \(x \in \partial\Omega \cap B_i\) and \(U_i\) is a neighbourhood of \(\mathbf{y}'\). Thus, for \(s \geq 0\) we say that \(g \in H^s(\partial\Omega)\) if 
+\[
+    \norm{g}_{H^s(\partial\Omega)}^2 = \sum_{i=1}^{N} \norm{\tilde{g}_i}_{H^s(U_i)} < \infty.
+\]
+
+Note that norm \(\norm{g}_{H^s(\partial\Omega)}^2\) depends on the cover and partition of unity. However, norms corresponding to different parametrizations of \(\Gamma\) and partitions of unity are all equivalent.

@@ -40,6 +40,11 @@ Carlos~JS Alves, Nuno~FM Martins, and Svilen~S Valtchev.
 \newblock Domain decomposition methods with fundamental solutions for helmholtz problems with discontinuous source terms.
 \newblock {\em Computers \& Mathematics with Applications}, 88:16--32, 2021.
 
+\bibitem[And22]{andrei2022modern}
+Neculai Andrei.
+\newblock {\em Modern Numerical Nonlinear Optimization}, volume 195.
+\newblock Springer Nature, 2022.
+
 \bibitem[Ant18a]{antunes2018numerical}
 Pedro~RS Antunes.
 \newblock A numerical algorithm to reduce ill-conditioning in meshless methods for the helmholtz equation.
@@ -138,6 +143,11 @@ Simon~N Chandler-Wilde, David~P Hewett, and Andrea Moiola.
 Goong Chen and Jianxin Zhou.
 \newblock {\em Boundary element methods with applications to nonlinear problems}, volume~7.
 \newblock Springer Science \& Business Media, 2010.
+
+\bibitem[DBDB78]{de1978practical}
+Carl De~Boor and Carl De~Boor.
+\newblock {\em A practical guide to splines}, volume~27.
+\newblock springer-verlag New York, 1978.
 
 \bibitem[Dir28]{dirac1928quantum}
 Paul Adrien~Maurice Dirac.
@@ -351,5 +361,10 @@ Tuyen Vu.
 Sven~Andreas Wolf and Joseph~Bishop Keller.
 \newblock Range of the first two eigenvalues of the laplacian.
 \newblock {\em Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences}, 447(1930):397--412, 1994.
+
+\bibitem[Wlo87]{wloka1987partial}
+Joseph Wloka.
+\newblock {\em Partial differential equations}.
+\newblock Cambridge University Press, 1987.
 
 \end{thebibliography}

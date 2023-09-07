@@ -148,13 +148,19 @@
 %\section{Spectral Decomposition of the Laplace operator}\label{div_theo}
 
 In this appendix, we make a brief study regarding the Laplace operator in a bounded domain \(\Omega \subset \mathbb{R}^d\) with Lipschitz boundary. The main results presented here are mostly consequences of the Spectral Theorem \ref{spectral_theorem}. Firstly, recall the Divergence Theorem, e.g. \cite{evans2015measure}.
+
 \begin{theorem}[Divergence Theorem]\label{appendix_div_theor}
     Let \(\Omega \subset \mathbb{R}^d\) defined as above. Then,
     \[
       \int_\Omega \Div \phi dx = \int_{\partial\Omega} \phi \cdot \mathbf{n} d\sigma,
     \]
-    where \(\mathbf{n}\) denotes the exterior unitary normal.
+    where \(\mathbf{n}\) denotes the exterior unitary normal and the \((d-1)\)-surface element is given by
+    \[
+        d\sigma = \sqrt{1+ \abs{\nabla \varphi_i}^2} d \mathbf{y}'
+    \]
+    where \(\varphi\) is the local parametrization given in Definition \ref{ck_lipschitz_domains_def}\footnote{Although \(\varphi\)} is only a Lipschitz function, by Rademacher Theorem (see Chapter 1 in \cite{salsa2016partial}) \(\varphi\) is differentiable almost everywhere.
 \end{theorem}
+
 A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}.
 \begin{corollary}[Green's Formulas]
     In this same conditions of the Theorem \ref{appendix_div_theor}, let \(u, v \in H^2(\Omega)\). Then,
@@ -188,9 +194,9 @@ The study of the spectrum of the Laplace operator is of major importance in this
         R(u) = \frac{\norm*{\nabla u}^2_{L^2(\Omega)}}{\norm*{u}^2_{L^2(\Omega)}}.
     \]
     Then,
-    \[
+    \begin{equation}\label{append_variational_form_laplacian}
     \lambda_n = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} R(u) = \max_{\substack{u \in E_n \\ u \neq 0}} R(u).
-    \]
+    \end{equation}
 \end{theorem}
 \begin{proof}
     For each \(f \in L^2(\Omega)\), consider the problem

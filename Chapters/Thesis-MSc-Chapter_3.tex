@@ -401,7 +401,7 @@ no matter the choice of the source points over \(\hat{\Gamma}\). Therefore, it i
 
 \subsection{An enrichment technique}\label{m_particular_solutions}
 
-Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions that display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique with particular solutions that allows for singularity treatment. In the same vein as in Proposition \ref{dirac_not_polar}, consider a wedge-like domain with interior angle \(\Theta\).
+Before diving into the numerical approach for the Helmholtz equation, we introduce some modifications to the classical \ac{MFS} method presented above. There is another drawback in our method: our basis functions are analytical and might lose precision when approximating functions that display singularities, for example near a corner if the domain is not smooth. In what follows we introduce an enrichment technique with particular solutions\footnote{\label{particular_solutions_footnote} The terminology \textit{particular solutions} agrees with the references \cite{betcke2005reviving}, \cite{antunes2010meshfree}, and \cite{barnett2008stability}, and it does not refer to the solution of a non-homogeneous \ac{PDE}, which is also called a \textit{particular solution}. To avoid confusion, the latter will be referred to as a \textit{non-homogeneous} solution.} that allows for singularity treatment. In the same vein as in Proposition \ref{dirac_not_polar}, consider a wedge-like domain with interior angle \(\Theta\).
 
 \begin{figure}[H]
 \centering
@@ -497,7 +497,7 @@ where \(c_1, c_2, c_3, c_4 \in \mathbb{C}\). In order to find \(\alpha\), one mu
 %     Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness!).
 % \end{remark}
 
-To incorporate the singular behavior near a singular corner, first assume, without loss of generality, that the domain \(\Omega\) has just one corner and that the solution of our \ac{BVP} can be decomposed in regular and singular parts,
+To incorporate the singular behavior near a corner with less regularity and (possible) singularities\footnote{We would like to address another terminology issue. In the literature, these types of corners are often referred to as "singular corners." However, this terminology is problematic (there is no such thing as a "singular corner"). Therefore, whenever we encounter such corners, we explicitly describe them as "less regular corners" or "corners with potential singularities."}, first assume, without loss of generality, that the domain \(\Omega\) has just one corner and that the solution of our \ac{BVP} can be decomposed in regular and singular parts,
 \[
     u(x) = u_R(x) + u_S(x), \; x \in \overline{\Omega},
 \]

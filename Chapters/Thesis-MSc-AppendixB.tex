@@ -58,8 +58,26 @@ In this section, the behavior of the Laplace equation's solutions near a corner 
     Observe that if the wedge domain is rotated by some angle \(\theta_1\) (see Figure \eqref{rotated_wedge}) one can consider the translation \(\theta^\star = \theta - \theta_1\), where \(\theta^\star\) is the angle on the ``correct'' wedge domain, see Figure \eqref{wedge}. 
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.5]{Images/rotated_wedge.png}
-        \caption{Rotation of the wedge domain. Image taken from \cite{li2000singularities}.}
+        \begin{tikzpicture}
+            \coordinate (O) at (0,0);
+            \coordinate[label=right:\(x\)] (A) at (3,0);
+            \coordinate (B) at (-1,-1.5);
+            \coordinate (C) at (1.45,-0.8);
+            
+            % Drawing the angle \theta_1
+            \draw (O) -- (A);
+            \draw (O) -- (B);
+            \draw (O) -- (C);
+            
+            % Labeling the angle theta_1
+            \draw (0.6,0) arc (0:234.5:0.6);
+            \node at (-0.1,0.8) {$\theta_1$};
+        
+            % Drawing and labeling angle \Theta
+            \draw (-0.45, -0.72) arc (234.5:342:0.7);
+            \node at (0.1,-1.1) {$\Theta$};
+        \end{tikzpicture}
+        \caption{Rotation of the wedge domain.}
         \label{rotated_wedge}
     \end{figure}
     In applications, we are mostly concerned with Dirichlet-Neumann and Neumann-Dirichlet boundary conditions. Just like stated above, some of these boundary conditions have different expansions for the angles \(\Theta=\frac{\pi}{2}\) and \(\Theta=\frac{3\pi}{2}\). However, we are only concerned with the expansion
