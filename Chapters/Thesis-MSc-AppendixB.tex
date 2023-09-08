@@ -5,12 +5,12 @@
 \chapter{Some useful insights to the Method of Fundamental Solutions}
 \label{chapter:appendixB}
 
-This appendix presents some useful results and techniques which can be used to increase the accuracy of the Method of Fundamental Solutions. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to tackle the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
+This appendix presents some useful results and techniques that can be used to increase the accuracy of the Method of Fundamental Solutions. Firstly, we present the behavior of the Laplace equation's solutions in polar coordinates near a corner's tip, supplementing the subsection \ref{m_particular_solutions}. Such considerations were the basis for the results presented in \ref{numerical_transmission_simulations}. Then, the Subspace Angle Technique is also presented, which was used in \ref{dirac_equation_simulations} to tackle the ill-conditioning of the \ac{MFS} for the Dirac equation with infinite mass boundary conditions.
 
 \section{Behavior of the Laplace equation's solutions near a corner.}\label{appendixB_corners}
 
 
-In this section, the behavior of the Laplace equation's solutions near a corner is summarized for different boundary conditions. For more details, we point the reader to \cite{li2000singularities}.
+In this subsection, the behavior of the Laplace equation's solutions near a corner is summarized for different boundary conditions. For more details, we point the reader to \cite{li2000singularities}.
 
 \begin{itemize}
     \item For Dirichlet-Dirichlet boundary conditions given by \(u(r, 0) = A, u(r, \Theta) = B\), then \(\alpha_k = \frac{k \pi}{\Theta}\) and
@@ -88,23 +88,23 @@ In this section, the behavior of the Laplace equation's solutions near a corner 
     \[
         \partial_r v(r,\theta) = \sum_{k=0}^{\infty}\alpha_k^2 r^{\alpha_k-1}\psi(\alpha_k \theta)
     \]
-    where \(\alpha_k-1 \in \mathbb{N}\). In general, if \(\alpha_k \in \mathbb{N}\) for some angle \(\Theta\) then all of its derivatives are continuous and \(v(r,\theta)\) is analytical. More precisely, there is no singularity in these cases. Therefore, one does not need to enrich the set of basis functions since the fundamental solutions correctly reproduce the behavior near the corner's tip. Such corners are called \textit{regular}. On the other hand, corners that present singularities are called \textit{singular} and are the ones that we are interested to approximate. 
-
-    Also notice that, in the expansions above, the term \(r^{-\alpha_k}\) does not appear. This has to do with the fact we are dealing with an interior problem: when considering the exterior problem, the terms \(r^{\alpha_k}\) are replaced with \(r^{-\alpha_k}\) (observe that it satisfies the asymptotic conditions prescribed in order to have well-posedness of the exterior problem!).
+    where \(\alpha_k-1 \in \mathbb{N}\) for every integer \(k\). In general, if \(\alpha_k \in \mathbb{N}\) for some angle \(\Theta\) then all of its derivatives are continuous and \(v(r,\theta)\) is analytical. More precisely, there is no singularity in these cases nor regularity loss. Therefore, one does not need to enrich the set of basis functions since the fundamental solutions correctly reproduce the behavior near the corner's tip.
+    
+    Note that in the expansions provided above, the term $r^{-\alpha_k}$ is absent. This omission is a consequence of addressing an interior problem. It's worth highlighting that when dealing with the exterior problem, the terms $r^{\alpha_k}$ are substituted with $r^{-\alpha_k}$, adhering to the asymptotic conditions necessary for establishing the well-posedness of the exterior problem.
 \end{remark}
 
 \section{The Subspace Angle Technique} \label{sat_appendix}
 
 One of the drawbacks of the \ac{MFS} is the ill-conditioning of the system. In this subsection we introduce the so-called \textit{Subspace Angle Technique}, first presented in \cite{betcke2005reviving}. Intuitively, there are two problems at play: firstly, while the \ac{MFS} only needs the boundary data to approximate the solution of the \ac{BVP}, the exponential growth of the condition number against its exponential convergence can be seen has the lack of information given by the collocation points on the boundary, which is not enough to decide if an approximate eigenfunction is spurious; secondly, while we proved the linear independence of the basis functions, in practice the columns of the matrix \(A(k)\) are almost linear dependent if its number is too large (in fact, this is, once again, associated with the distance from the boundary to the artificial boundary).
 
-To solve the first problem, we add additional interior points in order to over-determine the system; and for the second problem, we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points the matrix \(A(k)\) can be extended to
+To solve the first problem, we add additional interior points in order to over-determine the system; and for the second problem, we construct an orthonormal basis of the column space of \(A(k)\), denoted by \(\mathcal{C}(A(k))\), using the \(QR\) factorization of \(A(k)\). Let \(M_B\) be the number of boundary points and \(M_I\) the number of interior points, such that \(M=M_B+M_I\). Then, by adding some interior points, matrix \(A(k)\) can be extended to
 \[
     A(k) = \begin{bmatrix}
         A_B(k)\\
         A_I(k)
     \end{bmatrix},
 \]
-where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R\), where \(Q(k)\) is a unitary complex (possible non-rectangular) matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
+where the indices \(B\) and \(I\) correspond to the block matrices with the boundary and interior collocation points, respectively. To generate an orthonormal basis of the column space of \(A(k)\), consider the \(QR\) factorization of \(A(k)\), given by \(A(k)=Q(k)R(k)\), where \(Q(k)\) is a unitary complex (possible non-rectangular) matrix. By partitioning \(Q(k)\) in the boundary and interior collocation points, we also have
 \begin{equation*}
     Q(k) = \begin{bmatrix}
         Q_B(k)\\
@@ -121,7 +121,7 @@ and each unit vector \(u \in \mathcal{C}(A(k))\) has the form
         Q_I(k)
     \end{bmatrix}v
 \end{equation}
-for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichlet boundary conditions, we are interested in non-trivial solutions \(v \in \mathbb{R}^2\) to the above problem when \(u \approx 0\) at the boundary, i.e., to solve the constrained minimization problem
+for some \(v \in \mathbb{R}^2\), \(\norm*{v} = 1\). Assuming homogeneous Dirichlet boundary conditions, we are interested in non-trivial solutions \(v \in \mathbb{R}^2\) to problem \eqref{sat_qr} when \(u \approx 0\) at the boundary, i.e., to solve the constrained minimization problem
 \[
     \min_{v \in \mathbb{R}^2, \norm*{v}=1} \norm*{Q_B(k) v}. 
 \]

@@ -56,13 +56,13 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Spectral Decomposition of the Laplace operator}{88}{appendix.B}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{93}{appendix.C}%
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Rotation of the wedge domain.\relax }}{95}{figure.caption.50}%
+\contentsline {xchapter}{Some useful insights to the Method of Fundamental Solutions}{92}{appendix.C}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Rotation of the wedge domain.\relax }}{94}{figure.caption.50}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{On Bessel Functions}{98}{appendix.D}%
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Plot of the Bessel function \(J_\nu (z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{99}{figure.caption.51}%
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Plot of the Bessel function \(Y_\nu (z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{99}{figure.caption.51}%
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(1)}(z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{100}{figure.caption.52}%
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Plot of the Hankel function \(H_\nu ^{(2)}(z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\).\relax }}{100}{figure.caption.52}%
-\contentsline {figure}{\numberline {D.5}{\ignorespaces Plot of the real part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{103}{figure.caption.53}%
-\contentsline {figure}{\numberline {D.6}{\ignorespaces Plot of the imaginary part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{103}{figure.caption.53}%
+\contentsline {xchapter}{On Bessel Functions}{97}{appendix.D}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Complex plot of the absolute value of the Bessel function \(J_\nu (z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi \) to \(\pi \).\relax }}{98}{figure.caption.51}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Complex plot of the absolute value of the Bessel function \(Y_\nu (z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi \) to \(\pi \).\relax }}{98}{figure.caption.51}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Complex plot of the absolute value of the Hankel function \(H_\nu ^{(1)}(z)\) with \(\nu =0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi \) to \(\pi \).\relax }}{99}{figure.caption.52}%
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Complex plot of the absolute value of the Hankel function \(H_\nu ^{(2)}(z)\) with \(\nu _=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi \) to \(\pi \).\relax }}{99}{figure.caption.52}%
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Plot of the real part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{102}{figure.caption.53}%
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Plot of the imaginary part of \(\Phi _k(r)\) with \(k=1.5\) in the disk of radius \(10\).\relax }}{102}{figure.caption.53}%

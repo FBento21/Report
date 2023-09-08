@@ -12,7 +12,7 @@ Carlos~JS Alves and Pedro~RS Antunes.
 
 \bibitem[ABLOB21]{antunes2021variational}
 Pedro~RS Antunes, Rafael~D Benguria, Vladimir Lotoreichik, and Thomas Ourmi{\`e}res-Bonafos.
-\newblock A variational formulation for dirac operators in bounded domains. applications to spectral geometric inequalities.
+\newblock A variational formulation for {Dirac} operators in bounded domains. applications to spectral geometric inequalities.
 \newblock {\em Communications in Mathematical Physics}, 386(2):781--818, 2021.
 
 \bibitem[AC05]{alves2005new}
@@ -27,7 +27,7 @@ Robert~A Adams and John~JF Fournier.
 
 \bibitem[AF11]{antunes2011inverse}
 Pedro~RS Antunes and Pedro Freitas.
-\newblock On the inverse spectral problem for euclidean triangles.
+\newblock On the inverse spectral problem for {Euclidean} triangles.
 \newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 467(2130):1546--1562, 2011.
 
 \bibitem[Alv09]{alves2009choice}
@@ -37,7 +37,7 @@ Carlos~JS Alves.
 
 \bibitem[AMV21]{alves2021domain}
 Carlos~JS Alves, Nuno~FM Martins, and Svilen~S Valtchev.
-\newblock Domain decomposition methods with fundamental solutions for helmholtz problems with discontinuous source terms.
+\newblock Domain decomposition methods with fundamental solutions for {Helmholtz} problems with discontinuous source terms.
 \newblock {\em Computers \& Mathematics with Applications}, 88:16--32, 2021.
 
 \bibitem[And22]{andrei2022modern}
@@ -47,7 +47,7 @@ Neculai Andrei.
 
 \bibitem[Ant18a]{antunes2018numerical}
 Pedro~RS Antunes.
-\newblock A numerical algorithm to reduce ill-conditioning in meshless methods for the helmholtz equation.
+\newblock A numerical algorithm to reduce ill-conditioning in meshless methods for the {Helmholtz} equation.
 \newblock {\em Numer. Algorithms}, 79(3):879--897, 2018.
 
 \bibitem[Ant18b]{antunes2018reducing}
@@ -71,22 +71,22 @@ Pedro~RS Antunes and Svilen~S Valtchev.
 
 \bibitem[BB08]{barnett2008stability}
 Alex~H Barnett and Timo Betcke.
-\newblock Stability and convergence of the method of fundamental solutions for helmholtz problems on analytic domains.
+\newblock Stability and convergence of the method of fundamental solutions for {Helmholtz} problems on analytic domains.
 \newblock {\em Journal of Computational Physics}, 227(14):7003--7026, 2008.
 
 \bibitem[BB22]{bogosel2022polygonal}
 Beniamin Bogosel and Dorin Bucur.
-\newblock On the polygonal faber-krahn inequality.
+\newblock On the polygonal {Faber-Krahn} inequality.
 \newblock {\em arXiv preprint arXiv:2203.16409}, 2022.
 
 \bibitem[BFSVDB17]{benguria2017spectral}
 Rafael~D Benguria, S{\o}ren Fournais, Edgardo Stockmeyer, and Hanne Van Den~Bosch.
-\newblock Spectral gaps of dirac operators describing graphene quantum dots.
+\newblock Spectral gaps of {Dirac} operators describing graphene quantum dots.
 \newblock {\em Mathematical Physics, Analysis and Geometry}, 20:1--12, 2017.
 
 \bibitem[BK22]{briet2022spectral}
 Philippe Briet and David Krej{\v{c}}i{\v{r}}{\'\i}k.
-\newblock Spectral optimization of dirac rectangles.
+\newblock Spectral optimization of {Dirac} rectangles.
 \newblock {\em Journal of Mathematical Physics}, 63(1):013502, 2022.
 
 \bibitem[Bog85]{bogomolny1985fundamental}
@@ -116,7 +116,7 @@ Timo Betcke and Lloyd~N Trefethen.
 
 \bibitem[Buc12]{bucur2012minimization}
 Dorin Bucur.
-\newblock Minimization of the k-th eigenvalue of the dirichlet laplacian.
+\newblock Minimization of the k-th eigenvalue of the {Dirichlet} laplacian.
 \newblock {\em Archive for Rational Mechanics and Analysis}, 206(3):1073--1083, 2012.
 
 \bibitem[CH08]{courant2008methods}
@@ -136,7 +136,7 @@ S{\o}ren Christiansen and E~Meister.
 
 \bibitem[CWHM17]{chandler2017sobolev}
 Simon~N Chandler-Wilde, David~P Hewett, and Andrea Moiola.
-\newblock Sobolev spaces on non-lipschitz subsets of r n with application to boundary integral equations on fractal screens.
+\newblock Sobolev spaces on non-{Lipschitz} subsets of r n with application to boundary integral equations on fractal screens.
 \newblock {\em Integral Equations and Operator Theory}, 87(2):179--224, 2017.
 
 \bibitem[CZ10]{chen2010boundary}
@@ -166,7 +166,7 @@ Lawrence~C Evans.
 
 \bibitem[FK08]{freitas2008sharp}
 Pedro Freitas and David Krej{\v{c}}i{\v{r}}{\'\i}k.
-\newblock A sharp upper bound for the first dirichlet eigenvalue and the growth of the isoperimetric constant of convex domains.
+\newblock A sharp upper bound for the first {Dirichlet} eigenvalue and the growth of the isoperimetric constant of convex domains.
 \newblock {\em Proceedings of the American Mathematical Society}, 136(8):2997--3006, 2008.
 
 \bibitem[GCK96]{golberg1996improved}
@@ -176,7 +176,7 @@ Michael~A Golberg, Ching-Shyang Chen, and SR~Karur.
 
 \bibitem[Gey07]{geymonat2007trace}
 Giuseppe Geymonat.
-\newblock Trace theorems for sobolev spaces on lipschitz domains. necessary conditions.
+\newblock Trace theorems for sobolev spaces on {Lipschitz} domains. necessary conditions.
 \newblock In {\em Annales math{\'e}matiques Blaise Pascal}, volume~14, pages 187--197, 2007.
 
 \bibitem[Gri11]{grisvard2011elliptic}
@@ -191,12 +191,12 @@ Javier G{\'o}mez-Serrano and Gerard Orriols.
 
 \bibitem[GSV19]{gustafsson2019error}
 Tom Gustafsson, Rolf Stenberg, and Juha Videman.
-\newblock Error analysis of nitsche’s mortar method.
+\newblock Error analysis of {Nitsche’s} mortar method.
 \newblock {\em Numerische Mathematik}, 142:973--994, 2019.
 
 \bibitem[GWW92]{gordon1992isospectral}
 Carolyn Gordon, David Webb, and Scott Wolpert.
-\newblock Isospectral plane domains and surfaces via riemannian orbifolds.
+\newblock Isospectral plane domains and surfaces via {Riemannian} orbifolds.
 \newblock {\em Inventiones mathematicae}, 110(1):1--22, 1992.
 
 \bibitem[Hal64]{halton1964algorithm}
@@ -206,7 +206,7 @@ John~H Halton.
 
 \bibitem[HB00]{henrot2000minimization}
 Antoine Henrot and Dorin Bucur.
-\newblock Minimization of the third eigenvalue of the dirichlet laplacian.
+\newblock Minimization of the third eigenvalue of the {Dirichlet} laplacian.
 \newblock {\em Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences}, 456(1996):985--996, 2000.
 
 \bibitem[Hen06]{henrot2006extremum}
@@ -245,7 +245,7 @@ Tosio Kato.
 
 \bibitem[Kit88]{kitagawa1988numerical}
 Takashi Kitagawa.
-\newblock On the numerical stability of the method of fundamental solution applied to the dirichlet problem.
+\newblock On the numerical stability of the method of fundamental solution applied to the {Dirichlet} problem.
 \newblock {\em Japan Journal of Applied Mathematics}, 5:123--133, 1988.
 
 \bibitem[Kit91]{kitagawa1991asymptotic}
@@ -319,7 +319,7 @@ Alfio Quarteroni and Alberto Valli.
 
 \bibitem[Reu06]{reutskiy2006method}
 S~Yu Reutskiy.
-\newblock The method of fundamental solutions for helmholtz eigenvalue problems in simply and multiply connected domains.
+\newblock The method of fundamental solutions for {Helmholtz} eigenvalue problems in simply and multiply connected domains.
 \newblock {\em Engineering Analysis with Boundary Elements}, 30(3):150--159, 2006.
 
 \bibitem[RS75]{reed1975ii}
@@ -354,7 +354,7 @@ Svilen Valtchev.
 
 \bibitem[Vu23]{vu2023spectral}
 Tuyen Vu.
-\newblock Spectral inequality for dirac right triangles.
+\newblock Spectral inequality for {Dirac} right triangles.
 \newblock {\em arXiv preprint arXiv:2302.13040}, 2023.
 
 \bibitem[WK94]{wolf1994range}

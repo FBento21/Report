@@ -30,7 +30,7 @@
 \contentsline {chapter}{Bibliography}{85}{chapter*.49}%
 \contentsline {chapter}{\numberline {A}Some details on regular domains and Sobolev spaces}{86}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Spectral Decomposition of the Laplace operator}{88}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Some useful insights to the Method of Fundamental Solutions}{93}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Behavior of the Laplace equation's solutions near a corner.}{93}{section.C.1}%
-\contentsline {section}{\numberline {C.2}The Subspace Angle Technique}{95}{section.C.2}%
-\contentsline {chapter}{\numberline {D}On Bessel Functions}{98}{appendix.D}%
+\contentsline {chapter}{\numberline {C}Some useful insights to the Method of Fundamental Solutions}{92}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Behavior of the Laplace equation's solutions near a corner.}{92}{section.C.1}%
+\contentsline {section}{\numberline {C.2}The Subspace Angle Technique}{94}{section.C.2}%
+\contentsline {chapter}{\numberline {D}On Bessel Functions}{97}{appendix.D}%

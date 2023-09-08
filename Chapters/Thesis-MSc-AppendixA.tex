@@ -158,10 +158,10 @@ In this appendix, we make a brief study regarding the Laplace operator in a boun
     \[
         d\sigma = \sqrt{1+ \abs{\nabla \varphi_i}^2} d \mathbf{y}'
     \]
-    where \(\varphi\) is the local parametrization given in Definition \ref{ck_lipschitz_domains_def}\footnote{Although \(\varphi\)} is only a Lipschitz function, by Rademacher Theorem (see Chapter 1 in \cite{salsa2016partial}) \(\varphi\) is differentiable almost everywhere.
+    where \(\varphi\) is the local parametrization given in Definition \ref{ck_lipschitz_domains_def}. Although \(\varphi\) is only a Lipschitz function, by Rademacher Theorem (see Chapter 1 in \cite{salsa2016partial}) \(\varphi\) is differentiable almost everywhere.
 \end{theorem}
 
-A main consequence of the Divergence Theorem are the well-known \textit{Green's Formulas}.
+A key consequence of the Divergence Theorem is the \textit{Green's Formulas}.
 \begin{corollary}[Green's Formulas]
     In this same conditions of the Theorem \ref{appendix_div_theor}, let \(u, v \in H^2(\Omega)\). Then,
     \begin{enumerate}
@@ -207,10 +207,10 @@ The study of the spectrum of the Laplace operator is of major importance in this
         \end{cases} 
     \]
     with the associated variational form
-    \[
+    \begin{equation}\label{appendix_laplacian_variational_form_proof}
         \int_\Omega \nabla u \cdot \nabla v = \int_\Omega f v, \; \forall v \in H^1_0(\Omega).
-    \]
-    Using Lax-Milgram Theorem \ref{lax-milgram}, it is straightforward to prove that the variational form above admits a unique weak solution \(u \in H^1_0(\Omega)\) and the operator
+    \end{equation}
+    Using Lax-Milgram Theorem \ref{lax-milgram}, it is straightforward to prove that the variational form \eqref{appendix_laplacian_variational_form_proof} admits a unique weak solution \(u \in H^1_0(\Omega)\) and the operator
     \begin{align*}
         T: L^2(\Omega) &\rightarrow L^2(\Omega)\\
         f &\mapsto u
@@ -243,7 +243,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \[
         \int_\Omega \abs*{\nabla u}^2 = \lambda_n \int_\Omega u^2,
     \]
-    with \(\lambda_1 \leq \lambda_2 \leq \dots \rightarrow \infty\). To check the variational form of the eigenvalues \(\lambda_n\), let \(u \in E_{n-1}^\perp\). Then,
+    with \(\lambda_1 \leq \lambda_2 \leq \dots \rightarrow \infty\). To check the variational form \eqref{append_variational_form_laplacian}, let \(u \in E_{n-1}^\perp\). Then,
     \begin{align*}
         \norm*{\nabla u}_{L^2(\Omega)}^2 = (\nabla u, \nabla u)_{L^2(\Omega)}^2 &= \Big(\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} \nabla u_m, \nabla u \Big)_{L^2(\Omega)}\\
         &=\sum_{m\geq n} (u, u_m)_{L^2(\Omega)} (\nabla u_m, \nabla u)_{L^2(\Omega)}\\
@@ -258,7 +258,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
     The other case is analogous.
 \end{proof}
 \begin{remark}
-    Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). In order to achieve the regularity stated in Definition \eqref{eig_def}, some conditions on \(\Omega\) should be imposed: for example, if \(\Omega\) is an open set of class \(C^2\). If \(\Omega\) is smooth, then \(u_n \in C^\infty(\overline{\Omega})\).
+    Observe that \eqref{spec_lap_pre} only guarantees that the eigenfunctions \(u_n\) belong to \(H^1_0(\Omega)\). To achieve the regularity stated in Definition \eqref{eig_def}, certain conditions on \(\Omega\) should be imposed. For example, if \(\Omega\) is an open set of class \(C^2\), then \(u_n \in C^\infty(\overline{\Omega})\) when \(\Omega\) is smooth.
 \end{remark}
 
 \begin{corollary}[Homogeneity]\label{lap_homo}
@@ -275,11 +275,11 @@ The study of the spectrum of the Laplace operator is of major importance in this
 \end{corollary}
 
 \begin{proof}
-    The proof is an easy consequence of the variational description above. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \varphi(\Omega)\). Then,
+    The proof is an easy consequence of the variational description \eqref{append_variational_form_laplacian}. Let \(\varphi(x) = \alpha x\) and \(\alpha \Omega = \varphi(\Omega)\). Then,
     \begin{equation*}
         \lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}}  \frac{\int_{\varphi(\Omega)} \abs{\nabla u(x)}^2 dx}{\int_{\varphi(\Omega)} \abs{u(x)}^2 dx} = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla u(\alpha x)}^2 dx}{\int_{\Omega} \abs{u(\alpha x)}^2 dx},
     \end{equation*}
-    via a change of variables. Let \(v(x) = u(\alpha x)\). Then,
+    via a change of variables (the Jacobian determinant of the linear transformation \(\varphi\) vanished from consideration as we are dealing with a ratio). Let \(v(x) = u(\alpha x)\). Then,
     \[
         \nabla v(x) = \alpha \nabla u (\alpha x)
     \]

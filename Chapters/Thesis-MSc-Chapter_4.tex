@@ -528,7 +528,7 @@ The procedure presented here is based on \cite{alves2005new} and \cite{alves2021
     \]
     and, for each subdomain \(\Omega_i\) with \(i=1,2\) find the coefficients \(\alpha_j^{(i)}\) in \(f_i(x_k^{(i)}) =\tilde{f}_i(x_k^{(i)}) = \sum_{j=1}^{n} \alpha_j^{(i)} \varphi_j(x_k^{(i)})\) using least square methods, where \(\tilde{f}_i\) is an approximation for the source function \(f_i\) given by linear combinations of thin plate splines, \(x_k^{(i)}\) are collocation points for \(k=1,\dots,M^{(i)}\), \(\varphi_j(r) = \varphi(\abs{x^{(i)}-y_j})\) and \(y_j \in \mathbb{R}^2, \, j =1,\dots, N\), is the \ac{RBF} center, which is analogous to the concept of \textit{source points} in the \ac{MFS}. Finally, one can analytically solve for the \(\Psi_j\) functions in the polar Poisson equation \(\frac{1}{r}\left(r \frac{\partial}{\partial r}\Psi_j\right)  = \varphi_j\) with \(j=1,\dots,N\) in \(\mathbb{R}^2\), to recover the approximate non-homogeneous solutions \(u_1^{NH}\) and \(u_2^{NH}\), given by
     \begin{align*}
-        u_i^{NH}(x) = \sum_{j=1}^{n} \alpha_j^{(i)} \Psi_j(x-x_k^{(i)}).
+        u_i^{NH}(x) = \sum_{j=1}^{N} \alpha_j^{(i)} \Psi_j(x-y_j^{(i)}).
     \end{align*}
     In \cite{alves2005new} and \cite{alves2021domain} a different approach was suggested using the fundamental solutions of the Helmholtz equation instead of the classical \acp{RBF}; that method is known today as \textit{Kansa-MFS method}.
 \end{remark}

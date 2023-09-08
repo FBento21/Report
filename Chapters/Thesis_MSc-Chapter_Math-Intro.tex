@@ -155,7 +155,7 @@ The following Lemma is a consequence of Theorem \ref{hb_geo_form}, and it is a u
     as we saw above (\(N\) is a linear subspace).
     The desired result follows.
 \end{proof}
-\begin{remark}
+\begin{remark}\label{chapt_preliminaries_remark_density_banach}
     The Lemma \ref{banach_ortho_lemma} will be used in justifying the Method of Fundamental Solutions. To prove that some subset \(N\) of \(E ^\star\) is dense in \(E\) and \(E^\star\) it will suffice to show that its orthogonal \(N^\perp\) contains only the trivial element, which belongs to both \(E\) and \(E^\star\).
 \end{remark}
 
@@ -425,7 +425,7 @@ One of the main tools used in obtaining the spectral decomposition of the Laplac
     Assume that \(\Omega\) is a bounded Lipschitz domain. Then, the embedding \(H^1(\Omega) \rightarrow L^2(\Omega)\) is compact, i.e., given a bounded sequence \((u_n)_{n \in \mathbb{N}} \subset H^1(\Omega)\) there exists a convergent subsequence \((u_{n_k})_{k \in \mathbb{N}} \subset L^2(\Omega)\).
 \end{theorem}
 
-While we have only defined Sobolev spaces for \(k \in \mathbb{N}\), it is possible to define fractional Sobolev spaces with a real exponent \(s \in \mathbb{R}_0^+\). In particular, such a generalization can be made using Fourier Transforms if \(p=2\).
+So far we have restricted our definition of Sobolev spaces to \(k \in \mathbb{N}\), but it is entirely feasible to extend these spaces to fractional Sobolev spaces using a real exponent \(s \in \mathbb{R}_0^+\). While various approaches can be employed for this extension, when \(p=2\) it can be readily achieved through Fourier Transforms.
 
 \begin{lemma}
     Let \(u \in L^2(\mathbb{R}^d)\). Then
@@ -463,7 +463,7 @@ The definition \ref{def_fractional_sobolev} only holds for functions defined ove
     \]
 \end{definition}
 
-Fractional Sobolev spaces are important for our study because they are deeply related to the boundary behavior of a given function. For example, if \(u \in H^1(\Omega)\) and \(\Omega\) is a bounded Lipschitz domain, then \(u_{|\partial\Omega} \in H^\frac{1}{2}(\partial\Omega)\). However, the statement above must be defined rigorously: not only \(u\) is only defined in the open set \(\Omega\), but \(u\) is only defined \textit{almost everywhere} and the Lebesgue measure of \(\partial\Omega\) is zero. Intuitively, we consider the continuous extension of functions from \(\Omega\) to the boundary \(\partial\Omega\) which is only possible if the domain is regular \textit{enough}. This is done in the context of trace theory, cf. \cite{geymonat2007trace}, \cite{necas2011direct} or \cite{adams2003sobolev}.
+Fractional Sobolev spaces are important for our study because they are deeply related to the boundary behavior of a given function. For example, if \(u \in H^1(\Omega)\) and \(\Omega\) is a bounded Lipschitz domain, then \(u_{|\partial\Omega} \in H^\frac{1}{2}(\partial\Omega)\). However, the statement above must be defined rigorously: not only \(u\) is only defined in the open set \(\Omega\), but \(u\) is only defined \textit{almost everywhere} and the Lebesgue measure of \(\partial\Omega\) is zero. Intuitively, we consider the continuous extension of functions from \(\Omega\) to the boundary \(\partial\Omega\) which is only possible if the domain is regular \textit{enough}\footnote{We refer to Appendix \ref{appendix_truea} where we briefly study domain regularity and the notion of Sobolev spaces on manifolds, such as the boundary of a Lipschitz domain.}. This is done in the context of trace theory, cf. \cite{geymonat2007trace}, \cite{necas2011direct} or \cite{adams2003sobolev}.
 \begin{theorem}\label{frac_theo}
     Let \(\Omega\) be a bounded set with a Lipschitz boundary. Then, there exists a linear and continuous mapping called the trace operator
     \[
@@ -500,15 +500,15 @@ Finally, we shed some light on the dual space of Sobolev spaces (with fractional
     \]
     where \(\hat{u}\) and \(\hat{v}\) represent the Fourier Transforms of \(u\) and \(v\), respectively. In particular, the dual of \(H^s(\mathbb{R}^d)\) is isomorphic to \(H^{-s}(\mathbb{R}^d)\).
 \end{theorem}
-\begin{remark}
+\begin{remark}\label{preliminaries_chapter_duality_pairing_def_remark}
     Considering the inclusion \(\mathcal{D}(\Omega) \subset H^s(\Omega)\), it is straightforward to observe that \((H^s(\Omega))^\star \subset D^\star(\Omega)\) which implies that \(L^2(\Omega) \subset (H^{s}(\Omega))^\star \approxeq H^{-s}(\Omega)\). Consequently, based on the preceding Theorem, we note that Sobolev spaces with negative exponent \(s\) can be regarded as spaces of distributions with the following inclusions:
     \[
         H^{s}(\Omega) \subset L^2(\Omega) \subset H^{-s}(\Omega).
     \]
     In this case, one can consider \(L^2(\Omega)\) as a \textit{pivot} space, and by virtue of the identification of \(L^2(\Omega)\) with its dual, the duality pairing \(\langle \cdot, \cdot \rangle_{H^{-s}(\Omega), H^s(\Omega)}\) and the \(L^2(\Omega)\) inner product coincide for every \(u \in H^s(\Omega)\) and
-    \[
+    \begin{equation}\label{preliminaries_chapter_duality_pairing_def}
         \langle v, u \rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v dx
-    \]
+    \end{equation}
     whenever it makes sense, i.e., when \(v \in L^2(\Omega)\).
      %\rangle_{H^{-s}(\Omega), H^s(\Omega)} = \int_{\Omega} u v
 \end{remark}

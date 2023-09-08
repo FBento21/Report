@@ -4,7 +4,7 @@
 % #############################################################################
 \chapter{On Bessel Functions}\label{appendix_c_bessel}
 
-In this Appendix, some theory regarding Bessel functions is presented since they naturally appear when studying the Laplace operator, in the fundamental solution of the Helmholtz equation, when solving it in polar coordinates, and they are essential in the proof of Proposition \ref{dirac_not_polar}. First, some of its properties and relations are stated. Then, a short proof of the fundamental solution of the Helmholtz equation is given. Most of this Appendix is based on the classical book \cite{abramowitz1988handbook} and \cite{chen2010boundary}.
+In this appendix, we present some theory of Bessel functions, which naturally arise in the study of the Helmholtz equation in polar coordinates, and play a crucial role in proving Proposition \ref{dirac_not_polar}. We begin by presenting some of their properties and relationships, followed by the proof of the fundamental solution of the Laplace operator. Much of the content in this appendix draws from the classical reference \cite{abramowitz1988handbook} and from \cite{chen2010boundary}.
 
 Let \(\nu \in \mathbb{C}\). Bessel functions are the solutions \(y(x)\) of the differential equation
 \begin{equation}\label{bessel_equation}
@@ -20,7 +20,7 @@ where \(\Gamma(z) = \int_0^\infty t^{z-1} e^{-t}dt\) is the special Gamma functi
     Y_\nu(z) = \frac{J_\nu(z) \cos(\nu \pi) - J_{-\nu}(z)}{\sin(\nu \pi)}.
 \end{equation}
 
-Both functions are holomorphic through the complex plane cut along the negative real axis. If \(\nu \in \mathbb{N}\), then \(J_\nu\) is an entire function, i.e., holomorphic in the whole complex plane. In any other cases, both Bessel functions display a singularity on the origin: if \(\nu > 0\) then \(J_\nu(0)=0\), but it is not differentiable at the origin; for any other cases \(J_\nu(0)\) and \(Y_\nu(0)\) do not exist. Figures \ref{bessel_function_j_complex_plot} and \ref{bessel_function_y_complex_plot} present the Bessel functions of first and second kinds. The plots were created using Wolfram Mathematica.
+Both functions are holomorphic through the complex plane cut along the negative real axis. If \(\nu \in \mathbb{N}\), then \(J_\nu\) is an entire function, i.e., holomorphic in the whole complex plane. In any other cases, both Bessel functions display a singularity on the origin: if \(\nu > 0\) then \(J_\nu(0)=0\), but it is not differentiable at the origin. Figures \ref{bessel_function_j_complex_plot} and \ref{bessel_function_y_complex_plot} show the Bessel functions of first and second kinds. The plots were created using Wolfram Mathematica 13.3.1.0.
 
 \begin{figure}[!htb]
     \centering
@@ -28,7 +28,7 @@ Both functions are holomorphic through the complex plane cut along the negative 
         \centering
         \includegraphics[width=\linewidth]{Images/Bessel/bessel_j_0_z.png}
         \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
-        \caption{Plot of the Bessel function \(J_\nu(z)\) with \(\nu=0\) in the complex plane from \(-2-2i\) to \(2+2i\).}
+        \caption{Complex plot of the absolute value of the Bessel function \(J_\nu(z)\) with \(\nu=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi\) to \(\pi\).}
         \label{bessel_function_j_complex_plot}
     \end{minipage}%
     %\hspace{0.2cm} % Add some horizontal space between the figures
@@ -36,7 +36,7 @@ Both functions are holomorphic through the complex plane cut along the negative 
         \centering
         \includegraphics[width=\linewidth]{Images/Bessel/bessel_y_0_z.png}
         \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
-        \caption{Plot of the Bessel function \(Y_\nu(z)\) with \(\nu_=0\) in the complex plane from \(-2-2i\) to \(2+2i\).}
+        \caption{Complex plot of the absolute value of the Bessel function \(Y_\nu(z)\) with \(\nu_=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi\) to \(\pi\).}
         \label{bessel_function_y_complex_plot}
     \end{minipage}
 \end{figure}
@@ -48,7 +48,7 @@ A particularly important Bessel function in this work was the Bessel functions o
 \end{align*}
 and therefore also satisfy equation \eqref{bessel_equation}.
 
-Figures \ref{hankel_function_1_complex_plot} and \ref{hankel_function_2_complex_plot} present the Hankel functions of first and second kinds and Proposition \ref{asympt_hankel_app_c} presents the asymptotic expansions for small and large arguments of \(H_\nu^{(1)}(z)\) and \(H_\nu^{(2)}(z)\).
+Figures \ref{hankel_function_1_complex_plot} and \ref{hankel_function_2_complex_plot} show the Hankel functions of first and second kinds and Proposition \ref{asympt_hankel_app_c} presents the asymptotic expansions for small and large arguments of \(H_\nu^{(1)}(z)\) and \(H_\nu^{(2)}(z)\).
 
 \begin{figure}[H]
     \centering
@@ -56,7 +56,7 @@ Figures \ref{hankel_function_1_complex_plot} and \ref{hankel_function_2_complex_
         \centering
         \includegraphics[width=\linewidth]{Images/Bessel/hankel_1_0_z.png}
         \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
-        \caption{Plot of the Hankel function \(H_\nu^{(1)}(z)\) with \(\nu=0\) in the complex plane from \(-2-2i\) to \(2+2i\).}
+        \caption{Complex plot of the absolute value of the Hankel function \(H_\nu^{(1)}(z)\) with \(\nu=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi\) to \(\pi\).}
         \label{hankel_function_1_complex_plot}
     \end{minipage}%
     %\hspace{0.2cm} % Add some horizontal space between the figures
@@ -64,7 +64,7 @@ Figures \ref{hankel_function_1_complex_plot} and \ref{hankel_function_2_complex_
         \centering
         \includegraphics[width=\linewidth]{Images/Bessel/hankel_2_0_z.png}
         \captionsetup{width=0.9\linewidth} % Adjust the width of the caption
-        \caption{Plot of the Hankel function \(H_\nu^{(2)}(z)\) with \(\nu_=0\) in the complex plane from \(-2-2i\) to \(2+2i\).}
+        \caption{Complex plot of the absolute value of the Hankel function \(H_\nu^{(2)}(z)\) with \(\nu_=0\) in the complex plane from \(-2-2i\) to \(2+2i\). The plots are colored by the argument of the function and the colorbar shows its variation from \(-\pi\) to \(\pi\).}
         \label{hankel_function_2_complex_plot}
     \end{minipage}
 \end{figure}
@@ -146,10 +146,10 @@ First, one proves that equation \eqref{appendix_c_invariant} is invariant under 
         \Delta \Phi_k(x) + k^2 \Phi_k(x) = 0.
     \end{equation}
     Considering equation \eqref{proof_fs_helm_appendix_c} in polar coordinates, by Lemma \ref{invariant_lemma} it suffices to consider the radial part of equation
-    \[
+    \begin{equation}\label{bessel_appendix_proof_eq_q}
         \frac{1}{r^{d-1}} \frac{d}{d r}\left(r^{d-1}\frac{d \Phi_k(r)}{d r}\right) + k^2\Phi_k(r) = 0 \iff \frac{d}{d r}\left(r^{d-1}\frac{d \Phi_k(r)}{d r}\right) + k^2 r^{d-1}\Phi_k(r) = 0.
-    \]
-    Through the change of variables \(\Phi_k(r) = r^{1-\frac{d}{2}}\psi(r)\), the equation above can be written as
+    \end{equation}
+    Through the change of variables \(\Phi_k(r) = r^{1-\frac{d}{2}}\psi(r)\), the equation \eqref{bessel_appendix_proof_eq_q} above can be written as
     \[
         \frac{d}{d r}\left(r \frac{d \psi(r)}{d r}\right) + \left(k^2 r - \frac{\left(\frac{1}{2}d-1\right)^2}{r}\right)\psi(r) = 0,
     \]
@@ -169,23 +169,23 @@ First, one proves that equation \eqref{appendix_c_invariant} is invariant under 
     \[
         \Phi_k(r) = r^{1-\frac{d}{2}} \left(A H^{(1)}_{\frac{1}{2}d-1}(kr) + B H^{(2)}_{\frac{1}{2}d-1}(kr)\right).
     \]
-    Since \(\Phi_k\) must satisfy the \ref{sommerfeld_conditions} and \(\Im{k} \geq 0\) it implies that \(B=0\) by Proposition \ref{asympt_hankel_app_c} and
+    Since \(\Phi_k\) must satisfy the radiation conditions \ref{sommerfeld_conditions} and \(\Im{k} \geq 0\), it implies that \(B=0\) by Proposition \ref{asympt_hankel_app_c} and
     \[
         \Phi_k(r) = r^{1-\frac{d}{2}} A H^{(1)}_{\frac{1}{2}d-1}(kr).
     \]
-    To find \(A\), one can integrate on the ball \(B_\epsilon(0)\), apply the Divergence Theorem \ref{appendix_div_theor} and by Proposition \ref{asympt_hankel_app_c}
+    To find \(A\), one integrates equation \eqref{appendix_c_invariant} on the ball \(B_\epsilon(0)\), apply the Divergence Theorem \ref{appendix_div_theor} and by Proposition \ref{asympt_hankel_app_c}
     \[
-        \int_{\partial B_\epsilon(0)} \frac{\partial \Phi_k(r)}{\partial n}d \sigma \rightarrow -1, \, \epsilon \rightarrow 0.
+        \int_{\partial B_\epsilon(0)} \frac{\partial \Phi_k}{\partial n}d \sigma \rightarrow -1, \, \epsilon \rightarrow 0.
     \] 
     On the other hand
     \[
         \int_{\partial B_\epsilon(0)} \frac{\partial \Phi_k}{\partial n}d \sigma = \abs{\partial B_1(0)} \epsilon^{d-1}\Phi_k'(\epsilon)
     \]
     which implies that
-    \[
+    \begin{equation}\label{bessel_appendix_proof_asympt_first}
         \abs{\partial B_1(0)} \epsilon^{d-1}\Phi_k'(\epsilon) \rightarrow -1, \, \epsilon \rightarrow 0.
-    \]
-    From the formulas in Proposition \ref{recurrence_bessel_appendix_c} the equation above can be written as
+    \end{equation}
+    From Proposition \ref{recurrence_bessel_appendix_c}, equation \eqref{bessel_appendix_proof_asympt_first} above can be written as
     \[
         -A k  \abs{\partial B_1(0)} \epsilon^{\frac{d}{2}}H^{(1)}_{\frac{d}{2}}(k \epsilon) \rightarrow -1, \, \epsilon \rightarrow 0,
     \]
@@ -193,16 +193,16 @@ First, one proves that equation \eqref{appendix_c_invariant} is invariant under 
     \[
         A k \abs{\partial B_1(0)} \frac{i 2^{\frac{d}{2}} \Gamma(\frac{d}{2})}{\pi}  \rightarrow -1, \, \epsilon \rightarrow 0
     \]
-    by Proposition \ref{asympt_hankel_app_c} and,
+    by Proposition \ref{asympt_hankel_app_c}, and
     \[
         A = \frac{i \pi 2^{-\frac{d}{2}}k^{\frac{(d-2)}{2}}}{\Gamma(\frac{d}{2})\abs{\partial B_1(0)}}.
     \]
     Since \(\abs{\partial B_1(0)} = \frac{2 \pi^{\frac{d}{2}}}{\Gamma\left(\frac{1}{2}d\right)}\), 
-    and 
+    and for \(d=3\)
     \[
-        H^{(1)}_{\frac{1}{2}}(z) = \frac{1}{i}\sqrt{\frac{2}{\pi}}\frac{e^{i z}}{\sqrt{z}}
+        H^{(1)}_{\frac{1}{2}}(z) = \frac{1}{i}\sqrt{\frac{2}{\pi}}\frac{e^{i z}}{\sqrt{z}},
     \]
-    for \(d=3\), the fundamental solution of the Helmholtz equations is given by
+    the fundamental solution of the Helmholtz equation is given by
     \[
         \Phi_k(r) = \begin{cases}
             \frac{i}{4} H_0^{(1)}(k r), & d=2\\
@@ -211,7 +211,7 @@ First, one proves that equation \eqref{appendix_c_invariant} is invariant under 
     \]
 \end{proof}
 
-Figures \ref{hankel_function_re} and \ref{hankel_function_im} present the real and imaginary part of the fundamental solution \(\frac{i}{4} H_0^{(1)}(k r)\), respectively.
+Figures \ref{hankel_function_re} and \ref{hankel_function_im} show the real and imaginary part of the fundamental solution \(\frac{i}{4} H_0^{(1)}(k r)\), respectively.
 
 \begin{figure}[H]
     \centering
