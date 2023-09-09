@@ -74,7 +74,7 @@ We start by introducing the concept of analytic continuation. We refer to \cite{
 As evident from the Remark \ref{chatp_numerical_remark_conv_motivation} above, the examination of layer potentials plays a pivotal role in the Method of Fundamental Solutions. Due to the depth of this topic, we refer to \cite{chen2010boundary}, \cite{kress2013linear}, and \cite{colton2013integral} for a more comprehensive understanding.
 
 \begin{definition}\label{definition_single_and_double_layer_potentials}
-    Let \(\Omega\) be a bounded domain of class \(C^2\) and \(\varphi \in H^\frac{1}{2}(\partial\Omega)\). The functions
+    Let \(\Omega \subset \mathbb{R}^d\) be a bounded domain of class \(C^2\) and \(\varphi \in H^\frac{1}{2}(\partial\Omega)\). The functions
     \[
         S\varphi(x) = \int_{\partial\Omega} \Phi(x-y)\varphi(y) d\sigma(y)
     \]
@@ -85,7 +85,7 @@ As evident from the Remark \ref{chatp_numerical_remark_conv_motivation} above, t
     are called the single and double layer potentials with density \(\varphi\), respectively.
 \end{definition}
 \begin{proposition}\label{sl_jump}
-    Let \(\Omega\) be a bounded domain of class \(C^2\) and \(\varphi \in H^\frac{1}{2}(\partial\Omega)\). Then the single layer potential is harmonic in \(\mathbb{R}^d\setminus \overline{\partial\Omega}\), continuous across \(\partial\Omega\), and for every \(x \in \partial\Omega\) we have the following jump relations for the normal derivative:
+    Let \(\Omega  \subset \mathbb{R}^d\) be a bounded domain of class \(C^2\) and \(\varphi \in H^\frac{1}{2}(\partial\Omega)\). Then the single layer potential is harmonic in \(\mathbb{R}^d\setminus \overline{\partial\Omega}\), continuous across \(\partial\Omega\), and for every \(x \in \partial\Omega\) we have the following jump relations for the normal derivative:
     \[
         \lim_{z \rightarrow x} \frac{\partial S\varphi}{\partial n}(z) = \int_{\partial\Omega} \frac{\partial\Phi(x-y)}{\partial n}\varphi(y) d\sigma(y) - \frac{1}{2}\varphi(x), \quad z \in \mathbb{R}^d \setminus \ \overline{\Omega}
     \]
@@ -99,7 +99,7 @@ As evident from the Remark \ref{chatp_numerical_remark_conv_motivation} above, t
     \]
     Analogously, the double layer potential is harmonic in \(\mathbb{R}^d\setminus \overline{\partial\Omega}\), its normal derivative is continuous across \(\partial\Omega\), and for every \(x \in \partial\Omega\) we have the following jump relations:
     \[
-        \lim_{z \rightarrow x} M\varphi(z) = \int_{\partial\Omega} \frac{\partial\Phi(x-y)}{\partial n}\varphi(y) d\sigma(y) + \frac{1}{2}\varphi(x), \quad z \in \mathbb{R}^2\setminus\overline{\Omega}
+        \lim_{z \rightarrow x} M\varphi(z) = \int_{\partial\Omega} \frac{\partial\Phi(x-y)}{\partial n}\varphi(y) d\sigma(y) + \frac{1}{2}\varphi(x), \quad z \in \mathbb{R}^d\setminus\overline{\Omega}
     \]
     and
     \[
