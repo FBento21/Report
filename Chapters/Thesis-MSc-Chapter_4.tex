@@ -510,14 +510,14 @@ The procedure presented here is based on \cite{alves2005new} and \cite{alves2021
     \]
     are some possible non-homogeneous solutions;
     \item Then we solve the homogeneous problem 
-    \begin{align}\label{transmission_num_homo}
+    \begin{align*}
         \begin{cases}
         - \Delta u_i^H = 0, & \text{in }\Omega_i\\
         u_1^H - u_2^H = u_2^{NH}- u_1^{NH}, & \text{on }\gamma\\
         k_1 \frac{\partial u_1^H}{\partial \mathbf{n_1}} - k_2 \frac{\partial u_2^H}{\partial  \mathbf{n_1}} = k_2 \frac{\partial u_2^{NH}}{\partial  \mathbf{n_1}}  - k_1 \frac{\partial u_1^{NH}}{\partial  \mathbf{n_1}}, & \text{on }\gamma\\
         u_i^H = - u_i^{NH}, & \text{on }\Gamma_i,
         \end{cases}
-    \end{align}
+    \end{align*}
     for \(u_1^H\) and \(u_2^H\);
     \item Finally, the solution of \eqref{transmission_num} is \(u_i = u_i^H + u_i^{NH}\).
 \end{enumerate}
@@ -761,8 +761,8 @@ where
 \(\theta_1 = \frac{\pi}{2}\), \(\Theta = \pi\) is the total angle amplitude, and where the polar coordinates \(r\) and \(\theta\), centered in the corner, are given by
 \[
     r(x,y) = \sqrt{x^2+y^2}, \quad \theta(x,y)=\begin{cases}
-        \atantwo(\frac{y}{x}),& \text{if } \atantwo(\frac{y}{x})>0\\
-        \atantwo(\frac{y}{x})+2\pi,& \text{if } \atantwo(\frac{y}{x})\leq0,
+        \atantwo(y,x),& \text{if } \atantwo(y,x)>0\\
+        \atantwo(y,x)+2\pi,& \text{if } \atantwo(y,x)\leq0,
     \end{cases}
 \]
 where the function \(\atantwo(y,x)\) computes the \(\arctan\) of \(\frac{y}{x}\) taking into account which quadrant the point \((x, y)\) is in, and it is given by
@@ -786,7 +786,7 @@ Finally, considering the truncated expansion
     \phi(r,\theta)=\sum_{p_1=0}^{P_1} \delta_{p_1} v_{p_1}(r, \theta),
 \end{equation}
 where \(P_1\) is the number of particular solutions added and \(\delta_{p_1}\) are the coefficient to be found using least squares. Expanding the matrix in \eqref{MFS_transmission_classical_matrices_system}, it becomes
-\begin{equation}\label{transmission_mat_L_rect_exp}
+\begin{equation*}
     \renewcommand{\arraystretch}{1.75} % Increase spacing between rows of the matrices
     \begin{bmatrix}
         \left[\Phi\left(x^{(1)}_{m}-y_j^{(1)}\right)\right] & [0] & \left[\phi(r\left(x_m\right),\theta\left(x_m\right))\right]\\
@@ -794,7 +794,7 @@ where \(P_1\) is the number of particular solutions added and \(\delta_{p_1}\) a
         \left[\Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-\Phi\left(z_q-y_j^{(2)}\right)\right] & \left[\phi(r\left(z_k\right),\theta\left(z_q\right))\right]\\
         \left[k_1\partial_n \Phi\left(z_q-y_j^{(1)}\right)\right] & \left[-k_2 \partial_n \Phi\left(z_q-y_j^{(2)}\right)\right] & \left[k_1 \partial_n\phi(r\left(z_q\right),\theta\left(z_q\right))\right]
     \end{bmatrix}
-\end{equation}
+\end{equation*}
 
 Table \ref{tab:transmission_results_L_shape_rectangles_particular} presents the results after applying the enrichment technique for the previously considered \(k_1\) values. In expansion \eqref{num_particular_L_shape_rect_equation}, different numbers of terms were considered. After some simulations, it became clear that choosing \(P_1 > 2\) would not achieve better results for positive \(p_1\) values. On the other hand, negative values of \(p_1\) were considered. Interestingly, when adding particular solutions for the exterior problem, better results were achieved. Not only did the error decrease at the boundary \(\Gamma_i\) of each domain, but better results were also achieved on the interface.
 

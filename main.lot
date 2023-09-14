@@ -9,14 +9,14 @@
 \contentsline {xchapter}{The Method of Fundamental Solutions}{35}{chapter.4}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Numerical Results}{51}{chapter.5}%
-\contentsline {table}{\numberline {5.1}{\ignorespaces Eigenvalues for different values of \(N\) and the measured absolute error.\relax }}{53}{table.caption.20}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical errors at the boundaries \(\partial \Omega _1\) and \(\partial \Omega _2\) and in the domains \(\Omega _1\) and \(\Omega _2\)\relax }}{69}{table.caption.38}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical errors at the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{70}{table.caption.39}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{71}{table.caption.41}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Consistency errors on the boundary and in the interface \(\gamma \)\relax }}{72}{table.caption.43}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after enriching the basis with particular (angular) solutions.\relax }}{74}{table.caption.44}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{74}{table.caption.46}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after adding particular (angular) solutions to the classical \ac {MFS} basis.\relax }}{76}{table.caption.47}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Eigenvalues for different values of \(N\) and the measured absolute error.\relax }}{53}{table.caption.18}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Numerical errors at the boundaries \(\partial \Omega _1\) and \(\partial \Omega _2\) and in the domains \(\Omega _1\) and \(\Omega _2\)\relax }}{69}{table.caption.36}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Numerical errors at the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{70}{table.caption.37}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{71}{table.caption.39}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Consistency errors on the boundary and in the interface \(\gamma \)\relax }}{72}{table.caption.41}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after enriching the basis with particular (angular) solutions.\relax }}{74}{table.caption.42}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{74}{table.caption.44}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after adding particular (angular) solutions to the classical \ac {MFS} basis.\relax }}{76}{table.caption.45}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusions}{78}{chapter.6}%
 \addvspace {10\p@ }
