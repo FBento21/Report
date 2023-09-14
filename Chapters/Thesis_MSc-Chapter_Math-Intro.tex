@@ -188,7 +188,7 @@ Finally, if the normed space is complete for the induced norm, then we say that 
     % \[
     %     (f, g)_{L^2(\Omega)} = \int_\Omega f(x)\overline{g}(x) dx,
     % \]
-    where a bar over an expression represents the complex conjugate of the scalar (function).
+    % where a bar over an expression represents the complex conjugate of the scalar (function).
 \end{example}
 
 In Hilbert spaces, proving the density of a subspace \(M \subset H\) is more intuitive and can be derived straightforwardly. The following results can be compared with Definition \eqref{banach_ortho_def} and Lemma \ref{banach_ortho_lemma}.
@@ -347,11 +347,11 @@ As usual, we denote the space of test functions with compact support in $\Omega$
     \]
     If \(p=\infty\) we set
     \[
-        L^\infty(\Omega) = \Big\{u: \Omega \rightarrow \mathbb{R}: u \text{ is measurable and } \exists C > 0: \abs*{f(x)} \leq C \text{ a.e on } \Omega \Big\}
+        L^\infty(\Omega) = \Big\{u: \Omega \rightarrow \mathbb{R}: u \text{ is measurable and } \exists C > 0: \abs*{f(x)} \leq C \text{ a.e. on } \Omega \Big\}
     \]
     with the associated norm
     \[
-        \norm*{f}_{L^\infty(\Omega)} = \inf \{C: \abs*{f(x)} \leq C \text{ a.e on } \Omega\}.
+        \norm*{f}_{L^\infty(\Omega)} = \inf \{C: \abs*{f(x)} \leq C \text{ a.e. on } \Omega\}.
     \]
 \end{definition}
 
@@ -478,13 +478,13 @@ Fractional Sobolev spaces are important for our study because they are deeply re
     \end{align*}
     is linear and continuous\footnote{One may understand \(\gamma_0\) here as an elementwise operator, where \(\gamma_0(\nabla u) = \Big(\gamma_0(\frac{\partial u}{\partial x_1}),\dots,\gamma_0(\frac{\partial u}{\partial x_d})\)\Big).} and generalizes the notion of the normal derivative (denoted by \(\frac{\partial u}{\partial n}\)) on the boundary \(\partial\Omega\) for a function \(u \in H^2(\Omega)\).  
 \end{theorem}
-The result above is stated in a very weak form since we are working in Lipschitz domains. If $\Omega$ is a smooth domain, then $\gamma_1: H^2(\Omega) \rightarrow H^{\frac{1}{2}}(\partial\Omega)$, cf. \cite{lions2012non}. However, it should be noted that the normal derivative operator $\gamma_1$ cannot be defined if we only assume that $u \in H^1(\Omega)$. If such a continuous operator $\mathcal{N}$ existed, then $\mathcal{N}\varphi = 0$ for every $\varphi \in \mathcal{D}(\Omega)$. By continuity, this would imply $\mathcal{N}u=0$ for all $u \in H_0^1(\Omega)$, leading to a contradiction.
-
-An important (closed) subspace of \(H^1(\Omega)\) is the kernel of the trace operator \(\gamma_0\),
+The result above is stated in a very weak form since we are working in Lipschitz domains. If $\Omega$ is a smooth domain, then $\gamma_1: H^2(\Omega) \rightarrow H^{\frac{1}{2}}(\partial\Omega)$, cf. \cite{lions2012non}. An important (closed) subspace of \(H^1(\Omega)\) is the kernel of the trace operator \(\gamma_0\),
 \[
     \ker \gamma_0 = \{u \in H^1(\Omega): \gamma_0 u = 0\} \eqqcolon H^1_0(\Omega)
 \] 
-which can be equivalently defined as the closure of \(\overline{\mathcal{D}(\Omega)}\) in the \(H^1(\Omega)\) norm, i.e.,  \(H^1_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{H^1(\Omega)}\). \(H^1_0(\Omega)\) is of major importance in the Dirichlet Laplacian problem, since the functions in \(H^1_0(\Omega)\) ``vanish'' on \(\partial\Omega\). Next, we state an important result to be used when studying the spectrum of the Dirichlet Laplacian.
+which can be equivalently defined as the closure of \(\overline{\mathcal{D}(\Omega)}\) in the \(H^1(\Omega)\) norm, i.e.,  \(H^1_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{H^1(\Omega)}\). It should be noted that the normal derivative operator $\gamma_1$ cannot be defined if we only assume that $u \in H^1(\Omega)$. If such a continuous operator $\mathcal{N}$ existed, then $\mathcal{N}\varphi = 0$ for every $\varphi \in \mathcal{D}(\Omega)$. By continuity, this would imply $\mathcal{N}u=0$ for all $u \in H_0^1(\Omega)$, leading to a contradiction.
+
+\(H^1_0(\Omega)\) is of major importance in the Dirichlet Laplacian problem, since the functions in \(H^1_0(\Omega)\) ``vanish'' on \(\partial\Omega\). Next, we state an important result to be used when studying the spectrum of the Dirichlet Laplacian.
 \begin{theorem}[Poincaré inequality]
     Let \(\Omega \subset \mathbb{R}^d\) be a bounded set. Define \(W^{1, p}_0(\Omega) \coloneqq \overline{\mathcal{D}(\Omega)}^{W^{1, p}(\Omega)}\). Then, there exists \(C > 0\) such that
     \[

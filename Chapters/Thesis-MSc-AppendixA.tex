@@ -181,7 +181,7 @@ The study of the spectrum of the Laplace operator is of major importance in this
             u(x) = 0, & x \in \partial \Omega.
         \end{cases}
     \end{equation}
-    One says that \(\lambda \in \mathbb{C}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
+    One says that \(\lambda \in \mathbb{R}\) is an eigenvalue of the equation \eqref{eig_helm_eq} if there exists an eigenfunction \(u \neq 0\) belonging to the function spaces \(C^2(\Omega) \cap C(\overline{\Omega})\).
 \end{definition}
 
 \begin{theorem}\label{spec_lap_pre}
@@ -287,8 +287,11 @@ The study of the spectrum of the Laplace operator is of major importance in this
     \begin{equation*}
         \alpha^2\lambda_n(\alpha \Omega) = \min_{\substack{u \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\alpha\nabla u(\alpha x)}^2 dx}{\int_{\Omega} \abs{u(\alpha x)}^2 dx} = \min_{\substack{v \in E^\perp_{n-1} \\ u \neq 0}} \frac{\int_{\Omega} \abs{\nabla v(x)}^2 dx}{\int_{\Omega} \abs{v(x)}^2 dx} = \lambda_n(\Omega).
     \end{equation*}
-    
 \end{proof}
+
+\begin{remark}
+    Notice that, unlike the homogeneity property stated in Corollary \ref{lap_homo} for the Laplace operator, a similar property does not hold for the Dirac operator with infinite mass boundary conditions unless \(m=0\) is considered in the variational form presented in Proposition \ref{dirac_properties}.
+\end{remark}
 
 
 

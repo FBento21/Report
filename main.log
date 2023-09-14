@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.27)  9 SEP 2023 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.27)  14 SEP 2023 16:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1151,7 +1151,7 @@ File: english.mld 2006/01/13
 ))
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
-(minitoc)              on input line 362.
+(minitoc)              on input line 364.
  (/usr/share/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 ))
@@ -1583,44 +1583,44 @@ Package acronym Info: Label `acro:BVP' overridden on input line 18.
 [35
 
 ] [36] [37] [38] [39]
-Overfull \hbox (14.1464pt too wide) in paragraph at lines 269--270
+Overfull \hbox (14.1464pt too wide) in paragraph at lines 268--269
 []\OT1/phv/m/n/10 Finally, the dis-cretiza-tion ar-gu-ment fol-lows from the fact that for a set of source points $\OMS/cmsy/m/n/10 Y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 y[]; [] ; y[]\OMS/cmsy/m/n/10 g ^^Z
  []
 
 [40] [41] [42] [43] [44]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 441.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 440.
  [45] [46] [47] [48] [49]) (./Chapters/Thesis-MSc-Chapter_4.tex [50]
 Chapter 5.
 [51
 
 ]
-<Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png, id=1291, 654.0435pt x 540.5796pt>
+<Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png, id=1295, 654.0435pt x 540.5796pt>
 File: Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png  used on input line 51.
 (pdftex.def)             Requested size: 227.62204pt x 188.13338pt.
-<Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png, id=1296, 487.8225pt x 369.2997pt>
+<Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png, id=1300, 487.8225pt x 369.2997pt>
 File: Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png  used on input line 79.
 (pdftex.def)             Requested size: 227.62204pt x 172.31989pt.
-<Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png, id=1299, 403.9893pt x 365.6862pt>
+<Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png, id=1303, 403.9893pt x 365.6862pt>
 File: Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png  used on input line 88.
 (pdftex.def)             Requested size: 163.88737pt x 148.34761pt.
-<Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png, id=1300, 398.9304pt x 365.6862pt>
+<Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png, id=1304, 398.9304pt x 365.6862pt>
 File: Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png  used on input line 94.
 (pdftex.def)             Requested size: 163.88737pt x 150.22804pt.
-<Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png, id=1301, 407.6028pt x 365.6862pt>
+<Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png, id=1305, 407.6028pt x 365.6862pt>
 File: Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png  used on input line 102.
 (pdftex.def)             Requested size: 163.88737pt x 147.03633pt.
-<Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png, id=1302, 407.6028pt x 365.6862pt>
+<Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png, id=1306, 407.6028pt x 365.6862pt>
 File: Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png Graphic file (type png)
 <use Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png>
 Package pdftex.def Info: Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png  used on input line 108.
@@ -1629,33 +1629,33 @@ Package pdftex.def Info: Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.p
 Underfull \vbox (badness 4543) has occurred while \output is active []
 
  [52 <./Images/Dirac/circle_m_0_col_points_158_inner_eta_05.png>] [53 <./Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png>] [54 <./Images/Dirac/circle_m_0_u1_re_points_158_inner_eta_05.png> <./Images/Dirac/circle_m_0_u1_im_points_158_inner_eta_05.png> <./Images/Dirac/circle_m_0_u2_re_points_158_inner_eta_05.png> <./Images/Dirac/circle_m_0_u2_im_points_158_inner_eta_05.png>]
-<Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png, id=1337, 479.1501pt x 386.6445pt>
+<Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png, id=1341, 479.1501pt x 386.6445pt>
 File: Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png Graphic file (type png)
 <use Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png>
 Package pdftex.def Info: Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png  used on input line 136.
 (pdftex.def)             Requested size: 227.62204pt x 183.67574pt.
-<Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png, id=1338, 484.9317pt x 386.6445pt>
+<Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png, id=1342, 484.9317pt x 386.6445pt>
 File: Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png Graphic file (type png)
 <use Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png>
 Package pdftex.def Info: Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png  used on input line 144.
 (pdftex.def)             Requested size: 227.62204pt x 181.48695pt.
-<Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png, id=1345, 479.1501pt x 386.6445pt>
+<Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png, id=1349, 479.1501pt x 386.6445pt>
 File: Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png Graphic file (type png)
 <use Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png>
 Package pdftex.def Info: Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png  used on input line 157.
 (pdftex.def)             Requested size: 227.62204pt x 183.67574pt.
-<Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png, id=1346, 484.9317pt x 386.6445pt>
+<Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png, id=1350, 484.9317pt x 386.6445pt>
 File: Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png Graphic file (type png)
 <use Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png>
 Package pdftex.def Info: Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png  used on input line 165.
 (pdftex.def)             Requested size: 227.62204pt x 181.48695pt.
  [55 <./Images/Dirac/quad/eigenvalues_rectangle_width_m_1.png> <./Images/Dirac/quad/eigenvalues_rectangle_width_m_5.png> <./Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_1.png> <./Images/Dirac/quad/eigenvalues_rectangle_perimeter_width_m_5.png>]
-<Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png, id=1360, 669.2202pt x 544.1931pt>
+<Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png, id=1364, 669.2202pt x 544.1931pt>
 File: Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png Graphic file (type png)
 <use Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png>
 Package pdftex.def Info: Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png  used on input line 180.
 (pdftex.def)             Requested size: 291.35841pt x 236.92967pt.
-<Images/Dirac/quad/benguria_quad.png, id=1361, 489.2679pt x 369.2997pt>
+<Images/Dirac/quad/benguria_quad.png, id=1365, 489.2679pt x 369.2997pt>
 File: Images/Dirac/quad/benguria_quad.png Graphic file (type png)
 <use Images/Dirac/quad/benguria_quad.png>
 Package pdftex.def Info: Images/Dirac/quad/benguria_quad.png  used on input line 189.
@@ -1670,7 +1670,7 @@ Underfull \hbox (badness 6332) in paragraph at lines 191--191
 \OT1/phv/m/n/9 against the perime-ter for
  []
 
-<Images/Dirac/quad/generalized_benguria_quad.png, id=1364, 489.2679pt x 369.2997pt>
+<Images/Dirac/quad/generalized_benguria_quad.png, id=1368, 489.2679pt x 369.2997pt>
 File: Images/Dirac/quad/generalized_benguria_quad.png Graphic file (type png)
 <use Images/Dirac/quad/generalized_benguria_quad.png>
 Package pdftex.def Info: Images/Dirac/quad/generalized_benguria_quad.png  used on input line 197.
@@ -1680,7 +1680,7 @@ Underfull \hbox (badness 2126) in paragraph at lines 199--199
 \OT1/phv/m/n/9 first eigen-val-ues $[]$ plot-
  []
 
-<Images/Dirac/model_triangle.png, id=1373, 417.7206pt x 354.8457pt>
+<Images/Dirac/model_triangle.png, id=1377, 417.7206pt x 354.8457pt>
 File: Images/Dirac/model_triangle.png Graphic file (type png)
 <use Images/Dirac/model_triangle.png>
 Package pdftex.def Info: Images/Dirac/model_triangle.png  used on input line 223.
@@ -1689,27 +1689,31 @@ Package pdftex.def Info: Images/Dirac/model_triangle.png  used on input line 223
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57 <./Images/Dirac/quad/first_three_eigenvalues_quad_m_1.png> <./Images/Dirac/quad/benguria_quad.png> <./Images/Dirac/quad/generalized_benguria_quad.png>]
-<Images/Dirac/triangles/triangle_first_eigenvalues.png, id=1392, 1260.3888pt x 699.5736pt>
+<Images/Dirac/triangles/triangle_first_eigenvalues.png, id=1396, 1260.3888pt x 699.5736pt>
 File: Images/Dirac/triangles/triangle_first_eigenvalues.png Graphic file (type png)
 <use Images/Dirac/triangles/triangle_first_eigenvalues.png>
 Package pdftex.def Info: Images/Dirac/triangles/triangle_first_eigenvalues.png  used on input line 237.
 (pdftex.def)             Requested size: 364.19664pt x 202.14526pt.
-<Images/Dirac/triangles/triangle_benguria.png, id=1393, 489.2679pt x 369.2997pt>
+<Images/Dirac/triangles/triangle_benguria.png, id=1397, 489.2679pt x 369.2997pt>
 File: Images/Dirac/triangles/triangle_benguria.png Graphic file (type png)
 <use Images/Dirac/triangles/triangle_benguria.png>
 Package pdftex.def Info: Images/Dirac/triangles/triangle_benguria.png  used on input line 246.
 (pdftex.def)             Requested size: 186.65173pt x 140.88193pt.
-<Images/Dirac/triangles/triangle_3d_lambda1.png, id=1394, 460.3599pt x 406.1574pt>
+<Images/Dirac/triangles/triangle_3d_lambda1.png, id=1398, 460.3599pt x 406.1574pt>
 File: Images/Dirac/triangles/triangle_3d_lambda1.png Graphic file (type png)
 <use Images/Dirac/triangles/triangle_3d_lambda1.png>
 Package pdftex.def Info: Images/Dirac/triangles/triangle_3d_lambda1.png  used on input line 254.
 (pdftex.def)             Requested size: 223.0721pt x 196.81256pt.
-<Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png, id=1395, 1250.9937pt x 654.7662pt>
+<Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png, id=1399, 1250.9937pt x 654.7662pt>
 File: Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png Graphic file (type png)
 <use Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png>
 Package pdftex.def Info: Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png  used on input line 264.
 (pdftex.def)             Requested size: 455.24408pt x 238.27333pt.
-<Images/Dirac/Polygons/pentagons.png, id=1403, 479.1501pt x 369.2997pt>
+
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+ [58 <./Images/Dirac/model_triangle.png>]
+<Images/Dirac/Polygons/pentagons.png, id=1414, 479.1501pt x 369.2997pt>
 File: Images/Dirac/Polygons/pentagons.png Graphic file (type png)
 <use Images/Dirac/Polygons/pentagons.png>
 Package pdftex.def Info: Images/Dirac/Polygons/pentagons.png  used on input line 277.
@@ -1719,7 +1723,7 @@ Underfull \hbox (badness 4765) in paragraph at lines 278--278
 [][]|\OT1/phv/m/n/9 Nu-mer-i-cal sim-u-la-tions in the first
  []
 
-<Images/Dirac/Polygons/hexagons.png, id=1404, 495.0495pt x 369.2997pt>
+<Images/Dirac/Polygons/hexagons.png, id=1415, 495.0495pt x 369.2997pt>
 File: Images/Dirac/Polygons/hexagons.png Graphic file (type png)
 <use Images/Dirac/Polygons/hexagons.png>
 Package pdftex.def Info: Images/Dirac/Polygons/hexagons.png  used on input line 284.
@@ -1729,7 +1733,7 @@ Underfull \hbox (badness 4765) in paragraph at lines 285--285
 [][]|\OT1/phv/m/n/9 Nu-mer-i-cal sim-u-la-tions in the first
  []
 
-<Images/Dirac/Polygons/heptagons.png, id=1405, 494.3268pt x 369.2997pt>
+<Images/Dirac/Polygons/heptagons.png, id=1416, 494.3268pt x 369.2997pt>
 File: Images/Dirac/Polygons/heptagons.png Graphic file (type png)
 <use Images/Dirac/Polygons/heptagons.png>
 Package pdftex.def Info: Images/Dirac/Polygons/heptagons.png  used on input line 293.
@@ -1739,7 +1743,7 @@ Underfull \hbox (badness 4765) in paragraph at lines 294--294
 [][]|\OT1/phv/m/n/9 Nu-mer-i-cal sim-u-la-tions in the first
  []
 
-<Images/Dirac/Polygons/octagons.png, id=1406, 487.8225pt x 369.2997pt>
+<Images/Dirac/Polygons/octagons.png, id=1417, 487.8225pt x 369.2997pt>
 File: Images/Dirac/Polygons/octagons.png Graphic file (type png)
 <use Images/Dirac/Polygons/octagons.png>
 Package pdftex.def Info: Images/Dirac/Polygons/octagons.png  used on input line 300.
@@ -1750,66 +1754,60 @@ Underfull \hbox (badness 4765) in paragraph at lines 301--301
  []
 
 
-Underfull \vbox (badness 1057) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58 <./Images/Dirac/model_triangle.png>] [59 <./Images/Dirac/triangles/triangle_first_eigenvalues.png> <./Images/Dirac/triangles/triangle_benguria.png> <./Images/Dirac/triangles/triangle_3d_lambda1.png>]
-<Images/Dirac/smooth/random_smooth_domain.png, id=1425, 509.5035pt x 393.8715pt>
+ [59 <./Images/Dirac/triangles/triangle_first_eigenvalues.png> <./Images/Dirac/triangles/triangle_benguria.png> <./Images/Dirac/triangles/triangle_3d_lambda1.png>]
+<Images/Dirac/smooth/random_smooth_domain.png, id=1429, 509.5035pt x 393.8715pt>
 File: Images/Dirac/smooth/random_smooth_domain.png Graphic file (type png)
 <use Images/Dirac/smooth/random_smooth_domain.png>
 Package pdftex.def Info: Images/Dirac/smooth/random_smooth_domain.png  used on input line 314.
 (pdftex.def)             Requested size: 250.38562pt x 193.55765pt.
-<Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png, id=1433, 1136.0844pt x 656.9343pt>
+<Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png, id=1437, 1136.0844pt x 656.9343pt>
 File: Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png Graphic file (type png)
 <use Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png>
 Package pdftex.def Info: Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png  used on input line 326.
 (pdftex.def)             Requested size: 364.19664pt x 210.59415pt.
-<Images/Dirac/smooth/smooth_domains_scatter_benguria.png, id=1434, 506.6127pt x 376.5267pt>
+<Images/Dirac/smooth/smooth_domains_scatter_benguria.png, id=1438, 506.6127pt x 376.5267pt>
 File: Images/Dirac/smooth/smooth_domains_scatter_benguria.png Graphic file (type png)
 <use Images/Dirac/smooth/smooth_domains_scatter_benguria.png>
 Package pdftex.def Info: Images/Dirac/smooth/smooth_domains_scatter_benguria.png  used on input line 335.
 (pdftex.def)             Requested size: 204.85844pt x 152.25116pt.
-<Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png, id=1435, 498.663pt x 376.5267pt>
+<Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png, id=1439, 498.663pt x 376.5267pt>
 File: Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png Graphic file (type png)
 <use Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png>
 Package pdftex.def Info: Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png  used on input line 349.
 (pdftex.def)             Requested size: 204.85844pt x 154.68144pt.
- [60 <./Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61 <./Images/Dirac/Polygons/pentagons.png> <./Images/Dirac/Polygons/hexagons.png> <./Images/Dirac/Polygons/heptagons.png> <./Images/Dirac/Polygons/octagons.png>]
+ [60 <./Images/Dirac/triangles/triangle_perimeter_first_eigenvalues.png>] [61 <./Images/Dirac/Polygons/pentagons.png> <./Images/Dirac/Polygons/hexagons.png> <./Images/Dirac/Polygons/heptagons.png> <./Images/Dirac/Polygons/octagons.png>]
 Package acronym Info: Label `acro:BFGS' newly defined as it shall be overridden
 although it is yet undefined on input line 374.
- [62 <./Images/Dirac/smooth/random_smooth_domain.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [63 <./Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png> <./Images/Dirac/smooth/smooth_domains_scatter_benguria.png> <./Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png>]
-<Images/Dirac/smooth/nelder_mead_optimal.png, id=1482, 1198.2366pt x 643.203pt>
+ [62 <./Images/Dirac/smooth/random_smooth_domain.png>] [63 <./Images/Dirac/smooth/smooth_domains_scatter_all_eigs_.png> <./Images/Dirac/smooth/smooth_domains_scatter_benguria.png> <./Images/Dirac/smooth/smooth_domains_scatter_benguria_third.png>]
+<Images/Dirac/smooth/nelder_mead_optimal.png, id=1486, 1198.2366pt x 643.203pt>
 File: Images/Dirac/smooth/nelder_mead_optimal.png Graphic file (type png)
 <use Images/Dirac/smooth/nelder_mead_optimal.png>
 Package pdftex.def Info: Images/Dirac/smooth/nelder_mead_optimal.png  used on input line 409.
 (pdftex.def)             Requested size: 204.85844pt x 109.96136pt.
-<Images/Dirac/smooth/dirac_val_third.png, id=1483, 480.5955pt x 381.5856pt>
+<Images/Dirac/smooth/dirac_val_third.png, id=1487, 480.5955pt x 381.5856pt>
 File: Images/Dirac/smooth/dirac_val_third.png Graphic file (type png)
 <use Images/Dirac/smooth/dirac_val_third.png>
 Package pdftex.def Info: Images/Dirac/smooth/dirac_val_third.png  used on input line 418.
 (pdftex.def)             Requested size: 182.09831pt x 144.57898pt.
  [64 <./Images/Dirac/smooth/nelder_mead_optimal.png> <./Images/Dirac/smooth/dirac_val_third.png>]
-<Images/Dirac/smooth/optimal_lambda3_m_1_u1_re.png, id=1497, 415.5525pt x 361.35pt>
+<Images/Dirac/smooth/optimal_lambda3_m_1_u1_re.png, id=1501, 415.5525pt x 361.35pt>
 File: Images/Dirac/smooth/optimal_lambda3_m_1_u1_re.png Graphic file (type png)
 <use Images/Dirac/smooth/optimal_lambda3_m_1_u1_re.png>
 Package pdftex.def Info: Images/Dirac/smooth/optimal_lambda3_m_1_u1_re.png  used on input line 437.
 (pdftex.def)             Requested size: 153.64383pt x 133.60367pt.
-<Images/Dirac/smooth/optimal_lambda3_m_1_u1_im.png, id=1498, 415.5525pt x 361.35pt>
+<Images/Dirac/smooth/optimal_lambda3_m_1_u1_im.png, id=1502, 415.5525pt x 361.35pt>
 File: Images/Dirac/smooth/optimal_lambda3_m_1_u1_im.png Graphic file (type png)
 <use Images/Dirac/smooth/optimal_lambda3_m_1_u1_im.png>
 Package pdftex.def Info: Images/Dirac/smooth/optimal_lambda3_m_1_u1_im.png  used on input line 443.
 (pdftex.def)             Requested size: 153.64383pt x 133.60367pt.
-<Images/Dirac/smooth/optimal_lambda3_m_1_u2_re.png, id=1499, 415.5525pt x 361.35pt>
+<Images/Dirac/smooth/optimal_lambda3_m_1_u2_re.png, id=1503, 415.5525pt x 361.35pt>
 File: Images/Dirac/smooth/optimal_lambda3_m_1_u2_re.png Graphic file (type png)
 <use Images/Dirac/smooth/optimal_lambda3_m_1_u2_re.png>
 Package pdftex.def Info: Images/Dirac/smooth/optimal_lambda3_m_1_u2_re.png  used on input line 451.
 (pdftex.def)             Requested size: 153.64383pt x 133.60367pt.
-<Images/Dirac/smooth/optimal_lambda3_m_1_u2_im.png, id=1500, 415.5525pt x 361.35pt>
+<Images/Dirac/smooth/optimal_lambda3_m_1_u2_im.png, id=1504, 415.5525pt x 361.35pt>
 File: Images/Dirac/smooth/optimal_lambda3_m_1_u2_im.png Graphic file (type png)
 <use Images/Dirac/smooth/optimal_lambda3_m_1_u2_im.png>
 Package pdftex.def Info: Images/Dirac/smooth/optimal_lambda3_m_1_u2_im.png  used on input line 457.
@@ -1834,28 +1832,28 @@ Overfull \hbox (30.35979pt too wide) detected at line 567
 [67]
 Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
 although it is yet undefined on input line 576.
-<Images/Transmission/Circle_val_col_points_600_150.png, id=1553, 463.9734pt x 380.1402pt>
+<Images/Transmission/Circle_val_col_points_600_150.png, id=1556, 463.9734pt x 380.1402pt>
 File: Images/Transmission/Circle_val_col_points_600_150.png Graphic file (type png)
 <use Images/Transmission/Circle_val_col_points_600_150.png>
 Package pdftex.def Info: Images/Transmission/Circle_val_col_points_600_150.png  used on input line 597.
 (pdftex.def)             Requested size: 204.85844pt x 167.84224pt.
-<Images/Transmission/Circle_val_contour_600_150.png, id=1554, 426.393pt x 369.2997pt>
+<Images/Transmission/Circle_val_contour_600_150.png, id=1557, 426.393pt x 369.2997pt>
 File: Images/Transmission/Circle_val_contour_600_150.png Graphic file (type png)
 <use Images/Transmission/Circle_val_contour_600_150.png>
 Package pdftex.def Info: Images/Transmission/Circle_val_contour_600_150.png  used on input line 605.
 (pdftex.def)             Requested size: 182.09831pt x 157.71384pt.
  [68]
-<Images/Transmission/Rectangle_contour_600_150_k1_1.png, id=1574, 497.9403pt x 376.5267pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_1.png, id=1578, 497.9403pt x 376.5267pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_1.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_1.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_1.png  used on input line 661.
 (pdftex.def)             Requested size: 204.85844pt x 154.9055pt.
-<Images/Transmission/Rectangle_contour_600_150_k1_2.png, id=1575, 505.89pt x 382.3083pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_2.png, id=1579, 505.89pt x 382.3083pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_2.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_2.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_2.png  used on input line 667.
 (pdftex.def)             Requested size: 204.85844pt x 154.8165pt.
-<Images/Transmission/Rectangle_contour_600_150_k1_5.png, id=1576, 497.9403pt x 376.5267pt>
+<Images/Transmission/Rectangle_contour_600_150_k1_5.png, id=1580, 497.9403pt x 376.5267pt>
 File: Images/Transmission/Rectangle_contour_600_150_k1_5.png Graphic file (type png)
 <use Images/Transmission/Rectangle_contour_600_150_k1_5.png>
 Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_5.png  used on input line 676.
@@ -1864,7 +1862,7 @@ Package pdftex.def Info: Images/Transmission/Rectangle_contour_600_150_k1_5.png 
 Underfull \vbox (badness 7433) has occurred while \output is active []
 
  [70 <./Images/Transmission/Rectangle_contour_600_150_k1_1.png> <./Images/Transmission/Rectangle_contour_600_150_k1_2.png> <./Images/Transmission/Rectangle_contour_600_150_k1_5.png>]
-<Images/Transmission/L_shape_2_rectangles_col_points.png, id=1603, 640.3122pt x 643.203pt>
+<Images/Transmission/L_shape_2_rectangles_col_points.png, id=1606, 640.3122pt x 643.203pt>
 File: Images/Transmission/L_shape_2_rectangles_col_points.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_rectangles_col_points.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_rectangles_col_points.png  used on input line 716.
@@ -1874,7 +1872,7 @@ Underfull \hbox (badness 1122) in paragraph at lines 718--718
 \OT1/phv/m/n/9 face. Con-fig-u-ra-tion of the bound-ary,
  []
 
-<Images/Transmission/L_shape_2_rectangles_k1_5.png, id=1604, 505.89pt x 376.5267pt>
+<Images/Transmission/L_shape_2_rectangles_k1_5.png, id=1607, 505.89pt x 376.5267pt>
 File: Images/Transmission/L_shape_2_rectangles_k1_5.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_rectangles_k1_5.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_rectangles_k1_5.png  used on input line 724.
@@ -1909,7 +1907,7 @@ Overfull \hbox (16.13057pt too wide) in alignment at lines 821--840
  [] [] [] [] [] [] [] 
  []
 
-<Images/Transmission/L_shape_2_axis_col_points.png, id=1633, 1136.8071pt x 643.203pt>
+<Images/Transmission/L_shape_2_axis_col_points.png, id=1636, 1136.8071pt x 643.203pt>
 File: Images/Transmission/L_shape_2_axis_col_points.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_axis_col_points.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_axis_col_points.png  used on input line 849.
@@ -1948,17 +1946,17 @@ Overfull \hbox (21.13058pt too wide) in alignment at lines 904--923
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75 <./Images/Transmission/L_shape_2_axis_col_points.png>]
-<Images/Transmission/L_shape_2_axis_c0_error_k1_2_enr.png, id=1659, 1105.731pt x 617.9085pt>
+<Images/Transmission/L_shape_2_axis_c0_error_k1_2_enr.png, id=1662, 1105.731pt x 617.9085pt>
 File: Images/Transmission/L_shape_2_axis_c0_error_k1_2_enr.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_axis_c0_error_k1_2_enr.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_axis_c0_error_k1_2_enr.png  used on input line 978.
 (pdftex.def)             Requested size: 227.62204pt x 127.20006pt.
-<Images/Transmission/L_shape_2_axis_c1_error_k1_2_enr.png, id=1660, 1105.731pt x 617.9085pt>
+<Images/Transmission/L_shape_2_axis_c1_error_k1_2_enr.png, id=1663, 1105.731pt x 617.9085pt>
 File: Images/Transmission/L_shape_2_axis_c1_error_k1_2_enr.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_axis_c1_error_k1_2_enr.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_axis_c1_error_k1_2_enr.png  used on input line 984.
 (pdftex.def)             Requested size: 227.62204pt x 127.20006pt.
-<Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png, id=1661, 505.89pt x 376.5267pt>
+<Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png, id=1664, 505.89pt x 376.5267pt>
 File: Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png Graphic file (type png)
 <use Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png>
 Package pdftex.def Info: Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png  used on input line 993.
@@ -1999,36 +1997,36 @@ Appendix D.
 [97
 
 ]
-<Images/Bessel/bessel_j_0_z.png, id=1844, 395.22656pt x 328.97906pt>
+<Images/Bessel/bessel_j_0_z.png, id=1852, 395.22656pt x 328.97906pt>
 File: Images/Bessel/bessel_j_0_z.png Graphic file (type png)
 <use Images/Bessel/bessel_j_0_z.png>
-Package pdftex.def Info: Images/Bessel/bessel_j_0_z.png  used on input line 29.
+Package pdftex.def Info: Images/Bessel/bessel_j_0_z.png  used on input line 30.
 (pdftex.def)             Requested size: 227.62204pt x 189.4677pt.
-<Images/Bessel/bessel_y_0_z.png, id=1845, 395.22656pt x 336.50719pt>
+<Images/Bessel/bessel_y_0_z.png, id=1853, 395.22656pt x 336.50719pt>
 File: Images/Bessel/bessel_y_0_z.png Graphic file (type png)
 <use Images/Bessel/bessel_y_0_z.png>
-Package pdftex.def Info: Images/Bessel/bessel_y_0_z.png  used on input line 37.
+Package pdftex.def Info: Images/Bessel/bessel_y_0_z.png  used on input line 38.
 (pdftex.def)             Requested size: 227.62204pt x 193.80333pt.
-<Images/Bessel/hankel_1_0_z.png, id=1850, 395.22656pt x 335.00156pt>
+<Images/Bessel/hankel_1_0_z.png, id=1858, 395.22656pt x 335.00156pt>
 File: Images/Bessel/hankel_1_0_z.png Graphic file (type png)
 <use Images/Bessel/hankel_1_0_z.png>
-Package pdftex.def Info: Images/Bessel/hankel_1_0_z.png  used on input line 57.
+Package pdftex.def Info: Images/Bessel/hankel_1_0_z.png  used on input line 58.
 (pdftex.def)             Requested size: 227.62204pt x 192.9362pt.
-<Images/Bessel/hankel_2_0_z.png, id=1851, 395.22656pt x 335.00156pt>
+<Images/Bessel/hankel_2_0_z.png, id=1859, 395.22656pt x 335.00156pt>
 File: Images/Bessel/hankel_2_0_z.png Graphic file (type png)
 <use Images/Bessel/hankel_2_0_z.png>
-Package pdftex.def Info: Images/Bessel/hankel_2_0_z.png  used on input line 65.
+Package pdftex.def Info: Images/Bessel/hankel_2_0_z.png  used on input line 66.
 (pdftex.def)             Requested size: 227.62204pt x 192.9362pt.
  [98 <./Images/Bessel/bessel_j_0_z.png (PNG copy)> <./Images/Bessel/bessel_y_0_z.png (PNG copy)>] [99 <./Images/Bessel/hankel_1_0_z.png (PNG copy)> <./Images/Bessel/hankel_2_0_z.png (PNG copy)>] [100] [101]
-<Images/Bessel/hankel_re.png, id=1896, 323.70938pt x 284.56313pt>
+<Images/Bessel/hankel_re.png, id=1903, 323.70938pt x 284.56313pt>
 File: Images/Bessel/hankel_re.png Graphic file (type png)
 <use Images/Bessel/hankel_re.png>
-Package pdftex.def Info: Images/Bessel/hankel_re.png  used on input line 220.
+Package pdftex.def Info: Images/Bessel/hankel_re.png  used on input line 221.
 (pdftex.def)             Requested size: 227.62204pt x 200.09598pt.
-<Images/Bessel/hankel_im.png, id=1897, 323.70938pt x 284.56313pt>
+<Images/Bessel/hankel_im.png, id=1904, 323.70938pt x 284.56313pt>
 File: Images/Bessel/hankel_im.png Graphic file (type png)
 <use Images/Bessel/hankel_im.png>
-Package pdftex.def Info: Images/Bessel/hankel_im.png  used on input line 228.
+Package pdftex.def Info: Images/Bessel/hankel_im.png  used on input line 229.
 (pdftex.def)             Requested size: 227.62204pt x 200.09598pt.
 )
 \Changes@OutFile=\write10
@@ -2075,21 +2073,21 @@ Package cleveref Info: loaded `english' language definitions on input line 24.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F59E9B588D82B9CE81C01516D0726756;9635.
+(rerunfilecheck)             Checksum: DB7CE710B210D48E860EF56BBE686BFE;9640.
  ) ) 
 Here is how much of TeX's memory you used:
- 51217 strings out of 477985
- 1020576 string characters out of 5840058
+ 51218 strings out of 477985
+ 1020589 string characters out of 5840058
  1889388 words of memory out of 5000000
  69687 multiletter control sequences out of 15000+600000
  562673 words of font info for 122 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  95i,21n,95p,2382b,1457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (123 pages, 3868022 bytes).
+Output written on main.pdf (123 pages, 3869545 bytes).
 PDF statistics:
- 2163 PDF objects out of 2487 (max. 8388607)
- 1846 compressed objects within 19 object streams
- 531 named destinations out of 1000 (max. 500000)
+ 2170 PDF objects out of 2487 (max. 8388607)
+ 1853 compressed objects within 19 object streams
+ 532 named destinations out of 1000 (max. 500000)
  620 words of extra memory for PDF output out of 10000 (max. 10000000)
 

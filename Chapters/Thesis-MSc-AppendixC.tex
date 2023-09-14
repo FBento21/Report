@@ -15,10 +15,11 @@ Since equation \eqref{bessel_equation} is a second-order linear differential equ
 \[
     J_\nu (z) = \left(\frac{1}{2}z\right)^\nu \sum_{k=0}^{\infty} \frac{\left(-\frac{1}{4}z^2\right)^k}{k! \Gamma(\nu+k+1)},
 \]
-where \(\Gamma(z) = \int_0^\infty t^{z-1} e^{-t}dt\) is the special Gamma function. For the Bessel function of second kind, series expansions are only available for \(\nu \in \mathbb{N}\). However, the relation \eqref{bessel_y_relation} holds
+where \(\Gamma(z) = \int_0^\infty t^{z-1} e^{-t}dt\) is the special Gamma function. For the Bessel function of second kind, series expansions are only available for non-negative integers \(\nu\). For non-integers the relation \eqref{bessel_y_relation} holds
 \begin{equation}\label{bessel_y_relation}
-    Y_\nu(z) = \frac{J_\nu(z) \cos(\nu \pi) - J_{-\nu}(z)}{\sin(\nu \pi)}.
+    Y_\nu(z) = \frac{J_\nu(z) \cos(\nu \pi) - J_{-\nu}(z)}{\sin(\nu \pi)},
 \end{equation}
+where the right-hand side is replaced by its limiting value if \(\nu\) is an integer or zero.
 
 Both functions are holomorphic through the complex plane cut along the negative real axis. If \(\nu \in \mathbb{N}\), then \(J_\nu\) is an entire function, i.e., holomorphic in the whole complex plane. In any other cases, both Bessel functions display a singularity on the origin: if \(\nu > 0\) then \(J_\nu(0)=0\), but it is not differentiable at the origin. Figures \ref{bessel_function_j_complex_plot} and \ref{bessel_function_y_complex_plot} show the Bessel functions of first and second kinds. The plots were created using Wolfram Mathematica 13.3.1.0.
 

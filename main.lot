@@ -14,11 +14,11 @@
 \contentsline {table}{\numberline {5.3}{\ignorespaces Numerical errors at the interface \(\gamma \). The condition number of the matrix is also presented.\relax }}{70}{table.caption.39}%
 \contentsline {table}{\numberline {5.4}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{71}{table.caption.41}%
 \contentsline {table}{\numberline {5.5}{\ignorespaces Consistency errors on the boundary and in the interface \(\gamma \)\relax }}{72}{table.caption.43}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after enriching the basis with particular (angular) solutions\relax }}{74}{table.caption.44}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \)\relax }}{74}{table.caption.46}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after enriching the basis with particular (angular) solutions.\relax }}{74}{table.caption.44}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \).\relax }}{74}{table.caption.46}%
 \contentsline {table}{\numberline {5.10}{\ignorespaces Consistency errors on the boundary and at the interface \(\gamma \) after adding particular (angular) solutions to the classical \ac {MFS} basis.\relax }}{76}{table.caption.47}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion}{78}{chapter.6}%
+\contentsline {xchapter}{Conclusions}{78}{chapter.6}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Some details on regular domains and Sobolev spaces}{86}{appendix.A}%
 \addvspace {10\p@ }
