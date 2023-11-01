@@ -1,0 +1,19 @@
+# Ignore compiled LaTeX files and build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+*.bbl
+*.blg
+
+# Ignore auto-generated files and directories
+_minted-*
+_build
+.vscode
+.idea
+
+# Ignore macOS system files
+.DS_Store
