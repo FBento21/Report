@@ -12,15 +12,15 @@
 % -----------------------------------------------------------------------------
 % PACKAGES ucs, utf8x, babel, iflang:
 % -----------------------------------------------------------------------------
-% The 'ucs' package provides support for using UTF-8 in LaTeX documents. 
+% The 'ucs' package provides support for using UTF-8 in LaTeX documents.
 % However in most situations it is not required.
 \usepackage{ucs}
-% The 'utf8x' package contains support for using UTF-8 as input encoding. 
+% The 'utf8x' package contains support for using UTF-8 as input encoding.
 \usepackage[utf8x]{inputenc}
-% The 'babel' package may correct some hyphenation issues of LaTeX. 
+% The 'babel' package may correct some hyphenation issues of LaTeX.
 % Select your MAIN LANGUAGE for the Thesis with the 'main=' option.
 \usepackage[main=english,portuguese]{babel}
-% The 'iflang' package is used to help determine the language being used. 
+% The 'iflang' package is used to help determine the language being used.
 \usepackage{iflang}
 
 % -----------------------------------------------------------------------------
@@ -31,7 +31,7 @@
 % -----------------------------------------------------------------------------
 % PACKAGE mathtools, amsmath, amsthm, amssymb, a\ac{MSF}onts, nicefrac:
 % -----------------------------------------------------------------------------
-% These packages are typically required. 
+% These packages are typically required.
 % Among many other things they add the possibility to put symbols in bold
 % by using \boldsymbol (not \mathbf); defines additional fonts and symbols;
 % adds the \eqref command for citing equations.
@@ -66,7 +66,7 @@
 % -----------------------------------------------------------------------------
 % PACKAGES array, booktabs, multirow, colortbl, spreadtab:
 % -----------------------------------------------------------------------------
-% These packages are most usefull for advanced tables. 
+% These packages are most usefull for advanced tables.
 % 'multirow' allows to join rows throuhg the command \multirow which works
 % similarly with the command \multicolumn.
 % The 'colortbl' package allows to color the table (foreground and background)
@@ -82,23 +82,23 @@
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{float}
-\usepackage{flafter} 
+\usepackage{flafter}
 %
 % -----------------------------------------------------------------------------
 % PACKAGES graphicx, subfigure:
 % -----------------------------------------------------------------------------
 % The package 'graphicx' supports formats PNG and JPG.
-% Package 'subfigure' allows to place figures within figures with own caption. 
+% Package 'subfigure' allows to place figures within figures with own caption.
 % For each of the subfigures use the command \subfigure.
 \usepackage{graphicx}
 \usepackage[hang,small,bf,tight]{subfigure}
 % -----------------------------------------------------------------------------
 % PACKAGE caption:
 % -----------------------------------------------------------------------------
-% The 'caption' package offers customization of captions in floating 
+% The 'caption' package offers customization of captions in floating
 % environments such figure and table
 % \usepackage[hang,small,bf]{caption}
-\usepackage[format=hang,labelfont=bf,font=small]{caption} 
+\usepackage[format=hang,labelfont=bf,font=small]{caption}
 % the following customization adds vertical space between caption and the table
 \captionsetup[table]{skip=10pt}
 %
@@ -162,7 +162,7 @@
 \definecolor{forestgreen}{RGB}{34,139,34}
 \definecolor{orangered}{RGB}{239,134,64}
 \definecolor{lightred}{rgb}{1,0.4,0.5}
-\definecolor{orange}{rgb}{1,0.45,0.13}	
+\definecolor{orange}{rgb}{1,0.45,0.13}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
 \definecolor{lightblue}{rgb}{0.1,0.57,0.7}
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
@@ -179,8 +179,8 @@
 % -----------------------------------------------------------------------------
 % PACKAGE setspace:
 % ----------------------------------------------------------------------------
-% Provides support for setting the spacing between lines in a document. 
-% Package options include single spacing, one half spacing, and double spacing. 
+% Provides support for setting the spacing between lines in a document.
+% Package options include single spacing, one half spacing, and double spacing.
 % Alternatively the spacing can be changed as required with:
 % \singlespacing, \onehalfspacing, and \doublespacing commands
 %\usepackage{setspace}
@@ -206,9 +206,9 @@
 % -----------------------------------------------------------------------------
 % PACKAGE acronym:
 % -----------------------------------------------------------------------------
-% The package 'acronym' garantees that all acronyms definitions are 
-% given at the first usage. 
-% IMPORTANT: do not use acronyms in titles/captions; otherwise the definition 
+% The package 'acronym' garantees that all acronyms definitions are
+% given at the first usage.
+% IMPORTANT: do not use acronyms in titles/captions; otherwise the definition
 % will appear on the table of contents.
 \usepackage[printonlyused]{acronym}
 %
@@ -233,14 +233,14 @@
 % PACKAGE url:
 % -----------------------------------------------------------------------------
 % Provides better support for handling and breaking URLs.
-\usepackage{url} 
+\usepackage{url}
 %
 % -----------------------------------------------------------------------------
 % PACKAGE Cleveref:
 % -----------------------------------------------------------------------------
 % Clever Referencing of document parts
-% use \Cref[], or \cref[] for referencing items (Figures, Tables, Algorythms, 
-% Equations, Chapters, Sections, etc. No need to write the Name of the item. 
+% use \Cref[], or \cref[] for referencing items (Figures, Tables, Algorythms,
+% Equations, Chapters, Sections, etc. No need to write the Name of the item.
 % Note: portuguese is supported through "brazilian" option
 \usepackage[\IfLanguageName{english}{english}{brazilian}]{cleveref}
 %
@@ -257,7 +257,7 @@
 % -----------------------------------------------------------------------------
 % Allows creating a list of terms with definitions for those terms
 \usepackage[xindy,toc,nopostdot]{glossaries}
-\usepackage{glossaries-extra} 
+\usepackage{glossaries-extra}
 
 % Special style to print trailing dots before locations list
 \makeatletter
@@ -353,7 +353,7 @@
 % -----------------------------------------------------------------------------
 % PACKAGE minitoc:
 % -----------------------------------------------------------------------------
-% Package 'minitoc' creates a mini-table of contents (a “minitoc”) at 
+% Package 'minitoc' creates a mini-table of contents (a “minitoc”) at
 % the beginning of each chapter of a document.
 % This packages are required for the \fancychapter configuration
 \usepackage{minitoc}
@@ -362,7 +362,7 @@
 \renewcommand{\mtcfont}{\small\rm}
 \renewcommand{\mtcSfont}{\small\bf}
 \renewcommand*{\kernafterminitoc}{\kern0.\baselineskip\kern0.ex}
-\mtcselectlanguage{\languagename} 
+\mtcselectlanguage{\languagename}
 % Now prepare the MINITOC
 \def\boxedverbatim{%
   \def\verbatim@processline{%
@@ -409,12 +409,12 @@
 % #############################################################################
 % ADDITIONAL COMMANDS AND CONFIGURATIONS
 % #############################################################################
-% This commmand allows to place horizontal lines with a custom width... 
+% This commmand allows to place horizontal lines with a custom width...
 % replaces the standard hline command
 \newcommand{\hlinew}[1]{%
   \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
    \reserved@a\@xhline}
-%   
+%
 % -----------------------------------------------------------------------------
 % This command defines some marks... USEFUL FOR TABLES.
 \def\Mark#1{\raisebox{0pt}[0pt][0pt]{\textsuperscript{\footnotesize\ensuremath{\ifcase#1\or *\or \dagger\or \ddagger\or%

@@ -31,20 +31,20 @@ which can be reduced to the Helmholtz equation with Cauchy-Riemann oblique bound
     \begin{cases}
         &-\Delta u_1 = (\lambda^2 - m^2)u_1, \; \text{ in } \Omega\\
         & i (\partial_1 + i\partial_2)u_1 + (\lambda + m)i(n_1 + i n_2)u_1 = 0, \; \text{ on } \Gamma,
-    \end{cases}      
+    \end{cases}
 \end{equation*}
 where \(\Gamma = \partial\Omega\) as usual, and the function \(u_2\) depends on the function \(u_1\) through the following equality
 \[
-    u_2 = \frac{-i (\partial_1 + i\partial_2)u_1}{\lambda + m}.    
+    u_2 = \frac{-i (\partial_1 + i\partial_2)u_1}{\lambda + m}.
 \]
 \subsection{Numerical validation of the method}
 
-In order to validate the MFS for the Dirac equation with infinite mass boundary conditions, we start by testing it for the unit disk. If \(m=0\), then as stated in Proposition \ref{dirac_properties}, the first eigenvalue of problem \eqref{chapt_num_dirac_eq} is \(\lambda_1(\mathbb{D})= 1.434695650819\), obtained as the smallest positive solution of the equation
+In order to illustrate the MFS for the Dirac equation with infinite mass boundary conditions, we start by testing it for the unit disk. If \(m=0\), then as stated in Proposition \ref{dirac_properties}, the first eigenvalue of problem \eqref{chapt_num_dirac_eq} is \(\lambda_1(\mathbb{D})= 1.434695650819\), obtained as the smallest positive solution of the equation
 \[
     J_0(\lambda_1(\mathbb{D})) = J_1(\lambda_1(\mathbb{D})).
 \]
 
-In the numerical simulations presented below, 158 inner collocation points for the Subspace Angle Technique (see section \ref{sat_appendix} in Appendix \ref{chapter:appendixB}) were considered\footnote{In Figure \ref{dirak_disk_col_m0}, the inner collocation points were chosen in a lattice. However, one can place these points freely, in a lattice, or randomly. In fact, in some simulations, the inner points were placed using pseudo-random Halton sequences \cite{halton1964algorithm}.} and the number of source points \(N\) was always half of the number of boundary points. Figure \ref{dirak_disk_col_m0} shows the configuration used. The method described at the end of the subchapter \ref{density_proofs_section}, below Remark \ref{density_remark_general_bc_and_hilbert}, was used to place the source points, with \(\eta=0.5\). 
+In the numerical simulations presented below, 158 inner collocation points for the Subspace Angle Technique (see section \ref{sat_appendix} in Appendix \ref{chapter:appendixB}) were considered\footnote{In Figure \ref{dirak_disk_col_m0}, the inner collocation points were chosen in a lattice. However, one can place these points freely, in a lattice, or randomly. In fact, in some simulations, the inner points were placed using pseudo-random Halton sequences \cite{halton1964algorithm}.} and the number of source points \(N\) was always half of the number of boundary points. Figure \ref{dirak_disk_col_m0} shows the configuration used. The method described at the end of the subchapter \ref{density_proofs_section}, below Remark \ref{density_remark_general_bc_and_hilbert}, was used to place the source points, with \(\eta=0.5\).
 
 \begin{figure}[!htb]
     \centering
@@ -77,7 +77,7 @@ The results obtained using the bracketing algorithm \ref{direct_bracketing_algor
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.5\linewidth]{Images/Dirac/circle_m_0_alg_points_158_inner_eta_05.png}
-    \captionof{figure}{Results obtaiend by the direct search algorithm for the first three eigenvalues of the disk with \(m=0\). In practice, more accurate approximations are achieved when smaller values of the smallest singular value \(\sigma_N\) of the matrix \(Q(k)\) (studied in section \ref{sat_appendix}) are identified at each minimum.}
+    \captionof{figure}{Results obtained by the direct search algorithm for the first three eigenvalues of the disk with \(m=0\). In practice, more accurate approximations are achieved when smaller values of the smallest singular value \(\sigma_N\) of the matrix \(Q(k)\) (studied in section \ref{sat_appendix}) are identified at each minimum.}
     \label{dirac_disk_alg_m0}
 \end{figure}
 
@@ -122,10 +122,10 @@ Consider a rectangle with a width \(a \geq 1\) and unit area, where the sides ar
 
 \begin{enumerate}
   \item \label{dirac_sim_quad_point_1} The behavior of the spectrum remains qualitatively consistent for different values of \(m\). Significantly, as \(m\) increases, the eigenvalues approach \(m\) with a diminishing gap, while remaining greater than \(m\). While this trend is discernible already in Figures \ref{eigenvalues_rectangle_width_m_1} and \ref{eigenvalues_rectangle_width_m_5}, it becomes more apparent as \(m\) takes on even larger values. It is important to point out that the third eigenvalue is not globally minimized in the square for \(m=1\), but for some rectangle with width \(a \approx 2.2\). However, this does not appear to hold for any mass \(m \geq 0\) but only for some values of \(m \leq m_{\text{crit}}\), where \(1 \leq m_{\text{crit}} \leq 5\), i.e., for any mass \(m \leq m_{\text{crit}}\) the global minimizer of the third eigenvalue is some (non-square) rectangle.
-  
+
   \item \label{dirac_sim_quad_point_2}  Starting from the third eigenvalue and beyond, certain spikes become evident in the plot. These spikes correspond to rectangular domains where the eigenvalue has a multiplicity of two. For instance, between the values 1 and 1.5, the third and fourth eigenvalues appear to coincide. This behavior becomes more frequent as the order of the eigenvalues increases.
   %However, only multiplicity 2 is observed which is not consistent with the behavior seen in the Laplace operator, where multiplicity 3 is already achieved in the third eigenvalue and only the first eigenvalue is simple;
-  
+
   \item \label{dirac_sim_quad_point_3} By increasing the value of the parameter \(a\), a linear growth in the eigenvalues magnitude is observed, with no change in their multiplicity. As \(a\) increases, the eigenvalues draw closer to each other, which is an expected outcome. This behavior arises as the rectangular domain transforms into an unbounded line, giving rise to a continuous spectrum.
 \end{enumerate}
 
@@ -225,7 +225,7 @@ than \(\frac{\pi}{3}\) such that \((x, y) \in \Gamma_2\); if \((x, y) = (0, \sqr
     \label{dirac_triangle_model}
 \end{figure}
 
-In Figure \ref{dirac_smooth_first_eigenvalues}, we provide numerical evidence supporting Conjecture \ref{triangle_conjectures} with \(m=1\). It's noteworthy how the eigenvalues of the superequilateral and subequilateral triangles define a (very thin) region encompassing all other triangles with \((x, y)\) vertices in \(R\). Figure \ref{dirac_triangle_benguria} numerically corroborates a version of the Ashbaugh-Benguria (see Conjecture 3.2.6) Theorem
+In Figure \ref{dirac_smooth_first_eigenvalues}, we provide numerical evidence supporting Conjecture \ref{triangle_conjectures} with \(m=1\). It's noteworthy how the eigenvalues of the superequilateral and subequilateral triangles define a (very thin) region encompassing all other triangles with \((x, y)\) vertices in \(R\). Figure \ref{dirac_triangle_benguria} numerically corroborates a version of the Ashbaugh-Benguria Theorem
 (see to Conjecture \ref{conjecture_benguria}). Additionally, in Figure \ref{dirac_triangle_3d_lambda1}, we present a 3D plot of the first eigenvalue for each admissible triangle against the vertex coordinates \((x,y)\) within \(\overline{R}\). Finally, Figure \ref{dirac_triangle_model_perimeter} also showcases the first three eigenvalues for triangles with a fixed perimeter \(L = 15\). This unconventional value was chosen due to the diminutive size of unit perimeter triangles, making the method implementation more challenging, prone to numerical errors, and the eigenvalues' amplitude too large. For instance, if we choose \(L = \frac{6}{\sqrt[4]{3}}\), which corresponds to the perimeter of an equilateral triangle with unit area, the triangles with their third vertex \((x,y)\) very close to the triangle's base \(y=0\) become extremely narrow and attain unusual large values because their area becomes exceedingly small.
 
 In a manner similar to the conjecture regarding triangles with fixed area, the conjecture concerning triangles with fixed perimeter also seems to hold. Furthermore, it's worth noting that equilateral triangles minimize both the second and third eigenvalues.
@@ -266,7 +266,7 @@ In a manner similar to the conjecture regarding triangles with fixed area, the c
     \label{dirac_triangle_model_perimeter}
 \end{figure}
 
-While for quadrilaterals (and for smooth domains in the next subsection) only random domains could be considered, for the problem among triangles, one can consider \textit{every} type of triangle by varying \((x,y)\) in \(\overline{R}\). Since the eigenvalues are continuous with respect to domain perturbations (in the next subsection, we will briefly formalize this concept using equation \eqref{dirac_perturbation_chapter_5}), it means that it is very unlikely that the conjectures studied for triangles (at least for \(m=1\)) do not hold, otherwise some jump would probably be found, for example in Figure \ref{dirac_triangle_3d_lambda1}. 
+While for quadrilaterals (and for smooth domains in the next subsection) only random domains could be considered, for the problem among triangles, one can consider \textit{every} type of triangle by varying \((x,y)\) in \(\overline{R}\). Since the eigenvalues are continuous with respect to domain perturbations (in the next subsection, we will briefly formalize this concept using equation \eqref{dirac_perturbation_chapter_5}), it means that it is very unlikely that the conjectures studied for triangles (at least for \(m=1\)) do not hold, otherwise some jump would probably be found, for example in Figure \ref{dirac_triangle_3d_lambda1}.
 
 To finish this subsection, numerical evidence for Conjecture \ref{polya_szego_conjecture_dirac} for \(m=1\) is presented in Figures \ref{dirac_polya_szego_evidence_pentagons}, \ref{dirac_polya_szego_evidence_hexagons}, \ref{dirac_polya_szego_evidence_heptagons} and \ref{dirac_polya_szego_evidence_octagons}. For the sake of brevity, we only present the results for the first eigenvalue, although similar results were found for the second and third eigenvalues. As it is possible to check, the \(n\)-sided polygon with the least first eigenvalue is the regular polygon, with \(n=5,6,7,8\).
 
@@ -303,11 +303,11 @@ To finish this subsection, numerical evidence for Conjecture \ref{polya_szego_co
     \end{minipage}
 \end{figure}
 
-\subsection{Results in smooth domains}
+\subsection{Results in smooth domains}\label{numerics_smooth_section}
 
 In this last subsection, the behavior of the spectrum in smooth (connected) domains with unit area is studied. Here, we fix \(m=1\). The reason is twofold: first, the shape of the domains can be arbitrary and the numerical approximations are more reliable; second, one can also consider the domain which minimizes the third eigenvalue.
 
-In order to generate random smooth domains, periodic B-spline interpolation (e.g. \cite{de1978practical} for details) for each component of a vector in \(\mathbb{R}^2\) was used. One starts by generating randomly five points (using a uniform distribution), fitting a periodic B-spline on this points for each component, drawing the two-dimensional B-spline, and checking for auto-intersections\footnote{Unfortunately, such sampling of smooth domains is not representative of the set of all smooth domains. For example, generating complex non-convex domains (like star-shape domains) may be impossible.}. If it does not auto-intersect, then it is a valid domain. Figure \ref{dirac_smooth_random_domain} presents an example.
+In order to generate random smooth domains, periodic B-spline interpolation (e.g. \cite{de1978practical} for details) for each component of a vector in \(\mathbb{R}^2\) was used. One starts by generating randomly five points (using a uniform distribution), fitting a periodic B-spline on this points for each component, drawing the two-dimensional B-spline, and checking for auto-intersections\footnote{Unfortunately, such sampling of smooth domains is not representative of the set of all smooth domains. For example, generating complex non-convex domains (like domains in the shape of a star) may be impossible.}. If it does not auto-intersect, then it is a valid domain. Figure \ref{dirac_smooth_random_domain} presents an example.
 
 \begin{figure}[!htb]
     \centering
@@ -425,7 +425,7 @@ Figure \ref{dirac_nelder_mead_domain} presents an (almost) optimal domain \(\Ome
 As mentioned earlier, the \ac{BFGS} method was also employed. However, this method did not yield meaningful results. We attribute this to the proximity of the initial domain to the global minimizer, leading to a natural loss of precision when calculating the gradient through finite differences. The combination of these issues, along with the finite (albeit accurate due to the smoothness of the domains being considered) numerical precision of the \ac{MFS}, justifies the lack of convergence of the \ac{BFGS} method.
 
 \begin{remark}
-    One can not fail to point out a valid criticism to approach the minimization problem \eqref{dirac_unconstrained_min_lambda_3}: since we only parametrized the radial part of the domain's boundary, we always end up with star-like shapes. Moreover, in our case, the order of the trigonometric interpolation was low, with \(M=4\). We note however that, by increasing the order of interpolation, the dimension of the optimization space also increases, and already in \(\mathbb{R}^9\) it is very hard for a direct search method like Nelder-Mead to find a local minimum. The option to consider only the radial part, instead of both cartesian components, was also a way to reduce the dimensionality of the problem. 
+    One can not fail to point out a valid criticism to approach the minimization problem \eqref{dirac_unconstrained_min_lambda_3}: since we only parametrized the radial part of the domain's boundary, we always end up with star-like shapes. Moreover, in our case, the order of the trigonometric interpolation was low, with \(M=4\). We note however that, by increasing the order of interpolation, the dimension of the optimization space also increases, and already in \(\mathbb{R}^9\) it is very hard for a direct search method like Nelder-Mead to find a local minimum. The option to consider only the radial part, instead of both cartesian components, was also a way to reduce the dimensionality of the problem.
 \end{remark}
 
 Finally, the normalized eigenfunction associated with the optimal third eigenvalue of domain \(\Omega^\star\) is shown in Figure \ref{dirac_optimal_plots_eigenfunctions}.
@@ -509,7 +509,7 @@ The procedure presented here is based on \cite{alves2005new} and \cite{alves2021
         \end{cases}
     \]
     are some possible non-homogeneous solutions;
-    \item Then we solve the homogeneous problem 
+    \item Then we solve the homogeneous problem
     \begin{align*}
         \begin{cases}
         - \Delta u_i^H = 0, & \text{in }\Omega_i\\
@@ -524,7 +524,7 @@ The procedure presented here is based on \cite{alves2005new} and \cite{alves2021
 \begin{remark}
     For general (possibly different) source functions, the steps above can also be used: however, it may not be possible to find a closed-form solution in the first step. In this case, the problem in step \ref{chapter_numerics_t_p_particular_prodecure} must be solved numerically. A popular choice is to use \acp{RBF}, e.g. \cite{golberg1996improved}, for example the thin plate spline
     \[
-        \varphi(r) = r^2 \log r,     
+        \varphi(r) = r^2 \log r,
     \]
     and, for each subdomain \(\Omega_i\) with \(i=1,2\) find the coefficients \(\alpha_j^{(i)}\) in \(f_i(x_k^{(i)}) =\tilde{f}_i(x_k^{(i)}) = \sum_{j=1}^{N} \alpha_j^{(i)} \varphi_j(x_k^{(i)})\) using least square methods, where \(x_k^{(i)}\) are collocation points for \(k=1,\dots,M^{(i)}\), \(\tilde{f}_i\) is an approximation for the source function \(f_i\) given by linear combinations of thin plate splines, \(\varphi_j(x^{(i)}) = \varphi(\abs{x^{(i)}-y_j})\) and \(y_j \in \mathbb{R}^2, \, j =1,\dots, N\), is the \ac{RBF} center, which is analogous to the concept of \textit{source points} in the \ac{MFS}. Finally, one can analytically solve for the \(\Psi_j\) functions in the polar Poisson equation \(\frac{1}{r}\frac{\partial}{\partial r}\left(r \frac{\partial}{\partial r}\Psi_j\right)  = \varphi_j\) with \(j=1,\dots,N\) in \(\mathbb{R}^2\), to recover the approximate non-homogeneous solutions \(u_1^{NH}\) and \(u_2^{NH}\), given by
     \begin{align*}
@@ -573,11 +573,11 @@ Most of the examples below do not have an analytical solution: only in the secti
     \item \(e_\gamma^0 = \norm*{\tilde{u}_1 - \tilde{u}_2}_{L^2(\gamma)}\), \(i=1, 2\): \(L^2\) error of \(\tilde{u}\) across \(\gamma\);
     \item \(e_\gamma^1 = \norm*{k_1 \partial_n\tilde{u}_1 - k_2 \partial_n\tilde{u}_2}_{L^2(\gamma)}\), \(i=1, 2\): \(L^2\) error of \(\partial_n\tilde{u}\) across \(\gamma\).
 \end{itemize}
-From a numerical point of view, let \(\mathcal{I}\) be the sample of test points. The \(L^2\) norm is discretized into the \ac{RMSE}\ which is equivalent to the \(l^2\) norm and is given by
+From a numerical point of view, let \(\mathcal{I}\) be the sample of test points. The \(L^2\) norm is discretized into the \ac{RMSE}, which is equivalent to the \(l^2\) norm, and is given by
 \[
-    \norm*{u-\tilde{u}}= \sqrt{\frac{1}{\#\mathcal{I}} \sum_{z \in \mathcal{I}} \abs{u(z)-\tilde{u}(z)}^2}.
+    \norm*{u-\tilde{u}}_2= \sqrt{\frac{1}{\#\mathcal{I}} \sum_{z \in \mathcal{I}} \abs{u(z)-\tilde{u}(z)}^2}.
 \]
-For every result below the number of sample test points is 5 times larger than the sample used to find the coefficients of the \ac{MFS}, and we fix \(k_2=1\) since the ratio \(\frac{k_1}{k_2}\) is responsible for the behavior of the solutions near the interface. 
+For every result below the number of sample test points is 5 times larger than the sample used to find the coefficients of the \ac{MFS}, and we fix \(k_2=1\) since the ratio \(\frac{k_1}{k_2}\) is responsible for the behavior of the solutions near the interface.
 
 \subsection{Numerical validation of the method}\label{transmission_val_subsection}
 
@@ -588,7 +588,7 @@ First, we start by testing the numerical algorithm for the unit disk \(\mathbb{D
         u = 0, & \text{ on } \partial\mathbb{D},
     \end{split}
 \end{align}
-and is easy to see that the exact solution of Equation \eqref{transmission_disk} is given in polar coordinates by \(u(r, \theta) = \frac{1-r^2}{4}\). 
+and is easy to see that the exact solution of Equation \eqref{transmission_disk} is given in polar coordinates by \(u(r, \theta) = \frac{1-r^2}{4}\).
 
 \begin{figure}[!htb]
     \centering
@@ -668,16 +668,16 @@ In this subchapter, we focus on a rectangular domain \([-1, -0.5] \times [1, 0.5
       \caption{Numerical simulation with \(k_1=2\).}
       \label{transmission_rectangle_plot_k1_2}
     \end{minipage}
-    
+
     \vspace{0.5cm} % Add some vertical space between the rows of figures
-    
+
     \begin{minipage}{.6\textwidth}
       \centering
       \includegraphics[width=0.8\linewidth]{Images/Transmission/Rectangle_contour_600_150_k1_5.png}
       \caption{Numerical simulation with  \(k_1=5\).}
       \label{transmission_rectangle_plot_k1_5}
     \end{minipage}
-    
+
     \caption*{Numerical approximations of the \ac{BVP} for a rectangular domain with different \(k_1\) values.}
     \label{transmission_rectangle_plots}
 \end{figure}
@@ -819,13 +819,13 @@ Table \ref{tab:transmission_results_L_shape_rectangles_particular} presents the 
         \endfoot % Footer for subsequent pages
         \bottomrule
         \endlastfoot % Footer for the last page
-        
+
         % Data for p = [0, 1]
         0, 1 & 1 & $2.965\times10^{-5}$ & $7.907\times10^{-5}$ & $2.94\times10^{-3}$ & $2.624\times10^{-5}$ & $5.584\times10^{12}$ \\
         & 2 & $2.203\times10^{-5}$ & $6.657\times10^{-5}$ & $1.86\times10^{-3}$ & $2.068\times10^{-5}$ & $8.156\times10^{12}$ \\
         & 5 & $2.203\times10^{-5}$ & $6.657\times10^{-5}$ & $1.86\times10^{-3}$ & $2.068\times10^{-5}$ & $8.156\times10^{12}$ \\
         \midrule[\heavyrulewidth] % Horizontal line
-        
+
         % Data for p = [-1, 0, 1]
         -1, 0, 1 & 1 & $8.627\times10^{-6}$ & $4.132\times10^{-5}$ & $7.68\times10^{-4}$ & $6.876\times10^{-6}$ & $5.585\times10^{12}$ \\
         & 2 & $7.333\times10^{-6}$ & $2.791\times10^{-5}$ & $6.01\times10^{-4}$ & $2.555\times10^{-5}$ & $8.157\times10^{12}$ \\
@@ -902,13 +902,13 @@ Table \ref{tab:transmission_results_L_shape_axis_particular} shows the results o
         \endfoot % Footer for subsequent pages
         \bottomrule
         \endlastfoot % Footer for the last page
-        
+
         % Data for p = [0, 1]
         0, 1 & 1 & $3.107\times10^{-7}$ & $2.100\times10^{-7}$ & $1.158\times10^{-5}$ & $1.019\times10^{-7}$ & $1.054\times10^{10}$ \\
         & 2 & $1.061\times10^{-7}$ & $6.892\times10^{-7}$ & $6.366\times10^{-5}$ & $7.065\times10^{-8}$ & $1.648\times10^{10}$ \\
         & 5 & $1.207\times10^{-7}$ & $1.141\times10^{-6}$ & $9.544\times10^{-5}$ & $9.487\times10^{-8}$ & $3.732\times10^{10}$ \\
         \midrule[\heavyrulewidth] % Horizontal line
-        
+
         % Data for p = [-1, 0, 1]
         -1, 0, 1 & 1 & $3.319\times10^{-7}$ & $2.026\times10^{-7}$ & $1.813\times10^{-5}$ & $1.048\times10^{-7}$ & $1.054\times10^{10}$ \\
         & 2 & $1.676\times10^{-7}$ & $3.166\times10^{-7}$ & $8.375\times10^{-6}$ & $7.951\times10^{-8}$ & $1.647\times10^{10}$ \\
@@ -946,13 +946,13 @@ Table \ref{tab:transmission_results_L_shape_axis_particular} shows the results o
 %         \endfoot % Footer for subsequent pages
 %         \bottomrule
 %         \endlastfoot % Footer for the last page
-        
+
 %         % Data for p = [0, 1]
 %         0, 1 & 1 & $3.107\times10^{-7}$ & $2.100\times10^{-7}$ & $1.158\times10^{-5}$ & $1.019\times10^{-7}$ & $1.054\times10^{10}$ \\
 %         & 2 & $1.061\times10^{-7}$ & $6.892\times10^{-7}$ & $6.366\times10^{-5}$ & $7.065\times10^{-8}$ & $1.648\times10^{10}$ \\
 %         & 5 & $1.207\times10^{-7}$ & $1.141\times10^{-6}$ & $9.544\times10^{-5}$ & $9.487\times10^{-8}$ & $3.732\times10^{10}$ \\
 %         \midrule[\heavyrulewidth] % Horizontal line
-        
+
 %         % Data for p = [-1, 0, 1]
 %         -1, 0, 1 & 1 & $3.319\times10^{-7}$ & $2.026\times10^{-7}$ & $1.813\times10^{-5}$ & $1.048\times10^{-7}$ & $1.054\times10^{10}$ \\
 %         & 2 & $1.676\times10^{-7}$ & $3.166\times10^{-7}$ & $8.375\times10^{-6}$ & $7.951\times10^{-8}$ & $1.647\times10^{10}$ \\
@@ -969,7 +969,7 @@ Table \ref{tab:transmission_results_L_shape_axis_particular} shows the results o
 
 %\vspace*{2cm}
 
-Again, we found the same surprising results as before, that is, with negative values for \(p_1\) we achieve better approximations, particularly when \(k_1 \neq k_2 = 1\). An interesting observation was made when both \(p_1\) and \(p_2\) had negative values. In that case, the numerical solution exploded in both domains. Intuitively, it seems that one cannot consider particular solutions for the exterior problem in both domains. On the other hand, one may consider \(p_1 = p_2 = 0, \dots, P\), where \(P=P_1=P_2\), for \(P > 1\) (\(P\) may be as large as 8, for example, with 16 particular solutions being added in total) and the results can be as good as the ones presented in Table \ref{tab:transmission_results_L_shape_axis_particular} for \(p_1=-2, -1, 0, 1\), but only if \(k_1=k_2=1\); otherwise, the approximation on the interface gets worse. 
+Again, we found the same surprising results as before, that is, with negative values for \(p_1\) we achieve better approximations, particularly when \(k_1 \neq k_2 = 1\). An interesting observation was made when both \(p_1\) and \(p_2\) had negative values. In that case, the numerical solution exploded in both domains. Intuitively, it seems that one cannot consider particular solutions for the exterior problem in both domains. On the other hand, one may consider \(p_1 = p_2 = 0, \dots, P\), where \(P=P_1=P_2\), for \(P > 1\) (\(P\) may be as large as 8, for example, with 16 particular solutions being added in total) and the results can be as good as the ones presented in Table \ref{tab:transmission_results_L_shape_axis_particular} for \(p_1=-2, -1, 0, 1\), but only if \(k_1=k_2=1\); otherwise, the approximation on the interface gets worse.
 
 \begin{figure}[!htb]
     \centering
@@ -985,16 +985,16 @@ Again, we found the same surprising results as before, that is, with negative va
       \caption{Interface \(\epsilon_\gamma^1\) error.}
       \label{transmission_L_axis_error_c1_k1_2}
     \end{minipage}
-    
+
     \vspace{0.5cm} % Add some vertical space between the rows of figures
-    
+
     \begin{minipage}{.6\textwidth}
       \centering
       \includegraphics[width=\linewidth]{Images/Transmission/L_shape_2_axis_sol_k1_2_enr.png}
       %\caption{Numerical approximation}
       \label{transmission_L_axis_plot_k1_2}
     \end{minipage}
-    
+
     \caption{Absolute value of the interface errors and numerical approximation for \(k_1=2\), \(p_1=-2, -1, 0, 1\) and \(p_2 = 0, 1\).}
     \label{}
 \end{figure}
