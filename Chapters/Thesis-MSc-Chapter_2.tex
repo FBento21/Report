@@ -604,7 +604,7 @@ As studied in \cite{gustafsson2019error}, consider a polygonal domain \(\Omega \
         \vspace{-4pt} % Align at the top
         \begin{align}\label{decomp_prob}
             \begin{cases}
-                - \nabla \left(k_i \nabla u_i\right) = f_i, & \text{in }\Omega_i\\
+                - \nabla \cdot \left(k_i \nabla u_i\right) = f_i, & \text{in }\Omega_i\\
                 u_1 - u_2 = 0, & \text{on }\gamma\\
                 k_1 \frac{\partial u_1}{\partial \mathbf{n_1}} + k_2 \frac{\partial u_2}{\partial  \mathbf{n_2}} = 0, & \text{on }\gamma\\
                 u_i = 0, & \text{on }\Gamma_i
@@ -617,76 +617,83 @@ As studied in \cite{gustafsson2019error}, consider a polygonal domain \(\Omega \
 
 In what follows, we mainly follow the reference \cite{quarteroni1999domain}. Equations \eqref{decomp_prob} can be used in studying a system of two bodies with different material parameters (contact resistance or thermal conductivity) connected through an interface \(\gamma\). If we set
 \[
-k = \begin{cases}
-    k_1,& \text{in } \Omega_1\\
-    k_2,& \text{in } \Omega_2
-\end{cases}, \text{ and }
+k(x) = \begin{cases}
+    k_1,& x \in \Omega_1\\
+    k_2,& x \in \Omega_2
+\end{cases}, \quad
 f = \begin{cases}
-    \frac{f_1}{k_1},& \text{in } \Omega_1\\
-    \frac{f_2}{k_2},& \text{in } \Omega_2
+    f_1,& \text{in } \Omega_1\\
+    f_2,& \text{in } \Omega_2
 \end{cases},
 \]
-then problem \eqref{decomp_prob} can be seen as a natural reformulation of the Poisson equation
+then problem \eqref{decomp_prob} can be seen as a natural reformulation of the Poisson equation with variable coefficients
 \begin{align}\label{decomp_poisson}
     \begin{cases}
-        -\Delta u = f, & \text{in }\Omega \\
+        - \nabla \cdot \left(k(x) \nabla u\right) = f, & \text{in }\Omega\\
         u = 0, & \text{on } \partial\Omega
     \end{cases}
 \end{align}
-where \(f\) is (possibly) discontinuous through the interface \(\gamma\). Equivalence between problems \eqref{decomp_prob} and \eqref{decomp_poisson} (in the appropriate spaces defined below), follows from the transmission conditions in \eqref{decomp_prob} which enforce the continuity of the solutions and its normal derivative on \(\gamma\). To show the equivalence between the two problems we write the variational (weak) forms associated with problems \eqref{decomp_prob} and \eqref{decomp_poisson}. For \eqref{decomp_poisson} it is straightforward: one multiplies the equation in \(\Omega\) by a test function \(v \in C^\infty_0(\Omega)\) and by Green's Identities one finds that
+where \(f\) is (possibly) discontinuous through the interface \(\gamma\) and
 \[
-a(u,v)=\int_\Omega \nabla u \cdot \nabla v dx = \int_\Omega f v dx
+    u = \begin{cases}
+        u_1, \text{ in } \Omega_1\\
+        u_2, \text{ in } \Omega_2\\
+    \end{cases}
+.\]
+Equivalence between problems \eqref{decomp_prob} and \eqref{decomp_poisson} (in the appropriate spaces defined below), follows from the transmission conditions in \eqref{decomp_prob} which enforce the continuity of the solutions and its normal derivative on \(\gamma\). To show the equivalence between the two problems, we write the variational (weak) form associated with problems \eqref{decomp_prob} and \eqref{decomp_poisson}. The weak form of \eqref{decomp_poisson} is given by
+\[
+    a(u,v)=\int_\Omega k(x)\nabla u \cdot \nabla v dx = \int_\Omega f v dx
 \]
-where we have defined the associated bilinear form \(a\). As such, enlarging the functional space to the Hilbert Space \(V^0=H^1_0(\Omega)\), the problem can be rewritten as
-
+where we defined the associated bilinear form \(a\) in the Sobolev Space \(H^1_0(\Omega)\), and the problem can be rewritten as
 \begin{equation}\label{weak_poisson}
-    \text{find } u \in V^0: a(u,v) = (f, v), \; \forall v \in V^0,
+    \text{find } u \in H^1_0(\Omega): a(u,v) = (f, v), \; \forall v \in H^1_0(\Omega),
 \end{equation}
-where \((f,v)\) denotes the \(L^2(\Omega)\) inner product between \(f\) and \(v\), which has a unique solution in \(V^0\) by virtue of Lax-Milgram lemma \ref{lax-milgram}. In general, regularity results only guarantee, \(u \in V^0 \cap H^2_{\text{loc}}(\Omega'), \; \forall \Omega' \Subset \Omega\) (see Section 6.3.1 of \cite{evans2022partial})\footnote{We write that \(A \Subset B\) when \(\overline{A}\) is compact and \(\overline{A} \subset B\).}, but if the polygonal domain is convex then the solution is in \(u \in H^2(\Omega)\) up to the boundary (see Theorem 3.2.1.2 in \cite{grisvard2011elliptic}).
+where \((f,v)\) denotes the \(L^2(\Omega)\) inner product between \(f\) and \(v\), which has a unique solution in \(H^1_0(\Omega)\) by virtue of Lax-Milgram lemma \ref{lax-milgram}.
 
-For \eqref{decomp_prob} the process is not so direct. Given the subdomain \(\Omega_1\), one multiplies the first equation with a test function in \(v_1 \in C^\infty_0(\Omega_1)\) and integrates by parts to obtain
+For \eqref{decomp_prob} the process is not so direct. In what follows, the $L^2$ inner product in $\Omega_i$ is also denoted by $(\cdot, \cdot)$, since it is clear from the context. Given the subdomain \(\Omega_1\), one multiplies the first equation by \(v_1 \in H^1_0(\Omega_1)\) and integrates by parts to obtain the bilinear form
 \[
-a(u_1,v_1) = \Big(\frac{f_1}{k_1}, v_1\Big),
+    a_1(u_1,v_1) = \int_{\Omega_1} k_1 \nabla u_1 \cdot \nabla v_1 dx = (f_1, v_1),
 \]
-and analogously, for the subdomain \(\Omega_2\), considering \(v_2 \in C^\infty_0(\Omega_2)\) one finds that
+and analogously for the subdomain \(\Omega_2\), considering \(v_2 \in H^1_0(\Omega_2)\) one finds that
 \[
-a(u_2,v_2) = \Big(\frac{f_2}{k_2}, v_2\Big).
+    a_2(u_2,v_2) = \int_{\Omega_2} k_2 \nabla u_2 \cdot \nabla v_2 dx = (f_2, v_2),
 \]
-To (weakly) impose the continuity of the normal derivative at \(\gamma\) notice that if \(v \in C^\infty_0(\Omega)\), then one can define \(v_1 = v_{|\Omega_1}\) and \(v_2 = v_{|\Omega_2}\), where \(v_i \in C^\infty(\Omega_i)\) and \(v_i(x)=0, \; \forall x \in \Gamma_i\) for \(i=1, 2\). This allows us to write
+To (weakly) impose the continuity of the normal derivative at \(\gamma\), consider the functional space \[
+        V_i = \{v \in H^1(\Omega_i): v_{|\partial \Omega \cap \partial {\Omega_i}}=0\},\\
+\]
+and let \(v_1 \in V_1\) and \(v_2 \in V_2\). This allows us to write
 \begin{align*}
-    -\int_{\Omega_1} k_1 \Delta u_1 v_1 -\int_{\Omega_2} k_2 \Delta u_2 v_2 &= \int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2\\
-    &- k_1 \int_\gamma \frac{\partial u_1}{\partial n_1}v_1 - k_2 \int_\gamma \frac{\partial u_2}{\partial n_2}v_2
+    -\int_{\Omega_1} k_1 \Delta u_1 v_1 dx -\int_{\Omega_2} k_2 \Delta u_2 v_2 dx &= \int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 dx + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2 dx\\
+    &- k_1 \int_\gamma \frac{\partial u_1}{\partial n_1}v_1 dx - k_2 \int_\gamma \frac{\partial u_2}{\partial n_2}v_2 dx
 \end{align*}
 Observe that if \(v_{1_{|\gamma}} = v_{2_{|\gamma}} = \eta\), then using the condition on the normal derivative one would find that
 \[
-\int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2 = (f_1, v_1) + (f_2, v_2).
+\int_{\Omega_1} k_1\nabla u_1 \cdot \nabla v_1 dx+ \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla v_2 dx= (f_1, v_1) + (f_2, v_2).
 \]
 As such, consider a continuous extension operator \(P_i\) from the interface to the domain \(\Omega_i\) such that \((P_i \eta)_{|\gamma} = \eta\). In that case, given a function\footnote{A description of such function will be given below when we formalize the weak form of the problem. For now, assume that such an extension has the regularity that we need.} \(\mu\) defined in \(\gamma\), the identity above holds by rewriting it in the form
 \[
-\int_{\Omega_1} k_1\nabla u_1 \cdot \nabla P_1 \mu + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla P_2 \mu = (f_1, P_1 \mu) + (f_2, P_2 \mu).
+\int_{\Omega_1} k_1\nabla u_1 \cdot \nabla P_1 \mu dx + \int_{\Omega_2} k_2\nabla u_2 \cdot \nabla P_2 \mu dx= (f_1, P_1 \mu) + (f_2, P_2 \mu).
 \]
-Finally, for the continuity on the interface, we assume that \(u_1 = u_2\) on \(\gamma\). The process above allows us to state the weak form of problem \eqref{decomp_prob} as follows.
-\begin{proposition}
+Finally, for the continuity on the interface, we assume that \(u_1 = u_2\) on \(\gamma\). The process above allows us to state the weak form of problem \eqref{decomp_prob} as follows\footnote{Analogous characterizations can be derived. This characterization is particularly useful when using decomposition methods which discretize the operators $P_1$ and $P_2$.} .
+\begin{definition}
     Consider the set of equations \eqref{decomp_prob}. For \(i=1, 2\), let
     \begin{align*}
         &V_i = \{v_i \in H^1(\Omega_i): v_{i_{|\partial \Omega \cap \partial {\Omega_i}}}=0\},\\
-        &V_i^0 = H^1_0(\Omega_i),\\
-        &\Lambda = \{\eta \in H^\frac{1}{2}(\gamma): \eta = v_{|\gamma} \text{ for some } v \in V^0\}, \\
-        &a_i (u_i, v_i) = \int_{\Omega_i} \nabla u_i \cdot \nabla v_i,
+        &\Lambda = \{\eta \in H^\frac{1}{2}(\gamma): \eta = v_{|\gamma} \text{ for some } v \in H^1_0(\Omega)\}, \\
+        &a_i (u_i, v_i) = \int_{\Omega_i} k_i \nabla u_i \cdot \nabla v_i dx.
     \end{align*}
-    where \(V^0 = H^1_0(\Omega)\) as above.
     Then the weak formulation of \eqref{decomp_prob} reads as
     \begin{equation}\label{weak_decomp}
         \text{find } u_1\in V_1, u_2 \in V_2 \text{ such that }
         \begin{cases}
-            a_1(u_1, v_1) = (\frac{f_1}{k_1}, v_1), & \forall v_1 \in V_1^0\\
-            a_2(u_2, v_2) = (\frac{f_2}{k_2}, v_1), & \forall v_2 \in V_2^0\\
+            a_1(u_1, v_1) = (f_1, v_1), & \forall v_1 \in H^1_0(\Omega_1)\\
+            a_2(u_2, v_2) = (f_2, v_2), & \forall v_2 \in H^1_0(\Omega_2)\\
             u_1 = u_2, & \text{ on } \gamma\\
-            a_1(k_1 u_1, P_1 \mu) + a_2(k_2 u_2, P_2 \mu) = (f_1, P_1 \mu) + (f_2, P_2 \mu), & \forall \mu \in \Lambda
+            a_1(u_1, P_1 \mu) + a_2(u_2, P_2 \mu) = (f_1, P_1 \mu) + (f_2, P_2 \mu), & \forall \mu \in \Lambda
         \end{cases}
     \end{equation}
     where the operator \(P_i: \Lambda \rightarrow V_i\) is continuous for \(i=1, 2\).
-\end{proposition}
+\end{definition}
 
 % \begin{remark}
 %     The existence of the (continuous) extension operators \(P_1\) and \(P_2\) is not obvious but Theorem \ref{frac_theo} guarantees the existence of a right inverse of the trace operator. See the presented references for more details.
@@ -694,14 +701,20 @@ Finally, for the continuity on the interface, we assume that \(u_1 = u_2\) on \(
 
 We are now ready to prove the equivalence between the weak formulations of problems \eqref{decomp_prob} and \eqref{decomp_poisson}.
 \begin{theorem}\label{equivalence_transmission}
-    If \(\Omega\) is a polygonal convex domain, then problem \eqref{weak_poisson} is equivalent to \eqref{weak_decomp}.
+    Problem \eqref{weak_poisson} is equivalent to \eqref{weak_decomp}.
 \end{theorem}
 \begin{proof}
     \((\implies):\)
 
-    Let \(u \in V^0\) be a solution of problem \eqref{weak_poisson}. Define \(u_1 = u_{|\Omega_1}\) and \(u_2 = u_{|\Omega_2}\). It is clear that \(u_1\) and \(u_2\) satisfy the first two equations in \eqref{weak_decomp}.
-
-    For equation 3 in \eqref{weak_decomp}, we use the fact that \(u \in H^1(\Omega)\) and therefore \(u \in H^2(\Omega)\) since \(\Omega\) is a polygonal convex domain. As such, \(u\) is continuous on the interface and \(u_1=u_2\) on \(\gamma\).
+    Let \(u \in H^1_0(\Omega)\) be a solution of problem \eqref{weak_poisson}. Define \(u_1 = u_{|\Omega_1}\) and \(u_2 = u_{|\Omega_2}\). In order to check that $u_1$ satisfies the first equation in \eqref{weak_decomp}, let $v_1 \in H^1_0(\Omega_1)$. Considering the extension
+    \[
+        \Tilde{v}_1 = \begin{cases}
+            v_1, \text{ in } \Omega_1\\
+            0, \text{ in } \Omega_2\\
+        \end{cases}
+    ,\]
+$\Tilde{v}_1 \in H^1_0(\Omega)$ and by assumption $a_1(u_1, v_1) = a(u, \Tilde{v}_1) = (f, \Tilde{v}_1) = (f_1,v_1)$, as expected. For the second equation in \eqref{weak_decomp} the process is analogous.
+    For equation 3 in \eqref{weak_decomp}, we use the fact that \(u \in H^1_0(\Omega)\) and therefore \(u\) is H\"older continuous by the De Giorgi Theorem, see Theorem 8.22 in \cite{gilbarg1977elliptic}. As such, \(u\) is continuous on the interface and \(u_1=u_2\) on \(\gamma\).
 
     Finally, given \(\mu \in \Lambda\), one defines
     \[
@@ -711,19 +724,20 @@ We are now ready to prove the equivalence between the weak formulations of probl
         P_2 \mu, & \text{ in } \Omega_2
     \end{cases}
     \]
-    which satisfies \(P \mu \in V^0\) and the equality 4 in \eqref{weak_decomp}.
+    which satisfies \(P \mu \in H^1_0(\Omega)\) and the equality 4 in \eqref{weak_decomp}.
 
     \vspace*{0.5cm}
     \((\impliedby):\)
 
-    Let \(u_1 \in V_1^0, u_2 \in V_2^0\) solve \eqref{weak_decomp} in each subdomain and set
+    Let \(u_1 \in V_1, u_2 \in V_2\) solve \eqref{weak_decomp} in each subdomain and set
     \[
     u=\begin{cases}
         u_1, \text{ in } \Omega_1\\
-        u_2, \text{ in } \Omega_2.
+        u_2, \text{ in } \Omega_2
     \end{cases}
     \]
-    To check that \(u \in V^0\), let \(v \in \mathcal{D}(\Omega)\). Using integration by parts and the fact that \(u_1 = u_2\) on the interface \(\gamma\) we have
+    as before.
+    To check that \(u \in H^1_0(\Omega)\), let \(v \in \mathcal{D}(\Omega)\). Using integration by parts and the fact that \(u_1 = u_2\) on the interface \(\gamma\) we have
     \[
         \int_\Omega u \frac{\partial v}{\partial x_j} dx =  \int_{\Omega_1} u_1 \frac{\partial v}{\partial x_j} dx + \int_{\Omega_2} u_2 \frac{\partial v}{\partial x_j} dx = -\int_{\Omega_1} \frac{\partial u_1}{\partial x_j} v dx - \int_{\Omega_2} \frac{\partial u_2}{\partial x_j} v dx,
     \]
@@ -736,15 +750,25 @@ We are now ready to prove the equivalence between the weak formulations of probl
         \end{cases}
     \]
     for each \(j=1,2\).
-    Defining \(P \mu\) as above, take \(\mu \in \Lambda\) such that for some \(v \in V^0\) one has \(\mu = v_{|\gamma}\). Thus, the difference \((v_{|\Omega_i} - P_i \mu) \in V^0_i\) for each \(i=1, 2\) and
+    Defining \(P \mu\) as above, take \(\mu \in \Lambda\) such that for some \(v \in H^1_0(\Omega)\) one has \(\mu = v_{|\gamma}\) and let $v_i = v_{|\Omega_i}$. Thus, the difference \((v_i - P_i \mu) \in H^1_0(\Omega_i)\) for each \(i=1, 2\) and
+%     \begin{align*}
+%         a(u, v) &= \Big[a_1(u_1, v_{|\Omega_1} - P_1 \mu) + a_1(u_1, P_1\mu)\Big] + \Big[a_2(u_2, v_{|\Omega_2} - P_2 \mu) + a_2(u_2, P_2\mu)\Big]\\
+%         &=\Big[(f_1, v_{|\Omega_1} - P_1 \mu) + (f_1, P_1 \mu) \Big] + \Big[(f_2, v_{|\Omega_2} - P_2 \mu) + (f_2, P_2 \mu) \Big]\\
+%         &= (f, v)
+%     \end{align*}
+%     where \(f = \begin{cases}
+%         f_1, \text{ in } \Omega_1\\
+%         f_2, \text{ in } \Omega_2
+%     \end{cases}\)
     \begin{align*}
-        a(k u, v) &= \Big[a_1(k_1 u_1, v_{|\Omega_1} - P_1 \mu) + a_1(k_1 u_1, P_1\mu)\Big] + \Big[a_2(k_2 u_2, v_{|\Omega_2} - P_2 \mu) + a_2(k_2 u_2, P_2\mu)\Big]\\
-        &=\Big[(f_1, v_{|\Omega_1} - P_1 \mu) + (f_1, P_1 \mu) \Big] + \Big[(f_2, v_{|\Omega_2} - P_2 \mu) + (f_2, P_2 \mu) \Big]\\
-        &=(\Tilde{f}, v), \implies a(u, v) = (f, v)
+        a(u, v) &= \int_\Omega k(x) \nabla u \cdot \nabla v dx = \int_{\Omega_1} k_1 \nabla u_1 \cdot \nabla v_1 dx +  \int_{\Omega_2} k_2 \nabla u_2 \cdot \nabla v_2 dx \\
+        &= \int_{\Omega_1} k_1 \nabla u_1 \cdot \nabla (v_1 - P_1 \mu) dx + \int_{\Omega_1} k_1 \nabla u_1 \cdot \nabla P_1 \mu dx + \int_{\Omega_2} k_2 \nabla u_2 \cdot \nabla (v_2 - P_2 \mu) dx + \int_{\Omega_2} k_2 \nabla u_2 \cdot \nabla P_2 \mu dx \\
+        &=\int_{\Omega_1} f_1(v_1 - P_1 \mu)dx + \int_{\Omega_2} f_2(v_2 - P_2 \mu)dx + \int_{\Omega_1} f_1 P_1 \mu dx + \int_{\Omega_2} f_2 P_2\mu dx \\
+        &= \int_{\Omega_1} f_1 v_1 dx + \int_{\Omega_2} f_2 v_2 dx = \int_\Omega f v dx = (f, v),
     \end{align*}
-    where we have defined \(\Tilde{f} = \begin{cases}
+    where \(f = \begin{cases}
         f_1, \text{ in } \Omega_1\\
         f_2, \text{ in } \Omega_2
     \end{cases}\)
-   and used the first two and the fourth equations in \eqref{weak_decomp}.
+    as defined above, and we used the first, the second and the fourth equations in \eqref{weak_decomp}.
 \end{proof}
